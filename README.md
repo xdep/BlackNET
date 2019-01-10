@@ -20,7 +20,7 @@ Created By : DarkSoftwareCo
 2. Upload The ZIP File to your Server
 3. Extract it
 4. Go to PHPMyAdmin
-5. Create a database wiht any name you want
+5. Create a database with any name you want
 6. Change the data in config.php
 7. Change blacknet files and folders permission to 777
 8. Go to db.php to create the botnet tables automatically
