@@ -8,12 +8,21 @@ BlackNET is a simple botnet with PHP Panel and VB.NET Output
 Created By : DarkSoftwareCo
 
 ## What You Can Do
+On Windows
 1. Upload File
 2. DDOS Attack [ TCP,UDP,ARME,Slowloris ]
 3. Open Webpage
 4. Show MessageBox
 5. Uninstall Client
 6. Close Client
+
+On Linux
+1. Print Simple Message for Client
+2. Open Webpage
+
+## Python Stub
+You Can use it to hack any Linux or Windows systems with python on it
+
 
 ## How to Install PHP Panel
 1. Download BlackNET - PHP Panel.zip
