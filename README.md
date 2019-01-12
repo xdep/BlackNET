@@ -1,10 +1,10 @@
 ![Logo](https://a.top4top.net/p_1104t3ole1.png)
 
 # BlackNET
-A Free PHP Interface Botnet with VB.NET based Stub and Builder
+A Free MultiOS PHP Interface Botnet with VB.NET and Python based Stub and VB.NET Builder
 
 ## About BlackNET
-BlackNET is a simple botnet with PHP Panel and VB.NET Output
+BlackNET is a simple botnet with PHP Panel and VB.NET or Python Output for MultiOS Hacking
 Created By : DarkSoftwareCo
 
 ## What You Can Do
@@ -19,6 +19,10 @@ On Windows
 On Linux
 1. Print Simple Message for Client
 2. Open Webpage
+3. Upload File
+4. Simple DDOS Attack
+5. Uninstall Client
+6. Close Client
 
 ## Python Stub
 You Can use it to hack any Linux or Windows systems with python on it
