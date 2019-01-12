@@ -51,7 +51,7 @@ You Can use it to hack any Linux or Windows systems with python on it
 ![Image of the Dectection](https://antiscan.me/images/result/cYi5BmDOwzWU.png)
 
 #### Python Output
-![Image of the Dectection](https://spyralscanner.net/imgshr/index.php?id=QStXlv002W)
+![Image of the Dectection](https://d.top4top.net/p_1107ly63e1.png)
 
 ## Copyright
 Copyright © Black.Hacker and DarkSofrwareCo - 2019
