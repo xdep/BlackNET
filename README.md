@@ -25,8 +25,7 @@ On Linux
 6. Close Client
 
 ## Python Stub
-You Can use it to hack any Linux or Windows systems with python on it
-
+You Can use it to hack any Linux system with python on it
 
 ## How to Install PHP Panel
 1. Download BlackNET - PHP Panel.zip
