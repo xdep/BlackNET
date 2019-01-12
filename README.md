@@ -46,7 +46,12 @@ You Can use it to hack any Linux or Windows systems with python on it
 ![Image of the Builder](https://i.gyazo.com/3aeeb4aab1015b4a6e9c171ad20d21ed.png)
 
 ## Client Detection Rate
+
+##### VB.NET Output
 ![Image of the Dectection](https://antiscan.me/images/result/cYi5BmDOwzWU.png)
+
+#### Python Output
+![Image of the Dectection](https://spyralscanner.net/imgshr/index.php?id=QStXlv002W)
 
 ## Copyright
 Copyright © Black.Hacker and DarkSofrwareCo - 2019
