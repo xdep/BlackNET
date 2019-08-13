@@ -65,6 +65,7 @@ v0.5
  - Cleaner Code
  - Secure Database Connection
  - Admin Settings
+ - Better and Secure Login System
  - Bug Fixed
  - SQL Injection Fixed
  
