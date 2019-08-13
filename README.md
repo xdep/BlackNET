@@ -56,6 +56,17 @@ You Can use it to hack any Linux system with python on it
 ## YouTube - How To Install
 [https://youtu.be/GyPdu20rC1A](url)
 
+## Coming Soon
+
+```
+
+v0.5
+ - Stable Connection
+ - Cleaner Code
+ - Secure Database Connection
+ - Bug Fixed
+ 
+```
 
 ## Copyright
 Copyright © Black.Hacker and DarkSofrwareCo - 2019
