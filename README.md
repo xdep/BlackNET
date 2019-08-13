@@ -64,7 +64,9 @@ v0.5
  - Stable Connection
  - Cleaner Code
  - Secure Database Connection
+ - Admin Settings
  - Bug Fixed
+ - SQL Injection Fixed
  
 ```
 
