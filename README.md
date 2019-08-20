@@ -40,7 +40,7 @@ You Can use it to hack any Linux system with python on it
 9. Enter you network and enjoy hacking
 
 ## Screenshot
-![Image of the interface](https://c.top4top.net/p_110481bbz1.png)
+![Image of the interface](https://6.top4top.net/p_1327q2g8x1.png)
 
 ![Image of the Builder](https://i.gyazo.com/3aeeb4aab1015b4a6e9c171ad20d21ed.png)
 
