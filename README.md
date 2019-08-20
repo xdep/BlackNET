@@ -65,9 +65,11 @@ v0.5
  - Secure Database Connection
  - Admin Settings
  - Better and Secure Login System
+ - Salted MD5 Hashing
+ - Rewrite Project in OOP with PDO Connection
  - Bug Fixed
  - SQL Injection Fixed
- 
+  
 ```
 
 ## Copyright
