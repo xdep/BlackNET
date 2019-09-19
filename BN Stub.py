@@ -17,8 +17,6 @@ elif os.name == "nt":
 else:
 	username = os.getenv("USER")
 
-print (username)
-
 basecode = base64.urlsafe_b64encode(username.encode('UTF-8')).decode('ascii')
 uid = cid + "_" + basecode
 
