@@ -13,9 +13,14 @@ username = os.getenv("USERNAME")
 if os.name == "posix":
    username = os.getenv("USER")
 elif os.name == "nt":
-    username = os.getenv("%USERNAME%")
+    username = os.getenv("USERNAME")
+else:
+	username = os.getenv("USER")
 
-uid = cid + "_" + basecode = base64.urlsafe_b64encode(username.encode('UTF-8')).decode('ascii')
+print (username)
+
+basecode = base64.urlsafe_b64encode(username.encode('UTF-8')).decode('ascii')
+uid = cid + "_" + basecode
 
 if os.name == "posix":
       oss = "GNU/LINUX"
