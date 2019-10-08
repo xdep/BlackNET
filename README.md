@@ -63,6 +63,10 @@ You Can use it to hack any Linux system with python on it
 ## What's New
 
 ```
+v0.5.1
+ - Fixed Bugs
+ - Bug: Bot Master can't send commands (fixed)
+ - Bug: Python Malware doesn't work on Py3 (fixed)
 
 v0.5
  - Stable Connection
@@ -75,6 +79,13 @@ v0.5
  - Bug Fixed
  - SQL Injection Fixed
   
+```
+
+## Coming Soon
+
+```
+v1.0
+
 ```
 
 ## Copyright
