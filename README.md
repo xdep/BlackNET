@@ -84,8 +84,11 @@ v0.5
 ## Coming Soon
 
 ```
-v1.0
-
+v0.5.2
+ - Simple Stats
+ - Bugs Fixes
+ - UI Enhancments
+ - Database Fixs
 ```
 
 ## Copyright
