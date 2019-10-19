@@ -89,7 +89,6 @@ v0.5.2
  - Bugs Fixes
  - UI Enhancements
  - Database Fixs
- - Abbilty to change username
  - reCaptcha Integration
 ```
 
