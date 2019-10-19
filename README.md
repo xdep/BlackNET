@@ -87,7 +87,7 @@ v0.5
 v0.5.2
  - Simple Stats
  - Bugs Fixes
- - UI Enhancments
+ - UI Enhancements
  - Database Fixs
 ```
 
