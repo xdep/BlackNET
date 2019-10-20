@@ -91,6 +91,7 @@ v0.5.2
  - Database Fixs
  - Ability to change admin username
  - reCaptcha Integration
+ - Security Enhancements
 ```
 
 ## Copyright
