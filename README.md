@@ -92,6 +92,7 @@ v0.5.2
  - Ability to change admin username
  - reCaptcha Integration
  - Security Enhancements
+ - 2FA [ Code by Email ]
 ```
 
 ## Copyright
