@@ -85,14 +85,16 @@ v0.5
 
 ```
 v0.5.2
- - Simple Stats
- - Bugs Fixes
- - UI Enhancements
- - Database Fixs
- - Ability to change admin username
- - reCaptcha Integration
- - Security Enhancements
- - 2FA [ Code by Email ]
+ + PHP Panel
+   - Simple Stats
+   - Bugs Fixes
+   - UI Enhancements
+   - Database Fixs
+   - Ability to change admin username
+   - reCaptcha Integration
+   - Security Enhancements
+   - 2FA [ Code by Email ]
+  
 ```
 
 ## Copyright
