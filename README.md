@@ -42,6 +42,8 @@ You Can use it to hack any Linux system with python on it
 ## Screenshot
 ![Installtion Page](https://i.imgur.com/RwNTwgs.png)
 
+![Image of 2FA Page](https://i.imgur.com/v1zCoiv.png)
+
 ![Image of the interface](https://1.top4top.net/p_1388inug61.png)
 
 ![Image of the Builder](https://i.gyazo.com/3aeeb4aab1015b4a6e9c171ad20d21ed.png)
