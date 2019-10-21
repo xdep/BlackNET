@@ -94,7 +94,10 @@ v0.5.2
    - reCaptcha Integration
    - Security Enhancements
    - 2FA [ Code by Email ]
-  
+   
+ + VB.NET
+   - Move client to another Host
+   - Bug Fixs
 ```
 
 ## Copyright
