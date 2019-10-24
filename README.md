@@ -93,6 +93,7 @@ v0.5.2
    - Simple Stats
    - Bugs Fixes
    - UI Enhancements
+   - Email Notifications
    - Database Fixs
    - New Menues [ Blacklist Client, Move Client ]
    - Ability to change admin username
