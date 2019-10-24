@@ -102,7 +102,10 @@ v0.5.2
    - 2FA [ Code by Email ]
    
  + VB.NET
+   - RSA Encryption for BlackNET Panel URL
    - Move client to another Host
+   - Update the junk code
+   - Speed Optimization
    - Bug Fixs
 ```
 
