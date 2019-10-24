@@ -93,13 +93,14 @@ v0.5.2
    - Simple Stats
    - Bugs Fixes
    - UI Enhancements
+   - Select all button
    - Email Notifications
    - Database Fixs
    - New Menues [ Blacklist Client, Move Client ]
    - Ability to change admin username
    - reCAPTCHA Integration
    - Security Enhancements
-   - 2FA [ Code by Email ]
+   - 2FA Implementation [ Code by Email ]
    
  + VB.NET
    - RSA Encryption for BlackNET Panel URL
