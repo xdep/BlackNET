@@ -104,6 +104,7 @@ v0.5.2
  + VB.NET
    - RSA Encryption for BlackNET Panel URL
    - Move client to another Host
+   - Check Blacklist
    - Update the junk code
    - Speed Optimization
    - Bug Fixs
