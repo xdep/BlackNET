@@ -94,8 +94,9 @@ v0.5.2
    - Bugs Fixes
    - UI Enhancements
    - Database Fixs
+   - New Menues [ Blacklist Client, Move Client ]
    - Ability to change admin username
-   - reCaptcha Integration
+   - reCAPTCHA Integration
    - Security Enhancements
    - 2FA [ Code by Email ]
    
