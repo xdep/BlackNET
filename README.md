@@ -88,6 +88,7 @@ v0.5
 ## Coming Soon
 
 ```
+
 v0.5.2
  + PHP Panel
    - Simple Stats
@@ -109,6 +110,11 @@ v0.5.2
    - Update the junk code
    - Speed Optimization
    - Bug Fixs
+   
+ + Python
+   - Updated to 0.5.2
+   - Bug fixes
+   
 ```
 
 ## Copyright
