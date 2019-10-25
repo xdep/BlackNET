@@ -88,6 +88,7 @@ v0.5
 ## Coming Soon
 
 ```
+Biggest Update
 
 v0.5.2
  + PHP Panel
@@ -102,6 +103,7 @@ v0.5.2
    - reCAPTCHA Integration
    - Security Enhancements
    - 2FA Implementation [ Code by Email ]
+   - Screenshot Viewer
    
  + VB.NET
    - RSA Encryption for BlackNET Panel URL
@@ -109,6 +111,7 @@ v0.5.2
    - Check Blacklist
    - Update the junk code
    - Speed Optimization
+   - Take screenshot
    - Bug Fixs
    
  + Python
