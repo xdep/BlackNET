@@ -103,7 +103,6 @@ v0.5.2
    - reCAPTCHA Integration
    - Security Enhancements
    - 2FA Implementation [ Code by Email ]
-   - Remote Desktop Viewer
    
  + VB.NET
    - RSA Encryption for BlackNET Panel URL
@@ -111,7 +110,6 @@ v0.5.2
    - Check Blacklist
    - Update the junk code
    - Speed Optimization
-   - Remote Desktop Function
    - Bug Fixs
    
  + Python
