@@ -103,10 +103,12 @@ v0.5.2
    - reCAPTCHA Integration
    - Security Enhancements
    - 2FA Implementation [ Code by Email ]
+   - Screenshot Viewer
    
  + VB.NET
    - RSA Encryption for BlackNET Panel URL
    - Move client to another Host
+   - Take screenshot every minute and upload it
    - Check Blacklist
    - Update the junk code
    - Speed Optimization
