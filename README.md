@@ -107,6 +107,7 @@ v0.5.2
    - 2FA Implementation [ Code by Email ]
    - Screenshot Viewer
    - upload.php to Upload files to the network
+   - PHPMailer Integration with SMTP Settings 
    
  + VB.NET
    - RSA Encryption for BlackNET Panel URL
