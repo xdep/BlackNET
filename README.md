@@ -108,7 +108,8 @@ v0.5.2
  + VB.NET
    - RSA Encryption for BlackNET Panel URL
    - Move client to another Host
-   - Take screenshot every minute and upload it
+   - Take screenshot every 10 seconds
+   - Firefox Cookies Stealer
    - Check Blacklist
    - Update the junk code
    - Speed Optimization
