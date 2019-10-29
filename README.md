@@ -102,8 +102,11 @@ v0.5.2
    - Ability to change admin username
    - reCAPTCHA Integration
    - Security Enhancements
+   - Updating the Hashing System MD5 to SHA-265
+   - New and Stronger Salt
    - 2FA Implementation [ Code by Email ]
    - Screenshot Viewer
+   - upload.php to Upload files to the network
    
  + VB.NET
    - RSA Encryption for BlackNET Panel URL
