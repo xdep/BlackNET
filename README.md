@@ -90,7 +90,7 @@ v0.5
 ```
 Biggest Update
 
-v0.5.2
+v1.0.0
  + PHP Panel
    - Simple Stats
    - Bugs Fixes
@@ -114,14 +114,13 @@ v0.5.2
    - Move client to another Host
    - Take screenshot every 10 seconds
    - Firefox Cookies Stealer
-   - Keylogger Module
    - Check Blacklist
    - Update the junk code
    - Speed Optimization
    - Bug Fixs
    
  + Python
-   - Updated to 0.5.2
+   - Updated to v1.0.0
    - Bug fixes
    
 ```
