@@ -44,7 +44,7 @@ You Can use it to hack any Linux system with python on it
 
 ![Image of 2FA Page](https://i.imgur.com/v1zCoiv.png)
 
-![Image of the interface](https://i.imgur.com/Dg17RZv.png)
+![Image of the interface](https://2.top4top.net/p_1400xno5n1.png)
 
 ![Image of User Settings](https://i.imgur.com/LcCL9je.png)
 
