@@ -28,6 +28,12 @@ On Linux
 ## Python Stub
 You Can use it to hack any Linux system with python on it
 
+## Requirements
+PHP >= 5.6
+VB.NET >= 2.0
+Python >= 2.7
+
+
 ## How to Install PHP Panel
 1. Download BlackNET - PHP Panel.zip
 2. Upload The ZIP File to your Server
