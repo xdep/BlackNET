@@ -114,6 +114,7 @@ v1.0.0
    - Move client to another Host
    - Take screenshot every 10 seconds
    - Firefox Cookies Stealer
+   - Keylogger Module
    - Check Blacklist
    - Update the junk code
    - Speed Optimization
