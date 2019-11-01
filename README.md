@@ -29,9 +29,9 @@ On Linux
 You Can use it to hack any Linux system with python on it
 
 ## Requirements
-PHP >= 5.6
-VB.NET >= 2.0
-Python >= 2.7
+1. PHP >= 5.6
+2. VB.NET >= 2.0
+3. Python >= 2.7
 
 
 ## How to Install PHP Panel
