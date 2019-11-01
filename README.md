@@ -45,7 +45,7 @@ You Can use it to hack any Linux system with python on it
 8. Go to install.php to create the botnet tables automatically
 9. Enter your network and enjoy hacking
 
-## Screenshot
+##v1.0 Screenshot [ Soon ]
 ![Installtion Page](https://i.imgur.com/RwNTwgs.png)
 
 ![Image of 2FA Page](https://i.imgur.com/v1zCoiv.png)
