@@ -113,7 +113,8 @@ v1.0.0
    - 2FA Implementation [ Code by Email ]
    - Screenshot Viewer
    - upload.php to Upload files to the network
-   - PHPMailer Integration with SMTP Settings 
+   - PHPMailer Integration with SMTP Settings
+   - Plugin Loader
    
  + VB.NET
    - RSA Encryption for BlackNET Panel URL
@@ -124,6 +125,7 @@ v1.0.0
    - Check Blacklist
    - Update the junk code
    - Speed Optimization
+   - Plugin Helper Function
    - Bug Fixs
    
  + Python
