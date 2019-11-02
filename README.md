@@ -102,6 +102,7 @@ v1.0.0
    - Bugs Fixes
    - UI Enhancements
    - Select all button
+   - Map Visualization
    - Email Notifications
    - Database Fixs
    - New Menues [ Blacklist Client, Move Client ]
