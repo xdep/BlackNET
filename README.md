@@ -103,9 +103,9 @@ v1.0.0
    - UI Enhancements
    - Select all button
    - Map Visualization
-   - Email Notifications
-   - Database Fixs
-   - New Menues [ Blacklist Client, Move Client ]
+   - Email Notification when a new client is online
+   - Fixed Some Database Issues 
+   - New Menu [ Move Client ]
    - Ability to change admin username
    - reCAPTCHA Integration
    - Security Enhancements
@@ -116,6 +116,7 @@ v1.0.0
    - upload.php to Upload files to the network
    - PHPMailer Integration with SMTP Settings
    - Password Stealer Plugin
+   - Better [ Country Code to Country Name ] Function 
    - Plugin Loader
    
  + VB.NET
@@ -129,6 +130,7 @@ v1.0.0
    - Speed Optimization
    - Plugin Helper Function
    - Password Stealer Function
+   - Stealth Mode Function
    - Bug Fixs
    
  + Python
