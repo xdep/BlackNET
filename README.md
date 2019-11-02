@@ -50,7 +50,7 @@ You Can use it to hack any Linux system with python on it
 
 ![Image of 2FA Page](https://i.imgur.com/v1zCoiv.png)
 
-![Image of the interface](https://4.top4top.net/p_1401ngq2c1.png)
+![Image of the interface](https://1.top4top.net/p_140189rdi1.png)
 
 ![Image of User Settings](https://i.imgur.com/LcCL9je.png)
 
