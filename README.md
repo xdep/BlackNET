@@ -50,11 +50,11 @@ You Can use it to hack any Linux system with python on it
 
 ![Image of 2FA Page](https://i.imgur.com/v1zCoiv.png)
 
-![Image of the interface](https://2.top4top.net/p_1400xno5n1.png)
+![Image of the interface](https://4.top4top.net/p_1401ngq2c1.png)
 
 ![Image of User Settings](https://i.imgur.com/LcCL9je.png)
 
-![Image of the Builder](https://i.gyazo.com/3aeeb4aab1015b4a6e9c171ad20d21ed.png)
+![Image of the Builder](https://i.gyazo.com/00cb187eddac470647d477982298cc53.png)
 
 ## Working Proof
 ![](https://6.top4top.net/p_1327v2kiv1.gif)
