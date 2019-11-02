@@ -114,6 +114,7 @@ v1.0.0
    - Screenshot Viewer
    - upload.php to Upload files to the network
    - PHPMailer Integration with SMTP Settings
+   - Password Stealer Plugin
    - Plugin Loader
    
  + VB.NET
@@ -126,6 +127,7 @@ v1.0.0
    - Update the junk code
    - Speed Optimization
    - Plugin Helper Function
+   - Password Stealer Function
    - Bug Fixs
    
  + Python
