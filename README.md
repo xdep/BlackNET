@@ -1,12 +1,14 @@
 ![Logo](https://a.top4top.net/p_1104t3ole1.png)
 
+![](https://img.shields.io/github/repo-size/BlackHacker511/BlackNET) ![](https://img.shields.io/github/downloads/BlackHacker511/BlackNET/total) ![](https://img.shields.io/github/issues-closed/BlackHacker511/BlackNET) ![](https://img.shields.io/github/license/BlackHacker511/BlackNET) ![](https://img.shields.io/github/v/release/BlackHacker511/BlackNET) ![](https://img.shields.io/github/commits-since/BlackHacker511/BlackNET/0.5)
+
 # BlackNET
 Free Advanced MultiOS with a Secure PHP Interface Botnet with VB.NET and Python based Stub and VB.NET Builder
 
 ## About BlackNET
 BlackNET is an advanced botnet with PHP Panel and VB.NET or Python Output for MultiOS Hacking
 
-Created By : DarkSoftwareCo
+Developed By: Black.Hacker
 
 ## What You Can Do
 On Windows
