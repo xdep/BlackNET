@@ -140,6 +140,11 @@ v1.0.0
    - Bug fixes
    
 ```
+## Thanks to
+- njQ8 for njLogger v4
+- Nirosoft for Passwords Recovery Tools
+- PlasmaRAT for DDOS Functions 
+- NYAN CAT for Bypass VM Function
 
 ## Copyright
 Copyright © Black.Hacker and DarkSofrwareCo - 2019
