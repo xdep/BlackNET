@@ -145,6 +145,6 @@ v1.0.0
 - Nirosoft for Passwords Recovery Tools
 - PlasmaRAT for DDOS Functions 
 - NYAN CAT for Bypass VM Function
-
+- FamFamFam for flags icons
 ## Copyright
 Copyright © Black.Hacker and DarkSofrwareCo - 2019
