@@ -114,6 +114,7 @@ v1.0.0
    - Updating the Hashing System MD5 to SHA-265
    - New and Stronger Salt
    - 2FA Implementation [ Code by Email ]
+   - Secure Reset Password System [ Recover your password if you forget it ]
    - Screenshot Viewer
    - upload.php to Upload files to the network
    - PHPMailer Integration with SMTP Settings
