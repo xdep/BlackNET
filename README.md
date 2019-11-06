@@ -105,7 +105,6 @@ v1.0.0
    - UI Enhancements
    - Select all button
    - Map Visualization
-   - Email Notification when a new client is online
    - Fixed Some Database Issues 
    - New Menu [ Move Client ]
    - Ability to change admin username
