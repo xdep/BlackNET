@@ -114,7 +114,6 @@ v1.0.0
    - New and Stronger Salt
    - 2FA Implementation [ Code by Email ]
    - Secure Reset Password System [ Recover your password if you forget it ]
-   - Screenshot Viewer
    - upload.php to Upload files to the network
    - PHPMailer Integration with SMTP Settings
    - Password Stealer Plugin
@@ -137,6 +136,8 @@ v1.0.0
    
  + Python
    - Updated to v1.0.0
+   - Execute Shell Commands
+   - Upload Helper
    - Bug fixes
    
 ```
@@ -146,5 +147,6 @@ v1.0.0
 - PlasmaRAT for DDOS Functions 
 - NYAN CAT for Bypass VM Function
 - FamFamFam for flags icons
+
 ## Copyright
 Copyright © Black.Hacker and DarkSofrwareCo - 2019
