@@ -106,7 +106,7 @@ v1.0.0
    - Select all button
    - Map Visualization
    - Fixed Some Database Issues 
-   - New Menu [ Move Client ]
+   - New Menu [ Move Client,Execute Shell, Upload File ]
    - Ability to change admin username
    - reCAPTCHA Integration
    - Security Enhancements
