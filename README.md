@@ -136,6 +136,7 @@ v1.0.0
    
  + Python
    - Updated to v1.0.0
+   - Malware Builder
    - Execute Shell Commands
    - Upload Helper
    - Bug fixes
