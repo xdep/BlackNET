@@ -144,9 +144,10 @@ v1.0.0
 ```
 
 ## Sass Plugin
-for 10$ per site
-Start your own botnet bussines with BlackNET Sass Plugin
-You could resel BlackNET as a service
+For 15$ start your own botnet bussines with BlackNET Sass Plugin
+
+you could resel BlackNET as a service
+
 1. Create new accounts
 2. Limit number of clients per user
 3. Band Users
