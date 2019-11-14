@@ -142,6 +142,15 @@ v1.0.0
    - Bug fixes
    
 ```
+
+## Sass Plugin
+for 10$ per site
+Start your own botnet bussines with BlackNET Sass Plugin
+You could resel BlackNET as a service
+1. Create new accounts
+2. Limit number of clients per user
+3. Band Users
+
 ## Thanks to
 - njQ8 for njLogger v4
 - Nirosoft for Passwords Recovery Tools
