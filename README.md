@@ -162,7 +162,7 @@ Release date: Unknown
 - FamFamFam for flags icons
 
 ## Donate
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=farisksa79%40gmail.com&currency_code=USD&source=url"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
+<a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=farisksa79%40gmail.com&item_name=BlackNET+Development&currency_code=USD&source=url"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
 
 ## Copyright
 Copyright © Black.Hacker and DarkSofrwareCo - 2019
