@@ -152,6 +152,8 @@ you could resel BlackNET as a service
 2. Limit number of clients per user
 3. Band Users
 
+Release date: Unknown
+
 ## Thanks to
 - njQ8 for njLogger v4
 - Nirosoft for Passwords Recovery Tools
