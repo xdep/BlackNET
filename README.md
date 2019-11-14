@@ -111,7 +111,7 @@ v1.0.0
    - reCAPTCHA Integration
    - Security Enhancements
    - Added Security Questions
-   - Updating the Hashing System MD5 to SHA-265
+   - Updating the Hashing System MD5 to SHA256
    - New and Stronger Salt
    - 2FA Implementation [ Code by Email ]
    - Secure Reset Password System [ Recover your password if you forget it ]
