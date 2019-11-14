@@ -143,8 +143,8 @@ v1.0.0
    
 ```
 
-## Sass Plugin
-For 15$ start your own botnet bussines with BlackNET Sass Plugin
+## Saas Plugin
+For 20$ start your own botnet bussines with BlackNET Saas Plugin
 
 you could resel BlackNET as a service
 
