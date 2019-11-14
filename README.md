@@ -96,7 +96,7 @@ v0.5
 ## Coming Soon
 
 ```
-Biggest Update
+Biggest Update [ 16/11/2019 ]
 
 v1.0.0
  + PHP Panel
@@ -110,6 +110,7 @@ v1.0.0
    - Ability to change admin username
    - reCAPTCHA Integration
    - Security Enhancements
+   - Added Security Questions
    - Updating the Hashing System MD5 to SHA-265
    - New and Stronger Salt
    - 2FA Implementation [ Code by Email ]
@@ -118,7 +119,6 @@ v1.0.0
    - PHPMailer Integration with SMTP Settings
    - Password Stealer Plugin
    - Better [ Country Code to Country Name ] Function 
-   - Plugin Loader
    
  + VB.NET
    - RSA Encryption for BlackNET Panel URL
