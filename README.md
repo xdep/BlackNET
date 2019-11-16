@@ -54,9 +54,11 @@ You Can use it to hack any Linux system with python on it
 
 ![Image of the interface](https://1.top4top.net/p_140189rdi1.png)
 
-![Image of User Settings](https://i.imgur.com/LcCL9je.png)
+![Image of User Settings](https://3.top4top.net/p_1415ttdvo2.png)
 
-![Image of the Builder](https://i.gyazo.com/00cb187eddac470647d477982298cc53.png)
+![Image of Network Settings](https://4.top4top.net/p_1415i872p1.png)
+
+![Image of the Builder](https://i.gyazo.com/e854e4049de3dd18396975a085638019.png)
 
 ## Working Proof
 ![](https://6.top4top.net/p_1327v2kiv1.gif)
@@ -75,29 +77,6 @@ You Can use it to hack any Linux system with python on it
 ## What's New
 
 ```
-v0.5.1
- - Fixed Bugs
- - Bug: Bot Master can't send commands (fixed)
- - Bug: Python Malware doesn't work on Py3 (fixed)
-
-v0.5
- - Stable Connection
- - Cleaner Code
- - Secure Database Connection
- - Admin Settings
- - Better and Secure Login System
- - Salted MD5 Hashing
- - Rewrite Project in OOP with PDO Connection
- - Bug Fixed
- - SQL Injection Fixed
-  
-```
-
-## Coming Soon
-
-```
-Biggest Update [ 16/11/2019 ]
-
 v1.0.0
  + PHP Panel
    - Simple Stats
@@ -106,7 +85,7 @@ v1.0.0
    - Select all button
    - Map Visualization
    - Fixed Some Database Issues 
-   - New Menu [ Move Client,Execute Shell, Upload File ]
+   - New Menu [ Move Client,Execute Shell]
    - Ability to change admin username
    - reCAPTCHA Integration
    - Security Enhancements
@@ -138,9 +117,13 @@ v1.0.0
    - Updated to v1.0.0
    - Malware Builder
    - Execute Shell Commands
-   - Upload Helper
    - Bug fixes
-   
+  
+```
+
+## Coming Soon
+```
+v1.1
 ```
 
 ## Saas Plugin
