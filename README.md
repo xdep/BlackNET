@@ -4,7 +4,7 @@
 
 <p align="center"
  <a href="#"><img align="center" src="https://img.shields.io/github/repo-size/BlackHacker511/BlackNET" /></a>
- <a href="#"><img align="center" src="https://img.shields.io/github/downloads/BlackHacker511/BlackNET/total" /></a>
+ <a href="#"><img align="center" src="https://img.shields.io/github/downloads/BlackHacker511/BlackNET/v1.0/total" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/issues-closed/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/license/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/v/release/BlackHacker511/BlackNET" /></a> 
