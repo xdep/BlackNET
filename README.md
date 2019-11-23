@@ -1,6 +1,15 @@
-![Logo](https://a.top4top.net/p_1104t3ole1.png)
+<p align="center">
+<img src="https://a.top4top.net/p_1104t3ole1.png" alt="" />
+</p>
 
-![](https://img.shields.io/github/repo-size/BlackHacker511/BlackNET) ![](https://img.shields.io/github/downloads/BlackHacker511/BlackNET/total) ![](https://img.shields.io/github/issues-closed/BlackHacker511/BlackNET) ![](https://img.shields.io/github/license/BlackHacker511/BlackNET) ![](https://img.shields.io/github/v/release/BlackHacker511/BlackNET) ![](https://img.shields.io/github/commits-since/BlackHacker511/BlackNET/0.5)
+<p align="center"
+<a href="#"><img align="center" src="https://img.shields.io/github/repo-size/BlackHacker511/BlackNET" alt="" /></a>
+<a href="#"><img align="center" src="https://img.shields.io/github/downloads/BlackHacker511/BlackNET/total" alt="" /></a>
+<a href="#"><img align="center" src="https://img.shields.io/github/issues-closed/BlackHacker511/BlackNET" alt="" /></a>
+<a href="#"><img align="center" src="https://img.shields.io/github/license/BlackHacker511/BlackNET" alt="" /></a>
+<a href="#"><img align="center" src="https://img.shields.io/github/v/release/BlackHacker511/BlackNET" alt="" /></a>
+<a href="#"><img align="center" src="https://img.shields.io/github/commits-since/BlackHacker511/BlackNET/0.5" alt="" /></a>
+</p>
 
 # BlackNET
 Free Advanced MultiOS with a Secure PHP Interface Botnet with VB.NET and Python based Stub and VB.NET Builder
