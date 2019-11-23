@@ -2,7 +2,7 @@
 <img src="https://a.top4top.net/p_1104t3ole1.png" alt="" />
 </p>
 
-<p align="center"
+<p align="center">
  <a href="#"><img align="center" src="https://img.shields.io/github/repo-size/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/issues-closed/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/languages/top/BlackHacker511/BlackNET" /></a>
