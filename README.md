@@ -143,6 +143,14 @@ v1.0.0
 ## Coming Soon
 ```
 v1.1
+ + PHP
+  - Better and Cleaner Code
+  - Bug Fixes
+  
+ + VB.NET
+  - Package Similer Classes
+  - Remover Junkcode.vb
+  - Bug Fixes
 ```
 
 ## Saas Plugin
