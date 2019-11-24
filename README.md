@@ -91,7 +91,7 @@ You Can use it to hack any Linux system with python on it
 ![Image of the Dectection](https://d.top4top.net/p_1107ly63e1.png)
 
 ## YouTube - How To Install
-<a href="https://youtu.be/GyPdu20rC1A"><img src="https://1.top4top.net/p_1423q6dks1.png" alt=""></a>
+<a href="https://youtu.be/GyPdu20rC1A"><img src="https://1.top4top.net/p_1423q6dks1.png" alt="" width="150" hieght="150"></a>
 
 ## What's New
 
