@@ -154,17 +154,6 @@ v1.1
   - Bug Fixes
 ```
 
-## Saas Plugin
-For 20$ start your own botnet bussines with BlackNET Saas Plugin
-
-you could resel BlackNET as a service
-
-1. Create new accounts
-2. Limit number of clients per user
-3. Band Users
-
-Release date: Unknown
-
 ## Thanks to
 - njQ8 for njLogger v4
 - Nirosoft for Passwords Recovery Tools
