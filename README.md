@@ -150,6 +150,7 @@ v1.1
  + VB.NET
   - Package Similer Classes
   - Remove Junkcode.vb
+  - Added POST Method Function
   - Bug Fixes
 ```
 
