@@ -149,7 +149,7 @@ v1.1
   
  + VB.NET
   - Package Similer Classes
-  - Remover Junkcode.vb
+  - Remove Junkcode.vb
   - Bug Fixes
 ```
 
