@@ -85,7 +85,7 @@ You Can use it to hack any Linux system with python on it
 ## Client Detection Rate
 
 ##### VB.NET Output
-![Image of the Dectection](https://antiscan.me/images/result/iuW9DIaMipbi.png)
+![Image of the Dectection](https://antiscan.me/images/result/T4VSTbvyoCYJ.png)
 
 #### Python Output
 ![Image of the Dectection](https://d.top4top.net/p_1107ly63e1.png)
