@@ -145,6 +145,7 @@ v1.0.0
 v1.1
  + PHP
   - Better and Cleaner Code
+  - Simple API (send,view clients,receive)
   - Bug Fixes
   
  + VB.NET
