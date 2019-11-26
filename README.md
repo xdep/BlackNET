@@ -142,14 +142,13 @@ v1.0.0
 
 ## Coming Soon
 ```
-v1.1
+v1.0.3
  + PHP
   - Better and Cleaner Code
   - Simple API (send,view clients,receive)
   - Bug Fixes
   
  + VB.NET
-  - Package Similer Classes
   - Remove Junkcode.vb
   - Added POST Method Function
   - Bug Fixes
