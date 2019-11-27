@@ -145,7 +145,16 @@ v1.0.0
 v1.0.3
  + PHP
   - Better and Cleaner Code
-  - Simple API (send,view clients,receive)
+  - Simple API
+    - read
+    - create
+    - update
+    - delete
+    - connect
+    - disconnect
+    - send
+    - recive
+    - key auth
   - Bug Fixes
   
  + VB.NET
