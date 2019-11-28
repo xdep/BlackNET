@@ -144,8 +144,8 @@ v1.0.0
 ```
 v1.0.3
  + PHP
-  - Better and Cleaner Code
-  - Simple API
+  1.Better and Cleaner Code
+  2.Simple API
     - read
     - create
     - update
@@ -155,12 +155,12 @@ v1.0.3
     - send
     - recive
     - key auth
-  - Bug Fixes
+  3.Bug Fixes
   
  + VB.NET
-  - Remove Junkcode.vb
-  - Added POST Method Function
-  - Bug Fixes
+  1.Remove Junkcode.vb
+  2.Added POST Method Function
+  3.Bug Fixes
 ```
 
 ## Thanks to
