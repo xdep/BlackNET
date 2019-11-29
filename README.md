@@ -144,25 +144,26 @@ v1.0.0
 ```
 v1.0.3
  + PHP
-  1.Better and Cleaner Code
-  2.Simple API
-    - read
-    - create
-    - update
-    - delete
-    - connect
-    - disconnect
-    - send
-    - recive
-    - key auth
-  3.Bug Fixes
+  1. Better and Cleaner Code
+  2. Simple API
+      - read
+      - create
+      - update
+      - delete
+      - connect
+      - disconnect
+      - send
+      - recive
+      - key auth
+  3. Bug Fixes
   
  + VB.NET
-  1.Remove Junkcode.vb
-  2.Better an Cleaner Code
-  3.Replace njLogger with LimeLogger
-  4.Added POST Method Function to HTTP Socket
-  5.Bug Fixes
+  1. Remove Junkcode.vb
+  2. Better an Cleaner Code
+  3. Replace njLogger with LimeLogger
+  4. Added POST Method Function to HTTP Socket
+  5. Better Speed
+  6. Bug Fixes
 ```
 
 ## Thanks to
