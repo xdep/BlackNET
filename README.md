@@ -159,9 +159,10 @@ v1.0.3
   
  + VB.NET
   1.Remove Junkcode.vb
-  2.Replace njLogger with LimeLogger
-  2.Added POST Method Function
-  3.Bug Fixes
+  2.Better an Cleaner Code
+  3.Replace njLogger with LimeLogger
+  4.Added POST Method Function to HTTP Socket
+  5.Bug Fixes
 ```
 
 ## Thanks to
