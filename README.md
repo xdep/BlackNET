@@ -159,16 +159,16 @@ v1.0.3
   
  + VB.NET
   1.Remove Junkcode.vb
+  2.Replace njLogger with LimeLogger
   2.Added POST Method Function
   3.Bug Fixes
 ```
 
 ## Thanks to
-- njQ8 for njLogger v4
-- Nirosoft for Passwords Recovery Tools
-- PlasmaRAT for DDOS Functions 
-- NYAN CAT for Bypass VM Function
-- FamFamFam for flags icons
+- Nirosoft
+- PlasmaRAT
+- NYAN CAT
+- FamFamFam
 
 ## Donate
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=farisksa79%40gmail.com&item_name=BlackNET+Development&currency_code=USD&source=url"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
