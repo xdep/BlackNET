@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://a.top4top.net/p_1104t3ole1.png" alt="" />
+ <img src="https://a.top4top.net/p_1104t3ole1.png" alt="" />
 </p>
 
 <p align="center">
@@ -143,31 +143,32 @@ v1.0.0
 ## Coming Soon
 ```
 v1.0.3
-* Linux Support Discontinued
+ * Linux Support Discontinued
 
  + PHP
-  1. Better and Cleaner Code
-  2. New Menu [Open Webpage Hidden]
-  3. Simple API
-      - read
-      - create
-      - update
-      - delete
-      - connect
-      - disconnect
-      - send
-      - recive
-      - key auth
-  4. Bug Fixes
+   1. Better and Cleaner Code
+   2. New Menu [Open Webpage Hidden]
+   3. Simple API
+       - read
+       - create
+       - update
+       - delete
+       - connect
+       - disconnect
+       - send
+       - recive
+       - key auth
+   4. Bug Fixes
   
  + VB.NET
-  1. Remove Junkcode.vb
-  2. Better an Cleaner Code
-  3. Replace njLogger with LimeLogger
-  4. Added POST Method Function to HTTP Socket
-  5. Open Webpage Hidden Function
-  6. Better Speed
-  7. Bug Fixes
+   1. Remove Junkcode.vb
+   2. Better an Cleaner Code
+   3. Replace njLogger with LimeLogger
+   4. Added POST Method Function to HTTP Socket
+   5. Open Webpage Hidden Function
+   6. Better Speed
+   7. Update Client
+   8. Bug Fixes
 ```
 
 ## Thanks to
