@@ -55,15 +55,13 @@ On Windows
 
 ![Image of 2FA Page](https://i.imgur.com/v1zCoiv.png)
 
-![Image of the interface](https://1.top4top.net/p_140189rdi1.png)
+![Image of the interface](https://3.top4top.net/p_1429o4b871.png)
 
 ![Image of User Settings](https://3.top4top.net/p_1415ttdvo2.png)
 
 ![Image of Network Settings](https://4.top4top.net/p_1415i872p1.png)
 
-![Image of the Builder](https://i.gyazo.com/e854e4049de3dd18396975a085638019.png)
-
-![Image of Python Builder](https://i.gyazo.com/7c26976c0c41f23501825d395c219715.png)
+![Image of the Builder](https://i.gyazo.com/c49594c1a490253d6adabcd1fbf7227f.png)
 
 ## Working Proof
 ![](https://6.top4top.net/p_1327v2kiv1.gif)
