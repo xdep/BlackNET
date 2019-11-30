@@ -147,18 +147,8 @@ v1.0.3
 
  + PHP
    1. Better and Cleaner Code
-   2. New Menu [Open Webpage Hidden]
-   3. Simple API
-       - read
-       - create
-       - update
-       - delete
-       - connect
-       - disconnect
-       - send
-       - recive
-       - key auth
-   4. Bug Fixes
+   2. New Menu [Open Webpage Hidden, Update Client]
+   3. Bug Fixes
   
  + VB.NET
    1. Remove Junkcode.vb
