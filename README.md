@@ -13,10 +13,10 @@
 </p>
 
 # BlackNET
-Free Advanced MultiOS with a Secure PHP Interface Botnet with VB.NET and Python based Stub and VB.NET Builder
+Free Advanced Windows with a Secure PHP Interface Botnet with VB.NET Based Stub and Builder
 
 ## About BlackNET
-BlackNET is an advanced botnet with PHP Panel and VB.NET or Python Output for MultiOS Hacking
+BlackNET is an advanced botnet with PHP Panel and VB.NET Based Stub and Builder
 
 Developed By: Black.Hacker
 
@@ -35,23 +35,9 @@ On Windows
  11. Blacklist Client
  12. Close Client
 
-On Linux
- 1. Print Simple Message for Client
- 2. Open Webpage
- 3. Upload File
- 4. Simple DDOS Attack
- 5. Execute Shell Commands
- 6. Uninstall Client
- 7. Close Client
-
-## Python Stub
-You Can use it to hack any Linux system with python on it
-
 ## Requirements
 1. PHP >= 5.6
 2. VB.NET >= 2.0
-3. Python >= 2.7
-
 
 ## How to Install PHP Panel
 1. Download BlackNET - PHP Panel.zip
@@ -96,52 +82,6 @@ You Can use it to hack any Linux system with python on it
 ## What's New
 
 ```
-v1.0.0
- + PHP Panel
-   - Simple Stats
-   - Bugs Fixes
-   - UI Enhancements
-   - Select all button
-   - Map Visualization
-   - Fixed Some Database Issues 
-   - New Menu [ Move Client,Execute Shell]
-   - Ability to change admin username
-   - reCAPTCHA Integration
-   - Security Enhancements
-   - Added Security Questions
-   - Updating the Hashing System MD5 to SHA256
-   - New and Stronger Salt
-   - 2FA Implementation [ Code by Email ]
-   - Secure Reset Password System [ Recover your password if you forget it ]
-   - upload.php to Upload files to the network
-   - PHPMailer Integration with SMTP Settings
-   - Password Stealer Plugin
-   - Better [ Country Code to Country Name ] Function 
-   
- + VB.NET
-   - RSA Encryption for BlackNET Panel URL
-   - Move client to another Host
-   - Take screenshot every 10 seconds
-   - Firefox Cookies Stealer
-   - Keylogger Module
-   - Check Blacklist
-   - Update the junk code
-   - Speed Optimization
-   - Plugin Helper Function
-   - Password Stealer Function
-   - Stealth Mode Function
-   - Bug Fixs
-   
- + Python
-   - Updated to v1.0.0
-   - Malware Builder
-   - Execute Shell Commands
-   - Bug fixes
-  
-```
-
-## Coming Soon
-```
 v1.0.3
  * Linux Support Discontinued
 
@@ -160,6 +100,12 @@ v1.0.3
    7. Update Client
    8. Added Watchdog
    9. Bug Fixes
+  
+```
+
+## Coming Soon
+```
+v1.0.5
 ```
 
 ## Thanks to
