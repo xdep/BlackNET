@@ -168,7 +168,8 @@ v1.0.3
    5. Open Webpage Hidden Function
    6. Better Speed
    7. Update Client
-   8. Bug Fixes
+   8. Added Watchdog
+   9. Bug Fixes
 ```
 
 ## Thanks to
