@@ -21,10 +21,11 @@ BlackNET is an advanced botnet with PHP Panel and VB.NET Based Stub and Builder
 Developed By: Black.Hacker
 
 ## What You Can Do
-On Windows
  1. Upload File
  2. DDOS Attack [ TCP,UDP,ARME,Slowloris ]
- 3. Open Webpage
+   - Start DDOS
+   - Stop DDOS
+ 3. Open Webpage [Visiable, Hidden]
  4. Show MessageBox
  5. Take Screenshot
  6. Steal Firefox Cookies
@@ -33,8 +34,9 @@ On Windows
  9. Uninstall Client
  10. Move Client
  11. Blacklist Client
- 12. Close Client
-
+ 12. Update Client
+ 13. Close Client
+ 
 ## Requirements
 1. PHP >= 5.6
 2. VB.NET >= 2.0
