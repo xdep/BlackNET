@@ -104,6 +104,7 @@ v1.0.3
 ## Coming Soon
 ```
 v1.0.5
+  - AJAX Based Requests (POST and GET)
 ```
 
 ## Thanks to
