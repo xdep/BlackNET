@@ -68,13 +68,9 @@ Developed By: Black.Hacker
 ## Working Proof
 ![](https://6.top4top.net/p_1327v2kiv1.gif)
 
-## Client Detection Rate
+## Stub Scan Result
 
-##### VB.NET Output
 ![Image of the Dectection](https://antiscan.me/images/result/T4VSTbvyoCYJ.png)
-
-#### Python Output
-![Image of the Dectection](https://d.top4top.net/p_1107ly63e1.png)
 
 ## YouTube - How To Install
 <a href="https://youtu.be/GyPdu20rC1A"><img src="https://1.top4top.net/p_1423q6dks1.png" alt="" width="150" hieght="150"></a>
