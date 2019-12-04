@@ -104,12 +104,14 @@ v1.0.3
 v1.0.5
   + PHP
     - Added the Ability to disable the panel
+    - Better and Cleaner Code
     
   + VB.NET
     - Added check panel function
     - One Webclient to rule them all
     - Update .NET Framework for the Builder 2.0 to 4.0
     - Update Mono.Cecil to v0.11.1
+    - Better and Cleaner Code
 ```
 
 ## Thanks to
