@@ -107,6 +107,9 @@ v1.0.5
     
   + VB.NET
     - Added check panel function
+    - One Webclient to rule them all
+    - Update .NET Framework for the Builder 2.0 to 4.0
+    - Update Mono.Cecil to v0.11.1
 ```
 
 ## Thanks to
