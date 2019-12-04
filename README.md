@@ -106,6 +106,7 @@ v1.0.5
     - Added the Ability to disable the panel
     - Better and Cleaner Code
     - CSRF Protection
+    - Added viewuploads.php to view uploads folder
     
   + VB.NET
     - Added check panel function
