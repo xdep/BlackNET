@@ -105,6 +105,7 @@ v1.0.5
   + PHP
     - Added the Ability to disable the panel
     - Better and Cleaner Code
+    - CSRF Protection
     
   + VB.NET
     - Added check panel function
