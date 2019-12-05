@@ -112,6 +112,7 @@ v1.0.5
     - Better and Faster Connection Method
     - Check if Client is from USB Infection
     - New Menues [ Execute Scripts, Computer Commands ]
+    - Added Scripts Folder to Manage Execute Scripts Function
     - Bug Fixes
     
   + VB.NET
