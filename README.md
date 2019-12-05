@@ -40,8 +40,8 @@ Developed By: Black.Hacker
 ## Requirements
 1. PHP >=  5.6
 2. VB.NET
- - Stub >= 2.0
- - Builder >= 4.0
+    + Stub >= 2.0
+    + Builder >= 4.0
 
 ## How to Install PHP Panel
 1. Download BlackNET - PHP Panel.zip
