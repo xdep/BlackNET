@@ -120,6 +120,7 @@ v1.0.5
     - Better Client Update System
     - Added Self Destroy to Uninstall Function
     - Speed Optimization
+    - Update Checker
     - Bug Fixes
 ```
 
