@@ -116,6 +116,8 @@ v1.0.5
     - Update .NET Framework for the Builder 2.0 to 4.0
     - Update Mono.Cecil to v0.11.1
     - Better and Cleaner Code
+    - Better Client Update System
+    - Speed Optimization
 ```
 
 ## Thanks to
