@@ -107,6 +107,8 @@ v1.0.5
     - Better and Cleaner Code
     - CSRF Protection
     - Added viewuploads.php to view uploads folder
+    - Better and Faster Connection Method
+    - Check if Client is from USB Infection
     
   + VB.NET
     - Added check panel function
