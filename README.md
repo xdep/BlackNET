@@ -39,7 +39,7 @@ Developed By: Black.Hacker
  
 ## Requirements
 1. PHP >=  5.6
-2. VB.NET
+2. NET Framework
     + Stub >= 2.0
     + Builder >= 4.0
 
