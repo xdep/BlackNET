@@ -117,6 +117,7 @@ v1.0.5
     - Update Mono.Cecil to v0.11.1
     - Better and Cleaner Code
     - Better Client Update System
+    - Added Self Destroy to Uninstall Function
     - Speed Optimization
 ```
 
