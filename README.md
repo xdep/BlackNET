@@ -109,6 +109,7 @@ v1.0.5
     - Added viewuploads.php to view uploads folder
     - Better and Faster Connection Method
     - Check if Client is from USB Infection
+    - Bug Fixes
     
   + VB.NET
     - Added check panel function
@@ -119,6 +120,7 @@ v1.0.5
     - Better Client Update System
     - Added Self Destroy to Uninstall Function
     - Speed Optimization
+    - Bug Fixes
 ```
 
 ## Thanks to
