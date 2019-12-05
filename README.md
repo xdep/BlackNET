@@ -109,6 +109,7 @@ v1.0.5
     - Added viewuploads.php to view uploads folder
     - Better and Faster Connection Method
     - Check if Client is from USB Infection
+    - New Menues [ Execute Scripts, Computer Commands ]
     - Bug Fixes
     
   + VB.NET
@@ -121,6 +122,14 @@ v1.0.5
     - Added Self Destroy to Uninstall Function
     - Speed Optimization
     - Update Checker
+    - Execute Script
+      - bat
+      - vbs
+      - ps1
+    - Computer Commands
+      - Shutdown
+      - Restart
+      - Sleep
     - Bug Fixes
 ```
 
