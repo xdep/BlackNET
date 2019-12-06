@@ -117,6 +117,7 @@ v1.0.5
     - Added Scripts Folder to Manage Execute Scripts Function
     - Better Command Receive System
     - Fixed some Database Issues
+    - Rewrite All Menues
     - Bug Fixes
     
   + VB.NET
