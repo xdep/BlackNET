@@ -111,7 +111,7 @@ v1.0.5
     - Added viewuploads.php to view uploads folder
     - Better and Faster Connection Method
     - Check if Client is from USB Infection
-    - New Menues [ Execute Scripts, Computer Commands ]
+    - New Menues [ Execute Scripts ]
     - Added Scripts Folder to Manage Execute Scripts Function
     - Bug Fixes
     
