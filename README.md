@@ -137,7 +137,7 @@ v1.0.5
     - Computer Commands
       - Shutdown
       - Restart
-      - Sleep
+      - Logoff
     - Bug Fixes
 ```
 
