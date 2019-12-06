@@ -103,6 +103,8 @@ v1.0.3
 
 ## Coming Soon
 ```
+01/01/2020
+
 v1.0.5
   + PHP
     - Added the Ability to disable the panel
