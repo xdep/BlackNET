@@ -115,6 +115,8 @@ v1.0.5
     - Check if Client is from USB Infection
     - New Menues [ Execute Scripts ]
     - Added Scripts Folder to Manage Execute Scripts Function
+    - Better Command Receive System
+    - Fixed some Database Issues
     - Bug Fixes
     
   + VB.NET
