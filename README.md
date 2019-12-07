@@ -116,6 +116,7 @@ v1.0.5
     - New Menues [ Execute Scripts ]
     - Added Scripts Folder to Manage Execute Scripts Function
     - Better Command Receive System
+    - View Encrypted Passwords in a Table [Website,Username,Password]
     - Fixed some Database Issues
     - Rewrite All Menues
     - Update Bootstrap to 4.4.1
@@ -129,6 +130,7 @@ v1.0.5
     - Better and Cleaner Code
     - Better Client Update System
     - Added Self Destroy to Uninstall Function
+    - Update PasswordStealer DLL
     - Speed Optimization
     - Update Checker
     - Execute Script
