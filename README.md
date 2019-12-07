@@ -118,6 +118,7 @@ v1.0.5
     - Better Command Receive System
     - Fixed some Database Issues
     - Rewrite All Menues
+    - Update Bootstrap to 4.4.1
     - Bug Fixes
     
   + VB.NET
