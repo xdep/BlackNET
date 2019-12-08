@@ -134,6 +134,7 @@ v1.0.5
     - Update PasswordStealer DLL
     - Speed Optimization
     - Update Checker
+    - Added new Attacks [ HTTPGet, POSTHttp, Bandwidth Flood ]
     - Execute Script
       - bat
       - vbs
