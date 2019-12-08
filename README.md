@@ -135,6 +135,7 @@ v1.0.5
     - Speed Optimization
     - Update Checker
     - Added new Attacks [ HTTPGet, POSTHttp, Bandwidth Flood ]
+    - Encrypted C2 Communication
     - Execute Script
       - bat
       - vbs
