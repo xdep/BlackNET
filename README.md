@@ -104,8 +104,9 @@ v1.0.3
 ## Coming Soon
 ```
 01/01/2020
+Another Big Update
 
-v1.0.5
+v1.5.0
   + PHP
     - Added the Ability to disable the panel
     - Better and Cleaner Code
@@ -139,6 +140,8 @@ v1.0.5
     - Speed Optimization
     - Update Checker
     - Added new Attacks [ HTTPGet, POSTHttp, Bandwidth Flood ]
+    - Added schtask function
+      - choose between startup or schtask
     - Encrypted C2 Connection (Base64)
     - Execute Script
       - bat
