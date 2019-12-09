@@ -118,6 +118,7 @@ v1.0.5
     - Better Command Receive System
     - View Encrypted Passwords in a Table [Website,Username,Password]
     - Fixed some Database Issues
+      - Merged question with admin tables
     - New POST Class to Handle Socket Requests
       - Prepare Objects
       - Validate Strings
