@@ -119,6 +119,9 @@ v1.0.5
     - View Encrypted Passwords in a Table [Website,Username,Password]
     - Fixed some Database Issues
     - New POST Class to Handle Socket Requests
+      - Prepare Objects
+      - Validate Strings
+      - Write to a File
     - Rewrite All Menues
     - Update Bootstrap to 4.4.1
     - Bug Fixes
