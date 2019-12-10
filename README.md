@@ -143,6 +143,7 @@ v1.5.0
     - Added schtask function
       - choose between startup or schtask
     - Encrypted C2 Connection (Base64)
+    - Elevate Client ( UAC )
     - Execute Script
       - bat
       - vbs
