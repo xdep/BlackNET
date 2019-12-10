@@ -157,7 +157,7 @@ v1.5.0
 
 ## Thanks to
 - Nirosoft
-- PlasmaRAT
+- KFC
 - NYAN CAT
 - FamFamFam
 
