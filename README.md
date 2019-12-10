@@ -109,6 +109,7 @@ Another Big Update
 v1.5.0
   + PHP
     - Added the Ability to disable the panel
+    - Using PHPMailer is not required
     - Better and Cleaner Code
     - CSRF Protection
     - Added viewuploads.php to view uploads folder
