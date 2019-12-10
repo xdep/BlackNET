@@ -118,12 +118,13 @@ v1.5.0
     - Added Scripts Folder to Manage Execute Scripts Function
     - Better Command Receive System
     - View Encrypted Passwords in a Table [Website,Username,Password]
+    - Added check if client is admin
     - Fixed some Database Issues
-      - Merged question with admin tables
+      + Merged question with admin tables
     - New POST Class to Handle Socket Requests
-      - Prepare Objects
-      - Validate Strings
-      - Write to a File
+      + Prepare Objects
+      + Validate Strings
+      + Write to a File
     - Rewrite All Menues
     - Update Bootstrap to 4.4.1
     - Bug Fixes
@@ -137,21 +138,22 @@ v1.5.0
     - Better Client Update System
     - Added Self Destroy to Uninstall Function
     - Update PasswordStealer DLL
+      + Added Wifi Passwords Stealer 
     - Speed Optimization
     - Update Checker
     - Added new Attacks [ HTTPGet, POSTHttp, Bandwidth Flood ]
     - Added schtask function
-      - choose between startup or schtask
+      + choose between startup or schtask
     - Encrypted C2 Connection (Base64)
     - Elevate Client ( UAC )
     - Execute Script
-      - bat
-      - vbs
-      - ps1
+      + bat
+      + vbs
+      + ps1
     - Computer Commands
-      - Shutdown
-      - Restart
-      - Logoff
+      + Shutdown
+      + Restart
+      + Logoff
     - Bug Fixes
 ```
 
