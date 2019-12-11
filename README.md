@@ -151,6 +151,7 @@ v1.5.0
     - Elevate Client ( UAC )
     - Added Obfuscate output using ConfuserEx
     - Fixed some RSA Encryption Bugs
+    - Restart Client Connection
     - Execute Script
       + bat
       + vbs
