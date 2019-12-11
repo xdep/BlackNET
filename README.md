@@ -105,6 +105,7 @@ v1.0.3
 ```
 01/01/2020
 Another Big Update
+Codename: Doomsday 💀
 
 v1.5.0
   + PHP
@@ -115,6 +116,7 @@ v1.5.0
     - Added viewuploads.php to view uploads folder
     - Better and Faster Connection Method
     - Check if Client is from USB Infection
+    - Remover Clinet Folder after Executing Uninstall
     - New Menues [ Execute Scripts ]
     - Added Scripts Folder to Manage Execute Scripts Function
     - Better Command Receive System
@@ -139,6 +141,7 @@ v1.5.0
     - Better and Cleaner Code
     - Better Client Update System
     - Added Self Destroy to Uninstall Function
+    - Added Chrome Cookies Stealer
     - Update PasswordStealer DLL
       + Added Wifi Passwords Stealer 
     - Speed Optimization
