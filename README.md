@@ -120,6 +120,7 @@ v1.5.0
     - Better Command Receive System
     - View Encrypted Passwords in a Table [Website,Username,Password]
     - Added check if client is admin
+    - Added gethostbyname() function to sendcommand.php
     - Fixed some Database Issues
       + Merged question with admin tables
     - New POST Class to Handle Socket Requests
@@ -146,6 +147,7 @@ v1.5.0
     - Added schtask function
       + choose between startup or schtask
     - Encrypted C2 Connection (Base64)
+    - Fix DDOS Bugs { IP Only }
     - Elevate Client ( UAC )
     - Execute Script
       + bat
