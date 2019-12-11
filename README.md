@@ -149,6 +149,8 @@ v1.5.0
     - Encrypted C2 Connection (Base64)
     - Fix DDOS Bugs { IP Only }
     - Elevate Client ( UAC )
+    - Added Obfuscate output using ConfuserEx
+    - Fixed some RSA Encryption Bugs
     - Execute Script
       + bat
       + vbs
@@ -161,10 +163,10 @@ v1.5.0
 ```
 
 ## Thanks to
-- Nirosoft
+- Nirsoft
 - KFC
+- Yck1509
 - NYAN CAT
-- FamFamFam
 
 ## Donate
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=farisksa79%40gmail.com&item_name=BlackNET+Development&currency_code=USD&source=url"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
