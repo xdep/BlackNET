@@ -120,6 +120,7 @@ v1.5.0
     - New Menues [ Execute Scripts ]
     - Added Scripts Folder to Manage Execute Scripts Function
     - Better Command Receive System
+    - Better, Cleaner and Faster Authentication System
     - View Encrypted Passwords in a Table [Website,Username,Password]
     - Added check if client is admin
     - Added gethostbyname() function to sendcommand.php
