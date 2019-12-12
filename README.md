@@ -120,6 +120,7 @@ v1.5.0
     - New Menues [ Execute Scripts ]
     - Update PHPMailer to 6.1.4
     - Merged Login and Auth in one Class
+    - Self Expire 2FA Code after 10 minutes
     - Added Scripts Folder to Manage Execute Scripts Function
     - Better Command Receive System
     - Better, Cleaner and Faster Authentication System
