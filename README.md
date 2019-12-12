@@ -118,6 +118,7 @@ v1.5.0
     - Check if Client is from USB Infection
     - Remover Clinet Folder after Executing Uninstall
     - New Menues [ Execute Scripts ]
+    - Update PHPMailer to 6.1.4
     - Added Scripts Folder to Manage Execute Scripts Function
     - Better Command Receive System
     - Better, Cleaner and Faster Authentication System
