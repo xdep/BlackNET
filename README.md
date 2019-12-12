@@ -119,6 +119,7 @@ v1.5.0
     - Remover Clinet Folder after Executing Uninstall
     - New Menues [ Execute Scripts ]
     - Update PHPMailer to 6.1.4
+    - Merged Login and Auth in one Class
     - Added Scripts Folder to Manage Execute Scripts Function
     - Better Command Receive System
     - Better, Cleaner and Faster Authentication System
