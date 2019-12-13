@@ -159,6 +159,19 @@ v1.5.0
 2.0.0
 ```
 
+## Pull Request
+1. Fork the repo
+2. Create a new branch
+3. Modfiy the files
+4. Create a pull request
+
+i will review it in 1 - 5 days then i will merge it with the master branch
+
+## Note
+if you want edit or view the PasswordStealer sourcecode please extract Nirsoft tools
+
+go to [ PasswordStealer->PasswordStealer->Resources ] then extract Nirsoft_Tools.zip
+
 ## Thanks to
 - Nirsoft
 - KFC
