@@ -104,7 +104,7 @@ v1.0.3
 ## Coming Soon
 ```
 01/01/2020
-Another Big Update
+Another Big and Stable Update
 Codename: Doomsday 💀
 
 v1.5.0
@@ -118,6 +118,10 @@ v1.5.0
     - Added viewuploads.php to view uploads folder
     - Better and Faster Connection Method
     - Check if Client is from USB Infection
+    - UI Enhancements
+    - Better Session handling
+    - Securing session with the password and current IP
+    - Better redirection handling
     - Remover Clinet Folder after Executing Uninstall
     - New Menues [ Execute Scripts ]
     - Update PHPMailer to 6.1.4
@@ -148,6 +152,7 @@ v1.5.0
     - Better and Cleaner Code
     - Better Client Update System
     - Added Self Destroy to Uninstall Function
+    - UI Enhancements
     - Added Chrome Cookies Stealer
     - Update PasswordStealer DLL
       + Added Wifi Passwords Stealer 
