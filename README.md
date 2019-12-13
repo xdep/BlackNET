@@ -13,10 +13,12 @@
 </p>
 
 # BlackNET
-Free Advanced Windows with a Secure PHP Interface Botnet with VB.NET Based Stub and Builder
+Free advanced and modern Windows botnet with a nice and secure PHP panel buit using VB.NET.
 
 ## About BlackNET
-BlackNET is an advanced botnet with PHP Panel and VB.NET Based Stub and Builder
+Free advanced and modern Windows botnet with a nice and secure PHP panel buit using VB.NET.
+
+this botnet controller comes with alot of features and the most secure panel for free
 
 Developed By: Black.Hacker
 
@@ -67,9 +69,6 @@ Developed By: Black.Hacker
 
 ![Image of the Builder](https://i.gyazo.com/c49594c1a490253d6adabcd1fbf7227f.png)
 
-## Working Proof
-![](https://6.top4top.net/p_1327v2kiv1.gif)
-
 ## Stub Scan Result
 
 ![Image of the Dectection](https://antiscan.me/images/result/T4VSTbvyoCYJ.png)
@@ -80,30 +79,6 @@ Developed By: Black.Hacker
 ## What's New
 
 ```
-v1.0.3
- * Linux Support Discontinued
-
- + PHP
-   1. Better and Cleaner Code
-   2. New Menu [Open Webpage Hidden, Update Client]
-   3. Bug Fixes
-  
- + VB.NET
-   1. Remove Junkcode.vb
-   2. Better an Cleaner Code
-   3. Replace njLogger with LimeLogger
-   4. Added POST Method Function to HTTP Socket
-   5. Open Webpage Hidden Function
-   6. Better Speed
-   7. Update Client
-   8. Added Watchdog
-   9. Bug Fixes
-  
-```
-
-## Coming Soon
-```
-01/01/2020
 Another Big and Stable Update
 Codename: Doomsday 💀
 
@@ -176,6 +151,12 @@ v1.5.0
       + Restart
       + Logoff
     - Bug Fixes
+  
+```
+
+## Coming Soon
+```
+2.0.0
 ```
 
 ## Thanks to
@@ -188,4 +169,4 @@ v1.5.0
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=farisksa79%40gmail.com&item_name=BlackNET+Development&currency_code=USD&source=url"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
 
 ## Copyright
-Copyright © Black.Hacker and DarkSofrwareCo - 2019
+Copyright © Black.Hacker - 2020
