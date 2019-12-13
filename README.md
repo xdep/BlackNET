@@ -107,6 +107,9 @@ v1.0.3
 Another Big and Stable Update
 Codename: Doomsday 💀
 
+Pushing the code without zip files
+so you could make a pull request easily
+
 v1.5.0
   + PHP
     - Added the Ability to disable the panel
