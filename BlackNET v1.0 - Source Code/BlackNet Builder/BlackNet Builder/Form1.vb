@@ -273,12 +273,15 @@ Public Class Form1
         FlatTextBox2.Text = Randomisi2(6, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
     End Sub
-
-    Private Sub FormSkin1_Click(sender As Object, e As EventArgs) Handles FormSkin1.Click
-
+    Private Sub FlatCheckBox1_CheckedChanged(sender As Object) Handles FlatCheckBox1.CheckedChanged
+        If (FlatCheckBox10.Checked = True) Then
+            FlatCheckBox10.Checked = False
+        End If
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-
+    Private Sub FlatCheckBox10_CheckedChanged(sender As Object) Handles FlatCheckBox10.CheckedChanged
+        If (FlatCheckBox1.Checked = True) Then
+            FlatCheckBox1.Checked = False
+        End If
     End Sub
 End Class
