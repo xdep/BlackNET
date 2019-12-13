@@ -115,7 +115,6 @@ v1.5.0
     - CSRF Protection
     - Session Hijacking Protection
     - XSS Protection
-    - send and receive requests are now protected by xWAF
     - Added viewuploads.php to view uploads folder
     - Better and Faster Connection Method
     - Check if Client is from USB Infection
