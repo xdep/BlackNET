@@ -114,6 +114,7 @@ v1.5.0
     - Better and Cleaner Code
     - CSRF Protection
     - Session Hijacking Protection
+    - XSS Protection
     - Added viewuploads.php to view uploads folder
     - Better and Faster Connection Method
     - Check if Client is from USB Infection
