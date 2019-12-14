@@ -181,5 +181,10 @@ go to [ PasswordStealer->PasswordStealer->Resources ] then extract Nirsoft_Tools
 ## Donate
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=farisksa79%40gmail.com&item_name=BlackNET+Development&currency_code=USD&source=url"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
 
+BTC: 3AssdTzfQEvLfU4viepBXFs6C2KSHgW79Q
+
+## LEGAL DISCLAIMER PLEASE READ!
+##### I, the creator and all those associated with the development and production of this program are not responsible for any actions and or damages caused by this software. You bear the full responsibility of your actions and acknowledge that this software was created for educational purposes only. This software's intended purpose is NOT to be used maliciously, or on any system that you do not have own or have explicit permission to operate and use this program on. By using this software, you automatically agree to the above.
+
 ## Copyright
 Copyright © Black.Hacker - 2020
