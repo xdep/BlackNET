@@ -22,7 +22,7 @@ Imports System.Security.Principal
 '
 ' This Project is for educational purposes only.
 ' 
-' This Project is Licensed under GPL-3.0
+' This Project is Licensed under MIT
 ' -------------------------------
 
 Public Class Form1

