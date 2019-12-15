@@ -163,11 +163,14 @@ v1.5.0
        + Comes with Chrome Stealer and FileZilla Stealer
        + Modifed to Steal from All Chrome-based Browsers
     - Speed Optimization
+    - Bitcoin Wallet.dat Stealer
     - Update Checker
     - Added new Attacks [ HTTPGet, POSTHttp, Bandwidth Flood ]
     - Added schtask function
       + choose between startup or schtask
     - Encrypted C2 Connection (Base64)
+    - Bind and Execute File with output ( Dropper )
+    - Dropbox Spread
     - Fix DDOS Bugs { IP Only }
     - Elevate Client ( UAC )
     - Added Obfuscate output using ConfuserEx
