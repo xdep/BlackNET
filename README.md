@@ -103,14 +103,13 @@ v1.0.3
 
 ## Coming Soon
 ```
-01/01/2020
 Another Big and Stable Update
 Codename: Doomsday 💀
 
 Pushing the code without zip files
 so you could make a pull request easily
 
-v1.5.0
+v2.0.0
   + PHP
     - Now the PHP script is compatiable with 000webhost
     - Added the Ability to disable the panel
