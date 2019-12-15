@@ -158,7 +158,9 @@ v1.5.0
     - UI Enhancements
     - Added Chrome Cookies Stealer
     - Update PasswordStealer DLL
-      + Added Wifi Passwords Stealer 
+       + DLL is now less the 30kb and 1/26 FUD
+       + DLL does not use Nirsoft tools
+       + Comes with Chrome Stealer and FileZilla Stealer
     - Speed Optimization
     - Update Checker
     - Added new Attacks [ HTTPGet, POSTHttp, Bandwidth Flood ]
