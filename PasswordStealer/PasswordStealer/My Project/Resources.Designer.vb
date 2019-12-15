@@ -22,20 +22,20 @@ Namespace My.Resources
     '''<summary>
     '''  A strongly-typed resource class, for looking up localized strings, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0"),  _
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0"), _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(), _
+     Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
     Friend Module Resources
-        
+
         Private resourceMan As Global.System.Resources.ResourceManager
-        
+
         Private resourceCulture As Global.System.Globalization.CultureInfo
-        
+
         '''<summary>
         '''  Returns the cached ResourceManager instance used by this class.
         '''</summary>
-        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
         Friend ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
@@ -45,187 +45,27 @@ Namespace My.Resources
                 Return resourceMan
             End Get
         End Property
-        
+
         '''<summary>
         '''  Overrides the current thread's CurrentUICulture property for all
         '''  resource lookups using this strongly typed resource class.
         '''</summary>
-        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
         Friend Property Culture() As Global.System.Globalization.CultureInfo
             Get
                 Return resourceCulture
             End Get
-            Set
+            Set(value As Global.System.Globalization.CultureInfo)
                 resourceCulture = value
             End Set
         End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property ChromePass() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("ChromePass", resourceCulture)
-                Return CType(obj,Byte())
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property ChromePass_cfg() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("ChromePass_cfg", resourceCulture)
-                Return CType(obj,Byte())
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property iepv() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("iepv", resourceCulture)
-                Return CType(obj,Byte())
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property iepv_cfg() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("iepv_cfg", resourceCulture)
-                Return CType(obj,Byte())
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property PasswordFox32() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("PasswordFox32", resourceCulture)
-                Return CType(obj,Byte())
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property PasswordFox32cfg() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("PasswordFox32cfg", resourceCulture)
-                Return CType(obj,Byte())
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property PasswordFox64() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("PasswordFox64", resourceCulture)
-                Return CType(obj,Byte())
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property PasswordFox64cfg() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("PasswordFox64cfg", resourceCulture)
-                Return CType(obj,Byte())
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property ProduKey32() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("ProduKey32", resourceCulture)
-                Return CType(obj,Byte())
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property ProduKey32cfg() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("ProduKey32cfg", resourceCulture)
-                Return CType(obj,Byte())
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property ProduKey64() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("ProduKey64", resourceCulture)
-                Return CType(obj,Byte())
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property ProduKey64cfg() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("ProduKey64cfg", resourceCulture)
-                Return CType(obj,Byte())
-            End Get
-        End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to encoding=&quot;base64&quot;.
         '''</summary>
-        Friend ReadOnly Property String1() As String
+        Friend ReadOnly Property String2() As String
             Get
                 Return ResourceManager.GetString("String1", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property WirelessKeyView32() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("WirelessKeyView32", resourceCulture)
-                Return CType(obj, Byte())
-            End Get
-        End Property
-
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property WirelessKeyView32cfg() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("WirelessKeyView32cfg", resourceCulture)
-                Return CType(obj, Byte())
-            End Get
-        End Property
-
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property WirelessKeyView64() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("WirelessKeyView64", resourceCulture)
-                Return CType(obj, Byte())
-            End Get
-        End Property
-
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property WirelessKeyView64cfg() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("WirelessKeyView64cfg", resourceCulture)
-                Return CType(obj, Byte())
             End Get
         End Property
     End Module
