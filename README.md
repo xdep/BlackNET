@@ -75,11 +75,11 @@ Developed By: Black.Hacker
 ## What's New
 
 ```
+
 Another Big and Stable Update
 Codename: Doomsday 💀
 
 
-v2.0.0
   + PHP
     - Now the PHP script is compatiable with 000webhost
     - Added the Ability to disable the panel
@@ -189,4 +189,4 @@ BTC: 3AssdTzfQEvLfU4viepBXFs6C2KSHgW79Q
 This project is licensed under the MIT License
 
 ## Copyright
-Copyright © Black.Hacker - 2020
+
