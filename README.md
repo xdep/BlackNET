@@ -112,6 +112,7 @@ so you could make a pull request easily
 
 v1.5.0
   + PHP
+    - Now the PHP script is compatiable with 000webhost
     - Added the Ability to disable the panel
     - Using PHPMailer is not required
     - Better and Cleaner Code
