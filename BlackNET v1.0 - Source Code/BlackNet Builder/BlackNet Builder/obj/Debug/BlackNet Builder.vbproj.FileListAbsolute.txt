@@ -45,3 +45,4 @@ C:\Users\Black.Hacker\Desktop\BlackNET\BlackNET v1.0 - Source Code\BlackNet Buil
 C:\Users\Black.Hacker\Desktop\BlackNET\BlackNET v1.0 - Source Code\BlackNet Builder\BlackNet Builder\obj\Debug\BlackNet_Builder.Form1.resources
 C:\Users\Black.Hacker\Desktop\BlackNET\BlackNET v1.0 - Source Code\BlackNet Builder\BlackNet Builder\obj\Debug\BlackNet_Builder.Resources.resources
 C:\Users\Black.Hacker\Desktop\BlackNET\BlackNET v1.0 - Source Code\BlackNet Builder\BlackNet Builder\obj\Debug\BlackNet Builder.vbproj.GenerateResource.Cache
+C:\Users\Black.Hacker\Desktop\BlackNET\BlackNET v1.0 - Source Code\BlackNet Builder\BlackNet Builder\obj\Debug\BlackNet_Builder.Binder.resources

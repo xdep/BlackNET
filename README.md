@@ -8,7 +8,7 @@
  <a href="#"><img align="center" src="https://img.shields.io/github/languages/top/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/license/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/v/release/BlackHacker511/BlackNET" /></a>
- <a href="#"><img align="center" src="https://img.shields.io/github/commits-since/BlackHacker511/BlackNET/v1.5.0.0" /></a>
+ <a href="#"><img align="center" src="https://img.shields.io/github/commits-since/BlackHacker511/BlackNET/v2.0.0.0" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/stars/BlackHacker511/BlackNET?style=social" /></a>
 </p>
 
@@ -18,13 +18,13 @@ Free advanced and modern Windows botnet with a nice and secure PHP panel buit us
 ## About BlackNET
 Free advanced and modern Windows botnet with a nice and secure PHP panel buit using VB.NET.
 
-this botnet controller comes with alot of features and the most secure panel for free
+this botnet controller comes with a lot of features and the most secure panel for free
 
 Developed By: Black.Hacker
 
 ## What You Can Do
  1. Upload File
- 2. DDOS Attack [ TCP,UDP,ARME,Slowloris ]
+ 2. DDOS Attack [ TCP,UDP,ARME,Slowloris, HTTPGet, POSTHttp, Bandwidth Flood ]
    - Start DDOS
    - Stop DDOS
  3. Open Webpage [Visiable, Hidden]
@@ -33,6 +33,9 @@ Developed By: Black.Hacker
  6. Steal Firefox Cookies
  7. Steal Saved Passwords
  8. Keylogger
+ 9. Execute Scripts
+10. Computer Oprations [ Restart, Shutdown, Logout ]
+11.
  9. Uninstall Client
  10. Move Client
  11. Blacklist Client
@@ -46,15 +49,12 @@ Developed By: Black.Hacker
     + Builder >= 4.0
 
 ## How to Install PHP Panel
-1. Download BlackNET - PHP Panel.zip
-2. Upload The ZIP File to your Server
-3. Extract it
-4. Go to PHPMyAdmin
-5. Create a database with any name you want
-6. Change the data in classes/database.php
-7. Change files and folders permission to 777 [connection.php,sendcommand.php,receive.php,Uploads Folder]
-8. Go to install.php to create the botnet tables automatically
-9. Enter your network and enjoy hacking
+1. Clone this Repo
+2. Compress BlackNET panel folder and upload it to your hosting
+3. Create a database with any name you want
+4. Change the data in classes/database.php
+5. Change files and folders permission to 777 [ Uploads Folder]
+6. Go to install.php to create the botnet tables automatically
 
 ## Screenshots
 ![Installtion Page](https://i.imgur.com/RwNTwgs.png)
@@ -78,8 +78,10 @@ Developed By: Black.Hacker
 Another Big and Stable Update
 Codename: Doomsday 💀
 
-v1.5.0
+
+v2.0.0
   + PHP
+    - Now the PHP script is compatiable with 000webhost
     - Added the Ability to disable the panel
     - Using PHPMailer is not required
     - Better and Cleaner Code
@@ -126,13 +128,19 @@ v1.5.0
     - UI Enhancements
     - Added Chrome Cookies Stealer
     - Update PasswordStealer DLL
-      + Added Wifi Passwords Stealer 
+       + DLL is now less the 30kb and 1/26 FUD
+       + DLL does not use Nirsoft tools
+       + Comes with Chrome Stealer and FileZilla Stealer
+       + Modifed to Steal from All Chrome-based Browsers
     - Speed Optimization
+    - Bitcoin Wallet.dat Stealer
     - Update Checker
     - Added new Attacks [ HTTPGet, POSTHttp, Bandwidth Flood ]
     - Added schtask function
       + choose between startup or schtask
     - Encrypted C2 Connection (Base64)
+    - Bind and Execute File with output ( Dropper )
+    - Dropbox Spread
     - Fix DDOS Bugs { IP Only }
     - Elevate Client ( UAC )
     - Added Obfuscate output using ConfuserEx
@@ -152,7 +160,7 @@ v1.5.0
 
 ## Coming Soon
 ```
-2.0.0
+2.5.0
 ```
 
 ## Pull Request
@@ -163,13 +171,8 @@ v1.5.0
 
 i will review it in 1 - 5 days then i will merge it with the master branch
 
-## Note
-if you want to edit or view the PasswordStealer sourcecode please extract Nirsoft tools
-
-go to [ PasswordStealer->PasswordStealer->Resources ] then extract Nirsoft_Tools.zip
-
 ## Thanks to
-- Nirsoft
+- Underc0de
 - KFC
 - Yck1509
 - NYAN CAT

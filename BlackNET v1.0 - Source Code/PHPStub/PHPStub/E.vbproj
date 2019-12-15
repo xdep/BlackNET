@@ -75,8 +75,9 @@
     <Compile Include="DDOS\PostHTTP.vb" />
     <Compile Include="DDOS\Slowloris.vb" />
     <Compile Include="DDOS\UDPAttack.vb" />
+    <Compile Include="Other\Binder.vb" />
     <Compile Include="Other\Keylogger.vb" />
-    <Compile Include="Other\USB.vb" />
+    <Compile Include="Spreads\USB.vb" />
     <Compile Include="Other\Watchdog.vb" />
     <Compile Include="Socket\HTTP.vb" />
     <Compile Include="Form1.Designer.vb">

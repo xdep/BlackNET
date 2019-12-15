@@ -12,8 +12,8 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("an advanced client builder for BlackNET")> 
 <Assembly: AssemblyCompany("Dark Software Company")> 
 <Assembly: AssemblyProduct("BlackNET Builder")> 
-<Assembly: AssemblyCopyright("Copyright © DarkSoftwareCo - 2019")> 
-<Assembly: AssemblyTrademark("Black Product")> 
+<Assembly: AssemblyCopyright("Copyright © DarkSoftwareCo - 2020")> 
+<Assembly: AssemblyTrademark("Black Products")> 
 
 <Assembly: ComVisible(False)>
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.5.0.0")> 
-<Assembly: AssemblyFileVersion("1.5.0.0")> 
+<Assembly: AssemblyVersion("2.0.0.0")> 
+<Assembly: AssemblyFileVersion("2.0.0.0")> 

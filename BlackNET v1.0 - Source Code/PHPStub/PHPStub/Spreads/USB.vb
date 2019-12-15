@@ -1,6 +1,6 @@
 ﻿Imports System.Collections.Generic
 Imports System.Windows.Forms
-Public Class USB
+Public Class USBSpread
     Private Off As Boolean = False
     Dim thread As Threading.Thread = Nothing
     Public ExeName As String
