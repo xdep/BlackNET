@@ -59,11 +59,11 @@ Developed By: Black.Hacker
 ## Screenshots
 ![Installtion Page](https://i.imgur.com/RwNTwgs.png)
 
-![Image of Login Page](https://i.imgur.com/v1zCoiv.png)
+![Image of Login Page](https://2.top4top.net/p_14447rrth1.png)
 
-![Image of the interface](https://3.top4top.net/p_1429o4b871.png)
+![Image of the interface](https://3.top4top.net/p_1444y3poq2.png)
 
-![Image of the Builder](https://i.gyazo.com/c49594c1a490253d6adabcd1fbf7227f.png)
+![Image of the Builder](https://i.gyazo.com/967143097208f8d0721cfb93d3c81371.png)
 
 ## Stub Scan Result
 
