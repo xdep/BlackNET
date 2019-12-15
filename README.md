@@ -161,6 +161,7 @@ v1.5.0
        + DLL is now less the 30kb and 1/26 FUD
        + DLL does not use Nirsoft tools
        + Comes with Chrome Stealer and FileZilla Stealer
+       + Modifed to Steal from All Chrome-based Browsers
     - Speed Optimization
     - Update Checker
     - Added new Attacks [ HTTPGet, POSTHttp, Bandwidth Flood ]
@@ -184,7 +185,7 @@ v1.5.0
 ```
 
 ## Thanks to
-- Nirsoft
+- Underc0de
 - KFC
 - Yck1509
 - NYAN CAT
@@ -193,4 +194,4 @@ v1.5.0
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=farisksa79%40gmail.com&item_name=BlackNET+Development&currency_code=USD&source=url"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
 
 ## Copyright
-Copyright © Black.Hacker and DarkSofrwareCo - 2019
+Copyright © Black.Hacker - 2019
