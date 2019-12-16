@@ -25,6 +25,8 @@
          if ($auth->isTwoFAEnabled($username) == "on") {
            if ($auth->newCode($username,$auth->generateString(6,"0123456789")) == true){
              $settings->redirect("auth.php?username=$username&password=".base64_encode($password));
+           } else {
+             $error = "We couldn't send an email.";
            }
          } else {
           $_SESSION['login_user'] = $username;
