@@ -24,8 +24,8 @@ Developed By: Black.Hacker
 ## What You Can Do
  1. Upload File
  2. DDOS Attack [ TCP,UDP,ARME,Slowloris, HTTPGet, POSTHttp, Bandwidth Flood ]
-   - Start DDOS
-   - Stop DDOS
+    + Start DDOS
+    + Stop DDOS
  3. Open Webpage [Visiable, Hidden]
  4. Show MessageBox
  5. Take Screenshot
