@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\Exception;
 
 class Mailer extends Database{
 	public function getSMTP($id){
-		$pdo = $this->Connect();
+	$pdo = $this->Connect();
         $sql = "SELECT * FROM smtp WHERE id = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$id]);
@@ -18,7 +18,7 @@ class Mailer extends Database{
 	}
 
 	public function setSMTP($id,$smtphost,$smtpuser,$smtppassword,$port,$security_type,$status){
-		$pdo = $this->Connect();
+	$pdo = $this->Connect();
         $smtpdata = $this->getSMTP($id);
 
         if ($smtpdata->smtphost == $smtphost) {
@@ -105,7 +105,11 @@ class Mailer extends Database{
                 $headers .= 'From: '.$from."\r\n".
                     'Reply-To: '.$from."\r\n" .
                     'X-Mailer: PHP/' . phpversion();
-                mail($email,$subject,$body,$headers);
+                if(mail($email,$subject,$body,$headers)){
+                    return true;
+		} else {
+                    return false;
+		}
             }
             
 		} catch (Exception $e) {
