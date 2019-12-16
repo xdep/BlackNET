@@ -66,7 +66,7 @@ Developed By: Black.Hacker
 
 ## Stub Scan Result
 
-![Image of the Dectection](https://antiscan.me/images/result/myloTq6WPvz2.png)
+![Image of the Scan Result](https://antiscan.me/images/result/myloTq6WPvz2.png)
 
 ## YouTube - How To Install
 <a href="https://youtu.be/aWic9V5T_PQ"><img src="https://1.top4top.net/p_1423q6dks1.png" alt="" width="150" hieght="150"></a>
@@ -76,7 +76,6 @@ Developed By: Black.Hacker
 ```
 Another Big and Stable Update
 Codename: Doomsday 💀
-
 
 v2.0.0
   + PHP
@@ -164,9 +163,8 @@ v2.0.0
 
 ## Pull Request
 1. Fork the repo
-2. Create a new branch
-3. Modfiy the files
-4. Create a pull request
+2. Add your feature
+3. Create a pull request
 
 i will review it in 1 - 5 days then i will merge it with the master branch
 
