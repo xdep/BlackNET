@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$smtp->redirect("../settings.php?msg=csrf");
 	} else {
 	  $status = isset($_POST['smtp-state']) ? $_POST['smtp-state'] : '';
-	  $msg = $smtp->setSMTP($_POST['id'],$_POST['SMTPHost'],$_POST['SMTPUser'],$_POST['SMTPPassword'],$_POST['SMTPPort'],$_POST['security'],$_POST['smtp-state']);
+	  $msg = $smtp->setSMTP($_POST['id'],$_POST['SMTPHost'],$_POST['SMTPUser'],$_POST['SMTPPassword'],$_POST['SMTPPort'],$_POST['security'],$status);
 	  $smtp->redirect("../settings.php?msg=yes");
 	}
 }
