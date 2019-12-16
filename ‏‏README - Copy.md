@@ -35,12 +35,12 @@ Developed By: Black.Hacker
  8. Keylogger
  9. Execute Scripts
 10. Computer Oprations [ Restart, Shutdown, Logout ]
-11. Bitcoint Wallet Stealer
-12. Uninstall Client
-13. Move Client
-14. Blacklist Client
-15. Update Client
-16. Close Client
+11.
+ 9. Uninstall Client
+ 10. Move Client
+ 11. Blacklist Client
+ 12. Update Client
+ 13. Close Client
  
 ## Requirements
 1. PHP >=  5.6
@@ -59,18 +59,18 @@ Developed By: Black.Hacker
 ## Screenshots
 ![Installtion Page](https://i.imgur.com/RwNTwgs.png)
 
-![Image of Login Page](https://2.top4top.net/p_14447rrth1.png)
+![Image of Login Page](https://i.imgur.com/v1zCoiv.png)
 
-![Image of the interface](https://3.top4top.net/p_1444y3poq2.png)
+![Image of the interface](https://3.top4top.net/p_1429o4b871.png)
 
-![Image of the Builder](https://i.gyazo.com/967143097208f8d0721cfb93d3c81371.png)
+![Image of the Builder](https://i.gyazo.com/c49594c1a490253d6adabcd1fbf7227f.png)
 
 ## Stub Scan Result
 
 ![Image of the Dectection](https://antiscan.me/images/result/myloTq6WPvz2.png)
 
 ## YouTube - How To Install
-<a href="https://youtu.be/aWic9V5T_PQ"><img src="https://1.top4top.net/p_1423q6dks1.png" alt="" width="150" hieght="150"></a>
+<a href="https://youtu.be/GyPdu20rC1A"><img src="https://1.top4top.net/p_1423q6dks1.png" alt="" width="150" hieght="150"></a>
 
 ## What's New
 
