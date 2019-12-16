@@ -10,8 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	  $id = $_POST['id'];
 	  $recaptchaprivate = $_POST['reCaptchaPrivate'];
 	  $recaptchapublic = $_POST['reCaptchaPublic'];
-	  $status = $_POST['status-state'];
-	  $panel = $_POST['panel-state'];
+	  $status = isset($_POST['status-state']) ? $_POST['status-state'] : '';
+	  $panel = isset($_POST['panel-state']) ? $_POST['panel-state'] : '';
 	  $msg = $settings->updateSettings($id,$recaptchaprivate,$recaptchapublic,$status,$panel);
 	  $settings->redirect("../settings.php?msg=yes");
 	}
