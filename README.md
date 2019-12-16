@@ -8,7 +8,6 @@
  <a href="#"><img align="center" src="https://img.shields.io/github/languages/top/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/license/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/v/release/BlackHacker511/BlackNET" /></a>
- <a href="#"><img align="center" src="https://img.shields.io/github/commits-since/BlackHacker511/BlackNET/v2.0.0.0" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/stars/BlackHacker511/BlackNET?style=social" /></a>
 </p>
 
