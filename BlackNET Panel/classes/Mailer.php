@@ -1,7 +1,9 @@
 <?php
-include 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
-include 'vendor/phpmailer/phpmailer/src/SMTP.php';
-include 'vendor/phpmailer/phpmailer/src/Exception.php';
+if ( (is_dir("vendor/") && file_exists("vendor/")) ){
+    include_once 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+    include_once 'vendor/phpmailer/phpmailer/src/SMTP.php';
+    include_once 'vendor/phpmailer/phpmailer/src/Exception.php';    
+}
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
