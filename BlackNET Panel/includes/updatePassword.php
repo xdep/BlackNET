@@ -10,10 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	  $oldusername = $_POST['oldUsername'];
 	  $username = $_POST['Username'];
 	  $email = $_POST['Email'];
-	  $auth = $_POST['auth-state'];
+	  $auth = isset($_POST['auth-state']) ? $_POST['auth-state'] : '';
 	  $question = $_POST['questions'];
 	  $answer = $_POST['answer'];
-	  $sqenable = $_POST['sqenable'];
+	  $sqenable = isset($_POST['sqenable']) ? $_POST['sqenable'] : '';
 	  
 	  if (!$_POST['Password'] || $_POST['Password'] == "") {
 	  	$password = "No change";
