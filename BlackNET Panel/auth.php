@@ -12,7 +12,6 @@
        $authcode = str_replace(" ", NULL, $_POST['AuthCode']);
     if (hash("sha256", $code->secret.$authcode) == $code->code) {
       $diff = time() - strtotime($code->created_at);
-      echo round($diff / 60);
       if(round($diff / 60) >= 10){
         $error = "This code has expired please login again";
        } else {
