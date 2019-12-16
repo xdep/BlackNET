@@ -189,4 +189,4 @@ BTC: 3AssdTzfQEvLfU4viepBXFs6C2KSHgW79Q
 This project is licensed under the MIT License
 
 ## Copyright
-Copyright © Black.Hacker - 2020
+
