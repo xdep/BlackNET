@@ -70,7 +70,7 @@ Developed By: Black.Hacker
 ![Image of the Dectection](https://antiscan.me/images/result/myloTq6WPvz2.png)
 
 ## YouTube - How To Install
-<a href="https://youtu.be/GyPdu20rC1A"><img src="https://1.top4top.net/p_1423q6dks1.png" alt="" width="150" hieght="150"></a>
+<a href="https://youtu.be/aWic9V5T_PQ"><img src="https://1.top4top.net/p_1423q6dks1.png" alt="" width="150" hieght="150"></a>
 
 ## What's New
 
