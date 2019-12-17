@@ -4,7 +4,7 @@ require '../session.php';
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	if ($csrf != $_POST['csrf']){
-	   $user->redirect("../changePassword.php?msg=csrf");
+	   $database->redirect("../changePassword.php?msg=csrf");
 	} else {
 	  $id = $_POST['id'];
 	  $oldusername = $_POST['oldUsername'];
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	  	$password = $_POST['Password'];
 	  }
 	  $msg = $user->updateUser($id,$oldusername,$username,$email,$password,$auth,$question,$answer,$sqenable);
-	  $user->redirect("../changePassword.php?msg=yes");
+	  $database->redirect("../changePassword.php?msg=yes");
 	}
 
 }

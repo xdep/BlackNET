@@ -1,19 +1,16 @@
 <?php
-include 'classes/Database.php';
-include 'classes/Settings.php';
-include 'classes/Mailer.php';
-include('session.php');
+include_once 'classes/Database.php';
+include_once 'classes/Settings.php';
+include_once 'classes/Mailer.php';
+include_once 'session.php';
 
+
+
+$smtp = new Mailer();
+$getSMTP = $smtp->getSMTP(1);
 
 $settings = new Settings;
 $getSettings = $settings->getSettings(1);
-
-$smtp = new Mailer;
-$getSMTP = $smtp->getSMTP(1);
-
-if ($user_check != $data->username || $password_check != $data->password){
-    $database->redirect("logout.php");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">

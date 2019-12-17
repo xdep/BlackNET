@@ -3,17 +3,8 @@ include 'classes/Database.php';
 include 'classes/Mailer.php';
 include 'session.php';
 
-$current_username = isset($data->username) ? $data->username : null;
-$current_password = isset($data->password) ? $data->password : null;
-
-$database = new Database;
+//$current_username is in session.php 
 $question = $user->getQuestionByUser($current_username);
-$database->dataExist();
-
-if ($user_check != $current_username && $password_check != $current_password){
-    if (isset($_GET['msg']) && $_GET['msg'] == "yes"){$database->redirect("logout.php?msg=update");}
-    $database->redirect("logout.php");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">

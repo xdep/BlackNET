@@ -9,9 +9,14 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+
+/*
+    Simple Class that handles emails created using PHPMailer and PHP mail();
+*/
 class Mailer extends Database{
+    // Get SMTP data to use with PHPMailer
 	public function getSMTP($id){
-	$pdo = $this->Connect();
+        $pdo = $this->Connect();
         $sql = "SELECT * FROM smtp WHERE id = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$id]);
@@ -19,10 +24,10 @@ class Mailer extends Database{
         return $data;
 	}
 
+    // Update SMTP Data
 	public function setSMTP($id,$smtphost,$smtpuser,$smtppassword,$port,$security_type,$status){
-	$pdo = $this->Connect();
+        $pdo = $this->Connect();
         $smtpdata = $this->getSMTP($id);
-
         if ($smtpdata->smtphost == $smtphost) {
                 $newHost = $smtpdata->smtphost;
             } else {
@@ -59,27 +64,29 @@ class Mailer extends Database{
                 $status = "on";
             }
 
-        $sql = "UPDATE smtp SET smtphost = :host ,smtpuser = :user, smtppassword = :password, port = :port,security_type = :type, status = :status WHERE id = :id";
+        $sql = "UPDATE smtp SET 
+        smtphost = :host ,
+        smtpuser = :user,
+        smtppassword = :password,
+        port = :port,
+        security_type = :type,
+        status = :status
+        WHERE id = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(['host'=>$newHost,'user'=>$newUser,'password'=>$newPassword,'port'=>$newPort,'type'=>$newType,'status'=>$status,'id'=>$id]);
         return 'SMTP Updated';
 	}
 
-	public function checkSMTP($id){
-		$pdo = $this->Connect();
-		$data = $this->getSMTP($id);
-		if ($data->status == "on") {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
+    /*
+    check if SMTP is enabled then use PHPMailer to send a premade messgae 
+    if not this function will use mail() to send messages
+    */
 	public function sendmail($email,$subject,$body){
 		$smtpdata = $this->getSMTP(1);
 		$mail = new PHPMailer(true);
 		try {
             if ($smtpdata->status == "on") {
+                // PHPMailer settings
                 $mail->isSMTP();
                 $mail->Host = $smtpdata->security_type . "://" . $smtpdata->smtphost . ":" . $smtpdata->port;
                 $mail->SMTPAuth = true;
@@ -99,6 +106,7 @@ class Mailer extends Database{
                     return false;
                 }
             } else {
+                // Headers to enable HTML in mail();
                 $from = $this->admin_email;
                 $headers  = 'MIME-Version: 1.0' . "\r\n";
                 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";

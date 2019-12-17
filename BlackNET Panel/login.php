@@ -13,7 +13,6 @@
       $password = htmlspecialchars($_POST['password'],ENT_QUOTES, 'UTF-8');
       $loginstatus = $auth->newLogin($username,$password);
      if ($loginstatus == 200) {
-        $_SESSION['last_action'] = time();
         if(isset($_POST['g-recaptcha-response'])){
           $response = $auth->recaptchaResponse($getSettings->recaptchaprivate,$_POST['g-recaptcha-response']);
           if (!$response->success) {

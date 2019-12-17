@@ -3,11 +3,10 @@ class Database{
 	private $username = "root";
 	private $password = "";
 	private $host = "localhost";
-	private $db_name = "blacknet";
+	private $db_name = "botnet";
 	private $charset = "utf8mb4";
 	public  $salt = "Yi89TTJ3bSxIcGxyVURhIzltXTdJcGtnJVdTdjNpU3BNSF9vU1BXe1N5JkoxP00pSC50MkY2TVdCdDZuNg==";
-	public $admin_email = "admin@localhost";
-
+	public  $admin_email = "admin@localhost";
 	public function Connect(){
 
     try{
@@ -24,7 +23,7 @@ class Database{
 	public function dataExist(){
 		$pdo = $this->Connect();
 		$sql = $pdo->prepare("SHOW TABLES LIKE 'clients'");
-		$sql -> execute();
+		$sql->execute();
 		if ($sql->rowCount()) {
 			
 		} else {

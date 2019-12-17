@@ -6,9 +6,6 @@ include 'session.php';
 
 $client = new Clients;
 $allClients = $client->getClients();
-if ($user_check != $data->username || $password_check != $data->password){
-  $client->redirect("logout.php");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">

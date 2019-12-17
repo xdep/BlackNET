@@ -2,10 +2,6 @@
 include_once 'classes/Database.php';
 include_once 'session.php';
 
-if ($user_check != $data->username || $password_check != $data->password){
-    $database->redirect("logout.php");
-}
-
 $vicID = isset($_GET['vicid']) ? $_GET['vicid'] : '';
 if (file_exists("upload/$vicID/Passwords.txt")){
   $fn = fopen("upload/$vicID/Passwords.txt","r");

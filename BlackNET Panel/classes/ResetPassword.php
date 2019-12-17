@@ -1,9 +1,15 @@
 <?php
+
+/*
+a class that handles Reset Password Requsts
+*/
 class ResetPassword extends User {
+	// generate a token
 	public function generateToken(){
 		return sha1(base64_encode(uniqid(rand(), true)));
 	}
 	
+	// send an email to the user with the password link
 	public function sendEmail($username){
 		$pdo = $this->Connect();
 		$sendmail = new Mailer;

@@ -1,7 +1,14 @@
 <?php
+/*
+  this class is to handle user authentication
 
+  how to user
+  $auth = new Auth
+  $auth->newLogin("Faris","my password");
+*/
 class Auth extends User{
-
+  
+  // Random String Generator for 2FA Salt and code
 	function generateString($length,$pattern) {
 	    $characters = $pattern;
 	    $charactersLength = strlen($characters);
@@ -12,6 +19,7 @@ class Auth extends User{
 	    return $randomString;
 	}
 
+  // function to update 2fa code if needed
 	public function updateCode($username,$code,$secret){
 		$pdo = $this->Connect();
         $sql = "UPDATE auth SET code = :code, secret = :secret WHERE username = :username";
@@ -19,6 +27,8 @@ class Auth extends User{
         $stmt->execute(['username'=>$username,'code'=>hash("sha256", $secret.$code),'secret'=>$secret]);
 	}
 
+  // generate a new salt and bind it to a premade code 
+  // then send an email to the user with the code
 	public function newCode($username,$code){
 		try {
 			$pdo = $this->Connect();
@@ -42,6 +52,7 @@ class Auth extends User{
 		}
 	}
 
+  // check if the code exist
 	public function isExist($username){
 		$pdo = $this->Connect();
 		$sql = $pdo->prepare("SELECT * FROM auth WHERE username = ?");
@@ -53,6 +64,9 @@ class Auth extends User{
 		}
 	}
 
+  /*
+  Send an email to the user with the code
+  */
 	public function sendEmail($username,$code){
 		$smtp = new Mailer;
         $pdo = $this->Connect();
@@ -75,6 +89,7 @@ class Auth extends User{
         }
 	}
 
+  // get the code the to valid it with the enterd code
 	public function getCode($username){
         $pdo = $this->Connect();
         $sql = "SELECT code,secret,created_at FROM auth WHERE username = ?";
@@ -84,6 +99,7 @@ class Auth extends User{
         return $data;
 	}
 
+  // check login informations
 	public function newLogin($username,$password){
      $logme = $this->check_credentials($username,$password);
      $row = $logme->fetch();
@@ -98,7 +114,7 @@ class Auth extends User{
           return 500;
       }
 	}
-
+    // check if the user exist in the database
     public function check_credentials($username,$password){
       $pdo = $this->Connect();
       $sql = "SELECT * FROM admin WHERE username = :username AND password = :password limit 1";
@@ -107,12 +123,14 @@ class Auth extends User{
       return $stmt;
     }
 
+  // Google Recaptcha API to validate recaptcha v2 response
   public function recaptchaResponse($privatekey,$recaptcha_response_field){
     $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$privatekey.'&response='.$recaptcha_response_field);
     $responseData = json_decode($verifyResponse);
     return $responseData;
   }
 
+  // check if 2fa is enbaled
   public function isTwoFAEnabled($username){
       $pdo = $this->Connect();
       $sql = "SELECT s2fa FROM admin WHERE username = :username limit 1";

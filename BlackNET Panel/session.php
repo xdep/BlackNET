@@ -1,9 +1,16 @@
 <?php
 include 'classes/User.php';
 
+$database = new Database;
+$database->dataExist();
+
 $user = new User;
 $user_check = isset($_SESSION['login_user']) ? $_SESSION['login_user'] : null;
 $password_check = isset($_SESSION['login_password']) ? $_SESSION['login_password'] : null;
+
+if(!(isset($_SESSION['last_action']))){
+  $_SESSION['last_action'] = time();
+}
 
 if(isset($_SESSION['login_user']) && $user_check != null){
     $data = $user->getUserData($user_check);    
@@ -22,7 +29,7 @@ if (!isset($csrf)) {
 }
 
 if(!isset($_SESSION['login_user']) || !isset($_SESSION['login_password']) || !isset($_SESSION["current_ip"]) || !isset($_SESSION['key'])){
-  $user->redirect("login.php");
+  $database->redirect("login.php");
 }
 
 $expireAfter = 60;
@@ -33,10 +40,16 @@ if(isset($_SESSION['last_action'])){
   if($secondsInactive >= $expireAfterSeconds){
     session_unset();
     session_destroy();
-    $user->redirect("login.php");
+    $database->redirect("login.php");
   }
 }
 
-$database = new Database;
-$database->dataExist();
+$current_username = isset($data->username) ? $data->username : null;
+$current_password = isset($data->password) ? $data->password : null;
+
+if ($user_check != $current_username || $password_check != $current_password){
+    if (isset($_GET['msg']) && $_GET['msg'] == "yes"){ $database->redirect("logout.php?msg=update"); }
+    $database->redirect("logout.php");
+}
+
 ?>

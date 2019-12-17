@@ -1,5 +1,8 @@
 <?php
 class User extends Database{
+    // a class that handle user function and settings
+
+    // get user data
     public function getUserData($username){
         $pdo = $this->Connect();
         $sql = "SELECT * FROM admin WHERE username = ?";
@@ -9,6 +12,7 @@ class User extends Database{
         return $data;
     }
 
+    // count all users
     public function numUsers(){
         $pdo = $this->Connect();
         $sql = "SELECT COUNT(*) FROM admin";
@@ -18,6 +22,7 @@ class User extends Database{
         return $data;
     }
 
+    //check if user exist
     public function checkUser($username){
     	$pdo = $this->Connect();
 		$sql = $pdo->prepare("SELECT * FROM admin WHERE username = ?");
@@ -29,6 +34,7 @@ class User extends Database{
 		}
     }
 
+    // update a user data
     public function updateUser($id,$oldusername,$username,$email,$password,$auth,$question,$answer,$sqenable){
         $pdo = $this->Connect();
         $user = $this->getUserData($oldusername);
@@ -84,6 +90,7 @@ class User extends Database{
         return 'Username Updated';
     }
 
+    // get question using $username
     public function getQuestionByUser($username){
         $pdo = $this->Connect();
         $sql = "SELECT question,answer,sqenable FROM admin WHERE username = ?";
@@ -93,7 +100,8 @@ class User extends Database{
         return $data;
     }
 
-    public function isQExist($username){
+    // check if securiry question enabled
+    public function isQuestionEnabled($username){
         try {
             $pdo = $this->Connect();
             $sql = "SELECT sqenable FROM admin WHERE username = :user";
@@ -101,7 +109,7 @@ class User extends Database{
             $stmt->execute(['user'=>$username]);
             $data = $stmt->fetch();
             if ($data->sqenable == "off"){
-                return null;
+                return false;
             } else {
                 return true;
             }

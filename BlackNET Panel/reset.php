@@ -7,9 +7,9 @@ $key = $_GET['key'];
 $updatePassword = new ResetPassword;
 if ($updatePassword->isExist($key) == "Key Exist") {
 $data = $updatePassword->getUserAssignToToken($key);
-$question = $updatePassword->isQExist($data->username);
+$question = $updatePassword->isQuestionEnabled($data->username);
 $answerd = isset($_GET['answered']) ? $_GET['answered'] : "false";
-if ($question != null) {
+if ($question != false) {
   if ($answerd !="true") {
       $updatePassword->redirect("question.php?username=$data->username&&key=$key");
   }
