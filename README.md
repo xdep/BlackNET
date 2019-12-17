@@ -159,6 +159,10 @@ v2.0.0
 ## Coming Soon
 ```
 2.5.0
+ + PHP
+   - Added PHPSecLib
+ + VB.NET
+   - Added AES256 Encryption
 ```
 
 ## Pull Request
