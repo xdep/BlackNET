@@ -33,11 +33,10 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form1"
-        Me.Opacity = 0.0R
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Text = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Windows Update"
         Me.TopMost = True
         Me.ResumeLayout(False)
 
