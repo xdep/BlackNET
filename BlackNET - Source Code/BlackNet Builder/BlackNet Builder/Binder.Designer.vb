@@ -24,14 +24,12 @@ Partial Class Binder
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Binder))
         Me.FormSkin1 = New BlackNet_Builder.FormSkin()
+        Me.FlatButton3 = New BlackNet_Builder.FlatButton()
         Me.FlatTextBox2 = New BlackNet_Builder.FlatTextBox()
-        Me.FlatTextBox3 = New BlackNet_Builder.FlatTextBox()
         Me.FlatComboBox1 = New BlackNet_Builder.FlatComboBox()
         Me.FlatButton2 = New BlackNet_Builder.FlatButton()
         Me.FlatTextBox1 = New BlackNet_Builder.FlatTextBox()
-        Me.FlatClose1 = New BlackNet_Builder.FlatClose()
         Me.FlatButton1 = New BlackNet_Builder.FlatButton()
-        Me.FlatLabel4 = New BlackNet_Builder.FlatLabel()
         Me.FlatLabel3 = New BlackNet_Builder.FlatLabel()
         Me.FlatLabel2 = New BlackNet_Builder.FlatLabel()
         Me.FlatLabel1 = New BlackNet_Builder.FlatLabel()
@@ -44,14 +42,12 @@ Partial Class Binder
         Me.FormSkin1.BackColor = System.Drawing.Color.White
         Me.FormSkin1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.FormSkin1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.FormSkin1.Controls.Add(Me.FlatButton3)
         Me.FormSkin1.Controls.Add(Me.FlatTextBox2)
-        Me.FormSkin1.Controls.Add(Me.FlatTextBox3)
         Me.FormSkin1.Controls.Add(Me.FlatComboBox1)
         Me.FormSkin1.Controls.Add(Me.FlatButton2)
         Me.FormSkin1.Controls.Add(Me.FlatTextBox1)
-        Me.FormSkin1.Controls.Add(Me.FlatClose1)
         Me.FormSkin1.Controls.Add(Me.FlatButton1)
-        Me.FormSkin1.Controls.Add(Me.FlatLabel4)
         Me.FormSkin1.Controls.Add(Me.FlatLabel3)
         Me.FormSkin1.Controls.Add(Me.FlatLabel2)
         Me.FormSkin1.Controls.Add(Me.FlatLabel1)
@@ -62,14 +58,27 @@ Partial Class Binder
         Me.FormSkin1.HeaderMaximize = False
         Me.FormSkin1.Location = New System.Drawing.Point(0, 0)
         Me.FormSkin1.Name = "FormSkin1"
-        Me.FormSkin1.Size = New System.Drawing.Size(399, 286)
+        Me.FormSkin1.Size = New System.Drawing.Size(399, 238)
         Me.FormSkin1.TabIndex = 0
         Me.FormSkin1.Text = "Binder Settings"
+        '
+        'FlatButton3
+        '
+        Me.FlatButton3.BackColor = System.Drawing.Color.Transparent
+        Me.FlatButton3.BaseColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.FlatButton3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatButton3.Font = New System.Drawing.Font("Marlett", 10.0!)
+        Me.FlatButton3.Location = New System.Drawing.Point(381, 0)
+        Me.FlatButton3.Name = "FlatButton3"
+        Me.FlatButton3.Rounded = False
+        Me.FlatButton3.Size = New System.Drawing.Size(18, 18)
+        Me.FlatButton3.TabIndex = 26
+        Me.FlatButton3.Text = "r"
+        Me.FlatButton3.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'FlatTextBox2
         '
         Me.FlatTextBox2.BackColor = System.Drawing.Color.Transparent
-        Me.FlatTextBox2.Enabled = False
         Me.FlatTextBox2.Location = New System.Drawing.Point(58, 149)
         Me.FlatTextBox2.MaxLength = 32767
         Me.FlatTextBox2.Multiline = False
@@ -81,22 +90,6 @@ Partial Class Binder
         Me.FlatTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.FlatTextBox2.TextColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.FlatTextBox2.UseSystemPasswordChar = False
-        '
-        'FlatTextBox3
-        '
-        Me.FlatTextBox3.BackColor = System.Drawing.Color.Transparent
-        Me.FlatTextBox3.Enabled = False
-        Me.FlatTextBox3.Location = New System.Drawing.Point(58, 184)
-        Me.FlatTextBox3.MaxLength = 32767
-        Me.FlatTextBox3.Multiline = False
-        Me.FlatTextBox3.Name = "FlatTextBox3"
-        Me.FlatTextBox3.ReadOnly = False
-        Me.FlatTextBox3.Size = New System.Drawing.Size(248, 29)
-        Me.FlatTextBox3.TabIndex = 23
-        Me.FlatTextBox3.Text = "1000"
-        Me.FlatTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.FlatTextBox3.TextColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.FlatTextBox3.UseSystemPasswordChar = False
         '
         'FlatComboBox1
         '
@@ -146,44 +139,19 @@ Partial Class Binder
         Me.FlatTextBox1.TextColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.FlatTextBox1.UseSystemPasswordChar = False
         '
-        'FlatClose1
-        '
-        Me.FlatClose1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatClose1.BackColor = System.Drawing.Color.White
-        Me.FlatClose1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.FlatClose1.Font = New System.Drawing.Font("Marlett", 10.0!)
-        Me.FlatClose1.Location = New System.Drawing.Point(381, 0)
-        Me.FlatClose1.Name = "FlatClose1"
-        Me.FlatClose1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatClose1.TabIndex = 5
-        Me.FlatClose1.Text = "FlatClose1"
-        Me.FlatClose1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
         'FlatButton1
         '
         Me.FlatButton1.BackColor = System.Drawing.Color.Transparent
         Me.FlatButton1.BaseColor = System.Drawing.Color.DeepSkyBlue
         Me.FlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatButton1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.FlatButton1.Location = New System.Drawing.Point(12, 224)
+        Me.FlatButton1.Location = New System.Drawing.Point(12, 186)
         Me.FlatButton1.Name = "FlatButton1"
         Me.FlatButton1.Rounded = False
         Me.FlatButton1.Size = New System.Drawing.Size(375, 40)
         Me.FlatButton1.TabIndex = 4
         Me.FlatButton1.Text = "Save Settings"
         Me.FlatButton1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
-        'FlatLabel4
-        '
-        Me.FlatLabel4.AutoSize = True
-        Me.FlatLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.FlatLabel4.Font = New System.Drawing.Font("Segoe UI", 8.0!)
-        Me.FlatLabel4.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel4.Location = New System.Drawing.Point(21, 191)
-        Me.FlatLabel4.Name = "FlatLabel4"
-        Me.FlatLabel4.Size = New System.Drawing.Size(41, 13)
-        Me.FlatLabel4.TabIndex = 3
-        Me.FlatLabel4.Text = "Sleep: "
         '
         'FlatLabel3
         '
@@ -226,7 +194,7 @@ Partial Class Binder
         Me.AllowDrop = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(399, 286)
+        Me.ClientSize = New System.Drawing.Size(399, 238)
         Me.Controls.Add(Me.FormSkin1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -243,14 +211,12 @@ Partial Class Binder
     End Sub
     Friend WithEvents FormSkin1 As BlackNet_Builder.FormSkin
     Friend WithEvents FlatButton1 As BlackNet_Builder.FlatButton
-    Friend WithEvents FlatLabel4 As BlackNet_Builder.FlatLabel
     Friend WithEvents FlatLabel3 As BlackNet_Builder.FlatLabel
     Friend WithEvents FlatLabel2 As BlackNet_Builder.FlatLabel
     Friend WithEvents FlatLabel1 As BlackNet_Builder.FlatLabel
     Friend WithEvents FlatTextBox1 As BlackNet_Builder.FlatTextBox
-    Friend WithEvents FlatClose1 As BlackNet_Builder.FlatClose
     Friend WithEvents FlatButton2 As BlackNet_Builder.FlatButton
     Friend WithEvents FlatComboBox1 As BlackNet_Builder.FlatComboBox
-    Friend WithEvents FlatTextBox3 As BlackNet_Builder.FlatTextBox
     Friend WithEvents FlatTextBox2 As BlackNet_Builder.FlatTextBox
+    Friend WithEvents FlatButton3 As BlackNet_Builder.FlatButton
 End Class

