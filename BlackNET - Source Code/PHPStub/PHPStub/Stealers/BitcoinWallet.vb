@@ -1,0 +1,3 @@
+﻿Module BitcoinWallet
+
+End Module

