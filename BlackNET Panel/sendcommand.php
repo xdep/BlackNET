@@ -3,10 +3,6 @@ require "classes/Database.php";
 include 'classes/Clients.php';
 include 'session.php';
 
-if ($user_check != $data->username || $password_check != $data->password) {
-    $database->redierct("logout.php");
-}
-
 function POST($file_name,$data){
     $data = isset($data) ? $data : "This is incorrect";
     $myfile = fopen($file_name, "w") or die("Unable to open file!");
