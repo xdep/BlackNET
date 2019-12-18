@@ -2,9 +2,9 @@
 /*
   this class is to handle user authentication
 
-  how to user
+  how to use
   $auth = new Auth
-  $auth->newLogin("Faris","my password");
+  $status = $auth->newLogin("BlackHacker","12345678");
 */
 class Auth extends User{
   

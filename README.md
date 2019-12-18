@@ -159,6 +159,10 @@ v2.0.0
 ## Coming Soon
 ```
 2.5.0
+ + PHP
+   - Added PHPSecLib
+ + VB.NET
+   - Replace Base64 with AES-128 Encryption
 ```
 
 ## Pull Request
