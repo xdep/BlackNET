@@ -108,9 +108,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Other\RemoteDesktop.vb" />
-    <Compile Include="Stealers\BitcoinWallet.vb" />
-    <Compile Include="Stealers\ChromeCookies.vb" />
-    <Compile Include="Stealers\FirefoxCookies.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">

