@@ -27,8 +27,11 @@ class Database{
 		if ($sql->rowCount()) {
 			
 		} else {
-			die("<h1 style='text-align:center; color:#c0392b; font-family:arial;'>Please Go To <a href='install.php' style='color:#CF000F;'>install.php</a></h1>
-				<footer style='text-align:center; color:#c0392b; font-family:arial;'>Coded by: Black.Hacker</footer>");
+			die("<body style='background-color: #ededed;'>
+				<h1 style='text-align:center; color:#00bfff; font-family:arial;'>Please Go To <a href='install.php' style='color:#0099cc;'>install.php</a></h1>
+				<footer style='text-align:center; color:#00bfff; font-family:arial;'>Developed by: Black.Hacker</footer>
+				</body>
+				");
 		}
 		
 	}
@@ -37,5 +40,18 @@ class Database{
 		header('Location: ' . $url);
 		exit;
 	}
+
+
+
 }
+?>
+
+<?php
+if (file_exists("install.php")):
+	echo "<body style='background-color: #ededed;'>
+    		<h1 style='text-align:center; color:#00bfff; font-family:arial;'>Please Remove install.php</h1>
+    		<footer style='text-align:center; color:#00bfff; font-family:arial;'>Devloped by: Black.Hacker</footer>
+  		 </body>";
+  die();
+endif;
 ?>
