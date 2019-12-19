@@ -17,7 +17,7 @@ if(isset($_SESSION['login_user']) && $user_check != null){
 }
 
 if(empty($_SESSION['key'])){
-  $_SESSION['key'] = bin2hex(random_bytes(32));
+  $_SESSION['key'] = uniqid(rand(), true);
 }
 
 if (!isset($_SESSION['current_ip'])) {
