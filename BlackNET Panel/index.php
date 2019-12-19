@@ -202,6 +202,7 @@ $allClients = $client->getClients();
                         </optgroup>
                         <optgroup label="Keylogger">
                             <option value="startkl">Start Keylogger</option>
+                            <option value="stopkl">Stop Keylogger</option>
                             <option value="getlogs">Retreive Logs</option>
                         </optgroup>
                         <optgroup label="Computer Commands">

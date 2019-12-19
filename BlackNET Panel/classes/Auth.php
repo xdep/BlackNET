@@ -2,9 +2,9 @@
 /*
   this class is to handle user authentication
 
-  how to use
+  how to user
   $auth = new Auth
-  $status = $auth->newLogin("BlackHacker","12345678");
+  $auth->newLogin("Faris","my password");
 */
 class Auth extends User{
   
@@ -139,6 +139,7 @@ class Auth extends User{
       $data = $stmt->fetch();
       return $data->s2fa;
   }
+
 }
 
 ?>

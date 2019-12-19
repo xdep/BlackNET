@@ -5,9 +5,10 @@ class User extends Database{
     // get user data
     public function getUserData($username){
         $pdo = $this->Connect();
-        $sql = "SELECT * FROM admin WHERE username = ?";
+        $sql = "SELECT * FROM admin WHERE 
+            username = :username or email = :email";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([$username]);
+        $stmt->execute(["username"=>$username,"email"=>$username]);
         $data = $stmt->fetch();
         return $data;
     }
@@ -25,8 +26,9 @@ class User extends Database{
     //check if user exist
     public function checkUser($username){
     	$pdo = $this->Connect();
-		$sql = $pdo->prepare("SELECT * FROM admin WHERE username = ?");
-		$sql -> execute([$username]);
+		$sql = $pdo->prepare("SELECT * FROM admin WHERE 
+            username = :username or email = :email");
+		$sql -> execute(["username"=>$username,"email"=>$username]);
 		if ($sql->rowCount()) {
 			return 'User Exist';
 		} else {

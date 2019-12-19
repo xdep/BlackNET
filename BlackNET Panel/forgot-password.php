@@ -5,7 +5,7 @@ include 'classes/Mailer.php';
 include 'classes/ResetPassword.php';
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $username =isset($_POST['username']) ? $_POST['username']: '';
+    $username =isset($_POST['email']) ? $_POST['email']: '';
     $resetPassword = new ResetPassword;
     if($resetPassword->sendEmail($username)){
       $msg = "Instructions has been send to your email";
@@ -49,13 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
           <?php endif; ?>
         <div class="text-center mb-4">
           <h4>Forgot your password?</h4>
-          <p>Enter your username and we will send you instructions on how to reset your password.</p>
+          <p>Enter your email address and we will send you instructions on how to reset your password.</p>
         </div>
         <form method="POST">
           <div class="form-group">
             <div class="form-label-group">
-              <input type="text" name="username" id="username" class="form-control" placeholder="Enter Username" required="required" autofocus="autofocus">
-              <label for="username">Enter Username</label>
+              <input type="email" name="email" id="email" class="form-control" placeholder="Enter email address" required="required" autofocus="autofocus">
+              <label for="email">Enter email address</label>
             </div>
           </div>
           <button type="submit" class="btn btn-primary btn-block">Reset Password</button>

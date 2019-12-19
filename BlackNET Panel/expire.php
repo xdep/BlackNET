@@ -31,7 +31,7 @@
         </div>
         <p class="lead text-center">
           We are so sorry for the inconvenience but it appers your code does not exist or expired
-          please contact our support team or reset you password agin.
+          please reset your password again to generate a new token.
 
         </br></br>
         Thank You

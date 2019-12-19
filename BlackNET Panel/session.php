@@ -17,7 +17,7 @@ if(isset($_SESSION['login_user']) && $user_check != null){
 }
 
 if(empty($_SESSION['key'])){
-  $_SESSION['key'] = bin2hex(random_bytes(32));
+  $_SESSION['key'] = uniqid(rand(), true);
 }
 
 if (!isset($_SESSION['current_ip'])) {
@@ -38,9 +38,7 @@ if(isset($_SESSION['last_action'])){
   $expireAfterSeconds = $expireAfter * 60;
 
   if($secondsInactive >= $expireAfterSeconds){
-    session_unset();
-    session_destroy();
-    $database->redirect("login.php");
+    $database->redirect("logout.php");
   }
 }
 
