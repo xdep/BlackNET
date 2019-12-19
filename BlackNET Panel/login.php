@@ -25,9 +25,10 @@
            if ($auth->newCode($username,$auth->generateString(6,"0123456789")) == true){
              $settings->redirect("auth.php?username=$username&password=".base64_encode($password));
            } else {
-             $error = "We couldn't send an email.";
+             $error = "System couldn't send an email.";
            }
          } else {
+          $error = "Login works but redirect does not work";
           $_SESSION['login_user'] = $username;
           $_SESSION['login_password'] = hash("sha256", $auth->salt.$password);
           $settings->redirect("index.php");
@@ -35,19 +36,16 @@
         }
 
      } elseif ($loginstatus == 403) {
-          $error = "Access denied you are not admin.";
+         $error = "Access denied you are not admin.";
        } elseif ($loginstatus == 500) {
          $error = "Username or Password is incorrect.";
-       } 
+       } else {
+         $error = "Unexpected error occurred !";
+       }
    }
+
+   $settings->dataExist();
 ?>
-
-<?php if (file_exists("install.php")) : ?>
-  <h1 style='text-align:center; color:#c0392b; font-family:arial;'>Please Remove install.php</h1>
-  <footer style='text-align:center; color:#c0392b; font-family:arial;'>Coded by: Black.Hacker</footer>
-<?php die(); ?>
-<?php endif; ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
