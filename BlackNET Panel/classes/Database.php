@@ -45,13 +45,3 @@ class Database{
 
 }
 ?>
-
-<?php
-if (file_exists("install.php")):
-	echo "<body style='background-color: #ededed;'>
-    		<h1 style='text-align:center; color:#00bfff; font-family:arial;'>Please Remove install.php</h1>
-    		<footer style='text-align:center; color:#00bfff; font-family:arial;'>Devloped by: Black.Hacker</footer>
-  		 </body>";
-  die();
-endif;
-?>
