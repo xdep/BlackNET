@@ -40,7 +40,7 @@ Public Class Form1
     End Function
 
     Private Sub FlatTextBox3_MouseMove(sender As Object, e As MouseEventArgs) Handles FlatTextBox3.MouseMove
-        FlatTextBox3.Text = "BN[xxxxxx-123456]".Replace("xxxxxx", Randomisi2(7, "ABCDEFGHIJKLMNOPQRSTUVWXYZ")).Replace("123456", Randomisi2(6, "1234567890"))
+        FlatTextBox3.Text = "BN[xxxxxx-123456]".Replace("xxxxxx", Randomisi2(8, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")).Replace("123456", Randomisi2(7, "1234567890"))
     End Sub
     Private Sub FlatButton1_Click(sender As Object, e As EventArgs) Handles FlatButton1.Click
         If Not File.Exists((Application.StartupPath & "\stub.exe")) Then

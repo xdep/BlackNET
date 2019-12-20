@@ -118,7 +118,7 @@ Partial Class Form1
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(106, 531)
+        Me.PictureBox3.Location = New System.Drawing.Point(98, 531)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -430,7 +430,7 @@ Partial Class Form1
         Me.FlatCheckBox3.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
         Me.FlatCheckBox3.Size = New System.Drawing.Size(112, 22)
         Me.FlatCheckBox3.TabIndex = 10
-        Me.FlatCheckBox3.Text = "Eelevate UAC"
+        Me.FlatCheckBox3.Text = "Elevate UAC"
         '
         'FlatCheckBox2
         '
