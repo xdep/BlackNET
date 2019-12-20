@@ -42,7 +42,7 @@ Developed By: Black.Hacker
 16. Close Client
  
 ## Requirements
-1. PHP >=  5.6
+1. PHP >=  7.0
 2. NET Framework
     + Stub >= 2.0
     + Builder >= 4.0
