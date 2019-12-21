@@ -83,6 +83,7 @@
     </Compile>
     <Compile Include="Other\Binder.vb" />
     <Compile Include="Other\Keylogger.vb" />
+    <Compile Include="Other\BrowserHandler.vb" />
     <Compile Include="Persistence\SchTask.vb" />
     <Compile Include="Persistence\Startup.vb" />
     <Compile Include="Persistence\Stealth_Mode.vb" />
