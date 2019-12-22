@@ -62,7 +62,7 @@ Developed By: Black.Hacker
 
 ![Image of the interface](https://3.top4top.net/p_1444y3poq2.png)
 
-![Image of the Builder](https://i.gyazo.com/967143097208f8d0721cfb93d3c81371.png)
+![Image of the Builder](https://i.gyazo.com/3009893d1d8df53ca783d52406199448.png)
 
 ## Stub Scan Result
 
@@ -74,92 +74,22 @@ Developed By: Black.Hacker
 ## What's New
 
 ```
-Another Big and Stable Update
-Codename: Doomsday 💀
++ v2.0.1
+  - Fixed Login loop issue
+  - Fixed SelfDestroy() issue
+  - Namespacing VB.NET  Classes
+  - More Stable and faster panel
+  - Stable Client
+  - Better Session Handling
+  - Better Session Security
+  - css.php and js.php are now global
+     + Add your custom js code to js.php
+     + Add your custom CSS code to css.php
+  - Bug Fixes
 
-v2.0.0
-  + PHP
-    - Now the PHP script is compatiable with 000webhost
-    - Added the Ability to disable the panel
-    - Using PHPMailer is not required
-    - Better and Cleaner Code
-    - CSRF Protection
-    - Session Hijacking Protection
-    - XSS Protection
-    - Added viewuploads.php to view uploads folder
-    - Better and Faster Connection Method
-    - Check if Client is from USB Infection
-    - UI Enhancements
-    - Better Session handling
-    - Securing session with the password and current IP
-    - Better redirection handling
-    - Remover Clinet Folder after Executing Uninstall
-    - New Menues [ Execute Scripts ]
-    - Update PHPMailer to 6.1.4
-    - Merged Login and Auth in one Class
-    - Self Expire 2FA Code after 10 minutes
-    - Self Expire Forget Password Token after 10 minutes
-    - Added Scripts Folder to Manage Execute Scripts Function
-    - Better Command Receive System
-    - Better, Cleaner and Faster Authentication System
-    - View Encrypted Passwords in a Table [Website,Username,Password]
-    - Added check if client is admin
-    - Added gethostbyname() function to sendcommand.php
-    - Fixed some Database Issues
-      + Merged question with admin tables
-    - New POST Class to Handle Socket Requests
-      + Prepare Objects
-      + Validate Strings
-      + Write to a File
-    - Rewrite All Menues
-    - Update Bootstrap to 4.4.1
-    - Bug Fixes
-    
-  + VB.NET
-    - Added check panel function
-    - One Webclient to rule them all
-    - Update .NET Framework for the Builder 2.0 to 4.0
-    - Update Mono.Cecil to v0.11.1
-    - Better and Cleaner Code
-    - Better Client Update System
-    - Added Self Destroy to Uninstall Function
-    - UI Enhancements
-    - Added Chrome Cookies Stealer
-    - Update PasswordStealer DLL
-       + DLL is now less the 30kb and 1/26 FUD
-       + DLL does not use Nirsoft tools
-       + Comes with Chrome Stealer and FileZilla Stealer
-       + Modifed to Steal from All Chrome-based Browsers
-    - Speed Optimization
-    - Bitcoin Wallet.dat Stealer
-    - Update Checker
-    - Added new Attacks [ HTTPGet, POSTHttp, Bandwidth Flood ]
-    - Added schtask function
-      + choose between startup or schtask
-    - Encrypted C2 Connection (Base64)
-    - Bind and Execute File with output ( Dropper )
-    - Dropbox Spread
-    - Fix DDOS Bugs { IP Only }
-    - Elevate Client ( UAC )
-    - Added Obfuscate output using ConfuserEx
-    - Fixed some RSA Encryption Bugs
-    - Restart Client Connection
-    - Execute Script
-      + bat
-      + vbs
-      + ps1
-    - Computer Commands
-      + Shutdown
-      + Restart
-      + Logoff
-    - Bug Fixes
-  
-```
+  If you have Login loop issues please use this version.
 
-## Coming Soon
-```
-2.1.0
-- Better Session Handling and a better support for all hosting including 000webhost
+  Enjoy
 ```
 
 ## Pull Request
