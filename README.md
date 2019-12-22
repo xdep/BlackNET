@@ -158,7 +158,8 @@ v2.0.0
 
 ## Coming Soon
 ```
-2.5.0
+2.1.0
+- Better Session Handling and a better support for all hosting including 000webhost
 ```
 
 ## Pull Request
