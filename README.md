@@ -87,7 +87,7 @@ Developed By: Black.Hacker
      + Add your custom CSS code to css.php
   - Bug Fixes
 
-  If you have Login loop issues please use this version.
+  If you have Login loop issue on previous releases please update to this version.
 
   Enjoy
 ```
