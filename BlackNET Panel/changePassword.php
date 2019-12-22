@@ -1,7 +1,6 @@
 <?php
-include 'classes/Database.php';
-include 'classes/Mailer.php';
 include 'session.php';
+include 'classes/Mailer.php';
 
 //$current_username is in session.php 
 $question = $user->getQuestionByUser($current_username);

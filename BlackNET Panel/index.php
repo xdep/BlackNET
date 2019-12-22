@@ -1,8 +1,7 @@
 <?php
-include 'classes/Database.php';
+include 'session.php';
 include 'classes/Clients.php';
 include 'getcontery.php';
-include 'session.php';
 
 $client = new Clients;
 $allClients = $client->getClients();

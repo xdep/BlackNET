@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include 'classes/Database.php';
   include 'classes/Settings.php';
   include 'classes/User.php';
@@ -54,9 +55,7 @@
     <meta name="author" content="Black.Hacker">
     <title>BlackNET - Login</title>
     <link rel="shortcut icon" href="favico.png">
-    <link href="asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="asset/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="asset/css/sb-admin.css" rel="stylesheet">
+    <?php include 'components/css.php'; ?>
   </head>
   <body class="bg-dark">
     <div class="container">
@@ -107,9 +106,7 @@
         </div>
       </div>
     </div>
-    <script src="asset/vendor/jquery/jquery.min.js"></script>
-    <script src="asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="asset/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <?php include 'components/js.php'; ?>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
   </body>

@@ -1,5 +1,4 @@
 <?php
-include_once 'classes/Database.php';
 include_once 'session.php';
 
 $vicID = isset($_GET['vicid']) ? $_GET['vicid'] : '';

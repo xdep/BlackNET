@@ -1,10 +1,7 @@
 <?php
-include_once 'classes/Database.php';
+include_once 'session.php';
 include_once 'classes/Settings.php';
 include_once 'classes/Mailer.php';
-include_once 'session.php';
-
-
 
 $smtp = new Mailer();
 $getSMTP = $smtp->getSMTP(1);

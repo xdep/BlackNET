@@ -1,7 +1,6 @@
 <?php
-require "classes/Database.php";
-include 'classes/Clients.php';
 include 'session.php';
+include 'classes/Clients.php';
 
 function POST($file_name,$data){
     $data = isset($data) ? $data : "This is incorrect";

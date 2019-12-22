@@ -1,7 +1,6 @@
 <?php 
-include_once '../classes/Database.php';
-include_once '../classes/Mailer.php';
 include_once '../session.php';
+include_once '../classes/Mailer.php';
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$smtp = new Mailer;

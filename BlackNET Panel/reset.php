@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include 'classes/Database.php';
 include 'classes/User.php';
 include 'classes/Mailer.php';
@@ -40,12 +41,8 @@ session_destroy();
   <meta name="author" content="">
 
   <title>BlackNET - Reset Password</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="asset/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Custom styles for this template-->
-  <link href="asset/css/sb-admin.css" rel="stylesheet">
+  <link rel="shortcut icon" href="favico.png">
+  <?php include 'components/css.php'; ?>
 
 </head>
 
@@ -96,11 +93,7 @@ session_destroy();
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="asset/vendor/jquery/jquery.min.js"></script>
-  <script src="asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="asset/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <?php include 'components/js.php'; ?>
 
 </body>
 

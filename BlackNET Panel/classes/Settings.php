@@ -37,10 +37,20 @@ class Settings extends Database{
             } else {
                 $pstatus = "on";
             }
-
-        $sql = "UPDATE settings SET recaptchaprivate = :private,recaptchapublic = :public,recaptchastatus = :status, panel_status = :pstatus WHERE id = :id";
+        $sql = "UPDATE settings SET
+        recaptchaprivate = :private,
+        recaptchapublic = :public,
+        recaptchastatus = :status,
+        panel_status = :pstatus
+        WHERE id = :id";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute(["private"=>$newRCP,"public"=>$newRCPub,"status"=>$status,"pstatus"=>$pstatus,"id"=>$id]);
+        $stmt->execute([
+            "private"=>$newRCP,
+            "public"=>$newRCPub,
+            "status"=>$status,
+            "pstatus"=>$pstatus,
+            "id"=>$id
+        ]);
         return 'Settings Updated';
 	}
 }

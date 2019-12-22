@@ -1,7 +1,6 @@
-<?php 
-require '../classes/Database.php';
-require '../classes/Settings.php';
+<?php
 include('../session.php');
+require '../classes/Settings.php';
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$settings = new Settings;
 	if ($csrf != $_POST['csrf']) {

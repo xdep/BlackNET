@@ -1,4 +1,6 @@
 <?php
+session_start();
+include 'classes/Database.php';
 include 'classes/User.php';
 
 $database = new Database;
@@ -23,9 +25,9 @@ if(empty($_SESSION['key'])){
 if (!isset($_SESSION['current_ip'])) {
   $_SESSION['current_ip'] = $_SERVER["REMOTE_ADDR"];
 }
-    
-if (!isset($csrf)) {
-  $csrf = hash_hmac('sha256', 'Jyp9OENwQGVGM1NgUzoyTzBCLHs', $_SESSION['key'].session_id().$_SESSION["current_ip"]);
+
+if (!(isset($csrf))) {
+  $csrf = hash_hmac('sha256', "eVfLOm3DT3PhYIlYCKgAdoXrqLCTQ9", $_SESSION['key'].session_id().$_SESSION["current_ip"]);
 }
 
 if(!isset($_SESSION['login_user']) || !isset($_SESSION['login_password']) || !isset($_SESSION["current_ip"]) || !isset($_SESSION['key'])){
@@ -49,5 +51,4 @@ if ($user_check != $current_username || $password_check != $current_password){
     if (isset($_GET['msg']) && $_GET['msg'] == "yes"){ $database->redirect("logout.php?msg=update"); }
     $database->redirect("logout.php");
 }
-
 ?>

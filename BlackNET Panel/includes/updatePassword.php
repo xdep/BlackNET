@@ -1,6 +1,5 @@
 <?php 
-require '../classes/Database.php';
-require '../session.php';
+include '../session.php';
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	if ($csrf != $_POST['csrf']){

@@ -1,5 +1,4 @@
 <?php
-include_once 'classes/Database.php';
 include_once 'session.php';
 try {
 	@unlink("upload/" . $_GET['vicid'] . "/" . $_GET['fname']);
