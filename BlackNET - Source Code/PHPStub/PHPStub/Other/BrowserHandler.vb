@@ -1,4 +1,4 @@
-﻿Module BrowserHandler
+Module BrowserHandler
     Public Sub OpenWebPage(ByVal URL As String)
         If My.Computer.Info.OSFullName.Contains("10") Then
             OpenWebPageWind10(URL)
@@ -31,11 +31,11 @@
     Public Sub OpenWebPageOther(ByVal URL As String)
         Select Case getDefaultBrowser()
             Case "Internet Explorer"
-                Process.Start("iexplore", "https://www.google.com")
+                Process.Start("iexplore", URL)
             Case "Mozilla Firefox"
-                Process.Start("firefox", "https://www.google.com")
+                Process.Start("firefox", URL)
             Case "Google Chrome"
-                Process.Start("iexplore", "https://www.google.com")
+                Process.Start("chrome", URL)
         End Select
     End Sub
     Private Function getDefaultBrowserWin10() As String
