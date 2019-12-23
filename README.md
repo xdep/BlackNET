@@ -81,7 +81,7 @@ Developed By: Black.Hacker
   - More Stable and faster panel
   - Stable Client
   - Added BrowserHandler
-  - Delete viewupload.php files
+  - Delete files in viewupload.php
   - Elevate UAC in Builder
   - Wraping functions in threads
   - Better Session Handling
