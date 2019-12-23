@@ -80,6 +80,10 @@ Developed By: Black.Hacker
   - Namespacing VB.NET  Classes
   - More Stable and faster panel
   - Stable Client
+  - Added BrowserHandler
+  - Delete viewupload.php files
+  - Elevate UAC in Builder
+  - Wraping functions in threads
   - Better Session Handling
   - Better Session Security
   - css.php and js.php are now global
@@ -87,7 +91,8 @@ Developed By: Black.Hacker
      + Add your custom CSS code to css.php
   - Bug Fixes
 
-  If you have Login loop issue on previous releases please update to this version.
+  If you have a Login loop issue on previous releases please update to this version.
+  This release works on every hosting provider including free hostings
 
   Enjoy
 ```
