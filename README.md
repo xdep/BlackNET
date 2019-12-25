@@ -110,6 +110,9 @@ i will review it in 1 - 5 days then i will merge it with the master branch
 - Yck1509
 - NYAN CAT
 
+## Python Edition
+[BlackHacker511/BlackNET-Python](http://github.com/BlackHacker511/BlackNET-Python)
+
 ## Donate
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=farisksa79%40gmail.com&item_name=BlackNET+Development&currency_code=USD&source=url"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
 
