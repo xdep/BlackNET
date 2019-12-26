@@ -34,7 +34,10 @@ Developed By: Black.Hacker
  7. Steal Saved Passwords
  8. Keylogger
  9. Execute Scripts
-10. Computer Oprations [ Restart, Shutdown, Logout ]
+10. Computer Oprations
+    + Restart
+    + Shutdown
+    + Logout
 11. Bitcoint Wallet Stealer
 12. Uninstall Client
 13. Move Client
