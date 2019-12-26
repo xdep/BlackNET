@@ -12,9 +12,6 @@
  <a href="#"><img align="center" src="https://img.shields.io/github/stars/BlackHacker511/BlackNET?style=social" /></a>
 </p>
 
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FBlackHacker511%2FBlackNET.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FBlackHacker511%2FBlackNET?ref=badge_large)
-
 # BlackNET
 Free advanced and modern Windows botnet with a nice and secure PHP panel buit using VB.NET.
 
@@ -61,7 +58,6 @@ Developed By: Black.Hacker
 
 ## Screenshots
 ![Installtion Page](https://i.imgur.com/RwNTwgs.png)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FBlackHacker511%2FBlackNET.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FBlackHacker511%2FBlackNET?ref=badge_shield)
 
 ![Image of Login Page](https://2.top4top.net/p_14447rrth1.png)
 
@@ -130,6 +126,8 @@ LTC: 3EJ9bW6YwoLDhRRXmeZZudrNLJJW1LJ7Mj
 
 ## License
 This project is licensed under the MIT License
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FBlackHacker511%2FBlackNET.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FBlackHacker511%2FBlackNET?ref=badge_large)
 
 ## Copyright
 Copyright © Black.Hacker - 2020
