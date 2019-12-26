@@ -55,7 +55,7 @@
               <?php endif; ?>
             <div class="form-group">
               <div class="form-label-group">
-                <input type="text" id="AuthCode" pattern="[0-9]{6}" name="AuthCode" class="form-control" placeholder="Verification Code" required="required">
+                <input type="text" id="AuthCode" size="6" maxlength="6" pattern="[0-9]{6}" name="AuthCode" class="form-control" placeholder="Verification Code" required="required">
                 <label for="AuthCode">Verification Code</label>
               </div>
             </div>
