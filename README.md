@@ -9,7 +9,7 @@
  <a href="#"><img align="center" src="https://img.shields.io/github/license/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/v/release/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FBlackHacker511%2FBlackNET.svg?type=shield"/></a>
- <a href="#"><img align="center" src="https://img.shields.io/github/stars/BlackHacker511/BlackNET?style=social" /></a>
+ <a href="#"><img align="center" src="http://isitmaintained.com/badge/resolution/BlackHacker511/BlackNET.svg" /></a>
 </p>
 
 # BlackNET
@@ -130,4 +130,7 @@ This project is licensed under the MIT License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FBlackHacker511%2FBlackNET.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FBlackHacker511%2FBlackNET?ref=badge_large)
 
 ## Copyright
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) 
+
 Copyright © Black.Hacker - 2020
+
