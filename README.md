@@ -13,10 +13,10 @@
 </p>
 
 # BlackNET
-Free advanced and modern Windows botnet with a nice and secure PHP panel buit using VB.NET.
+Free advanced and modern Windows botnet with a nice and secure PHP panel developed using VB.NET.
 
 ## About BlackNET
-Free advanced and modern Windows botnet with a nice and secure PHP panel buit using VB.NET.
+Free advanced and modern Windows botnet with a nice and secure PHP panel developed using VB.NET.
 
 this botnet controller comes with a lot of features and the most secure panel for free
 
