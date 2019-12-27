@@ -70,8 +70,6 @@ Developed By: Black.Hacker
 
 ## Stub Scan Result
 
-![Image of the Scan Result](https://4.top4top.net/p_1456uda0g1.png)
-
 <img src="https://4.top4top.net/p_1456uda0g1.png" alt="How to encrypt BlackNET" width="340" hieght="775" />
 
 ## Encrypted Scan Result
