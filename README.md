@@ -72,6 +72,13 @@ Developed By: Black.Hacker
 
 ![Image of the Scan Result](https://antiscan.me/images/result/myloTq6WPvz2.png)
 
+## Encrypted Scan Result
+[Encrtypted Output: 3/31](https://shortty.ml/THcAq)
+
+How to encrypt it
+
+<a href="https://www.youtube.com/watch?v=hzC8_UYGor0"><img src="https://1.top4top.net/p_1423q6dks1.png" alt="How to encrypt BlackNET" width="150" hieght="150"></a>
+
 ## YouTube - How To Install
 <a href="https://youtu.be/aWic9V5T_PQ"><img src="https://1.top4top.net/p_1423q6dks1.png" alt="" width="150" hieght="150"></a>
 
