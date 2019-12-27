@@ -70,7 +70,7 @@ Developed By: Black.Hacker
 
 ## Stub Scan Result
 
-![Image of the Scan Result](https://antiscan.me/images/result/myloTq6WPvz2.png)
+![Image of the Scan Result](https://4.top4top.net/p_1456uda0g1.png)
 
 ## Encrypted Scan Result
 [Encrtypted Output: 3/31](https://shortty.ml/THcAq)
