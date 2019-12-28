@@ -1,2 +1,2 @@
-language: php
 before_script: cd "BlackNET Panel"
+language: php
