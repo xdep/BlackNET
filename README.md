@@ -73,7 +73,7 @@ Developed By: Black.Hacker
 <img src="https://4.top4top.net/p_1456uda0g1.png" alt="How to encrypt BlackNET" width="340" hieght="775" />
 
 ## Encrypted Scan Result
-[Encrtypted Output: 3/31](https://shortty.ml/THcAq)
+[Encrtypted Output: 3/31](https://shortty.co/THcAq)
 
 How to encrypt it
 
