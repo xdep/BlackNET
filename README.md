@@ -108,6 +108,21 @@ How to encrypt it
   Enjoy
 ```
 
+## Coming Soon
+````
+v2.5
+  + PHP
+    - Logs System
+    - View Logs
+    - Better Security
+    - More DDOS Settings
+    - DRY classes
+    
+  + VB.NET
+    - Logs System
+    - Stable Client
+````
+
 ## Pull Request
 1. Fork the repo
 2. Add your feature
