@@ -117,6 +117,8 @@ v2.5
     - Better Security
     - More DDOS Settings
     - DRY classes
+    - Replace 2FA By Email to 2FA By App
+    - Integrate sonata-project/GoogleAuthenticator
     
   + VB.NET
     - Logs System
