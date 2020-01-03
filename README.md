@@ -119,6 +119,11 @@ v2.5
     - DRY classes
     - Replace 2FA By Email to 2FA By App
     - Integrate sonata-project/GoogleAuthenticator
+    - Panel Update System\
+      + Create new tables
+      + Update old tables
+      + Create new columns
+      + Drop unused tables
     
   + VB.NET
     - Logs System
