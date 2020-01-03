@@ -144,9 +144,7 @@ i will review it in 1 - 5 days then i will merge it with the master branch
 ## Donate
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=farisksa79%40gmail.com&item_name=BlackNET+Development&currency_code=USD&source=url"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
 
-BTC: 3AssdTzfQEvLfU4viepBXFs6C2KSHgW79Q
-
-LTC: 3EJ9bW6YwoLDhRRXmeZZudrNLJJW1LJ7Mj
+BTC: 1DXMk3Dm2GXUsLe9ZFmNNs9jxa2qNX9GfW
 
 <a href="https://ko-fi.com/blackhacker"><img src="https://3.top4top.net/p_1460d94yj1.png" width="217" hieght="51" /><a>
 <a href="http://www.patreon.com/blackhacker511"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" width="217" hieght="51" /><a>
