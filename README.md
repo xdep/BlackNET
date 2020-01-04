@@ -119,14 +119,18 @@ v2.5
     - DRY classes
     - Replace 2FA By Email to 2FA By App
     - Integrate sonata-project/GoogleAuthenticator
-    - Panel Update System\
+    - Panel Update System
       + Create new tables
       + Update old tables
       + Create new columns
       + Drop unused tables
-    
+    - Cron Job System
+      + Ping.php [ to ping clients every 10 minutes ]
+      + Update_status.php [ to offline unactive clients every hour ]
+      
   + VB.NET
     - Logs System
+    - More DDOS Settings
     - Stable Client
 ````
 
