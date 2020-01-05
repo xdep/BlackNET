@@ -4,7 +4,6 @@
 
 <p align="center">
  <a href="#"><img align="center" alt="Maintenance" src="https://img.shields.io/maintenance/yes/2020"></a>
- <a href="#"><img align="center" src="https://img.shields.io/github/issues-closed/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/languages/top/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/license/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/v/release/BlackHacker511/BlackNET" /></a>
