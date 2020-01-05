@@ -128,11 +128,13 @@ v2.5
       + Ping.php [ Run it every 10min ]
         + Ping clients
         + Offline unactive clients
+    - Bug Fixes
       
   + VB.NET
     - Logs System
     - More DDOS Settings
     - Stable Client
+    - Bug Fixes
 ````
 
 ## Pull Request
