@@ -170,7 +170,7 @@ This project is licensed under the MIT License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FBlackHacker511%2FBlackNET.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FBlackHacker511%2FBlackNET?ref=badge_large)
 
 ## Copyright
-[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) 
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/) 
 
 Copyright © Black.Hacker - 2020
 
