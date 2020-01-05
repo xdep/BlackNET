@@ -125,8 +125,9 @@ v2.5
       + Create new columns
       + Drop unused tables
     - Cron Job System
-      + Ping.php [ to ping clients every 10 minutes ]
-      + Update_status.php [ to offline unactive clients every hour ]
+      + Ping.php [ Run it every 10min ]
+        + Ping clients
+        + Offline unactive clients
       
   + VB.NET
     - Logs System
