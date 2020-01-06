@@ -275,7 +275,7 @@ Public Class Form1
         Dim CurrentVersion As String = ProductVersion
         Dim GitHubVersion As String = DownloadVersion.DownloadString("https://raw.githubusercontent.com/BlackHacker511/BlackNET/master/version.txt")
 
-        If (GitHubVersion.Replace("v", "").Replace(".", "") < CurrentVersion.Replace(".", "")) Then
+        If (GitHubVersion.Replace("v", "").Replace(".", "") = CurrentVersion.Replace(".", "")) Then
             MessageBox.Show("BlackNET is Up to Date.", "Update check", MessageBoxButtons.OK, MessageBoxIcon.Information)
             FlatStatusBar1.Text = "Up to Date"
         Else

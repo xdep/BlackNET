@@ -112,7 +112,7 @@ Partial Class Form1
         Me.FormSkin1.Name = "FormSkin1"
         Me.FormSkin1.Size = New System.Drawing.Size(287, 696)
         Me.FormSkin1.TabIndex = 0
-        Me.FormSkin1.Text = "BlackNET Builder"
+        Me.FormSkin1.Text = " "
         '
         'PictureBox3
         '
@@ -301,7 +301,7 @@ Partial Class Form1
         Me.FlatTextBox5.ReadOnly = False
         Me.FlatTextBox5.Size = New System.Drawing.Size(206, 29)
         Me.FlatTextBox5.TabIndex = 22
-        Me.FlatTextBox5.Text = "svchost.exe"
+        Me.FlatTextBox5.Text = "WindowsUpdate.exe"
         Me.FlatTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.FlatTextBox5.TextColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.FlatTextBox5.UseSystemPasswordChar = False
@@ -552,7 +552,7 @@ Partial Class Form1
         Me.FlatButton1.Rounded = False
         Me.FlatButton1.Size = New System.Drawing.Size(287, 32)
         Me.FlatButton1.TabIndex = 0
-        Me.FlatButton1.Text = "Combile Client"
+        Me.FlatButton1.Text = "Compile Client"
         Me.FlatButton1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'FlatLabel6
