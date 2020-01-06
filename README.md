@@ -163,7 +163,6 @@ Now you can sell BlackNET accounts and start your own botnet business
 7. create a licenses per account
 
 plugin status: 15% finish
-plugin price: 30$ per license
 
 ## Donate
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=farisksa79%40gmail.com&item_name=BlackNET+Development&currency_code=USD&source=url"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
