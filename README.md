@@ -127,7 +127,14 @@ v2.5
       + Ping.php [ Run it every 10min ]
         + Ping clients
         + Offline unactive clients
+    - Replace amCharts Maps with jVectorMaps
+        + Better Speed
+        + Simple Maps
+        + Fast Loading
+        + Cleaner Look
+        + Unbranded
     - Bug Fixes
+    
       
   + VB.NET
     - Logs System
@@ -161,8 +168,9 @@ Now you can sell BlackNET accounts and start your own botnet business
 5. move clients between accounts
 6. remove accounts
 7. create a licenses per account
+8. manage licenses
 
-plugin status: 15% finish
+plugin status: 25% finish
 
 ## Donate
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=farisksa79%40gmail.com&item_name=BlackNET+Development&currency_code=USD&source=url"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
