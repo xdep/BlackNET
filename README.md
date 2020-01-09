@@ -146,7 +146,6 @@ v2.5
     - Better Speed
     - Cleaner Code
     - Ping is working now
-    - Custom obfuscated output
     - Bug Fixes
 ````
 
