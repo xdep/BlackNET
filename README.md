@@ -119,10 +119,13 @@ v2.5
     - New Unknown Country Flag
     - Replace 2FA By Email to 2FA By App
     - Integrate sonata-project/GoogleAuthenticator
-    - Panel Update System
+    - Panel Updater System
+      + No need to do fresh install
       + Create new tables
       + Update old tables
       + Create new columns
+      + Update current columns
+      + Inser new values
       + Drop unused tables
     - Cron Job System
       + Ping.php [ Run it every 10min ]
@@ -136,11 +139,14 @@ v2.5
         + Unbranded
     - Bug Fixes
     
-      
   + VB.NET
     - Logs System
     - More DDOS Settings
     - Stable Client
+    - Better Speed
+    - Cleaner Code
+    - Ping is working now
+    - Custom obfuscated output
     - Bug Fixes
 ````
 
