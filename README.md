@@ -137,6 +137,7 @@ v2.5
         + Fast Loading
         + Cleaner Look
         + Unbranded
+    - Cleaner Code
     - Bug Fixes
     
   + VB.NET
