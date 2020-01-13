@@ -83,31 +83,6 @@ How to encrypt it
 
 ## What's New
 
-```
-+ v2.0.1
-  - Fixed Login loop issue
-  - Fixed SelfDestroy() issue
-  - Namespacing VB.NET  Classes
-  - More Stable and faster panel
-  - Stable Client
-  - Added BrowserHandler
-  - Delete files in viewupload.php
-  - Elevate UAC in Builder
-  - Wraping functions in threads
-  - Better Session Handling
-  - Better Session Security
-  - css.php and js.php are now global
-     + Add your custom js code to js.php
-     + Add your custom CSS code to css.php
-  - Bug Fixes
-
-  If you have a Login loop issue on previous releases please update to this version.
-  This release works on every hosting provider including free hostings
-
-  Enjoy
-```
-
-## Coming Soon
 ````
 v2.5
   + PHP
@@ -153,6 +128,11 @@ v2.5
     - Cleaner Code
     - Ping is working now
     - Bug Fixes
+````
+
+## Coming Soon
+````
+v3.0
 ````
 
 ## Pull Request
