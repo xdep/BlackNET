@@ -118,6 +118,11 @@ v2.5
     - DRY classes
     - New Unknown Country Flag
     - Replace 2FA By Email to 2FA By App
+      + Authy or Google Authenticator
+      + Stable 2FA System
+      + Trust Device for 30 days
+      + Disable it any time you want
+      + Secure 215-bit Secret
     - Integrate sonata-project/GoogleAuthenticator
     - Panel Updater System
       + No need to do fresh install
