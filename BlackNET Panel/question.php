@@ -1,8 +1,8 @@
 <?php 
-include 'classes/Database.php';
-include 'classes/User.php';
-include 'classes/Mailer.php';
-include 'classes/ResetPassword.php';
+include_once 'classes/Database.php';
+include_once 'classes/User.php';
+include_once 'classes/Mailer.php';
+include_once 'classes/ResetPassword.php';
 $key = isset($_GET['key']) ? $_GET['key'] : null;
 $updatePassword = new ResetPassword;
 if ($updatePassword->isExist($key) == "Key Exist") {
@@ -23,16 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <html lang="en">
 
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
+  <?php include_once 'components/meta.php'; ?>
   <title>BlackNET - Reset Password</title>
-  <link rel="shortcut icon" href="favico.png">
-  <?php include 'components/css.php'; ?>
+  <?php include_once 'components/css.php'; ?>
 
 </head>
 
@@ -60,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
               <label for="answer">Security Question's Answer</label>
             </div>
           </div>
-          <button class="btn btn-primary btn-block" type="submit" for="Form2">Next Step</button>  
+          <button class="btn btn-primary btn-block" type="submit" >Next Step</button>  
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="login.php">Login Page</a>
@@ -69,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </div>
   </div>
 
-    <?php include 'components/js.php'; ?>
+    <?php include_once 'components/js.php'; ?>
 
 </body>
 

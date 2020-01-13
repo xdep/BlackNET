@@ -112,7 +112,7 @@ Partial Class Form1
         Me.FormSkin1.Name = "FormSkin1"
         Me.FormSkin1.Size = New System.Drawing.Size(287, 696)
         Me.FormSkin1.TabIndex = 0
-        Me.FormSkin1.Text = " "
+        Me.FormSkin1.Text = " BlackNET Builder"
         '
         'PictureBox3
         '

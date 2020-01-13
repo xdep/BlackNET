@@ -117,9 +117,9 @@ class Mailer extends Database{
                     'X-Mailer: PHP/' . phpversion();
                 if(mail($email,$subject,$body,$headers)){
                     return true;
-		} else {
+		      } else {
                     return false;
-		}
+		      }
             }
             
 		} catch (Exception $e) {

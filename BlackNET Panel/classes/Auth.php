@@ -4,100 +4,17 @@
 
   how to user
   $auth = new Auth
-  $auth->newLogin("Faris","my password");
+  $auth->newLogin($_POST['username'],$_POST['password']);
 */
 class Auth extends User{
-  
-  // Random String Generator for 2FA Salt and code
-	function generateString($length,$pattern) {
-	    $characters = $pattern;
-	    $charactersLength = strlen($characters);
-	    $randomString = '';
-	    for ($i = 0; $i < $length; $i++) {
-	        $randomString .= $characters[rand(0, $charactersLength - 1)];
-	    }
-	    return $randomString;
-	}
-
   // function to update 2fa code if needed
-	public function updateCode($username,$code,$secret){
+	public function updateSecret($username,$secret){
 		$pdo = $this->Connect();
-        $sql = "UPDATE auth SET code = :code, secret = :secret WHERE username = :username";
+        $sql = "UPDATE admin SET secret = :secret WHERE username = :username";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute(['username'=>$username,'code'=>hash("sha256", $secret.$code),'secret'=>$secret]);
+        $stmt->execute(['username'=>$username,'secret'=>$secret]);
 	}
 
-  // generate a new salt and bind it to a premade code 
-  // then send an email to the user with the code
-	public function newCode($username,$code){
-		try {
-			$pdo = $this->Connect();
-			$secret = $this->generateString(63,"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
-			if ($this->isExist($username) == true) {
-				$this->updateCode($username,$code,$secret);
-			} else {
-				$pdo = $this->Connect();
-				$sql = "INSERT INTO auth(username,code,secret) VALUES (:username,:code,:secret)";
-				$stmt = $pdo->prepare($sql);
-				$stmt->execute(['username'=>$username,'code'=>hash("sha256", $secret.$code),'secret'=>$secret]);
-				return 'Code Created';
-			}
-			if ($this->sendEmail($username,$code)) {
-				return true;
-			} else {
-				return false;
-			}
-		} catch (Exception $e) {
-			
-		}
-	}
-
-  // check if the code exist
-	public function isExist($username){
-		$pdo = $this->Connect();
-		$sql = $pdo->prepare("SELECT * FROM auth WHERE username = ?");
-		$sql -> execute([$username]);
-		if ($sql->rowCount()) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-  /*
-  Send an email to the user with the code
-  */
-	public function sendEmail($username,$code){
-		$smtp = new Mailer;
-        $pdo = $this->Connect();
-        $data = $this->getUserData($username);
-        $email = $data->email;
-        if ($smtp->sendmail($email,"Your BlackNET verification code",
-        	"<p>Welcome $username
-        	 <br />
-        	 Your verification code: $code
-        	 <br />
-        	 Here is your verification code.
-        	 <br />
-        	 It will expire in 10 minutes
-        	 <br />
-        	 If you didn't try to sign in just now, please change your password to protect your account.
-        	 </p>")) {
-        	return true;
-        } else {
-        	return false;
-        }
-	}
-
-  // get the code the to valid it with the enterd code
-	public function getCode($username){
-        $pdo = $this->Connect();
-        $sql = "SELECT code,secret,created_at FROM auth WHERE username = ?";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([$username]);
-        $data = $stmt->fetch();
-        return $data;
-	}
 
   // check login informations
 	public function newLogin($username,$password){
@@ -138,6 +55,15 @@ class Auth extends User{
       $stmt->execute(['username'=>$username]);
       $data = $stmt->fetch();
       return $data->s2fa;
+  }
+
+  public function getSecret($username){
+      $pdo = $this->Connect();
+      $sql = "SELECT secret FROM admin WHERE username = :username limit 1";
+      $stmt = $pdo->prepare($sql);
+      $stmt->execute(['username'=>$username]);
+      $data = $stmt->fetch();
+      return $data->secret;
   }
 
 }

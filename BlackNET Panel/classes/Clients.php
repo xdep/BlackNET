@@ -122,12 +122,12 @@ class Clients extends Database{
 	}
 
 	// count online clients
-	public function countOnlineClients(){
+	public function countClientsByCond($column_name,$cond){
 		try {
 			$pdo = $this->Connect();
-			$sql = "SELECT COUNT(*) FROM clients WHERE status = :status";
+			$sql = "SELECT COUNT(*) FROM clients WHERE " . $column_name . " = :cond";
 			$stmt = $pdo->prepare($sql);
-			$stmt->execute(['status' => 'online']);
+			$stmt->execute(['cond' => $cond]);
 			$data = $stmt->fetchColumn();
 			return $data;
 		} catch (\Throwable $th) {
@@ -135,34 +135,6 @@ class Clients extends Database{
 		}
 	}
 
-	// count offline clients
-	public function countOfflineClients(){
-		try {
-			$pdo = $this->Connect();
-			$sql = "SELECT COUNT(*) FROM clients WHERE status = :status";
-			$stmt = $pdo->prepare($sql);
-			$stmt->execute(['status' => 'offline']);
-			$data = $stmt->fetchColumn();
-			return $data;
-		} catch (\Throwable $th) {
-			//throw $th;
-		}
-	}
-
-	// count is_usb = yes clients
-	public function countClientByUSB()
-	{
-		try {
-			$pdo = $this->Connect();
-			$sql = "SELECT COUNT(*) FROM clients WHERE is_usb = :usb";
-			$stmt = $pdo->prepare($sql);
-			$stmt->execute(['usb' => 'yes']);
-			$data = $stmt->fetchColumn();
-			return $data;
-		} catch (\Throwable $th) {
-			//throw $th;
-		}
-	}
 
 	// update a client status online/offline
 	public function updateStatus($vicID,$status){
@@ -174,6 +146,45 @@ class Clients extends Database{
 			return 'Updated';
 		} catch (\Throwable $th) {
 			//throw $th;
+		}
+	}
+
+	public function new_log($vicid,$type,$message){
+		try {
+			$pdo = $this->Connect();
+			$sql = "INSERT INTO logs(vicid,type,message) VALUES (:vicid,:type,:message)";
+			$stmt = $pdo->prepare($sql);
+
+			$stmt->execute(['vicid'=>$vicid,'type'=>$type,'message'=>$message]);
+			// create a new command 
+			return 'Log Created';
+		} catch (\Throwable $th) {
+			//throw $th;
+		}
+	}
+
+
+	public function getLogs(){
+		try {
+			$pdo = $this->Connect();
+			$sql = "SELECT * FROM logs";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute();
+			$data = $stmt->fetchAll();
+			return $data;
+		} catch (\Throwable $th) {
+			//throw $th;
+		}
+		
+	}
+	public function deleteLog($id){
+		try{
+		   $pdo = $this->Connect();
+		   $sql = "DELETE FROM logs WHERE id IN ($id)";
+		   $stmt = $pdo->prepare($sql);
+		   $stmt->execute();
+		} catch (\Throwable $th ){
+
 		}
 	}
 
@@ -191,7 +202,7 @@ class Clients extends Database{
 		}
 	}
 
-	// update all clients statis offline/online
+	// update all clients status offline/online
 	public function updateAllStatus($status){
 		try {
 			$pdo = $this->Connect();
@@ -220,6 +231,14 @@ class Clients extends Database{
 		}
 	}
 
+	public function pinged($vicid,$old_pings){
+		$pdo = $this->Connect();
+		$pinged_at = date("m/d/Y H:i:s",time());
+		$sql = "UPDATE clients SET pings = :ping,update_at = :update_at WHERE vicid IN ($vicid)";
+		$stmt = $pdo->prepare($sql);
+		$stmt->execute(['ping'=>$old_pings + 1,"update_at"=>$pinged_at]);
+	}
+
 	// update a command if a client exist
 	public function updateCommands($vicID,$command){
 		try {
@@ -245,14 +264,5 @@ class Clients extends Database{
 		}
 	}
 
-	// count client by country for the map
-	public function countClientByCountry($code){
-		$pdo = $this->Connect();
-		$sql = "SELECT COUNT(*) FROM clients WHERE country = ?";
-		$stmt = $pdo->prepare($sql);
-		$stmt->execute([$code]);
-		$data = $stmt->fetchColumn();
-		return $data;
-	}
 }
 ?>

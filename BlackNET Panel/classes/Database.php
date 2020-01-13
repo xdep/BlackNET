@@ -44,10 +44,8 @@ class Database{
 	}
 
 	public function redirect($url){
-		ob_start();
 		header('Location: ' . $url);
 		exit;
-		ob_flush();
 	}
 
 }

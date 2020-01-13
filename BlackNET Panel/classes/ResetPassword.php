@@ -25,19 +25,15 @@ class ResetPassword extends User {
 			$stmt->execute(['username'=>$rows->username,'token'=>$token]);
 			$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http")."://".$this->getDir();
 		    $sendmail->sendmail($email, "Reset password instructions","
-		    Hello $rows->username
-		    <br />
-		    <br />
-		    You recently made a request to reset your BlackNET account password. Please click the link below to continue. 
-		    <br />
-		    <br />
-		    <a href='".$actual_link."reset.php?key=$token'>Update my password.</a>
-		    <br />
-		    <br />
-		    This link will expire in 10 minutes
-		    <br />
-		    <br />
-		    If you did not make this request, please ignore this email.");
+			Hello $rows->username
+			<br /><br />
+			You recently made a request to reset your BlackNET account password. Please click the link below to continue. 
+			<br /><br />
+			<a href='".$actual_link."reset.php?key=$token'>Update my password.</a>
+			<br /><br />
+			This link will expire in 10 minutes
+			<br /><br />
+			If you did not make this request, please ignore this email.");
 		    return true;
 		 }
 		} catch (Exception $e) {

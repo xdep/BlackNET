@@ -1,6 +1,6 @@
 <?php
-include 'session.php';
-include 'classes/Mailer.php';
+include_once 'session.php';
+include_once 'classes/Mailer.php';
 
 //$current_username is in session.php 
 $question = $user->getQuestionByUser($current_username);
@@ -8,34 +8,10 @@ $question = $user->getQuestionByUser($current_username);
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-     <link rel="shortcut icon" href="favico.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <?php include_once 'components/meta.php'; ?>
     <title>BlackNET - User Settings</title>
     <?php include_once 'components/css.php'; ?>
     <link href="asset/css/bootstrap-switch.css" rel="stylesheet">
-    
-    <style type="text/css">
-    @media (min-width: 1200px) {
-        .container{
-            max-width: 500px;
-        }
-    }
-      .sticky{
-        display: -webkit-box;
-        display: -ms-flexbox;
-        background-color: #e9ecef;
-        height: 80px;
-        right: 0;
-        bottom: 0; 
-        position: absolute;
-        display: flex;
-        width: 100%;
-        flex-shrink: none;
-      }
-    </style>
   </head>
 
   <body id="page-top">
@@ -57,7 +33,7 @@ $question = $user->getQuestionByUser($current_username);
               Update Password</div>
           <form method="POST" action="includes/updatePassword.php">
             <div class="card-body">
-              <div class="container">
+              <div class="container container-special">
               <?php if (isset($_GET['msg']) && $_GET['msg'] === "yes"): ?>
                 <div class="alert alert-success" role="alert">
                   <span class="fa fa-check-circle"></span> User settings has been updated
@@ -70,7 +46,7 @@ $question = $user->getQuestionByUser($current_username);
                 </div>
               <?php endif; ?>
             </div>
-              <div class="container">
+              <div class="container container-special">
                 <div class="align-content-center justify-content-center">
                 <input hidden="" value="<?php echo $data->id ?>" name="id" id="id">
                 <input type="text" name="csrf" id="csrf" hidden="" value="<?php  echo($csrf);  ?>">
@@ -97,10 +73,10 @@ $question = $user->getQuestionByUser($current_username);
                   <small>Keep it empty if you do not want change the password.</small>
                   </div>
 
-                  <div class="form-group">             
+                  <div class="form-group"> 
                     <div class="form-group">
-                       <label for="switch-state">Enable 2FA: </label>
-                      <input class="bootstrap-switch" id="auth-state" name="auth-state" type="checkbox" data-size="small" <?php if ($data->s2fa == "on") { echo 'checked'; } ?>>
+                      <label for="switch-state">Enable 2FA: </label>
+                      <a href="authsettings.php" class="btn btn-primary text-white">Open 2FA Settings</a>
                     </div>
                   </div>
                   <div class="form-group">

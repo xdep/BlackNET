@@ -1,9 +1,9 @@
 <?php 
 session_start();
-include 'classes/Database.php';
-include 'classes/User.php';
-include 'classes/Mailer.php';
-include 'classes/ResetPassword.php';
+include_once 'classes/Database.php';
+include_once 'classes/User.php';
+include_once 'classes/Mailer.php';
+include_once 'classes/ResetPassword.php';
 $key = $_GET['key'];
 $updatePassword = new ResetPassword;
 if ($updatePassword->isExist($key) == "Key Exist") {
@@ -12,7 +12,7 @@ $question = $updatePassword->isQuestionEnabled($data->username);
 $answerd = isset($_GET['answered']) ? $_GET['answered'] : "false";
 if ($question != false) {
   if ($answerd !="true") {
-      $updatePassword->redirect("question.php?username=$data->username&&key=$key");
+      $updatePassword->redirect("question.php?username=$data->username&key=$key");
   }
 }
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -33,16 +33,9 @@ session_destroy();
 <html lang="en">
 
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
+  <?php include_once 'components/meta.php'; ?>
   <title>BlackNET - Reset Password</title>
-  <link rel="shortcut icon" href="favico.png">
-  <?php include 'components/css.php'; ?>
+  <?php include_once 'components/css.php'; ?>
 
 </head>
 
@@ -71,14 +64,14 @@ session_destroy();
 
           <div class="form-group">
             <div class="form-label-group">
-              <input type="password" name="password" id="password" class="form-control" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Must contain at least one number, one uppercase letter, lowercase letter, one character, and at least 8 or more characters" placeholder="Enter your new password" required="required" autofocus="autofocus">
+              <input type="password" name="password" id="password" class="form-control" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Must contain at least one number, one uppercase letter, lowercase letter, one character, and at least 8 or more characters" placeholder="New Password" required="required" autofocus="autofocus">
               <label for="password">New Password</label>
             </div>
           </div>
 
           <div class="form-group">
             <div class="form-label-group">
-              <input type="password" name="confirmPassword" id="confirmPassword" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Must contain at least one number, one uppercase letter, lowercase letter, one special character, and at least 8 or more characters" class="form-control" placeholder="Enter your password again" required="required" autofocus="autofocus">
+              <input type="password" name="confirmPassword" id="confirmPassword" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Must contain at least one number, one uppercase letter, lowercase letter, one special character, and at least 8 or more characters" class="form-control" placeholder="Confirm Password" required="required" autofocus="autofocus">
               <label for="confirmPassword">Confirm Password</label>
             </div>
         </div>
@@ -93,7 +86,7 @@ session_destroy();
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <?php include 'components/js.php'; ?>
+  <?php include_once 'components/js.php'; ?>
 
 </body>
 

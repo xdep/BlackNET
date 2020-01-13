@@ -57,12 +57,6 @@ class User extends Database{
             $email = $user->email;
         }
 
-        if($auth == "") {
-            $auth = "off";
-        } else {
-             $auth = "on";
-        }
-
         if ($sqenable == "") {
             $sqenable = "off";
         } else {
@@ -82,14 +76,35 @@ class User extends Database{
         username = :username,
         email = :email,
         password = :password,
-        s2fa = :auth,
         sqenable = :sqenable,
         question = :question,
         answer = :answer
         WHERE id = :id";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute(['username'=>$username,'email'=>$email,'password'=>$password,'auth'=>$auth,'sqenable'=>$sqenable,'question'=>$question,'answer'=>$answer,'id'=>$id]);
+        $stmt->execute(['username'=>$username,'email'=>$email,'password'=>$password,'sqenable'=>$sqenable,'question'=>$question,'answer'=>$answer,'id'=>$id]);
         return 'Username Updated';
+    }
+
+    // Function that enabled 2FA
+    public function enables2fa($username,$secret,$status){
+        $pdo = $this->Connect();
+        $auth = "";
+        if($status == "") {
+            $auth = "off";
+        } else {
+             $auth = "on";
+        }
+
+        if($auth == "off"){
+            $secret = "null";
+        }
+
+        $sql = "UPDATE admin SET 
+        s2fa = :auth,
+        secret = :secret
+        WHERE username = :username";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(['username'=>$username,'auth'=>$auth,'secret'=>$secret]);
     }
 
     // get question using $username

@@ -16,30 +16,12 @@ if (file_exists("upload/$vicID/Passwords.txt")){
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="favico.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Botnet Coded By Black.Hacker">
-    <meta name="author" content="Black.Hacker">
+  <?php include_once 'components/meta.php'; ?>
 	<title>BlackNET - View Passwords</title>
 	<?php include_once 'components/css.php'; ?>
 	<link href="asset/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="asset/vendor/responsive/css/responsive.dataTables.css" rel="stylesheet">
     <link href="asset/vendor/responsive/css/responsive.bootstrap4.css" rel="stylesheet">
-    <style type="text/css">
-      .sticky{
-        display: -webkit-box;
-        display: -ms-flexbox;
-        background-color: #e9ecef;
-        height: 80px;
-        right: 0;
-        bottom: 0; 
-        position: absolute;
-        display: flex;
-        width: 100%;
-        flex-shrink: none;
-      }
-    </style>
 </head>
 <body id="page-top">
 	<?php include_once 'components/header.php'; ?>

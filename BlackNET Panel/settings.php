@@ -12,33 +12,10 @@ $getSettings = $settings->getSettings(1);
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-     <link rel="shortcut icon" href="favico.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <?php include_once 'components/meta.php'; ?>
     <title>BlackNET - Network Settings</title>
     <?php include_once 'components/css.php'; ?>
     <link href="asset/css/bootstrap-switch.css" rel="stylesheet">
-    <style type="text/css">
-    @media (min-width: 1200px) {
-        .container{
-            max-width: 500px;
-        }
-    }
-      .sticky{
-        display: -webkit-box;
-        display: -ms-flexbox;
-        background-color: #e9ecef;
-        height: 80px;
-        right: 0;
-        bottom: 0; 
-        position: absolute;
-        display: flex;
-        width: 100%;
-        flex-shrink: none;
-      }
-    </style>
   </head>
 
   <body id="page-top">
@@ -58,7 +35,7 @@ $getSettings = $settings->getSettings(1);
               <div class="card-body">
           <form id="Form1" name="Form1" method="POST" action="includes/updateSettings.php">
             
-              <div class="container">
+              <div class="container container-special">
               <?php if (isset($_GET['msg']) && $_GET['msg'] === "yes"): ?>
                 <div class="alert alert-success" role="alert">
                   <span class="fa fa-check-circle"></span> Settings Has Been Updated
@@ -71,7 +48,7 @@ $getSettings = $settings->getSettings(1);
                 </div>
               <?php endif; ?>
             </div>
-              <div class="container">
+              <div class="container container-special">
                 <div class="align-content-center justify-content-center">
                 <input type="text" name="csrf" id="csrf" hidden="" value="<?php  echo($csrf);  ?>">
                 <input hidden="" value="<?php echo $getSettings->id ?>" name="id" id="id">
@@ -111,7 +88,7 @@ $getSettings = $settings->getSettings(1);
       </form>
       
       <form id="Form2" name="Form2" method="POST" action="includes/updateSMTP.php" class="pt-2">
-        <div class="container" class="align-content-center justify-content-center">
+        <div class="container container-special" class="align-content-center justify-content-center">
                 <input type="text" name="csrf" id="csrf" hidden="" value="<?php  echo($csrf);  ?>">
                 <input hidden="" value="<?php echo $getSMTP->id ?>" name="id" id="id">
                <div class="form-group">             

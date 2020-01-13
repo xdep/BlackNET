@@ -1,5 +1,3 @@
-  <form method='POST'>
-    <div class="container">
       <div class="text-center">
         <p class="font-weight-bold">DDOS Attack</p>
       </div>
@@ -19,8 +17,16 @@
         <label for="TargetURL">Enter Host to Attack</label>
         <input class="form-control" type='text' name='TargetURL' id="TargetURL">
       </div>
-      <div class="text-center col-auto">
-        <button class='btn btn-dark btn-block'>Start DDOS</button>
+      <div class="form-group col-auto">
+        <label for="thread">Enter number of thread</label>
+        <input class="form-control" type='text' size="4" maxlength="4" name='thread' id="thread">
+        <small>From 1 to 1000</small>
       </div>
-    </div>
-  </form>
+      <div class="form-group col-auto">
+        <label for="timeout">Enter number to timeout</label>
+        <input class="form-control" type='text' size="4" maxlength="4" name='timeout' id="timeout">
+        <small>From 1 to 1000</small>
+      </div>
+      <div class="text-center col-auto">
+        <button class='btn btn-dark btn-block' name="Form2">Start DDOS</button>
+      </div>

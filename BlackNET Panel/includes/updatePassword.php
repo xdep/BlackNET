@@ -1,5 +1,5 @@
 <?php 
-include '../session.php';
+include_once '../session.php';
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	if ($csrf != $_POST['csrf']){
