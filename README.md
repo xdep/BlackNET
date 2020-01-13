@@ -116,23 +116,42 @@ v2.5
     - Better Security
     - More DDOS Settings
     - DRY classes
+    - New Unknown Country Flag
     - Replace 2FA By Email to 2FA By App
+      + Authy or Google Authenticator
+      + Stable 2FA System
+      + Trust Device for 30 days
+      + Disable it any time you want
+      + Secure 215-bit Secret
     - Integrate sonata-project/GoogleAuthenticator
-    - Panel Update System
+    - Panel Updater System
+      + No need to do fresh install
       + Create new tables
       + Update old tables
       + Create new columns
+      + Update current columns
+      + Inser new values
       + Drop unused tables
     - Cron Job System
       + Ping.php [ Run it every 10min ]
         + Ping clients
         + Offline unactive clients
+    - Replace amCharts Maps with jVectorMaps
+        + Better Speed
+        + Simple Maps
+        + Fast Loading
+        + Cleaner Look
+        + Unbranded
+    - Cleaner Code
     - Bug Fixes
-      
+    
   + VB.NET
     - Logs System
     - More DDOS Settings
     - Stable Client
+    - Better Speed
+    - Cleaner Code
+    - Ping is working now
     - Bug Fixes
 ````
 
@@ -151,6 +170,19 @@ i will review it in 1 - 5 days then i will merge it with the master branch
 
 ## Python Edition
 [BlackHacker511/BlackNET-Python](http://github.com/BlackHacker511/BlackNET-Python)
+
+## Saas Plugin
+Now you can sell BlackNET accounts and start your own botnet business
+1. create new account
+2. manage accounts
+3. banned accounts
+4. limit clients per account
+5. move clients between accounts
+6. remove accounts
+7. create a licenses per account
+8. manage licenses
+
+plugin status: 25% finish
 
 ## Donate
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=farisksa79%40gmail.com&item_name=BlackNET+Development&currency_code=USD&source=url"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
@@ -172,4 +204,3 @@ This project is licensed under the MIT License
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/) 
 
 Copyright © Black.Hacker - 2020
-
