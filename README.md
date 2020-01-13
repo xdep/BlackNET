@@ -100,7 +100,7 @@ v2.5
       + Secure 215-bit Secret
     - Integrate sonata-project/GoogleAuthenticator
     - Panel Updater System
-      + No need to do fresh install
+      + No need to do fresh install ( for old users ) 
       + Create new tables
       + Update old tables
       + Create new columns
