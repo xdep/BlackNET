@@ -12,7 +12,6 @@ $A = explode("|BN|", sanitizeInput($command));
 switch ($A[0]) {
 	case "Uninstall":
           $client->removeClient($ID);
-          delete_files("upload/" . trim($ID,"'"));          
 		break;
 
 	case "CleanCommands":
@@ -44,22 +43,6 @@ switch ($A[0]) {
 		break;
 	default:
 		break;
-}
-
-function delete_files($target) {
-	try {
-	    if(is_dir($target)){
-	        $files = glob($target . "/" . '{,.}*', GLOB_BRACE);
-	        foreach($files as $file){
-	            delete_files($file);      
-	        }
-	        rmdir($target);
-	    } elseif(is_file($target)) {
-	        unlink($target);  
-	    }
-	} catch (Exception $e) {
-		
-	}
 }
 
 function sanitizeInput($value){
