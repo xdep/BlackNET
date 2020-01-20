@@ -71,18 +71,12 @@ Developed By: Black.Hacker
 
 <img src="https://4.top4top.net/p_1456uda0g1.png" alt="How to encrypt BlackNET" width="340" hieght="775" />
 
+## YouTube Tutorials
+[How to install BlackNET v2.0](https://youtu.be/aWic9V5T_PQ)
 
-## YouTube - How To Install
-<a href="https://youtu.be/aWic9V5T_PQ"><img src="https://1.top4top.net/p_1423q6dks1.png" alt="" width="150" hieght="150"></a>
+[How to update BlackNET to v2.5](https://youtu.be/07XioeJvPZk)
 
-## YouTube - How to Update
-<a href="https://youtu.be/07XioeJvPZk"><img src="https://1.top4top.net/p_1423q6dks1.png" alt="" width="150" hieght="150"></a>
-
-## YouTube - How to Encrypt
-<a href="https://www.youtube.com/watch?v=hzC8_UYGor0"><img src="https://1.top4top.net/p_1423q6dks1.png" alt="How to encrypt BlackNET" width="150" hieght="150"></a>
-
-Scan Result: [Encrtypted Output: 3/31](https://shortty.co/THcAq)
-
+[How to obfuscate BlackNET](https://www.youtube.com/watch?v=hzC8_UYGor0)
 
 ## What's New
 
