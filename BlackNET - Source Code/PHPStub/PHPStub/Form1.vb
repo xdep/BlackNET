@@ -613,6 +613,7 @@ Public Class Form1
 
                         End Try
                 End Select
+                System.Threading.Thread.Sleep(100000)
             Loop
         Catch ex As Exception
 
