@@ -33,7 +33,7 @@
       }
    }
 
-   function checkUniqeId($id){
+   function checkUniqeId($uniqeid){
     if (isset( $_COOKIE[ '2fa' ] )) {
       if (isset( $_COOKIE['device_id'] )) {
         if($_COOKIE['device_id'] == $uniqeid){ return true; } else { return false; }
