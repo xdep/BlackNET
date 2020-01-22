@@ -4,7 +4,7 @@
 
 <p align="center">
  <a href="#"><img align="center" alt="Maintenance" src="https://img.shields.io/maintenance/yes/2020"></a>
- <a href="#"><img align="center" src="https://img.shields.io/github/languages/top/BlackHacker511/BlackNET" /></a>
+ <a href="#"><img align="center" src="https://api.codacy.com/project/badge/Grade/cea018ab5a474002860c60f9fd4d978a" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/license/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/v/release/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FBlackHacker511%2FBlackNET.svg?type=shield"/></a>
@@ -177,7 +177,6 @@ BTC: 1DXMk3Dm2GXUsLe9ZFmNNs9jxa2qNX9GfW
 ## License
 This project is licensed under the MIT License
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cea018ab5a474002860c60f9fd4d978a)](https://app.codacy.com/manual/BlackHacker511/BlackNET?utm_source=github.com&utm_medium=referral&utm_content=BlackHacker511/BlackNET&utm_campaign=Badge_Grade_Dashboard)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FBlackHacker511%2FBlackNET.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FBlackHacker511%2FBlackNET?ref=badge_large)
 
 ## Copyright
