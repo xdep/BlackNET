@@ -173,7 +173,7 @@ Now you can sell BlackNET accounts and start your own botnet business
 plugin status: 25% finish
 
 ## Donate
-<a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=farisksa79%40gmail.com&item_name=BlackNET+Development&currency_code=USD&source=url"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
+<a target="_blank" href="http://paypal.me/BlackHacker1"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
 
 BTC: 1DXMk3Dm2GXUsLe9ZFmNNs9jxa2qNX9GfW
 
