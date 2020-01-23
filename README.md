@@ -131,6 +131,16 @@ v2.5
 ## Coming Soon
 ````
 v3.0
+  + PHP
+    - Cleaner Code
+    - XSS Protection
+    - SQLi Protection
+    - Path Manipulation Protection
+    - Sanitized All Inputs and Outputs
+  
+  + VB.NET
+    - Cleaner Code
+    - Stabler Connection
 ````
 
 ## Pull Request
