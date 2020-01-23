@@ -60,9 +60,9 @@ Developed By: Black.Hacker
 ## Screenshots
 ![Installtion Page](https://i.imgur.com/RwNTwgs.png)
 
-![Image of Login Page](https://2.top4top.net/p_14447rrth1.png)
+![Image of Login Page](https://b.top4top.io/p_1482shh7l1.png)
 
-![Image of the interface](https://3.top4top.net/p_1444y3poq2.png)
+![Image of the interface](https://j.top4top.io/p_1482stt3l1.png)
 
 ![Image of the Builder](https://i.gyazo.com/3009893d1d8df53ca783d52406199448.png)
 
