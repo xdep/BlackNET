@@ -144,6 +144,7 @@ v3.0
     - Cleaner Code
     - Password Protection
     - Added [ Save Settings ] Button
+    - Disable Windows Defender
     - Stable Connection
     - Bug Fixes
 ````
