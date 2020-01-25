@@ -137,10 +137,14 @@ v3.0
     - SQLi Protection
     - Path Manipulation Protection
     - Sanitized All Inputs and Outputs
+    - Password Protection
+    - Bug Fixes
   
   + VB.NET
     - Cleaner Code
-    - Stabler Connection
+    - Password Protection
+    - Stable Connection
+    - Bug Fixes
 ````
 
 ## Pull Request
