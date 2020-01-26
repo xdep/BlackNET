@@ -24,6 +24,8 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.FormSkin1 = New BlackNet_Builder.FormSkin()
+        Me.FlatTextBox4 = New BlackNet_Builder.FlatTextBox()
+        Me.FlatLabel4 = New BlackNet_Builder.FlatLabel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.FlatCheckBox13 = New BlackNet_Builder.FlatCheckBox()
         Me.FlatCheckBox12 = New BlackNet_Builder.FlatCheckBox()
@@ -58,10 +60,13 @@ Partial Class Form1
         Me.FlatButton1 = New BlackNet_Builder.FlatButton()
         Me.FlatLabel6 = New BlackNet_Builder.FlatLabel()
         Me.FlatStatusBar1 = New BlackNet_Builder.FlatStatusBar()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.FlatCheckBox15 = New BlackNet_Builder.FlatCheckBox()
         Me.FormSkin1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'FormSkin1
@@ -69,6 +74,10 @@ Partial Class Form1
         Me.FormSkin1.BackColor = System.Drawing.Color.White
         Me.FormSkin1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.FormSkin1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.FormSkin1.Controls.Add(Me.PictureBox4)
+        Me.FormSkin1.Controls.Add(Me.FlatCheckBox15)
+        Me.FormSkin1.Controls.Add(Me.FlatTextBox4)
+        Me.FormSkin1.Controls.Add(Me.FlatLabel4)
         Me.FormSkin1.Controls.Add(Me.PictureBox3)
         Me.FormSkin1.Controls.Add(Me.FlatCheckBox13)
         Me.FormSkin1.Controls.Add(Me.FlatCheckBox12)
@@ -110,15 +119,42 @@ Partial Class Form1
         Me.FormSkin1.HeaderMaximize = False
         Me.FormSkin1.Location = New System.Drawing.Point(0, 0)
         Me.FormSkin1.Name = "FormSkin1"
-        Me.FormSkin1.Size = New System.Drawing.Size(287, 696)
+        Me.FormSkin1.Size = New System.Drawing.Size(287, 760)
         Me.FormSkin1.TabIndex = 0
         Me.FormSkin1.Text = " BlackNET Builder"
+        '
+        'FlatTextBox4
+        '
+        Me.FlatTextBox4.BackColor = System.Drawing.Color.Transparent
+        Me.FlatTextBox4.Location = New System.Drawing.Point(64, 141)
+        Me.FlatTextBox4.MaxLength = 32767
+        Me.FlatTextBox4.Multiline = False
+        Me.FlatTextBox4.Name = "FlatTextBox4"
+        Me.FlatTextBox4.ReadOnly = False
+        Me.FlatTextBox4.Size = New System.Drawing.Size(206, 29)
+        Me.FlatTextBox4.TabIndex = 39
+        Me.FlatTextBox4.Text = "Connection Password"
+        Me.FlatTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.FlatTextBox4.TextColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.FlatTextBox4.UseSystemPasswordChar = False
+        '
+        'FlatLabel4
+        '
+        Me.FlatLabel4.AutoSize = True
+        Me.FlatLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel4.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel4.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel4.Location = New System.Drawing.Point(1, 148)
+        Me.FlatLabel4.Name = "FlatLabel4"
+        Me.FlatLabel4.Size = New System.Drawing.Size(65, 13)
+        Me.FlatLabel4.TabIndex = 38
+        Me.FlatLabel4.Text = "Password : "
         '
         'PictureBox3
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(98, 531)
+        Me.PictureBox3.Location = New System.Drawing.Point(100, 596)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -133,7 +169,7 @@ Partial Class Form1
         Me.FlatCheckBox13.Checked = False
         Me.FlatCheckBox13.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatCheckBox13.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox13.Location = New System.Drawing.Point(3, 501)
+        Me.FlatCheckBox13.Location = New System.Drawing.Point(5, 566)
         Me.FlatCheckBox13.Name = "FlatCheckBox13"
         Me.FlatCheckBox13.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
         Me.FlatCheckBox13.Size = New System.Drawing.Size(112, 22)
@@ -148,10 +184,10 @@ Partial Class Form1
         Me.FlatCheckBox12.Checked = False
         Me.FlatCheckBox12.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatCheckBox12.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox12.Location = New System.Drawing.Point(3, 334)
+        Me.FlatCheckBox12.Location = New System.Drawing.Point(5, 371)
         Me.FlatCheckBox12.Name = "FlatCheckBox12"
         Me.FlatCheckBox12.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
-        Me.FlatCheckBox12.Size = New System.Drawing.Size(128, 22)
+        Me.FlatCheckBox12.Size = New System.Drawing.Size(113, 22)
         Me.FlatCheckBox12.TabIndex = 35
         Me.FlatCheckBox12.Text = "Enable Binder"
         '
@@ -163,7 +199,7 @@ Partial Class Form1
         Me.FlatCheckBox11.Checked = False
         Me.FlatCheckBox11.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatCheckBox11.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox11.Location = New System.Drawing.Point(3, 612)
+        Me.FlatCheckBox11.Location = New System.Drawing.Point(5, 677)
         Me.FlatCheckBox11.Name = "FlatCheckBox11"
         Me.FlatCheckBox11.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
         Me.FlatCheckBox11.Size = New System.Drawing.Size(166, 22)
@@ -174,7 +210,7 @@ Partial Class Form1
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(167, 282)
+        Me.PictureBox2.Location = New System.Drawing.Point(169, 319)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -189,7 +225,7 @@ Partial Class Form1
         Me.FlatCheckBox10.Checked = False
         Me.FlatCheckBox10.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatCheckBox10.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox10.Location = New System.Drawing.Point(3, 279)
+        Me.FlatCheckBox10.Location = New System.Drawing.Point(5, 316)
         Me.FlatCheckBox10.Name = "FlatCheckBox10"
         Me.FlatCheckBox10.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
         Me.FlatCheckBox10.Size = New System.Drawing.Size(166, 22)
@@ -204,7 +240,7 @@ Partial Class Form1
         Me.FlatCheckBox1.Checked = False
         Me.FlatCheckBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatCheckBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox1.Location = New System.Drawing.Point(3, 307)
+        Me.FlatCheckBox1.Location = New System.Drawing.Point(5, 344)
         Me.FlatCheckBox1.Name = "FlatCheckBox1"
         Me.FlatCheckBox1.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
         Me.FlatCheckBox1.Size = New System.Drawing.Size(112, 22)
@@ -233,7 +269,7 @@ Partial Class Form1
         Me.FlatCheckBox9.Checked = False
         Me.FlatCheckBox9.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatCheckBox9.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox9.Location = New System.Drawing.Point(3, 362)
+        Me.FlatCheckBox9.Location = New System.Drawing.Point(5, 399)
         Me.FlatCheckBox9.Name = "FlatCheckBox9"
         Me.FlatCheckBox9.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
         Me.FlatCheckBox9.Size = New System.Drawing.Size(128, 22)
@@ -275,7 +311,7 @@ Partial Class Form1
         Me.FlatCheckBox8.Checked = False
         Me.FlatCheckBox8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatCheckBox8.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox8.Location = New System.Drawing.Point(3, 390)
+        Me.FlatCheckBox8.Location = New System.Drawing.Point(5, 427)
         Me.FlatCheckBox8.Name = "FlatCheckBox8"
         Me.FlatCheckBox8.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
         Me.FlatCheckBox8.Size = New System.Drawing.Size(139, 22)
@@ -294,7 +330,7 @@ Partial Class Form1
         '
         Me.FlatTextBox5.BackColor = System.Drawing.Color.Transparent
         Me.FlatTextBox5.Enabled = False
-        Me.FlatTextBox5.Location = New System.Drawing.Point(64, 245)
+        Me.FlatTextBox5.Location = New System.Drawing.Point(64, 276)
         Me.FlatTextBox5.MaxLength = 32767
         Me.FlatTextBox5.Multiline = False
         Me.FlatTextBox5.Name = "FlatTextBox5"
@@ -312,7 +348,7 @@ Partial Class Form1
         Me.FlatLabel5.BackColor = System.Drawing.Color.Transparent
         Me.FlatLabel5.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.FlatLabel5.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel5.Location = New System.Drawing.Point(2, 252)
+        Me.FlatLabel5.Location = New System.Drawing.Point(2, 283)
         Me.FlatLabel5.Name = "FlatLabel5"
         Me.FlatLabel5.Size = New System.Drawing.Size(66, 13)
         Me.FlatLabel5.TabIndex = 20
@@ -332,7 +368,7 @@ Partial Class Form1
         Me.FlatComboBox1.HoverColor = System.Drawing.Color.DeepSkyBlue
         Me.FlatComboBox1.ItemHeight = 18
         Me.FlatComboBox1.Items.AddRange(New Object() {"Temp ", "AppData", "UserProfile", "ProgramData", "WinDir"})
-        Me.FlatComboBox1.Location = New System.Drawing.Point(64, 215)
+        Me.FlatComboBox1.Location = New System.Drawing.Point(64, 246)
         Me.FlatComboBox1.Name = "FlatComboBox1"
         Me.FlatComboBox1.Size = New System.Drawing.Size(206, 24)
         Me.FlatComboBox1.TabIndex = 19
@@ -346,7 +382,7 @@ Partial Class Form1
         Me.FlatCheckBox7.Checked = False
         Me.FlatCheckBox7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatCheckBox7.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox7.Location = New System.Drawing.Point(3, 445)
+        Me.FlatCheckBox7.Location = New System.Drawing.Point(5, 482)
         Me.FlatCheckBox7.Name = "FlatCheckBox7"
         Me.FlatCheckBox7.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
         Me.FlatCheckBox7.Size = New System.Drawing.Size(112, 22)
@@ -369,10 +405,10 @@ Partial Class Form1
         Me.FlatCheckBox6.Checked = False
         Me.FlatCheckBox6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatCheckBox6.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox6.Location = New System.Drawing.Point(3, 418)
+        Me.FlatCheckBox6.Location = New System.Drawing.Point(5, 455)
         Me.FlatCheckBox6.Name = "FlatCheckBox6"
         Me.FlatCheckBox6.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
-        Me.FlatCheckBox6.Size = New System.Drawing.Size(139, 22)
+        Me.FlatCheckBox6.Size = New System.Drawing.Size(113, 22)
         Me.FlatCheckBox6.TabIndex = 14
         Me.FlatCheckBox6.Text = "RSA Encryption"
         '
@@ -380,7 +416,7 @@ Partial Class Form1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Location = New System.Drawing.Point(110, 567)
+        Me.PictureBox1.Location = New System.Drawing.Point(112, 632)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(40, 40)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -395,7 +431,7 @@ Partial Class Form1
         Me.FlatCheckBox5.Checked = False
         Me.FlatCheckBox5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatCheckBox5.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox5.Location = New System.Drawing.Point(3, 584)
+        Me.FlatCheckBox5.Location = New System.Drawing.Point(5, 649)
         Me.FlatCheckBox5.Name = "FlatCheckBox5"
         Me.FlatCheckBox5.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
         Me.FlatCheckBox5.Size = New System.Drawing.Size(112, 22)
@@ -410,7 +446,7 @@ Partial Class Form1
         Me.FlatCheckBox4.Checked = False
         Me.FlatCheckBox4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatCheckBox4.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox4.Location = New System.Drawing.Point(3, 557)
+        Me.FlatCheckBox4.Location = New System.Drawing.Point(5, 622)
         Me.FlatCheckBox4.Name = "FlatCheckBox4"
         Me.FlatCheckBox4.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
         Me.FlatCheckBox4.Size = New System.Drawing.Size(112, 22)
@@ -425,7 +461,7 @@ Partial Class Form1
         Me.FlatCheckBox3.Checked = False
         Me.FlatCheckBox3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatCheckBox3.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox3.Location = New System.Drawing.Point(3, 529)
+        Me.FlatCheckBox3.Location = New System.Drawing.Point(5, 594)
         Me.FlatCheckBox3.Name = "FlatCheckBox3"
         Me.FlatCheckBox3.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
         Me.FlatCheckBox3.Size = New System.Drawing.Size(112, 22)
@@ -440,10 +476,10 @@ Partial Class Form1
         Me.FlatCheckBox2.Checked = False
         Me.FlatCheckBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatCheckBox2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox2.Location = New System.Drawing.Point(3, 473)
+        Me.FlatCheckBox2.Location = New System.Drawing.Point(5, 538)
         Me.FlatCheckBox2.Name = "FlatCheckBox2"
         Me.FlatCheckBox2.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
-        Me.FlatCheckBox2.Size = New System.Drawing.Size(189, 22)
+        Me.FlatCheckBox2.Size = New System.Drawing.Size(128, 22)
         Me.FlatCheckBox2.TabIndex = 9
         Me.FlatCheckBox2.Text = "Anti-Debugging"
         '
@@ -463,7 +499,7 @@ Partial Class Form1
         'FlatTextBox3
         '
         Me.FlatTextBox3.BackColor = System.Drawing.Color.Transparent
-        Me.FlatTextBox3.Location = New System.Drawing.Point(64, 180)
+        Me.FlatTextBox3.Location = New System.Drawing.Point(64, 211)
         Me.FlatTextBox3.MaxLength = 32767
         Me.FlatTextBox3.Multiline = False
         Me.FlatTextBox3.Name = "FlatTextBox3"
@@ -477,7 +513,7 @@ Partial Class Form1
         'FlatTextBox2
         '
         Me.FlatTextBox2.BackColor = System.Drawing.Color.Transparent
-        Me.FlatTextBox2.Location = New System.Drawing.Point(64, 145)
+        Me.FlatTextBox2.Location = New System.Drawing.Point(64, 176)
         Me.FlatTextBox2.MaxLength = 32767
         Me.FlatTextBox2.Multiline = False
         Me.FlatTextBox2.Name = "FlatTextBox2"
@@ -510,7 +546,7 @@ Partial Class Form1
         Me.FlatLabel3.BackColor = System.Drawing.Color.Transparent
         Me.FlatLabel3.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.FlatLabel3.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel3.Location = New System.Drawing.Point(15, 187)
+        Me.FlatLabel3.Location = New System.Drawing.Point(15, 218)
         Me.FlatLabel3.Name = "FlatLabel3"
         Me.FlatLabel3.Size = New System.Drawing.Size(52, 13)
         Me.FlatLabel3.TabIndex = 3
@@ -522,7 +558,7 @@ Partial Class Form1
         Me.FlatLabel2.BackColor = System.Drawing.Color.Transparent
         Me.FlatLabel2.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.FlatLabel2.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel2.Location = New System.Drawing.Point(5, 152)
+        Me.FlatLabel2.Location = New System.Drawing.Point(5, 183)
         Me.FlatLabel2.Name = "FlatLabel2"
         Me.FlatLabel2.Size = New System.Drawing.Size(61, 13)
         Me.FlatLabel2.TabIndex = 2
@@ -547,7 +583,7 @@ Partial Class Form1
         Me.FlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatButton1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.FlatButton1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.FlatButton1.Location = New System.Drawing.Point(0, 641)
+        Me.FlatButton1.Location = New System.Drawing.Point(0, 705)
         Me.FlatButton1.Name = "FlatButton1"
         Me.FlatButton1.Rounded = False
         Me.FlatButton1.Size = New System.Drawing.Size(287, 32)
@@ -561,7 +597,7 @@ Partial Class Form1
         Me.FlatLabel6.BackColor = System.Drawing.Color.Transparent
         Me.FlatLabel6.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.FlatLabel6.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel6.Location = New System.Drawing.Point(28, 220)
+        Me.FlatLabel6.Location = New System.Drawing.Point(28, 251)
         Me.FlatLabel6.Name = "FlatLabel6"
         Me.FlatLabel6.Size = New System.Drawing.Size(39, 13)
         Me.FlatLabel6.TabIndex = 21
@@ -573,7 +609,7 @@ Partial Class Form1
         Me.FlatStatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.FlatStatusBar1.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.FlatStatusBar1.ForeColor = System.Drawing.Color.White
-        Me.FlatStatusBar1.Location = New System.Drawing.Point(0, 673)
+        Me.FlatStatusBar1.Location = New System.Drawing.Point(0, 737)
         Me.FlatStatusBar1.Name = "FlatStatusBar1"
         Me.FlatStatusBar1.RectColor = System.Drawing.Color.DeepSkyBlue
         Me.FlatStatusBar1.ShowTimeDate = False
@@ -582,12 +618,38 @@ Partial Class Form1
         Me.FlatStatusBar1.Text = "Version:"
         Me.FlatStatusBar1.TextColor = System.Drawing.Color.White
         '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(191, 511)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 41
+        Me.PictureBox4.TabStop = False
+        '
+        'FlatCheckBox15
+        '
+        Me.FlatCheckBox15.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.FlatCheckBox15.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatCheckBox15.BorderColor = System.Drawing.Color.DeepSkyBlue
+        Me.FlatCheckBox15.Checked = False
+        Me.FlatCheckBox15.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatCheckBox15.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.FlatCheckBox15.Location = New System.Drawing.Point(5, 510)
+        Me.FlatCheckBox15.Name = "FlatCheckBox15"
+        Me.FlatCheckBox15.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
+        Me.FlatCheckBox15.Size = New System.Drawing.Size(183, 22)
+        Me.FlatCheckBox15.TabIndex = 40
+        Me.FlatCheckBox15.Text = "Disable Windows Defender"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(287, 696)
+        Me.ClientSize = New System.Drawing.Size(287, 760)
         Me.Controls.Add(Me.FormSkin1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -602,6 +664,7 @@ Partial Class Form1
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -640,4 +703,9 @@ Partial Class Form1
     Friend WithEvents FlatCheckBox12 As BlackNet_Builder.FlatCheckBox
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents FlatCheckBox13 As BlackNet_Builder.FlatCheckBox
+    Friend WithEvents FlatCheckBox14 As BlackNet_Builder.FlatCheckBox
+    Friend WithEvents FlatTextBox4 As BlackNet_Builder.FlatTextBox
+    Friend WithEvents FlatLabel4 As BlackNet_Builder.FlatLabel
+    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
+    Friend WithEvents FlatCheckBox15 As BlackNet_Builder.FlatCheckBox
 End Class

