@@ -3,8 +3,7 @@
 </p>
 
 <p align="center">
- <a href="#"><img align="center" alt="Maintenance" src="https://img.shields.io/maintenance/yes/2020"></a>
- <a href="#"><img align="center" src="https://img.shields.io/github/languages/top/BlackHacker511/BlackNET" /></a>
+ <a href="#"><img align="center" src="https://img.shields.io/maintenance/yes/2020" /></a> 
  <a href="#"><img align="center" src="https://img.shields.io/github/license/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://img.shields.io/github/v/release/BlackHacker511/BlackNET" /></a>
  <a href="#"><img align="center" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FBlackHacker511%2FBlackNET.svg?type=shield"/></a>
@@ -61,9 +60,9 @@ Developed By: Black.Hacker
 ## Screenshots
 ![Installtion Page](https://i.imgur.com/RwNTwgs.png)
 
-![Image of Login Page](https://2.top4top.net/p_14447rrth1.png)
+![Image of Login Page](https://b.top4top.io/p_1482shh7l1.png)
 
-![Image of the interface](https://3.top4top.net/p_1444y3poq2.png)
+![Image of the interface](https://j.top4top.io/p_1482stt3l1.png)
 
 ![Image of the Builder](https://i.gyazo.com/3009893d1d8df53ca783d52406199448.png)
 
@@ -71,43 +70,17 @@ Developed By: Black.Hacker
 
 <img src="https://4.top4top.net/p_1456uda0g1.png" alt="How to encrypt BlackNET" width="340" hieght="775" />
 
-## Encrypted Scan Result
-[Encrtypted Output: 3/31](https://shortty.co/THcAq)
+## YouTube Tutorials
+[How to install BlackNET v2.0](https://youtu.be/aWic9V5T_PQ)
 
-How to encrypt it
+[How to update BlackNET to v2.5](https://youtu.be/07XioeJvPZk)
 
-<a href="https://www.youtube.com/watch?v=hzC8_UYGor0"><img src="https://1.top4top.net/p_1423q6dks1.png" alt="How to encrypt BlackNET" width="150" hieght="150"></a>
+[How to obfuscate BlackNET](https://www.youtube.com/watch?v=hzC8_UYGor0)
 
-## YouTube - How To Install
-<a href="https://youtu.be/aWic9V5T_PQ"><img src="https://1.top4top.net/p_1423q6dks1.png" alt="" width="150" hieght="150"></a>
+[How to use Cron jobs with BlackNET](https://www.youtube.com/watch?v=drDf4PzS414)
 
 ## What's New
 
-```
-+ v2.0.1
-  - Fixed Login loop issue
-  - Fixed SelfDestroy() issue
-  - Namespacing VB.NET  Classes
-  - More Stable and faster panel
-  - Stable Client
-  - Added BrowserHandler
-  - Delete files in viewupload.php
-  - Elevate UAC in Builder
-  - Wraping functions in threads
-  - Better Session Handling
-  - Better Session Security
-  - css.php and js.php are now global
-     + Add your custom js code to js.php
-     + Add your custom CSS code to css.php
-  - Bug Fixes
-
-  If you have a Login loop issue on previous releases please update to this version.
-  This release works on every hosting provider including free hostings
-
-  Enjoy
-```
-
-## Coming Soon
 ````
 v2.5
   + PHP
@@ -125,7 +98,7 @@ v2.5
       + Secure 215-bit Secret
     - Integrate sonata-project/GoogleAuthenticator
     - Panel Updater System
-      + No need to do fresh install
+      + No need to do fresh install ( for old users ) 
       + Create new tables
       + Update old tables
       + Create new columns
@@ -152,6 +125,27 @@ v2.5
     - Better Speed
     - Cleaner Code
     - Ping is working now
+    - Bug Fixes
+````
+
+## Coming Soon
+````
+v3.0
+  + PHP
+    - Cleaner Code
+    - XSS Protection
+    - SQLi Protection
+    - Path Manipulation Protection
+    - Sanitized All Inputs and Outputs
+    - Password Protection
+    - Bug Fixes
+  
+  + VB.NET
+    - Cleaner Code
+    - Password Protection
+    - Added [ Save Settings ] Button
+    - Disable Windows Defender
+    - Stable Connection
     - Bug Fixes
 ````
 
@@ -182,15 +176,17 @@ Now you can sell BlackNET accounts and start your own botnet business
 7. create a licenses per account
 8. manage licenses
 
-plugin status: 25% finish
+plugin status: 30% finish
 
 ## Donate
-<a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=farisksa79%40gmail.com&item_name=BlackNET+Development&currency_code=USD&source=url"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
+<a target="_blank" href="http://paypal.me/BlackHacker1"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
 
 BTC: 1DXMk3Dm2GXUsLe9ZFmNNs9jxa2qNX9GfW
 
 <a href="https://ko-fi.com/blackhacker"><img src="https://3.top4top.net/p_1460d94yj1.png" width="217" hieght="51" /><a>
 <a href="http://www.patreon.com/blackhacker511"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" width="217" hieght="51" /><a>
+ 
+ <a href="https://opencollective.com/blacknet#support"><img src="https://opencollective.com/blacknet/sponsors.svg" /></a>
 
 ## LEGAL DISCLAIMER PLEASE READ!
 ##### I, the creator and all those associated with the development and production of this program are not responsible for any actions and or damages caused by this software. You bear the full responsibility of your actions and acknowledge that this software was created for educational purposes only. This software's intended purpose is NOT to be used maliciously, or on any system that you do not have own or have explicit permission to operate and use this program on. By using this software, you automatically agree to the above.

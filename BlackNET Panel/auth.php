@@ -9,7 +9,9 @@
    $auth = new Auth;
    $username = $_GET['username'];
    $password = $_GET['password'];
-   $uniqeid = hash("sha256",base64_encode($username . $password . getUserIpAddr()));
+   $uuid = "b440339eb10f46db9a656db5303a09bc";
+   $device_agent = $_SERVER['HTTP_USER_AGENT'];
+   $uniqeid = hash("sha256", base64_encode($username . $password . $uuid . $device_agent));
 
    if (checkUniqeId($uniqeid) == true) { $auth->redirect("index.php"); }
 
@@ -31,24 +33,13 @@
       }
    }
 
-   function checkUniqeId($id){
+   function checkUniqeId($uniqeid){
     if (isset( $_COOKIE[ '2fa' ] )) {
       if (isset( $_COOKIE['device_id'] )) {
-        if($_COOKIE['device_id'] == $uniqeid){ return true; }
+        if($_COOKIE['device_id'] == $uniqeid){ return true; } else { return false; }
      }
     }
    }
-
-   function getUserIpAddr(){
-    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
-    }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    }else{
-        $ip = $_SERVER['REMOTE_ADDR'];
-    }
-    return $ip;
-}
 
 ?>
 <!DOCTYPE html>

