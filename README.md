@@ -71,7 +71,7 @@ Developed By: Black.Hacker
 <img src="https://4.top4top.net/p_1456uda0g1.png" alt="How to encrypt BlackNET" width="340" hieght="775" />
 
 ## YouTube Tutorials
-[How to install BlackNET v2.0](https://youtu.be/aWic9V5T_PQ)
+[How to install BlackNET v2.0](https://www.youtube.com/watch?v=ReKOuh6fFcQ)
 
 [How to update BlackNET to v2.5](https://youtu.be/07XioeJvPZk)
 
