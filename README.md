@@ -138,6 +138,7 @@ v3.0
     - Path Manipulation Protection
     - Sanitized All Inputs and Outputs
     - Password Protection
+    - Added BlackUplod Library for File Uploading
     - Bug Fixes
   
   + VB.NET
