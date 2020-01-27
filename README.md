@@ -77,7 +77,7 @@ Developed By: Black.Hacker
 
 [How to obfuscate BlackNET](https://www.youtube.com/watch?v=hzC8_UYGor0)
 
-[How to use Cron jobs with BlackNET](https://www.youtube.com/watch?v=drDf4PzS414)
+[How to Setup BlackNET Cron Job System](https://www.youtube.com/watch?v=rHCYGRA1h54)
 
 ## What's New
 
