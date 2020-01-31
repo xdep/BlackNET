@@ -194,6 +194,36 @@ BTC: 1DXMk3Dm2GXUsLe9ZFmNNs9jxa2qNX9GfW
 ## LEGAL DISCLAIMER PLEASE READ!
 ##### I, the creator and all those associated with the development and production of this program are not responsible for any actions and or damages caused by this software. You bear the full responsibility of your actions and acknowledge that this software was created for educational purposes only. This software's intended purpose is NOT to be used maliciously, or on any system that you do not have own or have explicit permission to operate and use this program on. By using this software, you automatically agree to the above.
 
+## Contributors
+
+### Code Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="https://github.com/BlackHacker511/BlackNET/graphs/contributors"><img src="https://opencollective.com/BlackNET/contributors.svg?width=890&button=false" /></a>
+
+### Financial Contributors
+
+Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/BlackNET/contribute)]
+
+#### Individuals
+
+<a href="https://opencollective.com/BlackNET"><img src="https://opencollective.com/BlackNET/individuals.svg?width=890"></a>
+
+#### Organizations
+
+Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/BlackNET/contribute)]
+
+<a href="https://opencollective.com/BlackNET/organization/0/website"><img src="https://opencollective.com/BlackNET/organization/0/avatar.svg"></a>
+<a href="https://opencollective.com/BlackNET/organization/1/website"><img src="https://opencollective.com/BlackNET/organization/1/avatar.svg"></a>
+<a href="https://opencollective.com/BlackNET/organization/2/website"><img src="https://opencollective.com/BlackNET/organization/2/avatar.svg"></a>
+<a href="https://opencollective.com/BlackNET/organization/3/website"><img src="https://opencollective.com/BlackNET/organization/3/avatar.svg"></a>
+<a href="https://opencollective.com/BlackNET/organization/4/website"><img src="https://opencollective.com/BlackNET/organization/4/avatar.svg"></a>
+<a href="https://opencollective.com/BlackNET/organization/5/website"><img src="https://opencollective.com/BlackNET/organization/5/avatar.svg"></a>
+<a href="https://opencollective.com/BlackNET/organization/6/website"><img src="https://opencollective.com/BlackNET/organization/6/avatar.svg"></a>
+<a href="https://opencollective.com/BlackNET/organization/7/website"><img src="https://opencollective.com/BlackNET/organization/7/avatar.svg"></a>
+<a href="https://opencollective.com/BlackNET/organization/8/website"><img src="https://opencollective.com/BlackNET/organization/8/avatar.svg"></a>
+<a href="https://opencollective.com/BlackNET/organization/9/website"><img src="https://opencollective.com/BlackNET/organization/9/avatar.svg"></a>
+
 ## License
 This project is licensed under the MIT License
 
