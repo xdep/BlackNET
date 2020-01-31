@@ -146,6 +146,7 @@ v3.0
     - Password Protection
     - Added [ Save Settings ] Button
     - Disable Windows Defender
+    - Added TEMP Cleaner
     - Stable Connection
     - Bug Fixes
 ````
