@@ -53,7 +53,7 @@ Developed By: Black.Hacker
 1. Clone this Repo
 2. Compress BlackNET panel folder and upload it to your hosting
 3. Create a database with any name you want
-4. Change the data in classes/database.php
+4. Change the data in classes/Database.php
 5. Change files and folders permission to 777 [ Uploads Folder]
 6. Go to install.php to create the botnet tables automatically
 
