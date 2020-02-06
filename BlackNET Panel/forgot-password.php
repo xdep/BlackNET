@@ -1,18 +1,22 @@
-<?php 
+<?php
 include_once 'classes/Database.php';
 include_once 'classes/User.php';
 include_once 'classes/Mailer.php';
 include_once 'classes/ResetPassword.php';
+include_once 'classes/Utils.php';
+
+$utils = new Utils;
+
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $username =isset($_POST['email']) ? $_POST['email']: '';
-    $resetPassword = new ResetPassword;
-    if($resetPassword->sendEmail($username)){
-      $msg = "Instructions has been send to your email";
-    } else {
-      $err = "Username does not exist!";
-    }
+  $username = isset($_POST['email']) ? $utils->sanitize($_POST['email']) : '';
+  $resetPassword = new ResetPassword;
+  if ($resetPassword->sendEmail($username)) {
+    $msg = "Instructions has been send to your email";
+  } else {
+    $err = "Username does not exist!";
   }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,12 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Reset Password</div>
       <div class="card-body">
-          <?php if(isset($msg)): ?>
-            <div class="alert alert-primary" role="alert"><i class="fa fa-info-circle"></i> <?php echo $msg ?></div>
-          <?php endif; ?>
-          <?php if(isset($err)): ?>
-            <div class="alert alert-danger" role="alert"><i class="fa fa-times-circle"></i> <?php echo $err ?></div>
-          <?php endif; ?>
+        <?php if (isset($msg)) : ?>
+          <div class="alert alert-primary" role="alert"><i class="fa fa-info-circle"></i> <?php echo $msg ?></div>
+        <?php endif; ?>
+        <?php if (isset($err)) : ?>
+          <div class="alert alert-danger" role="alert"><i class="fa fa-times-circle"></i> <?php echo $err ?></div>
+        <?php endif; ?>
         <div class="text-center mb-4">
           <h4>Forgot your password?</h4>
           <p>Enter your email address and we will send you instructions on how to reset your password.</p>

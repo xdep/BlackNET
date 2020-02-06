@@ -1,10 +1,11 @@
 <?php
 include_once 'session.php';
 try {
-	@unlink("upload/" . $_GET['vicid'] . "/" . $_GET['fname']);
-	$database->redirect("viewuploads.php?vicid=" . $_GET['vicid'] . "&msg=yes");
-	
+	if ($_SESSION['csrf'] == $utils->sanitize($_GET['csrf'])) {
+		@unlink(realpath("upload/" . trim($_GET['vicid']) . "/" . trim($_GET['fname'], "./")));
+		$utils->redirect("viewuploads.php?vicid=" . $utils->sanitize($_GET['vicid']) . "&msg=yes");
+	} else {
+		$utils->redirect("viewuploads.php?vicid=" . $utils->sanitize($_GET['vicid']) . "&msg=csrf");
+	}
 } catch (Exception $e) {
-	
 }
-?>

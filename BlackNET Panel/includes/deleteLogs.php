@@ -2,12 +2,15 @@
 include_once '../session.php';
 include_once '../classes/Clients.php';
 
-if ($csrf != $_POST['csrf']) {
-	$database->redirect("../viewlogs.php?msg=csrf");
+if ($_SESSION['csrf'] != $utils->sanitize($_POST['csrf'])) {
+	$utils->redirect("../viewlogs.php?msg=csrf");
 } else {
 	$client = new Clients;
-	$logs = isset($_POST['log']) ? implode(',', $_POST['log']) : '';
-	$client->deleteLog($logs);
-	$database->redirect("../viewlogs.php?msg=yes");
+	if (isset($_POST['log'])) {
+		foreach ($_POST['log'] as $logs) {
+			$client->deleteLog($logs);
+		}
+	}
+
+	$utils->redirect("../viewlogs.php?msg=yes");
 }
-?>

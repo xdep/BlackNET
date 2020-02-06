@@ -248,4 +248,3 @@ $countries = [
     'ZW' => 'Zimbabwe',
     'X'  => 'Unknown'
 ];
-?>

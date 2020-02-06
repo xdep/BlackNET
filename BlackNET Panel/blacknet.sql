@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13 يناير 2020 الساعة 19:29
+-- Generation Time: 06 فبراير 2020 الساعة 17:29
 -- إصدار الخادم: 10.4.6-MariaDB
 -- PHP Version: 7.2.22
 
@@ -120,15 +120,16 @@ CREATE TABLE `settings` (
   `recaptchaprivate` longtext NOT NULL,
   `recaptchapublic` longtext NOT NULL,
   `recaptchastatus` mediumtext NOT NULL,
-  `panel_status` char(10) NOT NULL
+  `panel_status` char(10) NOT NULL,
+  `c_password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- إرجاع أو استيراد بيانات الجدول `settings`
 --
 
-INSERT INTO `settings` (`id`, `recaptchaprivate`, `recaptchapublic`, `recaptchastatus`, `panel_status`) VALUES
-(1, 'UpdateYourCode', 'UpdateYourCode', 'off', 'on');
+INSERT INTO `settings` (`id`, `recaptchaprivate`, `recaptchapublic`, `recaptchastatus`, `panel_status`, `c_password`) VALUES
+(1, 'UpdateYourCode', 'UpdateYourCode', 'off', 'on', 'Au9SmrqefaAr1DYFnZEpgGaZYdepAs5i');
 
 -- --------------------------------------------------------
 
@@ -151,7 +152,7 @@ CREATE TABLE `smtp` (
 --
 
 INSERT INTO `smtp` (`id`, `smtphost`, `smtpuser`, `smtppassword`, `port`, `security_type`, `status`) VALUES
-(1, 'smtp.localhost.com', 'localhost@gmail.com', 'Z21haWxwYXNzd29yZA==', 0, 'none', 'off');
+(1, 'smtp.localhost.com', 'localhost@gmail.com', 'Z21haWxwYXNzd29yZA==', 0, 'ssl', 'off');
 
 --
 -- Indexes for dumped tables
@@ -207,7 +208,7 @@ ALTER TABLE `smtp`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `clients`

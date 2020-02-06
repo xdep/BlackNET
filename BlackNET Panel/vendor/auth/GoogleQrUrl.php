@@ -76,7 +76,7 @@ final class GoogleQrUrl
             }
 
             // use both the issuer parameter and label prefix as recommended by Google for BC reasons
-            $label = $issuer.':'.$label;
+            $label = $issuer . ':' . $label;
             $otpauthString .= '&issuer=%s';
         }
 

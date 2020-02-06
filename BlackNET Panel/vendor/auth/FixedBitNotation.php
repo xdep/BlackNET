@@ -71,7 +71,7 @@ final class FixedBitNotation
         // Ensure validity of $chars
         if (!is_string($chars) || ($charLength = strlen($chars)) < 2) {
             $chars =
-            '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-,';
+                '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-,';
             $charLength = 64;
         }
 
@@ -155,8 +155,8 @@ final class FixedBitNotation
                         $lcmMap = [1 => 1, 2 => 1, 3 => 3, 4 => 1, 5 => 5, 6 => 3, 7 => 7, 8 => 1];
                         $bytesPerGroup = $lcmMap[$bitsPerCharacter];
                         $pads = $bytesPerGroup * 8 / $bitsPerCharacter
-                        - ceil((strlen($rawString) % $bytesPerGroup)
-                        * 8 / $bitsPerCharacter);
+                            - ceil((strlen($rawString) % $bytesPerGroup)
+                                * 8 / $bitsPerCharacter);
                         $encodedString .= str_repeat($padCharacter[0], $pads);
                     }
 
@@ -256,7 +256,7 @@ final class FixedBitNotation
                     // New bits aren't enough to complete a byte; shift them
                     // left into position
                     $newBits = $charmap[$encodedString[$c]] << $bitsNeeded
-                    - $bitsPerCharacter;
+                        - $bitsPerCharacter;
                     $bitsWritten += $bitsPerCharacter;
                 } elseif ($c != $lastNotatedIndex || $rightPadFinalBits) {
                     // Zero or more too many bits to complete a byte;
@@ -279,7 +279,7 @@ final class FixedBitNotation
                         // Start the next byte
                         $bitsWritten = $unusedBitCount;
                         $byte = ($charmap[$encodedString[$c]]
-                        ^ ($newBits << $unusedBitCount)) << 8 - $bitsWritten;
+                            ^ ($newBits << $unusedBitCount)) << 8 - $bitsWritten;
                     }
                 }
             } elseif ($strict) {

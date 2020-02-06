@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PHPMailer - PHP email creation and transport class.
  * PHP Version 5.5
@@ -45,15 +46,17 @@ use Stevenmaguire\OAuth2\Client\Provider\Microsoft;
 
 if (!isset($_GET['code']) && !isset($_GET['provider'])) {
 ?>
-<html>
-<body>Select Provider:<br/>
-<a href='?provider=Google'>Google</a><br/>
-<a href='?provider=Yahoo'>Yahoo</a><br/>
-<a href='?provider=Microsoft'>Microsoft/Outlook/Hotmail/Live/Office365</a><br/>
-</body>
-</html>
+    <html>
+
+    <body>Select Provider:<br />
+        <a href='?provider=Google'>Google</a><br />
+        <a href='?provider=Yahoo'>Yahoo</a><br />
+        <a href='?provider=Microsoft'>Microsoft/Outlook/Hotmail/Live/Office365</a><br />
+    </body>
+
+    </html>
 <?php
-exit;
+    exit;
 }
 
 require 'vendor/autoload.php';
@@ -124,7 +127,7 @@ if (!isset($_GET['code'])) {
     $_SESSION['oauth2state'] = $provider->getState();
     header('Location: ' . $authUrl);
     exit;
-// Check given state against previously stored one to mitigate CSRF attack
+    // Check given state against previously stored one to mitigate CSRF attack
 } elseif (empty($_GET['state']) || ($_GET['state'] !== $_SESSION['oauth2state'])) {
     unset($_SESSION['oauth2state']);
     unset($_SESSION['provider']);

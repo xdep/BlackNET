@@ -1,20 +1,23 @@
 <?php
-class User extends Database{
+class User extends Database
+{
     // a class that handle user function and settings
 
     // get user data
-    public function getUserData($username){
+    public function getUserData($username)
+    {
         $pdo = $this->Connect();
         $sql = "SELECT * FROM admin WHERE 
             username = :username or email = :email";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute(["username"=>$username,"email"=>$username]);
+        $stmt->execute(["username" => $username, "email" => $username]);
         $data = $stmt->fetch();
         return $data;
     }
 
     // count all users
-    public function numUsers(){
+    public function numUsers()
+    {
         $pdo = $this->Connect();
         $sql = "SELECT COUNT(*) FROM admin";
         $stmt = $pdo->prepare($sql);
@@ -24,54 +27,32 @@ class User extends Database{
     }
 
     //check if user exist
-    public function checkUser($username){
-    	$pdo = $this->Connect();
-		$sql = $pdo->prepare("SELECT * FROM admin WHERE 
+    public function checkUser($username)
+    {
+        $pdo = $this->Connect();
+        $sql = $pdo->prepare("SELECT * FROM admin WHERE 
             username = :username or email = :email");
-		$sql -> execute(["username"=>$username,"email"=>$username]);
-		if ($sql->rowCount()) {
-			return 'User Exist';
-		} else {
-			return 'Premission Denied';
-		}
+        $sql->execute(["username" => $username, "email" => $username]);
+        if ($sql->rowCount()) {
+            return 'User Exist';
+        } else {
+            return 'Permission Denied';
+        }
     }
 
     // update a user data
-    public function updateUser($id,$oldusername,$username,$email,$password,$auth,$question,$answer,$sqenable){
+    public function updateUser($id, $oldusername, $username, $email, $password, $auth, $question, $answer, $sqenable)
+    {
         $pdo = $this->Connect();
-        $user = $this->getUserData($oldusername);
 
-        if ($user->username != $username) {
-        } else {
-            $username = $user->username;
-        }
+        $user = $this->getUserData($oldusername);
 
         if ($password == "No change") {
             $password = $user->password;
         } else {
-            $password = hash("sha256" , $this->salt.$password);
+            $password = hash("sha256", $this->salt . $password);
         }
 
-        if ($user->email != $email) {
-        } else {
-            $email = $user->email;
-        }
-
-        if ($sqenable == "") {
-            $sqenable = "off";
-        } else {
-            $sqenable = "on";
-        }
-
-        if ($user->question != $question) {
-        } else {
-            $question = $user->question;
-        }
-
-        if ($user->answer != $answer) {
-        } else {
-            $answer = $user->answer;
-        }
         $sql = "UPDATE admin SET 
         username = :username,
         email = :email,
@@ -81,21 +62,23 @@ class User extends Database{
         answer = :answer
         WHERE id = :id";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute(['username'=>$username,'email'=>$email,'password'=>$password,'sqenable'=>$sqenable,'question'=>$question,'answer'=>$answer,'id'=>$id]);
+        $stmt->execute([
+            'username' => $username,
+            'email' => $email,
+            'password' => $password,
+            'sqenable' => $sqenable,
+            'question' => $question,
+            'answer' => $answer, 'id' => $id
+        ]);
         return 'Username Updated';
     }
 
     // Function that enabled 2FA
-    public function enables2fa($username,$secret,$status){
+    public function enables2fa($username, $secret, $auth)
+    {
         $pdo = $this->Connect();
-        $auth = "";
-        if($status == "") {
-            $auth = "off";
-        } else {
-             $auth = "on";
-        }
 
-        if($auth == "off"){
+        if ($auth == "off") {
             $secret = "null";
         }
 
@@ -104,11 +87,12 @@ class User extends Database{
         secret = :secret
         WHERE username = :username";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute(['username'=>$username,'auth'=>$auth,'secret'=>$secret]);
+        $stmt->execute(['username' => $username, 'auth' => $auth, 'secret' => $secret]);
     }
 
     // get question using $username
-    public function getQuestionByUser($username){
+    public function getQuestionByUser($username)
+    {
         $pdo = $this->Connect();
         $sql = "SELECT question,answer,sqenable FROM admin WHERE username = ?";
         $stmt = $pdo->prepare($sql);
@@ -118,14 +102,15 @@ class User extends Database{
     }
 
     // check if securiry question enabled
-    public function isQuestionEnabled($username){
+    public function isQuestionEnabled($username)
+    {
         try {
             $pdo = $this->Connect();
             $sql = "SELECT sqenable FROM admin WHERE username = :user";
             $stmt = $pdo->prepare($sql);
-            $stmt->execute(['user'=>$username]);
+            $stmt->execute(['user' => $username]);
             $data = $stmt->fetch();
-            if ($data->sqenable == "off"){
+            if ($data->sqenable == "off") {
                 return false;
             } else {
                 return true;
@@ -133,7 +118,5 @@ class User extends Database{
         } catch (\Throwable $th) {
             //throw $th;
         }
-
     }
 }
-?>

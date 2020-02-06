@@ -92,11 +92,11 @@ final class GoogleAuthenticator
         $result += hash_equals($this->getCode($secret, $this->now), $code);
 
         // previous period, happens if the user was slow to enter or it just crossed over
-        $dateTime = new \DateTimeImmutable('@'.($this->now->getTimestamp() - $this->codePeriod));
+        $dateTime = new \DateTimeImmutable('@' . ($this->now->getTimestamp() - $this->codePeriod));
         $result += hash_equals($this->getCode($secret, $dateTime), $code);
 
         // next period, happens if the user is not completely synced and possibly a few seconds ahead
-        $dateTime = new \DateTimeImmutable('@'.($this->now->getTimestamp() + $this->codePeriod));
+        $dateTime = new \DateTimeImmutable('@' . ($this->now->getTimestamp() + $this->codePeriod));
         $result += hash_equals($this->getCode($secret, $dateTime), $code);
 
         return $result > 0;
@@ -110,7 +110,7 @@ final class GoogleAuthenticator
      *
      * @return string
      */
-    public function getCode($secret, /* \DateTimeInterface */$time = null): string
+    public function getCode($secret, /* \DateTimeInterface */ $time = null): string
     {
         if (null === $time) {
             $time = $this->now;
@@ -120,8 +120,8 @@ final class GoogleAuthenticator
             $timeForCode = floor($time->getTimestamp() / $this->codePeriod);
         } else {
             @trigger_error(
-                'Passing anything other than null or a DateTimeInterface to $time is deprecated as of 2.0 '.
-                'and will not be possible as of 3.0.',
+                'Passing anything other than null or a DateTimeInterface to $time is deprecated as of 2.0 ' .
+                    'and will not be possible as of 3.0.',
                 E_USER_DEPRECATED
             );
             $timeForCode = $time;
@@ -155,8 +155,8 @@ final class GoogleAuthenticator
     public function getUrl($user, $hostname, $secret): string
     {
         @trigger_error(sprintf(
-            'Using %s() is deprecated as of 2.1 and will be removed in 3.0. '.
-            'Use Sonata\GoogleAuthenticator\GoogleQrUrl::generate() instead.',
+            'Using %s() is deprecated as of 2.1 and will be removed in 3.0. ' .
+                'Use Sonata\GoogleAuthenticator\GoogleQrUrl::generate() instead.',
             __METHOD__
         ), E_USER_DEPRECATED);
 
@@ -167,7 +167,7 @@ final class GoogleAuthenticator
         $url = GoogleQrUrl::generate($accountName, $secret);
 
         if ($issuer) {
-            $url .= '%26issuer%3D'.$issuer;
+            $url .= '%26issuer%3D' . $issuer;
         }
 
         return $url;

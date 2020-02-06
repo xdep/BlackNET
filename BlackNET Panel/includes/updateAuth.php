@@ -4,26 +4,26 @@ include_once '../vendor/auth/FixedBitNotation.php';
 include_once '../vendor/auth/GoogleAuthenticator.php';
 include_once '../vendor/auth/GoogleQrUrl.php';
 
-
 $g = new \Sonata\GoogleAuthenticator\GoogleAuthenticator();
-$status = isset($_POST['enable']) ? "on" : "";
-$code = isset($_POST['code']) ? $_POST['code'] : null;
-$secret = isset($_POST['secret']) ? $_POST['secret'] : null;
-$username = $_POST['username'];
+$status = isset($_POST['enable']) ? "on" : "off";
+$code = isset($_POST['code']) ? $utils->sanitize($_POST['code']) : null;
+$secret = isset($_POST['secret']) ? $utils->sanitize($_POST['secret']) : null;
+$username = $utils->sanitize($_POST['username']);
+$msg = [];
 
-if ($csrf != $_POST['csrf']) {
-	$database->redirect("../authsettings.php?msg=csrf");
+if ($_SESSION['csrf'] != $utils->sanitize($_POST['csrf'])) {
+	$msg = ["msg" => "csrf", "code" => "error"];
 } else {
-	if ($status == ""){
-		$user->enables2fa($username,$secret,$status);
-		$database->redirect("../authsettings.php?msg=ok&code=disable");
+	if ($status == "off") {
+		$user->enables2fa($username, $secret, $status);
+		$msg = ["msg" => "ok", "code" => "disable"];
 	} else {
 		if ($g->checkCode($secret, $code)) {
-			$user->enables2fa($username,$secret,$status);
-		    $database->redirect("../authsettings.php?msg=ok&code=enable");
+			$user->enables2fa($username, $secret, $status);
+			$msg = ["msg" => "ok", "code" => "enable"];
 		} else {
-			$database->redirect("../authsettings.php?msg=error");
+			$msg = ["msg" => "error", "code" => "error"];
 		}
 	}
 }
-?>
+$utils->redirect("../authsettings.php?msg=" . $utils->sanitize($msg['msg']) . "&code=" . $utils->sanitize($msg['code']));
