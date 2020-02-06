@@ -29,9 +29,9 @@
                 Else
                     Process.Start(URL)
                 End If
-                Form1.C.Log("Succ", "Webpage has been opened in visable mode")
+
             Catch ex As Exception
-                Form1.C.Log("Fail", "An unexpected error occurred" & ex.Message)
+
             End Try
 
         End Sub
@@ -45,9 +45,9 @@
                     Case "Google Chrome"
                         Process.Start("chrome", URL)
                 End Select
-                Form1.C.Log("Succ", "Webpage has been opened in visable mode")
+
             Catch ex As Exception
-                Form1.C.Log("Fail", "An unexpected error occurred" & ex.Message)
+
             End Try
         End Sub
         Private Function getDefaultBrowserWin10() As String
