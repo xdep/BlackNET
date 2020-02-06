@@ -5,7 +5,7 @@ Imports Mono.Cecil.Cil
 Imports System.Net
 ' - - - - - - - - - - -
 ' BlackNET Builder
-' v2.0.0.0
+' v3.0.0.0
 ' Developed by: Black.Hacker
 ' Tnx to: NYAN CAT, KFC, Underc0de.
 ' - - - - - - - - - - -
