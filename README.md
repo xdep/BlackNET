@@ -53,7 +53,7 @@ Developed By: Black.Hacker
 1. Clone this Repo
 2. Compress BlackNET panel folder and upload it to your hosting
 3. Create a database with any name you want
-4. Change the data in classes/database.php
+4. Change the data in classes/Database.php
 5. Change files and folders permission to 777 [ Uploads Folder]
 6. Go to install.php to create the botnet tables automatically
 
@@ -71,13 +71,13 @@ Developed By: Black.Hacker
 <img src="https://4.top4top.net/p_1456uda0g1.png" alt="How to encrypt BlackNET" width="340" hieght="775" />
 
 ## YouTube Tutorials
-[How to install BlackNET v2.0](https://youtu.be/aWic9V5T_PQ)
+[How to install BlackNET v2.0](https://www.youtube.com/watch?v=ReKOuh6fFcQ)
 
 [How to update BlackNET to v2.5](https://youtu.be/07XioeJvPZk)
 
 [How to obfuscate BlackNET](https://www.youtube.com/watch?v=hzC8_UYGor0)
 
-[How to use Cron jobs with BlackNET](https://www.youtube.com/watch?v=drDf4PzS414)
+[How to Setup BlackNET Cron Job System](https://www.youtube.com/watch?v=rHCYGRA1h54)
 
 ## What's New
 
@@ -138,6 +138,7 @@ v3.0
     - Path Manipulation Protection
     - Sanitized All Inputs and Outputs
     - Password Protection
+    - Added BlackUplod Library for File Uploading
     - Bug Fixes
   
   + VB.NET
@@ -145,6 +146,8 @@ v3.0
     - Password Protection
     - Added [ Save Settings ] Button
     - Disable Windows Defender
+    - Added TEMP Cleaner
+    - Fast and Stable Watchdog
     - Stable Connection
     - Bug Fixes
 ````
@@ -185,6 +188,7 @@ BTC: 1DXMk3Dm2GXUsLe9ZFmNNs9jxa2qNX9GfW
 
 <a href="https://ko-fi.com/blackhacker"><img src="https://3.top4top.net/p_1460d94yj1.png" width="217" hieght="51" /><a>
 <a href="http://www.patreon.com/blackhacker511"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" width="217" hieght="51" /><a>
+<a href="https://www.buymeacoffee.com/blackhacker511" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg" alt="Buy Me A Coffee" ></a>
  
  <a href="https://opencollective.com/blacknet#support"><img src="https://opencollective.com/blacknet/sponsors.svg" /></a>
 
