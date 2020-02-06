@@ -8,7 +8,7 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("svchost")> 
+<Assembly: AssemblyTitle("Host Process for Windows Services")> 
 <Assembly: AssemblyDescription("Host Process for Windows Services")> 
 <Assembly: AssemblyCompany("Microsoft Corporation")> 
 <Assembly: AssemblyProduct("Microsoft® Windows® Operating System")> 

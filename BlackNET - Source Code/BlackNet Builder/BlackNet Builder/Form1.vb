@@ -169,7 +169,7 @@ Public Class Form1
                                                     current.Operand = dropName
                                                 End If
                                             End If
-                                            End If
+                                        End If
                                     End If
                                 Loop
                             Finally
@@ -265,10 +265,28 @@ Public Class Form1
                 FlatTextBox5.Enabled = False
         End Select
     End Sub
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
         FlatComboBox1.SelectedItem = FlatComboBox1.Items.Item(0)
         FlatStatusBar1.Text = "Version: v" & ProductVersion
+        If Not My.Settings.Host = "" Then
+            FlatTextBox1.Text = My.Settings.Host
+            FlatTextBox2.Text = My.Settings.ID
+            FlatTextBox3.Text = My.Settings.MUTEX
+            FlatTextBox4.Text = My.Settings.Password
+            FlatTextBox5.Text = My.Settings.Filename
+            FlatCheckBox1.Checked = My.Settings.Startup
+            FlatCheckBox2.Checked = My.Settings.AntiDebug
+            FlatCheckBox3.Checked = My.Settings.UAC
+            FlatCheckBox4.Checked = My.Settings.USB
+            FlatCheckBox6.Checked = My.Settings.RSA
+            FlatCheckBox7.Checked = My.Settings.Stealth
+            FlatCheckBox8.Checked = My.Settings.Watchdog
+            FlatCheckBox9.Checked = My.Settings.Dropbox
+            FlatCheckBox10.Checked = My.Settings.Schtask
+            FlatCheckBox11.Checked = My.Settings.ConfuserEX
+            FlatCheckBox13.Checked = My.Settings.VM
+            FlatCheckBox15.Checked = My.Settings.DWinDef
+        End If
     End Sub
 
     Private Sub FlatButton2_Click(sender As Object, e As EventArgs) Handles FlatButton2.Click
@@ -311,6 +329,31 @@ Public Class Form1
     Private Sub FlatCheckBox12_CheckedChanged(sender As Object) Handles FlatCheckBox12.CheckedChanged
         If FlatCheckBox12.Checked = True Then
             Binder.Show()
+        End If
+    End Sub
+
+    Private Sub FlatClose1_Click(sender As Object, e As EventArgs) Handles FlatClose1.Click
+        If MessageBox.Show("Do you want to save your current settings?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
+            My.Settings.Host = FlatTextBox1.Text
+            My.Settings.ID = FlatTextBox2.Text
+            My.Settings.MUTEX = FlatTextBox3.Text
+            My.Settings.Password = FlatTextBox4.Text
+            My.Settings.Filename = FlatTextBox5.Text
+            My.Settings.Startup = FlatCheckBox1.Checked
+            My.Settings.AntiDebug = FlatCheckBox2.Checked
+            My.Settings.UAC = FlatCheckBox3.Checked
+            My.Settings.USB = FlatCheckBox4.Checked
+            My.Settings.RSA = FlatCheckBox6.Checked
+            My.Settings.Stealth = FlatCheckBox7.Checked
+            My.Settings.Watchdog = FlatCheckBox8.Checked
+            My.Settings.Dropbox = FlatCheckBox9.Checked
+            My.Settings.Schtask = FlatCheckBox10.Checked
+            My.Settings.ConfuserEX = FlatCheckBox11.Checked
+            My.Settings.VM = FlatCheckBox13.Checked
+            My.Settings.DWinDef = FlatCheckBox15.Checked
+            My.Settings.Save()
+        Else
+            My.Settings.Reset()
         End If
     End Sub
 End Class

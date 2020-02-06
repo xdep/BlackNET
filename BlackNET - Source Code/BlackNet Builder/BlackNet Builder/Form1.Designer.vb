@@ -24,6 +24,8 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.FormSkin1 = New BlackNet_Builder.FormSkin()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.FlatCheckBox15 = New BlackNet_Builder.FlatCheckBox()
         Me.FlatTextBox4 = New BlackNet_Builder.FlatTextBox()
         Me.FlatLabel4 = New BlackNet_Builder.FlatLabel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
@@ -60,13 +62,11 @@ Partial Class Form1
         Me.FlatButton1 = New BlackNet_Builder.FlatButton()
         Me.FlatLabel6 = New BlackNet_Builder.FlatLabel()
         Me.FlatStatusBar1 = New BlackNet_Builder.FlatStatusBar()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.FlatCheckBox15 = New BlackNet_Builder.FlatCheckBox()
         Me.FormSkin1.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'FormSkin1
@@ -122,6 +122,32 @@ Partial Class Form1
         Me.FormSkin1.Size = New System.Drawing.Size(287, 760)
         Me.FormSkin1.TabIndex = 0
         Me.FormSkin1.Text = " BlackNET Builder"
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(191, 511)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 41
+        Me.PictureBox4.TabStop = False
+        '
+        'FlatCheckBox15
+        '
+        Me.FlatCheckBox15.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.FlatCheckBox15.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatCheckBox15.BorderColor = System.Drawing.Color.DeepSkyBlue
+        Me.FlatCheckBox15.Checked = False
+        Me.FlatCheckBox15.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatCheckBox15.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.FlatCheckBox15.Location = New System.Drawing.Point(5, 510)
+        Me.FlatCheckBox15.Name = "FlatCheckBox15"
+        Me.FlatCheckBox15.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
+        Me.FlatCheckBox15.Size = New System.Drawing.Size(183, 22)
+        Me.FlatCheckBox15.TabIndex = 40
+        Me.FlatCheckBox15.Text = "Disable Windows Defender"
         '
         'FlatTextBox4
         '
@@ -618,32 +644,6 @@ Partial Class Form1
         Me.FlatStatusBar1.Text = "Version:"
         Me.FlatStatusBar1.TextColor = System.Drawing.Color.White
         '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(191, 511)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 41
-        Me.PictureBox4.TabStop = False
-        '
-        'FlatCheckBox15
-        '
-        Me.FlatCheckBox15.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
-        Me.FlatCheckBox15.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatCheckBox15.BorderColor = System.Drawing.Color.DeepSkyBlue
-        Me.FlatCheckBox15.Checked = False
-        Me.FlatCheckBox15.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatCheckBox15.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox15.Location = New System.Drawing.Point(5, 510)
-        Me.FlatCheckBox15.Name = "FlatCheckBox15"
-        Me.FlatCheckBox15.Options = BlackNet_Builder.FlatCheckBox._Options.Style1
-        Me.FlatCheckBox15.Size = New System.Drawing.Size(183, 22)
-        Me.FlatCheckBox15.TabIndex = 40
-        Me.FlatCheckBox15.Text = "Disable Windows Defender"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -661,10 +661,10 @@ Partial Class Form1
         Me.TransparencyKey = System.Drawing.Color.Fuchsia
         Me.FormSkin1.ResumeLayout(False)
         Me.FormSkin1.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

