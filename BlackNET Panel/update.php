@@ -12,7 +12,7 @@ $update = new Update;
 if (isset($_POST['start_update'])) {
   $sql = [
     $update->create_column("settings", ['c_password', 'text', 'COLLATE utf8mb4_unicode_ci', 'NOT NULL'], "panel_status"),
-    $update->update_value("settings", "c_password", "Connection Password")
+    $update->update_value("settings", "c_password", "Au9SmrqefaAr1DYFnZEpgGaZYdepAs5i")
   ];
 
   foreach ($sql as $query) {

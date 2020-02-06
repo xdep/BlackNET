@@ -82,54 +82,6 @@ Developed By: Black.Hacker
 ## What's New
 
 ````
-v2.5
-  + PHP
-    - Logs System
-    - View Logs
-    - Better Security
-    - More DDOS Settings
-    - DRY classes
-    - New Unknown Country Flag
-    - Replace 2FA By Email to 2FA By App
-      + Authy or Google Authenticator
-      + Stable 2FA System
-      + Trust Device for 30 days
-      + Disable it any time you want
-      + Secure 215-bit Secret
-    - Integrate sonata-project/GoogleAuthenticator
-    - Panel Updater System
-      + No need to do fresh install ( for old users ) 
-      + Create new tables
-      + Update old tables
-      + Create new columns
-      + Update current columns
-      + Inser new values
-      + Drop unused tables
-    - Cron Job System
-      + Ping.php [ Run it every 10min ]
-        + Ping clients
-        + Offline unactive clients
-    - Replace amCharts Maps with jVectorMaps
-        + Better Speed
-        + Simple Maps
-        + Fast Loading
-        + Cleaner Look
-        + Unbranded
-    - Cleaner Code
-    - Bug Fixes
-    
-  + VB.NET
-    - Logs System
-    - More DDOS Settings
-    - Stable Client
-    - Better Speed
-    - Cleaner Code
-    - Ping is working now
-    - Bug Fixes
-````
-
-## Coming Soon
-````
 v3.0
   + PHP
     - Cleaner Code
@@ -150,6 +102,11 @@ v3.0
     - Fast and Stable Watchdog
     - Stable Connection
     - Bug Fixes
+````
+
+## Coming Soon
+````
+
 ````
 
 ## Pull Request
