@@ -147,6 +147,7 @@ v3.0
     - Added [ Save Settings ] Button
     - Disable Windows Defender
     - Added TEMP Cleaner
+    - Fast and Stable Watchdog
     - Stable Connection
     - Bug Fixes
 ````
