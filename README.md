@@ -125,19 +125,6 @@ i will review it in 1 - 5 days then i will merge it with the master branch
 ## Python Edition
 [BlackHacker511/BlackNET-Python](http://github.com/BlackHacker511/BlackNET-Python)
 
-## Saas Plugin
-Now you can sell BlackNET accounts and start your own botnet business
-1. create new account
-2. manage accounts
-3. banned accounts
-4. limit clients per account
-5. move clients between accounts
-6. remove accounts
-7. create a licenses per account
-8. manage licenses
-
-plugin status: 30% finish
-
 ## Donate
 <a target="_blank" href="http://paypal.me/BlackHacker1"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
 
