@@ -79,6 +79,8 @@ Developed By: Black.Hacker
 
 [How to Setup BlackNET Cron Job System](https://www.youtube.com/watch?v=rHCYGRA1h54)
 
+[How to use BlackNET v3.0 new settings](https://youtu.be/eIOd8Xo7CvY)
+
 ## What's New
 
 ````
