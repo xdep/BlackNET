@@ -79,31 +79,14 @@ Developed By: Black.Hacker
 
 [How to Setup BlackNET Cron Job System](https://www.youtube.com/watch?v=rHCYGRA1h54)
 
-[How to use BlackNET v3.0 new settings](https://youtu.be/eIOd8Xo7CvY)
-
 ## What's New
 
 ````
-v3.0
-  + PHP
-    - Cleaner Code
-    - XSS Protection
-    - SQLi Protection
-    - Path Manipulation Protection
-    - Sanitized All Inputs and Outputs
-    - Password Protection
-    - Added BlackUplod Library for File Uploading
-    - Bug Fixes
-  
-  + VB.NET
-    - Cleaner Code
-    - Password Protection
-    - Added [ Save Settings ] Button
-    - Disable Windows Defender
-    - Added TEMP Cleaner
-    - Fast and Stable Watchdog
-    - Stable Connection
-    - Bug Fixes
+v3.0.0.1
+  Vuln: Auth.php bypass (fixed)
+  Bug: Typo => #54 ( fixed )
+  Edit: Removed Connection Password
+  Bug Fixes
 ````
 
 ## Coming Soon
