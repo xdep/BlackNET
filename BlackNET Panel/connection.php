@@ -7,7 +7,6 @@ $utils = new Utils;
 
 $client = new Clients;
 
-$c_password = $utils->sanitize(base64_decode($_GET['password']));
 $ipaddress = $utils->sanitize($_SERVER['REMOTE_ADDR']);
 $country = getConteryCode($ipaddress);
 $date = date("Y-m-d");
