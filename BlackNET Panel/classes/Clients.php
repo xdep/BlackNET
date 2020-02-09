@@ -307,14 +307,4 @@ class Clients extends Database
 			return false;
 		}
 	}
-
-	public function getServerPassword()
-	{
-		$pdo = $this->Connect();
-		$sql = "SELECT c_password FROM settings";
-		$stmt = $pdo->prepare($sql);
-		$stmt->execute();
-		$data = $stmt->fetch();
-		return $data->c_password;
-	}
 }

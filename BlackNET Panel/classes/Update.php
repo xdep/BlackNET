@@ -45,17 +45,22 @@ class Update extends Database
 
 	public function table_exist($table_name)
 	{
-		return "SHOW TABLES LIKE " . "'" . $table_name . "'";
+		return "SHOW TABLES LIKE " . $table_name;
 	}
 
 	public function column_exist($table_name, $column_name)
 	{
-		return "SHOW COLUMNS FROM `$table_name` LIKE '$column_name'";
+		return "SHOW COLUMNS FROM $table_name LIKE $column_name";
 	}
 
 	public function drop_table($table_name)
 	{
 		return "DROP TABLE " . $table_name . ";";
+	}
+
+	public function drop_column($table_name, $column_name)
+	{
+		return "ALTER TABLE " . $table_name . " DROP COLUMN " .  $column_name . ";";
 	}
 
 	public function execute($sql)

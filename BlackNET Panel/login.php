@@ -29,8 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       $_SESSION['login_user'] = $username;
       $_SESSION['login_password'] = hash("sha256", $auth->salt . $password);
       if ($auth->isTwoFAEnabled($username) == "on") {
-        $utils->redirect("auth.php?username=$username&password=" . hash("sha256", $auth->salt . $password));
+        $utils->redirect("auth.php");
       } else {
+        $_SESSION['OTP'] = "OK";
         $utils->redirect("index.php");
       }
     }

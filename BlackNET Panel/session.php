@@ -7,7 +7,6 @@ include_once 'classes/Utils.php';
 
 
 $utils = new Utils;
-
 $database = new Database;
 $database->dataExist();
 
@@ -15,6 +14,12 @@ $user = new Auth;
 
 $username = isset($_SESSION['login_user']) ? $_SESSION['login_user'] : null;
 $password = isset($_SESSION['login_password']) ? $_SESSION['login_password'] : null;
+
+if ($user->isTwoFAEnabled($username) == "on") {
+  if (!isset($_SESSION['OTP']) || $_SESSION['OTP'] !== "OK") {
+    $utils->redirect("logout.php");
+  }
+}
 
 if (!(isset($_SESSION['last_action']))) {
   $_SESSION['last_action'] = time();

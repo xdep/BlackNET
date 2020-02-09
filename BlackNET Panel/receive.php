@@ -39,7 +39,6 @@ switch ($A[0]) {
 		try {
 			@unlink(realpath($utils->sanitize("scripts/" . trim($A[1], "./"))));
 		} catch (Exception $e) {
-			echo $e->getMessage();
 		}
 		break;
 	case "NewLog":

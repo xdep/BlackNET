@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06 فبراير 2020 الساعة 17:29
+-- Generation Time: 09 فبراير 2020 الساعة 17:46
 -- إصدار الخادم: 10.4.6-MariaDB
 -- PHP Version: 7.2.22
 
@@ -120,16 +120,15 @@ CREATE TABLE `settings` (
   `recaptchaprivate` longtext NOT NULL,
   `recaptchapublic` longtext NOT NULL,
   `recaptchastatus` mediumtext NOT NULL,
-  `panel_status` char(10) NOT NULL,
-  `c_password` text NOT NULL
+  `panel_status` char(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- إرجاع أو استيراد بيانات الجدول `settings`
 --
 
-INSERT INTO `settings` (`id`, `recaptchaprivate`, `recaptchapublic`, `recaptchastatus`, `panel_status`, `c_password`) VALUES
-(1, 'UpdateYourCode', 'UpdateYourCode', 'off', 'on', 'Au9SmrqefaAr1DYFnZEpgGaZYdepAs5i');
+INSERT INTO `settings` (`id`, `recaptchaprivate`, `recaptchapublic`, `recaptchastatus`, `panel_status`) VALUES
+(1, 'UpdateYourCode', 'UpdateYourCode', 'off', 'on');
 
 -- --------------------------------------------------------
 

@@ -61,13 +61,6 @@ $getSettings = $settings->getSettings(1);
                                                                                                                             } ?>>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <div class="form-label-group">
-                      <input class="form-control" type="text" id="c_password" name="c_password" placeholder="Connection Password" value="<?php echo $getSettings->c_password; ?>">
-                      <label for="switch-state">Connection Password</label>
-
-                    </div>
-                  </div>
                   <hr>
                   <div class="form-group">
                     <div class="form-group">

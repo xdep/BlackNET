@@ -13,9 +13,9 @@ $updatePassword = new ResetPassword;
 if ($updatePassword->isExist($key) == "Key Exist") {
   $data = $updatePassword->getUserAssignToToken($key);
   $question = $updatePassword->isQuestionEnabled($data->username);
-  $answerd = isset($_GET['answered']) ? $utils->sanitize($_GET['answered']) : "false";
+  $answered = isset($_GET['answered']) ? $utils->sanitize($_GET['answered']) : "false";
   if ($question != false) {
-    if ($answerd != "true") {
+    if ($answered != "true") {
       $utils->redirect("question.php?username=$data->username&key=$key");
     }
   }

@@ -7,16 +7,18 @@ include_once 'vendor/auth/FixedBitNotation.php';
 include_once 'vendor/auth/GoogleAuthenticator.php';
 include_once 'classes/Utils.php';
 
+$_SESSION['OTP'] = "Waiting";
+
 $utils = new Utils;
 
 $auth = new Auth;
-$username = $utils->sanitize($_GET['username']);
-$password = $utils->sanitize($_GET['password']);
-$uuid = "b440339eb10f46db9a656db5303a09bc";
-$device_agent = $utils->sanitize($_SERVER['HTTP_USER_AGENT']);
-$uniqeid = hash("sha256", base64_encode($username . $password . $uuid . $device_agent));
+
+$uniqeid = hash("sha256", base64_encode($utils->sanitize($_SERVER['HTTP_USER_AGENT'])));
 
 if (checkUniqeId($uniqeid) == true) {
+
+  $_SESSION['OTP'] = "OK";
+
   $utils->redirect("index.php");
 }
 
@@ -24,7 +26,7 @@ $g = new \Sonata\GoogleAuthenticator\GoogleAuthenticator();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $code = $_POST['AuthCode'];
-  $secret = $auth->getSecret($username);
+  $secret = $auth->getSecret($_SESSION['login_user']);
   if ($g->checkCode($secret, $code)) {
     if (isset($_POST['remberme'])) {
       if (!isset($_COOKIE['2fa'])) {
@@ -32,6 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         setcookie('device_id', $uniqeid, time() + 2592000);
       }
     }
+
+    $_SESSION['OTP'] = "OK";
+
     $utils->redirect("index.php");
   } else {
     $error = "Verification code is incorrect!!";
@@ -70,7 +75,7 @@ function checkUniqeId($uniqeid)
       <div class="card-body">
         <form method="POST">
           <?php if (isset($error)) : ?>
-            <div class="alert alert-danger"><span class="fa fa-times-circle"></span><?php echo $error; ?></div>
+            <div class="alert alert-danger"><span class="fa fa-times-circle"></span> <?php echo $error; ?></div>
           <?php else : ?>
             <div class="alert alert-primary"><span class="fa fa-info-circle"></span> Please open the app for the code.</div>
           <?php endif; ?>

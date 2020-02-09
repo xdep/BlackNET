@@ -15,14 +15,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$recaptchapublic = $utils->sanitize($_POST['reCaptchaPublic']);
 			$status = isset($_POST['status-state']) ? "on" : 'off';
 			$panel = isset($_POST['panel-state']) ? "on" : 'off';
-			$c_password = isset($_POST['c_password']) ? $utils->sanitize($_POST['c_password']) : '';
 			$msg = $settings->updateSettings(
 				$id,
 				$recaptchaprivate,
 				$recaptchapublic,
 				$status,
-				$panel,
-				$c_password
+				$panel
 			);
 			$status = "yes";
 		}

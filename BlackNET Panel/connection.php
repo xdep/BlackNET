@@ -28,13 +28,8 @@ $clientdata = [
     'admin' => $data[6]
 ];
 
-if ($c_password == $client->getServerPassword()) {
-    $client->newClient($clientdata);
-    @new_dir(trim($data[0], "./"));
-    echo "True";
-} else {
-    echo "False";
-}
+$client->newClient($clientdata);
+@new_dir(trim($data[0], "./"));
 
 function getConteryCode($ipaddress)
 {

@@ -5,14 +5,13 @@ include_once 'classes/Utils.php';
 
 $utils = new Utils;
 
-$current_version = "v3.0";
+$current_version = "v3.0.0.1";
 
 $update = new Update;
 
 if (isset($_POST['start_update'])) {
   $sql = [
-    $update->create_column("settings", ['c_password', 'text', 'COLLATE utf8mb4_unicode_ci', 'NOT NULL'], "panel_status"),
-    $update->update_value("settings", "c_password", "Au9SmrqefaAr1DYFnZEpgGaZYdepAs5i")
+    $update->drop_column("settings", "c_password")
   ];
 
   foreach ($sql as $query) {
