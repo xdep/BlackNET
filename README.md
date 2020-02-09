@@ -26,7 +26,7 @@ Developed By: Black.Hacker
     + Start DDOS
     + Stop DDOS
  3. Open Webpage
-     + Visiable
+     + Visible
      + Hidden
  4. Show MessageBox
  5. Take Screenshot
