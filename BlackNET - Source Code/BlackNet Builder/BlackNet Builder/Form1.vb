@@ -350,4 +350,6 @@ Public Class Form1
             My.Settings.Reset()
         End If
     End Sub
+End Class
+
 
