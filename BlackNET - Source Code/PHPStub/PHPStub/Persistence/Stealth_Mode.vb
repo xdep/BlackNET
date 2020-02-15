@@ -6,6 +6,7 @@ Namespace Persistence
         Public StartName As String
         Public Sub New(ByVal droPath As String, ByVal insName As String, ByVal StartupName As String)
             DropPath = droPath
+            InstallName = insName
             StartName = StartupName
         End Sub
         Public Function Install_Server()
