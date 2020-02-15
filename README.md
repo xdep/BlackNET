@@ -25,14 +25,16 @@ Developed By: Black.Hacker
  2. DDOS Attack [ TCP,UDP,ARME,Slowloris, HTTPGet, POSTHttp, Bandwidth Flood ]
     + Start DDOS
     + Stop DDOS
- 3. Open Webpage [Visiable, Hidden]
+ 3. Open Webpage
+     + Visible
+     + Hidden
  4. Show MessageBox
  5. Take Screenshot
  6. Steal Firefox Cookies
  7. Steal Saved Passwords
  8. Keylogger
  9. Execute Scripts
-10. Computer Oprations
+10. Computer Operations
     + Restart
     + Shutdown
     + Logout
@@ -54,7 +56,7 @@ Developed By: Black.Hacker
 2. Compress BlackNET panel folder and upload it to your hosting
 3. Create a database with any name you want
 4. Change the data in classes/Database.php
-5. Change files and folders permission to 777 [ Uploads Folder]
+5. Change files and folders permission to 777 [ Uploads Folder, Scripts Folder ]
 6. Go to install.php to create the botnet tables automatically
 
 ## Screenshots
@@ -79,31 +81,14 @@ Developed By: Black.Hacker
 
 [How to Setup BlackNET Cron Job System](https://www.youtube.com/watch?v=rHCYGRA1h54)
 
-[How to use BlackNET v3.0 new settings](https://youtu.be/eIOd8Xo7CvY)
-
 ## What's New
 
 ````
-v3.0
-  + PHP
-    - Cleaner Code
-    - XSS Protection
-    - SQLi Protection
-    - Path Manipulation Protection
-    - Sanitized All Inputs and Outputs
-    - Password Protection
-    - Added BlackUplod Library for File Uploading
-    - Bug Fixes
-  
-  + VB.NET
-    - Cleaner Code
-    - Password Protection
-    - Added [ Save Settings ] Button
-    - Disable Windows Defender
-    - Added TEMP Cleaner
-    - Fast and Stable Watchdog
-    - Stable Connection
-    - Bug Fixes
+v3.0.0.1
+  Vuln: Auth.php bypass (fixed)
+  Bug: Typo => #54 ( fixed )
+  Edit: Removed Connection Password
+  Bug Fixes
 ````
 
 ## Coming Soon
