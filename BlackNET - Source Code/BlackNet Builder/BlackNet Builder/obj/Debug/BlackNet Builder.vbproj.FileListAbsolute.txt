@@ -57,4 +57,3 @@ C:\Users\Black.Hacker\Desktop\BlackNET\BlackNET - Source Code\BlackNet Builder\B
 C:\Users\Black.Hacker\Desktop\BlackNET\BlackNET - Source Code\BlackNet Builder\BlackNet Builder\obj\Debug\BlackNET Builder.exe
 C:\Users\Black.Hacker\Desktop\BlackNET\BlackNET - Source Code\BlackNet Builder\BlackNet Builder\obj\Debug\BlackNET Builder.xml
 C:\Users\Black.Hacker\Desktop\BlackNET\BlackNET - Source Code\BlackNet Builder\BlackNet Builder\obj\Debug\BlackNET Builder.pdb
-C:\Users\Black.Hacker\Desktop\BlackNET\BlackNET - Source Code\BlackNet Builder\BlackNet Builder\obj\Debug\BlackNet Builder.vbprojResolveAssemblyReference.cache

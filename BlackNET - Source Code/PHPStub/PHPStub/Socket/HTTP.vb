@@ -4,7 +4,6 @@ Namespace HTTPSocket
     Public Class HTTP
         Public ID As String
         Public Host As String
-        Public C_Password As String
         Dim Socket As New WebClient
         Public Function Connect()
             Try
@@ -30,13 +29,13 @@ Namespace HTTPSocket
                 Return ex.Message
             End Try
         End Function
-        Public Function _POST(ByVal requst As String)
+        Public Function _POST(ByVal filename As String, ByVal requst As String)
             Try
                 Dim s As HttpWebRequest
                 Dim enc As UTF8Encoding
                 Dim postdata As String
                 Dim postdatabytes As Byte()
-                s = HttpWebRequest.Create(Host & "/" & "post.php")
+                s = HttpWebRequest.Create(Host & "/" & filename)
                 enc = New UTF8Encoding()
                 postdata = requst
                 postdatabytes = enc.GetBytes(postdata)

