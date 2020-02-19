@@ -94,6 +94,10 @@ v3.0.0.1
 ## Coming Soon
 ````
 v3.5
+ + Fixed Client Update Loop
+ + New Method to blacklist client
+ + Miner Code changes
+ + Bugs Fixed
 ````
 
 ## Pull Request
