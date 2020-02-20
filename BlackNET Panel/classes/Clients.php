@@ -3,6 +3,7 @@
 Class to handle clients and C&C Panel
 using HTTP and MySQL
 */
+require_once 'classes/Database.php';
 class Clients extends Database
 {
 
